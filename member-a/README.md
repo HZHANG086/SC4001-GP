@@ -1,18 +1,8 @@
-# Member A: RoBERTa low-label sentiment experiments
-
-This directory contains the completed M1/M2 experiments, source code, fixed split indices, reports, frozen protocol and original prediction records.
-
-- Results: [Chinese report](RESULTS_ZH.md), [per-seed CSV](formal-results/results/A-v1/per_seed.csv), [verification](formal-results/results/A-v1/VERIFICATION.json).
-- Reproduction: run commands below from this directory (`cd member-a`). Pretrained weights and downloaded datasets are recreated from the recorded Hugging Face revisions; model weights are not committed.
-- `formal-results/runs/` and `remote-records/runs/` are immutable experiment records and intentionally tracked. New runtime data, checkpoints and logs at the top level are ignored.
-
-The original project documentation follows.
-
 # 最终完成状态（2026-10-28）
 
 A 的90次候选训练、30个结果单元及全部评测已经完成并本地核验。先读 RESULTS_ZH.md；原始完整记录在 formal-results/。以下运行说明保留作为复现与历史记录，不要重复提交已完成的作业。
 
-# SC4001 成员 A：数据与基础方法
+# 数据与基础方法
 
 状态：这是实验代码与操作说明。真实数据审计和 GPU 结果以远程运行记录为准；不得把测试通过写成模型效果已验证。
 
@@ -28,7 +18,7 @@ A 的90次候选训练、30个结果单元及全部评测已经完成并本地�
 - Yelp/Amazon 只从官方测试部分固定抽 5,000 条，各类 2,500；规范化去重并排除源领域文本及两目标集合间选中重复。Amazon 固定拼接 `title + 换行 + content`。
 - 规范化只用于查重；模型输入保留原始文本。
 
-## NTU 操作
+## 操作
 
 登录节点只做环境、文件与调度操作。数据处理、模型检查、训练及 GPU 查询均放在计算节点。先运行 `bash scripts/diagnose.sh`，根据实际配额修改 sbatch 资源。本包的 partition/QoS 来自提供的手册，必须以账户诊断为准。
 
@@ -43,7 +33,7 @@ sbatch scripts/prepare.sbatch
 
 若创建过程中失败，先检查 `conda env list` 和报错，不自动删环境。初次复现的 `no such table: shards` 可通过 classic 求解器与独立缓存绕开：`CONDA_PKGS_DIRS="$HOME/.conda/sc4001-pkgs" conda create --solver classic --repodata-fn current_repodata.json -n sc4001-bootstrap --override-channels -c conda-forge python=3.11 pip -y`。本次基础环境保留为 sc4001-bootstrap，慢速官方 torch 2.6.0 下载已停止。共享包缓存已清理，普通 conda 离线 clone 也失败；最终使用 conda-pack 的标准 tar 打包、路径修复及解包方案。no-archive 曾不完整退出，不能使用。每次激活禁用 ~/.local 用户站点包，并优先加载个人环境 lib；共享环境的 MKL 2025 与旧 PyTorch 不兼容，需使用 MKL 2024.0.0。脚本会拒绝覆盖已有 sc4001。
 
-## 先跑通，再正式训练
+## 流程
 
 准备完成必须有 `artifacts/data-v1/READY`。如果失败，会留下未完成目录；保留日志并把目录改名为失败版本，再重新准备，不能直接当完整数据使用。
 
@@ -99,8 +89,6 @@ C 可按 `example_id` 配对分析。均值、样本标准差和 M2-M1 差值应
 没有实现近似语义重复检测；规范化哈希不能发现所有泄漏。官方 IMDb 测试保留重复，报告会披露重复条数。没有实现特征缓存，因此 M1 仍会重复前向传播。主干与分类头虽一致，训练参数不同；按验证集使用不同 LR 是计划中的设计。
 
 来源：用户给定 GPU 手册；https://huggingface.co/FacebookAI/roberta-base ；https://huggingface.co/datasets/stanfordnlp/imdb ；https://huggingface.co/datasets/fancyzhx/yelp_polarity ；https://huggingface.co/datasets/fancyzhx/amazon_polarity ；https://huggingface.co/docs/transformers/v4.51.3/en/main_classes/trainer ；https://pytorch.org/get-started/previous-versions/ 。依赖使用已发布固定版本以控制接口变化，不代表当前最新版。
-
-AI 使用：初版数据、基线、脚本与说明由 Codex 在 2026-10-27 协助生成；团队须审查实现、确认正式协议并如实披露。实验结果由实际运行产生，不预设改进有效。
 
 完成每个单元的 3 个候选后，可在计算节点执行 `python -m sc4001_a.select --length 512` 生成不可覆盖的 `winners.json`。A-v1 已固定为 512。工具只读验证指标，拒绝候选缺失、重复和关键配置不一致；文件列出实际存在的单元，不能把不存在的单元当作已完成。
 
