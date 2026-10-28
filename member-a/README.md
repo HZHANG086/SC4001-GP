@@ -1,116 +1,187 @@
-# 最终完成状态（2026-10-28）
+# RoBERTa Adaptation under Limited Labels
 
-A 的90次候选训练、30个结果单元及全部评测已经完成并本地核验。先读 RESULTS_ZH.md；原始完整记录在 formal-results/。以下运行说明保留作为复现与历史记录，不要重复提交已完成的作业。
+A reproducible comparison of frozen representations and partial fine-tuning for sentiment classification across domains. Models are trained on a limited number of IMDb labels and evaluated on IMDb, Yelp Polarity, and Amazon Polarity.
 
-# 数据与基础方法
+The completed **A-v1** experiment comprises **90 candidate training runs**, **30 selected method–budget–seed configurations**, and **1,050,000 test predictions**. This directory contains the data protocol, implementation, frozen source snapshots, experiment records, and verified results for the project's Member A component.
 
-状态：这是实验代码与操作说明。真实数据审计和 GPU 结果以远程运行记录为准；不得把测试通过写成模型效果已验证。
+## Research objective
 
-## 范围与接口
+How much does updating the final Transformer layers improve in-domain accuracy and cross-domain generalisation when labelled data are limited?
 
-- 主模型 `FacebookAI/roberta-base`，下载时记录确切 commit SHA；同一个 CLS 线性分类头。
-- M1：冻结整个 RoBERTa，只更新线性头，冻结部分关闭 dropout。
-- M2：只更新最后两层及同一线性头，其余部分冻结且关闭 dropout。
-- 不包含 B 的 M3/M4/M6 或 C 的 LoRA；他们可复用本项目的数据、线性头和运行目录接口。
-- 正式预算 400/1600/6400，分别为训练 320/1280/5120、验证 80/320/1280。
-- 五个配对种子 13/21/42/87/100。预算内严格平衡；同一种子下训练集与验证集分别嵌套，跨预算也不会互相泄漏。不同种子允许重叠。
-- IMDb 官方训练集去除规范化重复、标签冲突文本及与官方测试的文本重合；官方测试 25,000 条保留原样。此清理规则在训练前固定，不使用测试标签或预测。
-- Yelp/Amazon 只从官方测试部分固定抽 5,000 条，各类 2,500；规范化去重并排除源领域文本及两目标集合间选中重复。Amazon 固定拼接 `title + 换行 + content`。
-- 规范化只用于查重；模型输入保留原始文本。
+The comparison holds the pretrained backbone, classifier architecture, data splits, input length, and evaluation sets fixed. Each method uses its own predefined learning-rate grid, with model selection based exclusively on source-domain validation accuracy.
 
-## 操作
+## Methods
 
-登录节点只做环境、文件与调度操作。数据处理、模型检查、训练及 GPU 查询均放在计算节点。先运行 `bash scripts/diagnose.sh`，根据实际配额修改 sbatch 资源。本包的 partition/QoS 来自提供的手册，必须以账户诊断为准。
+Both methods start from the original pretrained `FacebookAI/roberta-base` checkpoint and use a linear classifier over the final CLS representation.
 
-实际采用的环境方案：用 conda-pack 标准 tar 从课程共享 CZ4042_v5 完整复制并修正路径，创建个人环境，Python 3.11 / PyTorch 2.5.1 / CUDA 11.8，并把 MKL 修正为 2024.0.0；其他依赖在 pyproject.toml 中锁定。共享环境与手册版本可能不同，先核对实际版本。CUDA 是否兼容必须以计算节点实测为准。无需另装完整 CUDA toolkit。不要在 base 安装依赖。
+| Method | Adaptation strategy | Trainable parameters |
+|---|---|---:|
+| M1 | Freeze the encoder and train the linear classifier | 1,538 |
+| M2 | Update the final two Transformer layers and the same classifier | 14,177,282 |
+
+Dropout is disabled in frozen components. Full fine-tuning, staged adaptation, LoRA, and feature-preservation methods are outside this component's experimental scope.
+
+## Data and experimental protocol
+
+### Datasets
+
+| Role | Dataset | Evaluation size |
+|---|---|---:|
+| Source training and validation | IMDb official training split | Budget-dependent |
+| In-domain evaluation | IMDb official test split | 25,000 |
+| Cross-domain evaluation | Yelp Polarity official test split | 5,000 |
+| Cross-domain evaluation | Amazon Polarity official test split | 5,000 |
+
+Source preparation removes normalised duplicates, conflicting-label text, and overlap with the IMDb test text. The original IMDb test set is retained, including its documented duplicates. Cleaning produces 24,779 eligible source examples. Normalisation is used for duplicate detection; model inputs retain the original text.
+
+Each target test subset contains 2,500 examples per class. Target sampling removes normalised duplicates and excludes source-text overlap and selected overlap between the two target subsets. Amazon inputs concatenate the title and content with a newline. Target labels and predictions are excluded from training and model selection.
+
+Dataset revisions, fixed indices, split hashes, and audit statistics are recorded in [remote-records/data-v1/](remote-records/data-v1/). See [DATA_AUDIT.md](DATA_AUDIT.md) for the detailed audit.
+
+### Label budgets and repetition
+
+Each label budget includes both training and validation labels.
+
+| Total labels | Training labels | Validation labels |
+|---:|---:|---:|
+| 400 | 320 | 80 |
+| 1,600 | 1,280 | 320 |
+| 6,400 | 5,120 | 1,280 |
+
+Experiments use five paired seeds: **13, 21, 42, 87, and 100**. Methods share the same split for each budget and seed. Splits are class-balanced; training subsets and validation subsets are separately nested across budgets, with no train–validation overlap across budgets. Subsets from different seeds may overlap.
+
+### Training and model selection
+
+| Setting | A-v1 configuration |
+|---|---|
+| Maximum input length | 512 tokens |
+| Precision | FP32 |
+| Optimiser | AdamW |
+| Weight decay | 0.01 |
+| Warmup ratio | 0.1 |
+| Batch size | 8 |
+| Gradient accumulation | 4 steps |
+| Training limit | 10 epochs per candidate |
+| M1 learning rates | `1e-4`, `1e-3`, `1e-2` |
+| M2 learning rates | `5e-6`, `2e-5`, `5e-5` |
+| Checkpoint selection | Highest IMDb validation accuracy; earliest epoch on a tie |
+| Candidate selection | Highest IMDb validation accuracy; predefined learning-rate order on a tie |
+
+Two methods × three budgets × five seeds × three learning rates produce 90 candidate runs and 30 selected configurations. All source-validation selections precede formal test evaluation. Input length was fixed after source-validation development experiments; the pilot does not establish a confirmatory claim about sequence length.
+
+The complete specification, model and dataset revisions, and source hashes are in [protocol/A-v1.json](protocol/A-v1.json). Formal jobs execute [protocol/locked_src/](protocol/locked_src/) to preserve the implementation used for the reported results.
+
+## Results
+
+Accuracy is reported as **mean ± sample standard deviation across five seeds**, in percent. The OOD mean is the arithmetic mean of Yelp and Amazon accuracy within each seed; IMDb is excluded.
+
+| Method | Label budget | IMDb | Yelp | Amazon | OOD mean |
+|---|---:|---:|---:|---:|---:|
+| M1 | 400 | 81.08 ± 3.19 | 83.93 ± 3.92 | 81.54 ± 3.08 | 82.74 ± 3.48 |
+| M1 | 1,600 | 86.67 ± 0.50 | 88.96 ± 0.90 | 85.98 ± 1.08 | 87.47 ± 0.85 |
+| M1 | 6,400 | 89.54 ± 0.10 | 91.23 ± 1.42 | 88.58 ± 0.65 | 89.91 ± 1.02 |
+| M2 | 400 | 90.87 ± 1.17 | 92.38 ± 1.23 | 90.68 ± 0.84 | 91.53 ± 0.87 |
+| M2 | 1,600 | 93.52 ± 0.19 | 93.06 ± 1.04 | 91.85 ± 1.14 | 92.45 ± 1.07 |
+| M2 | 6,400 | 94.20 ± 0.09 | 94.47 ± 0.57 | 93.29 ± 0.46 | 93.88 ± 0.49 |
+
+M2 achieves higher mean IMDb and OOD accuracy at every budget. Its paired OOD gains over M1 are **8.79**, **4.98**, and **3.97 percentage points** at 400, 1,600, and 6,400 labels, respectively. The gap narrows as the label budget increases.
+
+These observations support partial adaptation in this setting. They do not establish a causal role for representation drift, predict the performance of untested methods, or imply statistical significance from five repetitions alone.
+
+Result entry points:
+
+- [summary.md](formal-results/results/A-v1/summary.md): English accuracy tables and paired differences.
+- [per_seed.csv](formal-results/results/A-v1/per_seed.csv): selected learning rates, per-seed scores, parameter counts, and recorded costs.
+- [summary.json](formal-results/results/A-v1/summary.json): machine-readable five-seed statistics.
+- [VERIFICATION.json](formal-results/results/A-v1/VERIFICATION.json): completed integrity and metric checks.
+- [RESULTS_ZH.md](RESULTS_ZH.md): detailed Chinese-language results and resource analysis.
+
+Verification covered prediction IDs, labels, probabilities, recomputed accuracy, source-only model selection, split and source hashes, and paired statistics. All 90 candidate training runs succeeded. A scheduler timeout interrupted final evaluation; a subsequent job completed the remaining two evaluations without retraining candidates. The three formal allocations total approximately 11.43 single-GPU hours, excluding development and pilot jobs.
+
+## Repository structure
+
+```text
+member-a/
+├── src/sc4001_a/          Data preparation, modelling, training, selection and evaluation
+├── protocol/             Frozen A-v1 specification and source snapshot
+├── scripts/              Environment setup and SLURM entry points
+├── tests/                Data protocol, model-freezing and checkpoint-resume checks
+├── remote-records/       Data indices, audits, environment and development records
+├── formal-results/
+│   ├── results/A-v1/     Selected configurations and aggregate results
+│   ├── runs/A-v1/        Candidate records and selected-run predictions
+│   └── logs/             Formal job logs
+└── DELIVERY_MANIFEST.json
+```
+
+Each candidate record includes `run_config.json`, `parameters.json`, `history.json`, `validation.json`, and its source snapshot. Selected runs additionally contain `test/metrics.json` and three `*_predictions.jsonl` files. Prediction rows contain `example_id`, `label`, `prediction`, and `p_positive`, enabling paired analysis without duplicating review text.
+
+Model weights, downloaded datasets, and Conda environments are excluded from Git. Recomputing summary statistics uses the committed records; rerunning model inference requires retained checkpoints or retraining.
+
+## Reproducibility
+
+Run the following commands from `member-a/` unless specified otherwise.
+
+### 1. Environment
+
+The recorded GPU environment uses Python 3.11, PyTorch 2.5.1 with CUDA 11.8, and MKL 2024.0.0. Package versions are pinned in [pyproject.toml](pyproject.toml); captured environment records are in [remote-records/](remote-records/).
+
+For a standalone installation, create an isolated environment, install a compatible PyTorch build, then install the package:
 
 ```bash
-bash scripts/rebuild-environment.sh
+python -m pip install -e .
+PYTHONPATH=src python -m unittest discover -s tests -p test_protocol.py -v
+```
+
+The included SLURM scripts target the original NTU environment. Review their partition, QoS, resource limits, and environment activation before using them on another system. [scripts/rebuild-environment.sh](scripts/rebuild-environment.sh) documents the NTU-specific reconstruction path; it depends on the original shared environment.
+
+### 2. Inspect and regenerate summaries
+
+The committed records support summary regeneration without a GPU, model weights, or dataset downloads. From `member-a/`:
+
+```bash
+cd formal-results
+PYTHONPATH=../protocol/locked_src python -m sc4001_a.aggregate \
+  --winners results/A-v1/winners.json \
+  --out /tmp/sc4001-a-summary
+```
+
+The working directory matters because the selected run paths are relative to the experiment root. This command writes a separate summary directory and preserves the committed results.
+
+### 3. Rebuild data and run experiments
+
+For a fresh NTU reproduction, activate the configured environment and create the log directory. Verify the environment and rebuild data using the recorded Hub revisions:
+
+```bash
 mkdir -p logs
 sbatch scripts/check.sbatch
-sbatch scripts/prepare.sbatch
+sbatch scripts/prepare.sbatch \
+  --source-lock remote-records/data-v1/sources.json
 ```
 
-若创建过程中失败，先检查 `conda env list` 和报错，不自动删环境。初次复现的 `no such table: shards` 可通过 classic 求解器与独立缓存绕开：`CONDA_PKGS_DIRS="$HOME/.conda/sc4001-pkgs" conda create --solver classic --repodata-fn current_repodata.json -n sc4001-bootstrap --override-channels -c conda-forge python=3.11 pip -y`。本次基础环境保留为 sc4001-bootstrap，慢速官方 torch 2.6.0 下载已停止。共享包缓存已清理，普通 conda 离线 clone 也失败；最终使用 conda-pack 的标准 tar 打包、路径修复及解包方案。no-archive 曾不完整退出，不能使用。每次激活禁用 ~/.local 用户站点包，并优先加载个人环境 lib；共享环境的 MKL 2025 与旧 PyTorch 不兼容，需使用 MKL 2024.0.0。脚本会拒绝覆盖已有 sc4001。
+Wait for both jobs to succeed and confirm `artifacts/data-v1/READY` exists before training. The frozen sweep validates the data manifest and source hashes against A-v1. Data preparation requires access to the upstream datasets and model.
 
-## 流程
-
-准备完成必须有 `artifacts/data-v1/READY`。如果失败，会留下未完成目录；保留日志并把目录改名为失败版本，再重新准备，不能直接当完整数据使用。
+The original sweep can be submitted in two dependent stages:
 
 ```bash
-sbatch scripts/train.sbatch --method M1 --budget 400 --seed 13 --lr 0.001 --max-steps 2 --out runs/smoke-M1
-sbatch scripts/train.sbatch --method M2 --budget 400 --seed 13 --lr 0.00002 --max-steps 2 --out runs/smoke-M2
+first_job=$(sbatch --parsable scripts/formal.sbatch 13 21 42)
+sbatch --dependency=afterok:"$first_job" scripts/formal.sbatch 87 100 --finish
 ```
 
-同一时间只申请账户允许的 GPU 总数。本包不批量提交 90 个任务，也不自动启动全部调参。
+The final stage selects configurations, evaluates all three test sets, and writes `results/A-v1/`. These commands initiate a new training sweep; they are unnecessary for inspecting the completed records. Account for scheduler time limits when planning a reproduction.
 
-正式搜索草案（需三人一起冻结）：每种方法、每个预算、每个种子 3 个候选；M1 LR={0.0001,0.001,0.01}；M2 LR={0.000005,0.00002,0.00005}。每个候选最多 10 epochs，每 epoch 保存与验证，按源验证准确率选检查点（并列取最早），候选并列时按预先列出的 LR 顺序取第一个。AdamW、weight decay=.01、warmup ratio=.1、batch=8、累积=4、FP32。学习率只是预注册起点，需试跑检查学习曲线后冻结，不能声称最优。
+The sweep skips completed candidates and resumes incomplete runs when an epoch checkpoint is available. Preserve failed-run logs and recovery records. Each candidate's learning rate, data split, model revision, and other frozen settings must remain unchanged when resuming.
 
-长度 256/512 的比较应先在源验证集上独立完成，计入开发成本，再把统一长度传给所有方法；本包默认 256 只是试跑值。不得依据 Yelp/Amazon 测试指标选择长度、LR 或方法。
+### 4. Output interpretation
 
-示例正式候选：
+A complete sweep requires `results/A-v1/COMPLETE`, 30 unique method–budget–seed cells, and all three test-domain metrics for every selected run. Scheduler exit status alone does not establish experiment completeness.
 
-```bash
-sbatch scripts/train.sbatch --method M1 --budget 400 --seed 13 --lr 0.001 --length 512 --out runs/M1-b400-s13-lr0.001
-```
+Training time records include training, validation, and checkpoint writes within the training invocation. They exclude process startup, model loading, and data mapping. Search cost includes all three candidates per cell; interrupted invocations and development jobs require separate accounting. Peak allocated CUDA memory measures process allocations rather than total device occupancy.
 
-中断后用完全相同参数及 `--resume` 恢复最新 checkpoint。每 epoch 才保存；首个 epoch 未保存时无法恢复。先完成一次人工中断/恢复检查再扩大实验。`train_wall_seconds_this_invocation` 是本次调用的耗时，恢复多次时必须把各次作业计费时间累计；GPU 峰值是进程统计，不是整张卡的全部占用。
+## Limitations and provenance
 
-## 测试集开放
+The study uses one source domain and two fixed target subsets. Dataset differences include topic, length, and writing style, so performance changes cannot be attributed to a single domain-shift factor. Normalised hashing does not detect all semantic duplicates. IMDb's official test duplicates are retained and disclosed in the audit. M1 recomputes encoder features rather than caching them, which affects its measured runtime.
 
-先冻结主实验方案、完成所有源验证选择、保存 winner 清单。只对每个单元选中的 winner 运行：
+The model and data originate from [RoBERTa-base](https://huggingface.co/FacebookAI/roberta-base), [IMDb](https://huggingface.co/datasets/stanfordnlp/imdb), [Yelp Polarity](https://huggingface.co/datasets/fancyzhx/yelp_polarity), and [Amazon Polarity](https://huggingface.co/datasets/fancyzhx/amazon_polarity). Related work and bibliographic entries are provided in [RELATED_WORK.md](RELATED_WORK.md) and [references.bib](references.bib). Upstream resources remain subject to their respective terms.
 
-```bash
-sbatch scripts/evaluate.sbatch --run runs/M1-b400-s13-lr0.001 --protocol-locked
-```
-
-`--protocol-locked` 是操作声明，不能代替团队的预注册记录。smoke 运行禁止生成正式测试结果。测试目录不可覆盖；中途评测失败时保留或改名失败目录再重跑，记录重跑原因。
-
-## 交付格式
-
-`artifacts/data-v1/`：数据版本与模型 SHA、原始行号、15 份固定划分、Yelp/Amazon 固定测试索引、标签统计、长度分位数、256/512 截断比例和清理报告。`audit.json` 包含测试数据分布，只用于固定的数据质量检查，不能据此调模型。
-
-`runs/<method>-b<budget>-s<seed>-lr<lr>/`：
-
-- `run_config.json`：种子、预算、LR、长度、SHA、划分哈希、是否 smoke。
-- `parameters.json`：可训练参数总量与完整名称。
-- `history.json`、`validation.json`：验证轨迹、最佳 checkpoint、耗时和显存。
-- `environment.txt`、`best/`、`checkpoints/`：依赖记录、最佳模型、恢复状态。
-- `test/*_predictions.jsonl`：example_id、label、prediction、p_positive；无需复制评论原文。
-- `test/metrics.json`：三个领域的绝对准确率和两外部领域准确率的算术平均。
-
-C 可按 `example_id` 配对分析。均值、样本标准差和 M2-M1 差值应按同一预算的五个种子计算；不能把同一种子的候选 LR 当独立重复。每个候选都是实际训练成本；M1/M2 全部 3 候选的主网格是 90 次训练，源验证选中 30 个结果单元。
-
-## 验证与局限
-
-纯 Python 测试：`PYTHONPATH=src python -m unittest discover -s tests -v`。
-计算节点模型检查：`python tests/check_model.py`，用随机小模型验证冻结参数、梯度和 dropout，不下载模型，不能替代真实数据 smoke。
-
-没有实现近似语义重复检测；规范化哈希不能发现所有泄漏。官方 IMDb 测试保留重复，报告会披露重复条数。没有实现特征缓存，因此 M1 仍会重复前向传播。主干与分类头虽一致，训练参数不同；按验证集使用不同 LR 是计划中的设计。
-
-来源：用户给定 GPU 手册；https://huggingface.co/FacebookAI/roberta-base ；https://huggingface.co/datasets/stanfordnlp/imdb ；https://huggingface.co/datasets/fancyzhx/yelp_polarity ；https://huggingface.co/datasets/fancyzhx/amazon_polarity ；https://huggingface.co/docs/transformers/v4.51.3/en/main_classes/trainer ；https://pytorch.org/get-started/previous-versions/ 。依赖使用已发布固定版本以控制接口变化，不代表当前最新版。
-
-完成每个单元的 3 个候选后，可在计算节点执行 `python -m sc4001_a.select --length 512` 生成不可覆盖的 `winners.json`。A-v1 已固定为 512。工具只读验证指标，拒绝候选缺失、重复和关键配置不一致；文件列出实际存在的单元，不能把不存在的单元当作已完成。
-
-重建同一数据版本时，用 `python -m sc4001_a.prepare --source-lock remote-records/sources.json --out artifacts/data-rebuilt`；前提是已取得本次 sources.json。实际 pip 依赖另存为 requirements-remote.txt，环境导出记录不能代替数据/模型版本锁定。
-
-## 已冻结并启动的 A-v1 正式协议
-
-统一长度固定为 512。开发依据与限制见 PILOT_RESULTS.md；全部参数和源码哈希在 protocol/A-v1.json。作业使用 protocol/locked_src 的冻结副本，之后修改 src 不会改变已提交实验。
-
-A 共 30 个最终单元，每个单元 3 个 LR 候选，共 90 次训练。第一段 seeds 13/21/42（54 次）为作业 70088；第二段 seeds 87/100（36 次）为 70089，依赖 70088 成功，随后统一选择 30 个 winner、测试并汇总。
-
-```bash
-squeue -u "$USER"
-sacct -j 70088,70089 --format=JobID,State,ExitCode,Elapsed
-```
-
-运行入口是 scripts/formal.sbatch，种子作为参数；最后一段加 --finish。不要在已排队时重复提交。已完成候选会跳过；未完成候选在存在完整 epoch checkpoint 时恢复，否则保留失败目录再重新运行。
-
-完成后的恢复状态会删除；非胜出候选的 best 权重在本单元源验证选择后删除。配置、指标、轨迹、日志保留，30 个赢家的 best 权重保留。清理只针对 runs/A-v1 内本程序生成的文件，避免 90 份完整模型和优化器状态超过空间配额。
-
-最终产物位于 results/A-v1/：winners.json、per_seed.csv、summary.json、summary.md、COMPLETE。逐样本预测位于各 winner 的 test/。五种子均值、样本标准差和 M2-M1 配对差值自动汇总，不自动作显著性声明。若第一段失败，afterok 依赖的第二段不会启动；按候选日志诊断并恢复，不能把等待状态解释成成功。
-
-GPU 恢复测试在 70082 成功：step 2 保存后停止，恢复到 step 4，与不停训练的最终权重在 1e-7 绝对容差内一致。NumPy RNG 恢复使用局部 safe_globals 上下文，仍采用受限的 weights_only 读取。
-
-正式结果完成后，可在 Mac 本地项目目录运行 `bash scripts/collect-results.sh tsun003@10.96.189.11` 收集汇总、配置和逐样本预测；不会复制模型权重。需要有效 SSH/VPN 连接。`best_checkpoint` 记录的是训练时胜出检查点的历史位置，完成后恢复状态会清理；保留模型在 winner 的 best/。
+AI assistance was used for environment troubleshooting, implementation, experiment orchestration, verification, and documentation. Reported metrics are derived from the recorded experiment outputs.
