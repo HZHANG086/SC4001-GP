@@ -1,0 +1,10 @@
+{
+  "winner": "runs/A-v1/M1-b400-s100-lr1e-02",
+  "source_val_accuracy": 0.7625,
+  "candidate_runs": [
+    "runs/A-v1/M1-b400-s100-lr1e-04",
+    "runs/A-v1/M1-b400-s100-lr1e-03",
+    "runs/A-v1/M1-b400-s100-lr1e-02"
+  ],
+  "selection": "source validation accuracy, LR-list order for exact ties"
+}

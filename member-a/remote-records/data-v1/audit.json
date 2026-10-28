@@ -1,0 +1,60 @@
+{
+  "source_removals": {
+    "train_test_overlap_rows_removed": 123,
+    "duplicate_train_rows_removed": 98,
+    "conflicting_normalized_text_groups_removed": 0
+  },
+  "eligible_source_rows": 24779,
+  "test_protocol": "IMDb official test unchanged; target tests normalized-deduplicated",
+  "seed_protocol": "nested train/validation within each seed; disjoint across budgets",
+  "datasets": {
+    "imdb_train_pool": {
+      "n": 24779,
+      "labels": {
+        "0": 12336,
+        "1": 12443
+      },
+      "normalized_duplicate_rows": 0,
+      "token_length_median": 224,
+      "token_length_p95": 775,
+      "truncation_rate_256": 0.4184591791436297,
+      "truncation_rate_512": 0.136809395052262
+    },
+    "imdb": {
+      "n": 25000,
+      "labels": {
+        "0": 12500,
+        "1": 12500
+      },
+      "normalized_duplicate_rows": 201,
+      "token_length_median": 221.0,
+      "token_length_p95": 754,
+      "truncation_rate_256": 0.41028,
+      "truncation_rate_512": 0.12772
+    },
+    "yelp": {
+      "n": 5000,
+      "labels": {
+        "0": 2500,
+        "1": 2500
+      },
+      "normalized_duplicate_rows": 0,
+      "token_length_median": 127.0,
+      "token_length_p95": 486,
+      "truncation_rate_256": 0.2108,
+      "truncation_rate_512": 0.0424
+    },
+    "amazon": {
+      "n": 5000,
+      "labels": {
+        "0": 2500,
+        "1": 2500
+      },
+      "normalized_duplicate_rows": 0,
+      "token_length_median": 88.0,
+      "token_length_p95": 202,
+      "truncation_rate_256": 0.0024,
+      "truncation_rate_512": 0.0002
+    }
+  }
+}

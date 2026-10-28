@@ -1,0 +1,7 @@
+test_duplicate_overlap (test_protocol.ProtocolTests.test_duplicate_overlap) ... ok
+test_nested_balance_and_no_cross_budget_leakage (test_protocol.ProtocolTests.test_nested_balance_and_no_cross_budget_leakage) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.018s
+
+OK

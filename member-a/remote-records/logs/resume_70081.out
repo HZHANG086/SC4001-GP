@@ -1,0 +1,4 @@
+{'train_runtime': 0.4447, 'train_samples_per_second': 35.981, 'train_steps_per_second': 8.995, 'train_loss': 0.6950953006744385, 'epoch': 1.0}
+{'train_runtime': 0.0809, 'train_samples_per_second': 197.893, 'train_steps_per_second': 49.473, 'train_loss': 0.6914236545562744, 'epoch': 0.5}
+{'train_runtime': 0.0727, 'train_samples_per_second': 220.086, 'train_steps_per_second': 55.022, 'train_loss': 0.3493834435939789, 'epoch': 1.0}
+RESUME_CHECK_PASSED: interrupted at step 2, restored to step 4; weights match uninterrupted training.

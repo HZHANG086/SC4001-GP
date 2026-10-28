@@ -1,0 +1,31 @@
+{
+  "data": "artifacts/data-v1",
+  "out": "runs/A-v1/M2-b400-s13-lr5e-06",
+  "method": "M2",
+  "budget": 400,
+  "seed": 13,
+  "lr": 5e-06,
+  "length": 512,
+  "epochs": 10,
+  "batch": 8,
+  "accumulation": 4,
+  "max_steps": -1,
+  "cpu": false,
+  "resume": false,
+  "stage": "formal",
+  "model_id": "FacebookAI/roberta-base",
+  "model_revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "split_sha256": "42100fd4142b4d6617e3b9f664ed030ac0757c197f64792a51671c11a3bcd972",
+  "data_manifest_sha256": "74d278fb4419173b5aaf439f6b3723621b6e39484d2749ddacdc01665e964a78",
+  "dataset_revisions": {
+    "imdb": "e6281661ce1c48d982bc483cf8a173c1bbeb5d31",
+    "yelp": "bbf1c97a1f0cf005e5aded43839fd814654a1557",
+    "amazon": "9d9c45c18f8c3cf1b23a3c27917b60cbf28f3289"
+  },
+  "smoke": false,
+  "code_sha256": {
+    "train.py": "f8f5f8b3bb1b39b0bf526bbb48e0ce89a80760ad25f854f52199a17ae3c54d30",
+    "model.py": "16cac1c2550027cc457967ae671947ec6d3ba69eb0a1af3fd804aab4d1934d72",
+    "checkpoint.py": "48e5496a06e8013f86b4b16bacee2ce7a9c189796736315f854b063e3276e605"
+  }
+}

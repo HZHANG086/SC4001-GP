@@ -1,0 +1,396 @@
+{
+  "selection": "IMDb validation accuracy only",
+  "length": 512,
+  "winners": [
+    {
+      "method": "M1",
+      "budget": 400,
+      "seed": 13,
+      "run": "runs/A-v1/M1-b400-s13-lr1e-03",
+      "source_val_accuracy": 0.8625,
+      "lr": 0.001,
+      "candidate_runs": [
+        "runs/A-v1/M1-b400-s13-lr1e-02",
+        "runs/A-v1/M1-b400-s13-lr1e-03",
+        "runs/A-v1/M1-b400-s13-lr1e-04"
+      ]
+    },
+    {
+      "method": "M1",
+      "budget": 400,
+      "seed": 21,
+      "run": "runs/A-v1/M1-b400-s21-lr1e-02",
+      "source_val_accuracy": 0.85,
+      "lr": 0.01,
+      "candidate_runs": [
+        "runs/A-v1/M1-b400-s21-lr1e-02",
+        "runs/A-v1/M1-b400-s21-lr1e-03",
+        "runs/A-v1/M1-b400-s21-lr1e-04"
+      ]
+    },
+    {
+      "method": "M1",
+      "budget": 400,
+      "seed": 42,
+      "run": "runs/A-v1/M1-b400-s42-lr1e-02",
+      "source_val_accuracy": 0.8375,
+      "lr": 0.01,
+      "candidate_runs": [
+        "runs/A-v1/M1-b400-s42-lr1e-02",
+        "runs/A-v1/M1-b400-s42-lr1e-03",
+        "runs/A-v1/M1-b400-s42-lr1e-04"
+      ]
+    },
+    {
+      "method": "M1",
+      "budget": 400,
+      "seed": 87,
+      "run": "runs/A-v1/M1-b400-s87-lr1e-02",
+      "source_val_accuracy": 0.8375,
+      "lr": 0.01,
+      "candidate_runs": [
+        "runs/A-v1/M1-b400-s87-lr1e-02",
+        "runs/A-v1/M1-b400-s87-lr1e-03",
+        "runs/A-v1/M1-b400-s87-lr1e-04"
+      ]
+    },
+    {
+      "method": "M1",
+      "budget": 400,
+      "seed": 100,
+      "run": "runs/A-v1/M1-b400-s100-lr1e-02",
+      "source_val_accuracy": 0.7625,
+      "lr": 0.01,
+      "candidate_runs": [
+        "runs/A-v1/M1-b400-s100-lr1e-02",
+        "runs/A-v1/M1-b400-s100-lr1e-03",
+        "runs/A-v1/M1-b400-s100-lr1e-04"
+      ]
+    },
+    {
+      "method": "M1",
+      "budget": 1600,
+      "seed": 13,
+      "run": "runs/A-v1/M1-b1600-s13-lr1e-02",
+      "source_val_accuracy": 0.88125,
+      "lr": 0.01,
+      "candidate_runs": [
+        "runs/A-v1/M1-b1600-s13-lr1e-02",
+        "runs/A-v1/M1-b1600-s13-lr1e-03",
+        "runs/A-v1/M1-b1600-s13-lr1e-04"
+      ]
+    },
+    {
+      "method": "M1",
+      "budget": 1600,
+      "seed": 21,
+      "run": "runs/A-v1/M1-b1600-s21-lr1e-02",
+      "source_val_accuracy": 0.8875,
+      "lr": 0.01,
+      "candidate_runs": [
+        "runs/A-v1/M1-b1600-s21-lr1e-02",
+        "runs/A-v1/M1-b1600-s21-lr1e-03",
+        "runs/A-v1/M1-b1600-s21-lr1e-04"
+      ]
+    },
+    {
+      "method": "M1",
+      "budget": 1600,
+      "seed": 42,
+      "run": "runs/A-v1/M1-b1600-s42-lr1e-02",
+      "source_val_accuracy": 0.878125,
+      "lr": 0.01,
+      "candidate_runs": [
+        "runs/A-v1/M1-b1600-s42-lr1e-02",
+        "runs/A-v1/M1-b1600-s42-lr1e-03",
+        "runs/A-v1/M1-b1600-s42-lr1e-04"
+      ]
+    },
+    {
+      "method": "M1",
+      "budget": 1600,
+      "seed": 87,
+      "run": "runs/A-v1/M1-b1600-s87-lr1e-02",
+      "source_val_accuracy": 0.85625,
+      "lr": 0.01,
+      "candidate_runs": [
+        "runs/A-v1/M1-b1600-s87-lr1e-02",
+        "runs/A-v1/M1-b1600-s87-lr1e-03",
+        "runs/A-v1/M1-b1600-s87-lr1e-04"
+      ]
+    },
+    {
+      "method": "M1",
+      "budget": 1600,
+      "seed": 100,
+      "run": "runs/A-v1/M1-b1600-s100-lr1e-02",
+      "source_val_accuracy": 0.85,
+      "lr": 0.01,
+      "candidate_runs": [
+        "runs/A-v1/M1-b1600-s100-lr1e-02",
+        "runs/A-v1/M1-b1600-s100-lr1e-03",
+        "runs/A-v1/M1-b1600-s100-lr1e-04"
+      ]
+    },
+    {
+      "method": "M1",
+      "budget": 6400,
+      "seed": 13,
+      "run": "runs/A-v1/M1-b6400-s13-lr1e-02",
+      "source_val_accuracy": 0.90703125,
+      "lr": 0.01,
+      "candidate_runs": [
+        "runs/A-v1/M1-b6400-s13-lr1e-02",
+        "runs/A-v1/M1-b6400-s13-lr1e-03",
+        "runs/A-v1/M1-b6400-s13-lr1e-04"
+      ]
+    },
+    {
+      "method": "M1",
+      "budget": 6400,
+      "seed": 21,
+      "run": "runs/A-v1/M1-b6400-s21-lr1e-02",
+      "source_val_accuracy": 0.896875,
+      "lr": 0.01,
+      "candidate_runs": [
+        "runs/A-v1/M1-b6400-s21-lr1e-02",
+        "runs/A-v1/M1-b6400-s21-lr1e-03",
+        "runs/A-v1/M1-b6400-s21-lr1e-04"
+      ]
+    },
+    {
+      "method": "M1",
+      "budget": 6400,
+      "seed": 42,
+      "run": "runs/A-v1/M1-b6400-s42-lr1e-02",
+      "source_val_accuracy": 0.896875,
+      "lr": 0.01,
+      "candidate_runs": [
+        "runs/A-v1/M1-b6400-s42-lr1e-02",
+        "runs/A-v1/M1-b6400-s42-lr1e-03",
+        "runs/A-v1/M1-b6400-s42-lr1e-04"
+      ]
+    },
+    {
+      "method": "M1",
+      "budget": 6400,
+      "seed": 87,
+      "run": "runs/A-v1/M1-b6400-s87-lr1e-02",
+      "source_val_accuracy": 0.8890625,
+      "lr": 0.01,
+      "candidate_runs": [
+        "runs/A-v1/M1-b6400-s87-lr1e-02",
+        "runs/A-v1/M1-b6400-s87-lr1e-03",
+        "runs/A-v1/M1-b6400-s87-lr1e-04"
+      ]
+    },
+    {
+      "method": "M1",
+      "budget": 6400,
+      "seed": 100,
+      "run": "runs/A-v1/M1-b6400-s100-lr1e-02",
+      "source_val_accuracy": 0.89375,
+      "lr": 0.01,
+      "candidate_runs": [
+        "runs/A-v1/M1-b6400-s100-lr1e-02",
+        "runs/A-v1/M1-b6400-s100-lr1e-03",
+        "runs/A-v1/M1-b6400-s100-lr1e-04"
+      ]
+    },
+    {
+      "method": "M2",
+      "budget": 400,
+      "seed": 13,
+      "run": "runs/A-v1/M2-b400-s13-lr5e-05",
+      "source_val_accuracy": 0.9,
+      "lr": 5e-05,
+      "candidate_runs": [
+        "runs/A-v1/M2-b400-s13-lr2e-05",
+        "runs/A-v1/M2-b400-s13-lr5e-05",
+        "runs/A-v1/M2-b400-s13-lr5e-06"
+      ]
+    },
+    {
+      "method": "M2",
+      "budget": 400,
+      "seed": 21,
+      "run": "runs/A-v1/M2-b400-s21-lr5e-05",
+      "source_val_accuracy": 0.9625,
+      "lr": 5e-05,
+      "candidate_runs": [
+        "runs/A-v1/M2-b400-s21-lr2e-05",
+        "runs/A-v1/M2-b400-s21-lr5e-05",
+        "runs/A-v1/M2-b400-s21-lr5e-06"
+      ]
+    },
+    {
+      "method": "M2",
+      "budget": 400,
+      "seed": 42,
+      "run": "runs/A-v1/M2-b400-s42-lr5e-05",
+      "source_val_accuracy": 0.9,
+      "lr": 5e-05,
+      "candidate_runs": [
+        "runs/A-v1/M2-b400-s42-lr2e-05",
+        "runs/A-v1/M2-b400-s42-lr5e-05",
+        "runs/A-v1/M2-b400-s42-lr5e-06"
+      ]
+    },
+    {
+      "method": "M2",
+      "budget": 400,
+      "seed": 87,
+      "run": "runs/A-v1/M2-b400-s87-lr5e-05",
+      "source_val_accuracy": 0.9375,
+      "lr": 5e-05,
+      "candidate_runs": [
+        "runs/A-v1/M2-b400-s87-lr2e-05",
+        "runs/A-v1/M2-b400-s87-lr5e-05",
+        "runs/A-v1/M2-b400-s87-lr5e-06"
+      ]
+    },
+    {
+      "method": "M2",
+      "budget": 400,
+      "seed": 100,
+      "run": "runs/A-v1/M2-b400-s100-lr5e-05",
+      "source_val_accuracy": 0.8875,
+      "lr": 5e-05,
+      "candidate_runs": [
+        "runs/A-v1/M2-b400-s100-lr2e-05",
+        "runs/A-v1/M2-b400-s100-lr5e-05",
+        "runs/A-v1/M2-b400-s100-lr5e-06"
+      ]
+    },
+    {
+      "method": "M2",
+      "budget": 1600,
+      "seed": 13,
+      "run": "runs/A-v1/M2-b1600-s13-lr5e-05",
+      "source_val_accuracy": 0.953125,
+      "lr": 5e-05,
+      "candidate_runs": [
+        "runs/A-v1/M2-b1600-s13-lr2e-05",
+        "runs/A-v1/M2-b1600-s13-lr5e-05",
+        "runs/A-v1/M2-b1600-s13-lr5e-06"
+      ]
+    },
+    {
+      "method": "M2",
+      "budget": 1600,
+      "seed": 21,
+      "run": "runs/A-v1/M2-b1600-s21-lr2e-05",
+      "source_val_accuracy": 0.94375,
+      "lr": 2e-05,
+      "candidate_runs": [
+        "runs/A-v1/M2-b1600-s21-lr2e-05",
+        "runs/A-v1/M2-b1600-s21-lr5e-05",
+        "runs/A-v1/M2-b1600-s21-lr5e-06"
+      ]
+    },
+    {
+      "method": "M2",
+      "budget": 1600,
+      "seed": 42,
+      "run": "runs/A-v1/M2-b1600-s42-lr5e-05",
+      "source_val_accuracy": 0.946875,
+      "lr": 5e-05,
+      "candidate_runs": [
+        "runs/A-v1/M2-b1600-s42-lr2e-05",
+        "runs/A-v1/M2-b1600-s42-lr5e-05",
+        "runs/A-v1/M2-b1600-s42-lr5e-06"
+      ]
+    },
+    {
+      "method": "M2",
+      "budget": 1600,
+      "seed": 87,
+      "run": "runs/A-v1/M2-b1600-s87-lr5e-05",
+      "source_val_accuracy": 0.9375,
+      "lr": 5e-05,
+      "candidate_runs": [
+        "runs/A-v1/M2-b1600-s87-lr2e-05",
+        "runs/A-v1/M2-b1600-s87-lr5e-05",
+        "runs/A-v1/M2-b1600-s87-lr5e-06"
+      ]
+    },
+    {
+      "method": "M2",
+      "budget": 1600,
+      "seed": 100,
+      "run": "runs/A-v1/M2-b1600-s100-lr2e-05",
+      "source_val_accuracy": 0.94375,
+      "lr": 2e-05,
+      "candidate_runs": [
+        "runs/A-v1/M2-b1600-s100-lr2e-05",
+        "runs/A-v1/M2-b1600-s100-lr5e-05",
+        "runs/A-v1/M2-b1600-s100-lr5e-06"
+      ]
+    },
+    {
+      "method": "M2",
+      "budget": 6400,
+      "seed": 13,
+      "run": "runs/A-v1/M2-b6400-s13-lr5e-05",
+      "source_val_accuracy": 0.9453125,
+      "lr": 5e-05,
+      "candidate_runs": [
+        "runs/A-v1/M2-b6400-s13-lr2e-05",
+        "runs/A-v1/M2-b6400-s13-lr5e-05",
+        "runs/A-v1/M2-b6400-s13-lr5e-06"
+      ]
+    },
+    {
+      "method": "M2",
+      "budget": 6400,
+      "seed": 21,
+      "run": "runs/A-v1/M2-b6400-s21-lr5e-05",
+      "source_val_accuracy": 0.94453125,
+      "lr": 5e-05,
+      "candidate_runs": [
+        "runs/A-v1/M2-b6400-s21-lr2e-05",
+        "runs/A-v1/M2-b6400-s21-lr5e-05",
+        "runs/A-v1/M2-b6400-s21-lr5e-06"
+      ]
+    },
+    {
+      "method": "M2",
+      "budget": 6400,
+      "seed": 42,
+      "run": "runs/A-v1/M2-b6400-s42-lr2e-05",
+      "source_val_accuracy": 0.94609375,
+      "lr": 2e-05,
+      "candidate_runs": [
+        "runs/A-v1/M2-b6400-s42-lr2e-05",
+        "runs/A-v1/M2-b6400-s42-lr5e-05",
+        "runs/A-v1/M2-b6400-s42-lr5e-06"
+      ]
+    },
+    {
+      "method": "M2",
+      "budget": 6400,
+      "seed": 87,
+      "run": "runs/A-v1/M2-b6400-s87-lr5e-05",
+      "source_val_accuracy": 0.94296875,
+      "lr": 5e-05,
+      "candidate_runs": [
+        "runs/A-v1/M2-b6400-s87-lr2e-05",
+        "runs/A-v1/M2-b6400-s87-lr5e-05",
+        "runs/A-v1/M2-b6400-s87-lr5e-06"
+      ]
+    },
+    {
+      "method": "M2",
+      "budget": 6400,
+      "seed": 100,
+      "run": "runs/A-v1/M2-b6400-s100-lr2e-05",
+      "source_val_accuracy": 0.9390625,
+      "lr": 2e-05,
+      "candidate_runs": [
+        "runs/A-v1/M2-b6400-s100-lr2e-05",
+        "runs/A-v1/M2-b6400-s100-lr5e-05",
+        "runs/A-v1/M2-b6400-s100-lr5e-06"
+      ]
+    }
+  ]
+}

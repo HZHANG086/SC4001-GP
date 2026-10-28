@@ -1,0 +1,354 @@
+{
+  "mean_std": [
+    {
+      "method": "M1",
+      "budget": 400,
+      "metric": "imdb_accuracy",
+      "mean": 0.810752,
+      "sample_std": 0.031898569246911375,
+      "n_seeds": 5
+    },
+    {
+      "method": "M1",
+      "budget": 400,
+      "metric": "yelp_accuracy",
+      "mean": 0.83928,
+      "sample_std": 0.039162890598116,
+      "n_seeds": 5
+    },
+    {
+      "method": "M1",
+      "budget": 400,
+      "metric": "amazon_accuracy",
+      "mean": 0.8154399999999999,
+      "sample_std": 0.03080694726843283,
+      "n_seeds": 5
+    },
+    {
+      "method": "M1",
+      "budget": 400,
+      "metric": "ood_accuracy",
+      "mean": 0.82736,
+      "sample_std": 0.0348134744028803,
+      "n_seeds": 5
+    },
+    {
+      "method": "M1",
+      "budget": 1600,
+      "metric": "imdb_accuracy",
+      "mean": 0.866728,
+      "sample_std": 0.004970102614634823,
+      "n_seeds": 5
+    },
+    {
+      "method": "M1",
+      "budget": 1600,
+      "metric": "yelp_accuracy",
+      "mean": 0.88964,
+      "sample_std": 0.00898153661686019,
+      "n_seeds": 5
+    },
+    {
+      "method": "M1",
+      "budget": 1600,
+      "metric": "amazon_accuracy",
+      "mean": 0.85984,
+      "sample_std": 0.010752116070802039,
+      "n_seeds": 5
+    },
+    {
+      "method": "M1",
+      "budget": 1600,
+      "metric": "ood_accuracy",
+      "mean": 0.87474,
+      "sample_std": 0.008454466275289034,
+      "n_seeds": 5
+    },
+    {
+      "method": "M1",
+      "budget": 6400,
+      "metric": "imdb_accuracy",
+      "mean": 0.895352,
+      "sample_std": 0.0010366870308825041,
+      "n_seeds": 5
+    },
+    {
+      "method": "M1",
+      "budget": 6400,
+      "metric": "yelp_accuracy",
+      "mean": 0.91228,
+      "sample_std": 0.014204647126908892,
+      "n_seeds": 5
+    },
+    {
+      "method": "M1",
+      "budget": 6400,
+      "metric": "amazon_accuracy",
+      "mean": 0.88584,
+      "sample_std": 0.006516747655080719,
+      "n_seeds": 5
+    },
+    {
+      "method": "M1",
+      "budget": 6400,
+      "metric": "ood_accuracy",
+      "mean": 0.89906,
+      "sample_std": 0.010233425623905243,
+      "n_seeds": 5
+    },
+    {
+      "method": "M2",
+      "budget": 400,
+      "metric": "imdb_accuracy",
+      "mean": 0.908712,
+      "sample_std": 0.01172516609690456,
+      "n_seeds": 5
+    },
+    {
+      "method": "M2",
+      "budget": 400,
+      "metric": "yelp_accuracy",
+      "mean": 0.9238,
+      "sample_std": 0.012285764119500235,
+      "n_seeds": 5
+    },
+    {
+      "method": "M2",
+      "budget": 400,
+      "metric": "amazon_accuracy",
+      "mean": 0.9068,
+      "sample_std": 0.008374962686484067,
+      "n_seeds": 5
+    },
+    {
+      "method": "M2",
+      "budget": 400,
+      "metric": "ood_accuracy",
+      "mean": 0.9153,
+      "sample_std": 0.00867611664283049,
+      "n_seeds": 5
+    },
+    {
+      "method": "M2",
+      "budget": 1600,
+      "metric": "imdb_accuracy",
+      "mean": 0.93524,
+      "sample_std": 0.0018659046063504922,
+      "n_seeds": 5
+    },
+    {
+      "method": "M2",
+      "budget": 1600,
+      "metric": "yelp_accuracy",
+      "mean": 0.93056,
+      "sample_std": 0.010410955767843798,
+      "n_seeds": 5
+    },
+    {
+      "method": "M2",
+      "budget": 1600,
+      "metric": "amazon_accuracy",
+      "mean": 0.91852,
+      "sample_std": 0.011449541475535176,
+      "n_seeds": 5
+    },
+    {
+      "method": "M2",
+      "budget": 1600,
+      "metric": "ood_accuracy",
+      "mean": 0.92454,
+      "sample_std": 0.010739785845164685,
+      "n_seeds": 5
+    },
+    {
+      "method": "M2",
+      "budget": 6400,
+      "metric": "imdb_accuracy",
+      "mean": 0.942024,
+      "sample_std": 0.0009306341923656588,
+      "n_seeds": 5
+    },
+    {
+      "method": "M2",
+      "budget": 6400,
+      "metric": "yelp_accuracy",
+      "mean": 0.94472,
+      "sample_std": 0.005749086884019065,
+      "n_seeds": 5
+    },
+    {
+      "method": "M2",
+      "budget": 6400,
+      "metric": "amazon_accuracy",
+      "mean": 0.9328799999999999,
+      "sample_std": 0.004581702740248433,
+      "n_seeds": 5
+    },
+    {
+      "method": "M2",
+      "budget": 6400,
+      "metric": "ood_accuracy",
+      "mean": 0.9388,
+      "sample_std": 0.004905609034564449,
+      "n_seeds": 5
+    }
+  ],
+  "paired": [
+    {
+      "budget": 400,
+      "metric": "imdb_accuracy",
+      "M2_minus_M1_mean": 0.09796,
+      "sample_std_of_paired_difference": 0.02912758143066468,
+      "per_seed_differences": [
+        0.14892000000000005,
+        0.08887999999999996,
+        0.07823999999999998,
+        0.08055999999999996,
+        0.09320000000000006
+      ]
+    },
+    {
+      "budget": 400,
+      "metric": "yelp_accuracy",
+      "M2_minus_M1_mean": 0.08452,
+      "sample_std_of_paired_difference": 0.04267870663457367,
+      "per_seed_differences": [
+        0.1532,
+        0.09900000000000009,
+        0.05679999999999996,
+        0.05159999999999998,
+        0.061999999999999944
+      ]
+    },
+    {
+      "budget": 400,
+      "metric": "amazon_accuracy",
+      "M2_minus_M1_mean": 0.09136000000000002,
+      "sample_std_of_paired_difference": 0.02659526273605885,
+      "per_seed_differences": [
+        0.129,
+        0.10720000000000007,
+        0.06259999999999999,
+        0.08279999999999998,
+        0.07520000000000004
+      ]
+    },
+    {
+      "budget": 400,
+      "metric": "ood_accuracy",
+      "M2_minus_M1_mean": 0.08793999999999999,
+      "sample_std_of_paired_difference": 0.034122910192420565,
+      "per_seed_differences": [
+        0.1411,
+        0.10309999999999997,
+        0.059700000000000086,
+        0.06719999999999993,
+        0.0686
+      ]
+    },
+    {
+      "budget": 1600,
+      "metric": "imdb_accuracy",
+      "M2_minus_M1_mean": 0.06851199999999999,
+      "sample_std_of_paired_difference": 0.005476232281413924,
+      "per_seed_differences": [
+        0.07067999999999997,
+        0.06668000000000007,
+        0.06291999999999998,
+        0.07691999999999999,
+        0.06535999999999997
+      ]
+    },
+    {
+      "budget": 1600,
+      "metric": "yelp_accuracy",
+      "M2_minus_M1_mean": 0.04092,
+      "sample_std_of_paired_difference": 0.014020413688618498,
+      "per_seed_differences": [
+        0.05620000000000003,
+        0.04480000000000006,
+        0.04859999999999998,
+        0.01979999999999993,
+        0.03520000000000001
+      ]
+    },
+    {
+      "budget": 1600,
+      "metric": "amazon_accuracy",
+      "M2_minus_M1_mean": 0.058679999999999996,
+      "sample_std_of_paired_difference": 0.01704265237573072,
+      "per_seed_differences": [
+        0.0716,
+        0.05500000000000005,
+        0.07979999999999998,
+        0.03739999999999999,
+        0.04959999999999998
+      ]
+    },
+    {
+      "budget": 1600,
+      "metric": "ood_accuracy",
+      "M2_minus_M1_mean": 0.0498,
+      "sample_std_of_paired_difference": 0.015086252019636965,
+      "per_seed_differences": [
+        0.06389999999999996,
+        0.049900000000000055,
+        0.06420000000000003,
+        0.02859999999999996,
+        0.04239999999999999
+      ]
+    },
+    {
+      "budget": 6400,
+      "metric": "imdb_accuracy",
+      "M2_minus_M1_mean": 0.046672000000000005,
+      "sample_std_of_paired_difference": 0.0016400975580739476,
+      "per_seed_differences": [
+        0.049000000000000044,
+        0.04499999999999993,
+        0.047640000000000016,
+        0.04624000000000006,
+        0.045479999999999965
+      ]
+    },
+    {
+      "budget": 6400,
+      "metric": "yelp_accuracy",
+      "M2_minus_M1_mean": 0.03243999999999998,
+      "sample_std_of_paired_difference": 0.009726664381996564,
+      "per_seed_differences": [
+        0.04820000000000002,
+        0.03259999999999996,
+        0.02859999999999996,
+        0.031000000000000028,
+        0.02179999999999993
+      ]
+    },
+    {
+      "budget": 6400,
+      "metric": "amazon_accuracy",
+      "M2_minus_M1_mean": 0.04703999999999997,
+      "sample_std_of_paired_difference": 0.005082125539574961,
+      "per_seed_differences": [
+        0.05259999999999998,
+        0.0514,
+        0.04679999999999995,
+        0.04399999999999993,
+        0.04039999999999999
+      ]
+    },
+    {
+      "budget": 6400,
+      "metric": "ood_accuracy",
+      "M2_minus_M1_mean": 0.03974,
+      "sample_std_of_paired_difference": 0.00711638953402637,
+      "per_seed_differences": [
+        0.0504,
+        0.04200000000000004,
+        0.03770000000000007,
+        0.03749999999999987,
+        0.031100000000000017
+      ]
+    }
+  ]
+}

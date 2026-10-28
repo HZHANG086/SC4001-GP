@@ -1,0 +1,18 @@
+{
+  "datasets": {
+    "imdb": "stanfordnlp/imdb",
+    "yelp": "fancyzhx/yelp_polarity",
+    "amazon": "fancyzhx/amazon_polarity"
+  },
+  "revisions": {
+    "imdb": "e6281661ce1c48d982bc483cf8a173c1bbeb5d31",
+    "yelp": "bbf1c97a1f0cf005e5aded43839fd814654a1557",
+    "amazon": "9d9c45c18f8c3cf1b23a3c27917b60cbf28f3289"
+  },
+  "model_id": "FacebookAI/roberta-base",
+  "model_revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "label_mapping": {
+    "0": "negative",
+    "1": "positive"
+  }
+}

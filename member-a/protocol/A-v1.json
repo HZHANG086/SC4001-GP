@@ -1,0 +1,60 @@
+{
+  "version": "A-v1",
+  "frozen_on": "2026-10-27 Asia/Singapore",
+  "development_note": "512 chosen after source-only pilot; pilot was development, not a preregistered confirmatory test. No target predictions inspected.",
+  "data": "artifacts/data-v1",
+  "runs": "runs/A-v1",
+  "results": "results/A-v1",
+  "data_manifest_sha256": "74d278fb4419173b5aaf439f6b3723621b6e39484d2749ddacdc01665e964a78",
+  "model_id": "FacebookAI/roberta-base",
+  "model_revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "dataset_revisions": {
+    "imdb": "e6281661ce1c48d982bc483cf8a173c1bbeb5d31",
+    "yelp": "bbf1c97a1f0cf005e5aded43839fd814654a1557",
+    "amazon": "9d9c45c18f8c3cf1b23a3c27917b60cbf28f3289"
+  },
+  "budgets": [
+    400,
+    1600,
+    6400
+  ],
+  "seeds": [
+    13,
+    21,
+    42,
+    87,
+    100
+  ],
+  "max_length": 512,
+  "learning_rates": {
+    "M1": [
+      0.0001,
+      0.001,
+      0.01
+    ],
+    "M2": [
+      5e-06,
+      2e-05,
+      5e-05
+    ]
+  },
+  "epochs": 10,
+  "batch_size": 8,
+  "gradient_accumulation": 4,
+  "precision": "FP32",
+  "selection": "IMDb validation accuracy; earliest checkpoint for tied epochs; LR-list order for exact candidate ties",
+  "test_access": "After all 90 candidate runs and source-only selection of 30 cells; IMDb official test, Yelp 5000, Amazon 5000",
+  "retention": "Keep configs, metrics, histories, logs and 30 winner best/ models; remove only this sweep's completed recovery states and nonwinner weights to stay within storage limits.",
+  "code_hashes": {
+    "__init__.py": "566c50cc722852fc7ae73a67a8c6a78ea2984457256d79d1bf7a53e8d74c9ed7",
+    "aggregate.py": "fa57ca0c562aca9d4779585545b0a7a244bd245b32d23d39f908b65e5938fba4",
+    "checkpoint.py": "48e5496a06e8013f86b4b16bacee2ce7a9c189796736315f854b063e3276e605",
+    "evaluate.py": "54a2502c1027122e2efa32ec8a81f3b736e15484d65298d49b576dfef9382217",
+    "model.py": "16cac1c2550027cc457967ae671947ec6d3ba69eb0a1af3fd804aab4d1934d72",
+    "prepare.py": "be52f6cdf2d25ffbd13b1d1b1b1a82aa35c47306a10cdc47ddd39f4c70f0899b",
+    "protocol.py": "58b339065d61f5c4cbaddf1aa5911b4cf51898ff2f7ab9d0a4c9d04795d2f743",
+    "select.py": "fd35e58fded49ff57fb9b0f4b84f98edb8d8accd1b1b79ce3f292a62430340e6",
+    "sweep.py": "e1e03ec9f37a4f9a3bf19dd0b9b0b2c8435d219f454becd63e047a86987b7b6e",
+    "train.py": "f8f5f8b3bb1b39b0bf526bbb48e0ce89a80760ad25f854f52199a17ae3c54d30"
+  }
+}

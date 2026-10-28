@@ -1,0 +1,4 @@
+{'train_runtime': 0.4039, 'train_samples_per_second': 39.615, 'train_steps_per_second': 9.904, 'train_loss': 0.6951740384101868, 'epoch': 1.0}
+{'train_runtime': 0.0598, 'train_samples_per_second': 267.383, 'train_steps_per_second': 66.846, 'train_loss': 0.6915073394775391, 'epoch': 0.5}
+{'train_runtime': 0.0591, 'train_samples_per_second': 270.898, 'train_steps_per_second': 67.725, 'train_loss': 0.34942036867141724, 'epoch': 1.0}
+CUDA RESUME_CHECK_PASSED: interrupted at step 2, restored to step 4; weights match uninterrupted training.
