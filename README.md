@@ -7,6 +7,7 @@ This project investigates how adaptation strategies for pretrained language mode
 | Component | Scope | Documentation |
 |---|---|---|
 | Member A | Data preparation, fixed evaluation protocol, frozen-encoder and partial fine-tuning baselines | [Implementation and results](member-a/README.md) |
+| Member B | Full fine-tuning, LP-FT, feature-preservation fine-tuning (our method) and an L2-SP control, under the same protocol | [Implementation and protocol](member-b/README.md) |
 
 The completed Member A experiments use RoBERTa-base, three label budgets, and five paired seeds. Training and model selection use IMDb; evaluation covers IMDb, Yelp Polarity, and Amazon Polarity. The committed records include 90 candidate training runs, 30 selected configurations, per-example predictions, and verified aggregate results.
 
