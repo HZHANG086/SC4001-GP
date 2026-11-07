@@ -1,0 +1,18 @@
+{
+  "status": "PASSED",
+  "training_candidates": 90,
+  "selected_cells": 30,
+  "seed_count": 5,
+  "domains_per_cell": 3,
+  "verified_prediction_rows": 1050000,
+  "checks": [
+    "source-only winner selection",
+    "frozen model and data versions",
+    "saved source-code hashes",
+    "paired split hashes",
+    "exact evaluation ID sets and consistent labels",
+    "all per-example probabilities and recomputed accuracies",
+    "five-seed sample SD and paired differences"
+  ],
+  "training_attempts_successful": 90
+}

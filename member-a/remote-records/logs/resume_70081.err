@@ -1,0 +1,2 @@
+/tc1home/UG/tsun003/.conda/envs/sc4001/lib/python3.11/site-packages/torch/autograd/graph.py:825: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /opt/conda/conda-bld/pytorch_1729647369228/work/c10/cuda/CUDAFunctions.cpp:108.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
