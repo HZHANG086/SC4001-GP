@@ -18,8 +18,8 @@ All methods start from `FacebookAI/roberta-base` (revision as in A-v1) with Memb
 |---|---|---|---|
 | M3 full fine-tuning | everything | CE | LR ∈ {1e-5, 2e-5, 3e-5} |
 | M4 LP-FT | stage 1: head only (= A's M1, A's selected M1 LR); stage 2: everything, from the stage-1 model | CE | stage-2 LR ∈ {1e-5, 2e-5, 3e-5} |
-| **M6 feature preservation (ours)** | everything | CE + λ · R_feat | λ ∈ {0.1, 1, 10}; LR = the cell's selected M3 LR |
-| L2-SP control | everything | CE + λ · R_weight | λ ∈ {0.01, 0.1, 1}; LR = the cell's selected M3 LR |
+| **M6 feature preservation (ours)** | everything | CE + λ · R_feat | λ ∈ {0.01, 0.1, 1}; LR = the cell's selected M3 LR |
+| L2-SP control | everything | CE + λ · R_weight | λ ∈ {0.1, 1, 10}; LR = the cell's selected M3 LR |
 
 - **R_feat** = mean over the batch of 1 − cos(pool(h_θ(x)), pool(h_0(x))). Here h_θ is the final-layer token states of the model being trained, taken from the same forward pass as the CE loss. h_0 is the same quantity from the frozen pretrained encoder (eval mode, no gradient), and pool is the mean over non-padding tokens.
 - **x is the same labelled mini-batch as the CE loss.** M6 uses no extra unlabelled text, so it sees exactly the data M3 sees, and any difference comes from the constraint itself.

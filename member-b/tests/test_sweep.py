@@ -89,10 +89,11 @@ class SweepTests(unittest.TestCase):
         self.assertFalse(any(self.root.glob('*/checkpoints')))
 
         self.cell('M6')                                                      # inherits M3 LR 2e-05
-        m6 = ['M6-b400-s13-lam0.1', 'M6-b400-s13-lam1', 'M6-b400-s13-lam10']
+        m6 = [sweep.run_name('M6', 400, 13, lam=lam) for lam in SPEC['lambdas']['M6']]
         self.assertEqual(self.evaluated[1:], m6)                             # all candidates (ablation)
         self.assertTrue((self.root / 'M6-b400-s13-lam1/best').exists())
-        self.assertFalse((self.root / 'M6-b400-s13-lam10/best').exists())
+        for name in m6:
+            self.assertEqual((self.root / name / 'best').exists(), name == 'M6-b400-s13-lam1')
 
         self.cell('L2SP')
         self.cell('M4')
@@ -121,7 +122,7 @@ class SweepTests(unittest.TestCase):
         with (out / 'ablation.csv').open() as stream:
             ablation = list(csv.DictReader(stream))
         lams = sorted(float(r['lam']) for r in ablation if r['method'] == 'M6')
-        self.assertEqual(lams, [0.0, 0.1, 1.0, 10.0])
+        self.assertEqual(lams, [0.0] + SPEC['lambdas']['M6'])
         self.assertFalse((out / 'COMPLETE').exists())
         self.assertIn('INCOMPLETE', (out / 'summary.md').read_text())
 

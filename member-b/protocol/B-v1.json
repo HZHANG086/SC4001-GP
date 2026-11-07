@@ -2,7 +2,7 @@
   "version": "B-v1",
   "frozen_on": null,
   "based_on": "A-v1 (identical data, model revision, head, length, precision, optimiser and selection rule)",
-  "development_note": "Draft. Grids may change only after a source-only pilot (IMDb validation, no test or target predictions); freeze with python -m sc4001_b.freeze before formal runs.",
+  "development_note": "Grids fixed after a source-only GPU pilot (jobs 72768-72769; IMDb validation and validation feature drift only, no test or target predictions). M6 lambda grid moved from {0.1,1,10} to {0.01,0.1,1} and L2-SP from {0.01,0.1,1} to {0.1,1,10}; see PILOT_RESULTS.md.",
   "data": "artifacts/data-v1",
   "runs": "runs/B-v1",
   "results": "results/B-v1",
@@ -52,14 +52,14 @@
   },
   "lambdas": {
     "M6": [
-      0.1,
-      1.0,
-      10.0
-    ],
-    "L2SP": [
       0.01,
       0.1,
       1.0
+    ],
+    "L2SP": [
+      0.1,
+      1.0,
+      10.0
     ]
   },
   "inherited_learning_rate": {
