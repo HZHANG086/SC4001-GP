@@ -75,5 +75,9 @@ class WeightPreservation:
         self.lam = lam
 
     def __call__(self, model, inputs, outputs):
+        # The snapshot is taken before the Trainer moves the model to the GPU; move it once.
+        device = next(model.roberta.parameters()).device
+        if next(iter(self.reference.values())).device != device:
+            self.reference = {k: v.to(device) for k, v in self.reference.items()}
         penalty = l2sp_penalty(model.roberta, self.reference)
         return self.lam * penalty, penalty.detach()

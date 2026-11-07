@@ -49,6 +49,19 @@ class WeightPreservationTests(unittest.TestCase):
         self.assertAlmostEqual(float(penalty), 3.0 * float(raw), places=6)
         self.assertAlmostEqual(float(raw), 1.0, places=6)
 
+    def test_reference_follows_the_model_device(self):
+        # Regression: the snapshot is taken before the Trainer moves the model to the GPU.
+        class Net(nn.Module):
+            def __init__(self):
+                super().__init__()
+                self.roberta = nn.Linear(2, 2)
+        net = Net()
+        objective = WeightPreservation(net.roberta, lam=1.0)   # snapshot on CPU
+        net.roberta.to('meta')                                 # stands in for .to('cuda')
+        penalty, _ = objective(net, None, None)
+        self.assertEqual(penalty.device.type, 'meta')
+        self.assertTrue(all(v.device.type == 'meta' for v in objective.reference.values()))
+
 
 class FeaturePreservationTests(unittest.TestCase):
     def test_teacher_frozen_and_zero_when_student_equals_teacher(self):
