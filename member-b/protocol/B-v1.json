@@ -1,6 +1,6 @@
 {
   "version": "B-v1",
-  "frozen_on": null,
+  "frozen_on": "2026-11-07T06:39:59+00:00",
   "based_on": "A-v1 (identical data, model revision, head, length, precision, optimiser and selection rule)",
   "development_note": "Grids fixed after a source-only GPU pilot (jobs 72768-72769; IMDb validation and validation feature drift only, no test or target predictions). M6 lambda grid moved from {0.1,1,10} to {0.01,0.1,1} and L2-SP from {0.01,0.1,1} to {0.1,1,10}; see PILOT_RESULTS.md.",
   "data": "artifacts/data-v1",
@@ -81,5 +81,11 @@
     "checkpoint.py",
     "evaluate.py"
   ],
-  "code_hashes": {}
+  "code_hashes": {
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "aggregate.py": "e8c8721296b18d965bbea43c1285d07370e73cba0ed0bb43b1e32624c421e992",
+    "objectives.py": "b26b6a0f01c5be209108f34e245c02d2d826ee50b6ca19b415bfde455f5f4ed6",
+    "sweep.py": "a887e015168617cebee7009bfce2f5806146c064cfc5f8e8430d6723282015a7",
+    "train.py": "cbb4da2c62b539e6e6bec193b3ab637e1bb3fb8642ca41a4bb4080ed8e19e81b"
+  }
 }
