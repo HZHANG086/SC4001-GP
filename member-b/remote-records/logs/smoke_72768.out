@@ -1,0 +1,100 @@
+Sat Nov  7 14:12:17 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.173.02             Driver Version: 580.173.02     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-PCIE-32GB           Off |   00000000:37:00.0 Off |                    0 |
+| N/A   66C    P0             43W /  250W |       0MiB /  32768MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+{'eval_loss': 0.6915203332901001, 'eval_accuracy': 0.5, 'eval_runtime': 0.7325, 'eval_samples_per_second': 109.222, 'eval_steps_per_second': 6.826, 'epoch': 0.2}
+{'train_runtime': 13.0797, 'train_samples_per_second': 4.893, 'train_steps_per_second': 0.153, 'train_loss': 0.7203035950660706, 'epoch': 0.2}
+{
+  "eval_loss": 0.6915203332901001,
+  "eval_accuracy": 0.5,
+  "eval_runtime": 0.7401,
+  "eval_samples_per_second": 108.087,
+  "eval_steps_per_second": 6.755,
+  "epoch": 0.2,
+  "train_wall_seconds_this_invocation": 13.205584662035108,
+  "peak_cuda_allocated_bytes": 5187343872,
+  "peak_cuda_reserved_bytes": 5370806272,
+  "gpu": "Tesla V100-PCIE-32GB",
+  "best_checkpoint": "runs/smoke-M3/checkpoints/checkpoint-2",
+  "val_feature_distance": 0.00028462037444114684
+}
+{'eval_loss': 0.6916207671165466, 'eval_accuracy': 0.5, 'eval_runtime': 0.7296, 'eval_samples_per_second': 109.65, 'eval_steps_per_second': 6.853, 'epoch': 0.2}
+{'train_runtime': 13.6623, 'train_samples_per_second': 4.684, 'train_steps_per_second': 0.146, 'train_loss': 0.7215081453323364, 'epoch': 0.2}
+{
+  "eval_loss": 0.6916207671165466,
+  "eval_accuracy": 0.5,
+  "eval_runtime": 0.7354,
+  "eval_samples_per_second": 108.787,
+  "eval_steps_per_second": 6.799,
+  "epoch": 0.2,
+  "train_wall_seconds_this_invocation": 13.804482392966747,
+  "peak_cuda_allocated_bytes": 5245438464,
+  "peak_cuda_reserved_bytes": 5509218304,
+  "gpu": "Tesla V100-PCIE-32GB",
+  "best_checkpoint": "runs/smoke-M6/checkpoints/checkpoint-2",
+  "val_feature_distance": 0.0002238243818283081
+}
+{'eval_loss': 0.6915203332901001, 'eval_accuracy': 0.5, 'eval_runtime': 0.7328, 'eval_samples_per_second': 109.178, 'eval_steps_per_second': 6.824, 'epoch': 0.2}
+{'train_runtime': 13.7622, 'train_samples_per_second': 4.65, 'train_steps_per_second': 0.145, 'train_loss': 0.7203035950660706, 'epoch': 0.2}
+{
+  "eval_loss": 0.6915203332901001,
+  "eval_accuracy": 0.5,
+  "eval_runtime": 0.74,
+  "eval_samples_per_second": 108.106,
+  "eval_steps_per_second": 6.757,
+  "epoch": 0.2,
+  "train_wall_seconds_this_invocation": 13.903310928493738,
+  "peak_cuda_allocated_bytes": 6544029696,
+  "peak_cuda_reserved_bytes": 6757023744,
+  "gpu": "Tesla V100-PCIE-32GB",
+  "best_checkpoint": "runs/smoke-L2SP/checkpoints/checkpoint-2",
+  "val_feature_distance": 0.00028463602066040037
+}
+{'eval_loss': 0.6910378336906433, 'eval_accuracy': 0.5, 'eval_runtime': 0.7222, 'eval_samples_per_second': 110.765, 'eval_steps_per_second': 6.923, 'epoch': 0.2}
+{'train_runtime': 7.224, 'train_samples_per_second': 8.859, 'train_steps_per_second': 0.277, 'train_loss': 0.7045892477035522, 'epoch': 0.2}
+{
+  "eval_loss": 0.6910378336906433,
+  "eval_accuracy": 0.5,
+  "eval_runtime": 0.735,
+  "eval_samples_per_second": 108.848,
+  "eval_steps_per_second": 6.803,
+  "epoch": 0.2,
+  "train_wall_seconds_this_invocation": 7.364875551313162,
+  "peak_cuda_allocated_bytes": 808583680,
+  "peak_cuda_reserved_bytes": 1103101952,
+  "gpu": "Tesla V100-PCIE-32GB",
+  "best_checkpoint": "runs/smoke-M4S1/checkpoints/checkpoint-2"
+}
+{'eval_loss': 0.6900597810745239, 'eval_accuracy': 0.5625, 'eval_runtime': 0.7316, 'eval_samples_per_second': 109.353, 'eval_steps_per_second': 6.835, 'epoch': 0.2}
+{'train_runtime': 16.2121, 'train_samples_per_second': 3.948, 'train_steps_per_second': 0.123, 'train_loss': 0.7216863632202148, 'epoch': 0.2}
+{
+  "eval_loss": 0.6900597810745239,
+  "eval_accuracy": 0.5625,
+  "eval_runtime": 0.7413,
+  "eval_samples_per_second": 107.915,
+  "eval_steps_per_second": 6.745,
+  "epoch": 0.2,
+  "train_wall_seconds_this_invocation": 16.361543484032154,
+  "peak_cuda_allocated_bytes": 5187343872,
+  "peak_cuda_reserved_bytes": 5370806272,
+  "gpu": "Tesla V100-PCIE-32GB",
+  "best_checkpoint": "runs/smoke-M4/checkpoints/checkpoint-2",
+  "val_feature_distance": 0.00025168582797050474
+}
+SMOKE_PASSED

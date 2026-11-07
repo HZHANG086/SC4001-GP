@@ -1,0 +1,13 @@
+{
+  "eval_loss": 0.6910378336906433,
+  "eval_accuracy": 0.5,
+  "eval_runtime": 0.735,
+  "eval_samples_per_second": 108.848,
+  "eval_steps_per_second": 6.803,
+  "epoch": 0.2,
+  "train_wall_seconds_this_invocation": 7.364875551313162,
+  "peak_cuda_allocated_bytes": 808583680,
+  "peak_cuda_reserved_bytes": 1103101952,
+  "gpu": "Tesla V100-PCIE-32GB",
+  "best_checkpoint": "runs/smoke-M4S1/checkpoints/checkpoint-2"
+}

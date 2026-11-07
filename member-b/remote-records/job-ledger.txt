@@ -1,0 +1,7 @@
+JobID                   JobName      State    Elapsed ExitCode 
+------------ ------------------ ---------- ---------- -------- 
+72764            sc4001-B-check  COMPLETED   00:01:10      0:0 
+72765          sc4001-B-prepare  COMPLETED   00:01:23      0:0 
+72766            sc4001-B-smoke     FAILED   00:01:33      1:0 
+72768            sc4001-B-smoke  COMPLETED   00:02:39      0:0 
+72769            sc4001-B-pilot  COMPLETED   00:22:36      0:0 

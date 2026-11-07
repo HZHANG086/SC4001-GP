@@ -1,0 +1,57 @@
+Some weights of LinearRoberta were not initialized from the model checkpoint at FacebookAI/roberta-base and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Map:   0%|          | 0/320 [00:00<?, ? examples/s]Map: 100%|██████████| 320/320 [00:00<00:00, 956.39 examples/s]Map: 100%|██████████| 320/320 [00:00<00:00, 907.38 examples/s]
+Map:   0%|          | 0/80 [00:00<?, ? examples/s]Map: 100%|██████████| 80/80 [00:00<00:00, 877.80 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:03<00:03,  3.63s/it]100%|██████████| 2/2 [00:04<00:00,  2.07s/it]
+  0%|          | 0/5 [00:00<?, ?it/s][A
+ 40%|████      | 2/5 [00:00<00:00, 13.67it/s][A
+ 80%|████████  | 4/5 [00:00<00:00,  8.58it/s][A
+100%|██████████| 5/5 [00:00<00:00,  8.07it/s][A                                             
+                                             [A100%|██████████| 2/2 [00:05<00:00,  2.07s/it]
+100%|██████████| 5/5 [00:00<00:00,  8.07it/s][A
+                                             [A                                             100%|██████████| 2/2 [00:18<00:00,  2.07s/it]100%|██████████| 2/2 [00:18<00:00,  9.27s/it]
+  0%|          | 0/5 [00:00<?, ?it/s] 40%|████      | 2/5 [00:00<00:00, 13.68it/s] 80%|████████  | 4/5 [00:00<00:00,  8.62it/s]100%|██████████| 5/5 [00:00<00:00,  8.11it/s]100%|██████████| 5/5 [00:00<00:00,  8.63it/s]
+Some weights of LinearRoberta were not initialized from the model checkpoint at FacebookAI/roberta-base and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Map:   0%|          | 0/320 [00:00<?, ? examples/s]Map: 100%|██████████| 320/320 [00:00<00:00, 1565.96 examples/s]Map: 100%|██████████| 320/320 [00:00<00:00, 1413.23 examples/s]
+Map:   0%|          | 0/80 [00:00<?, ? examples/s]Map: 100%|██████████| 80/80 [00:00<00:00, 1129.77 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:01<00:01,  1.58s/it]100%|██████████| 2/2 [00:02<00:00,  1.40s/it]
+  0%|          | 0/5 [00:00<?, ?it/s][A
+ 40%|████      | 2/5 [00:00<00:00, 13.67it/s][A
+ 80%|████████  | 4/5 [00:00<00:00,  8.60it/s][A
+100%|██████████| 5/5 [00:00<00:00,  8.09it/s][A                                             
+                                             [A100%|██████████| 2/2 [00:03<00:00,  1.40s/it]
+100%|██████████| 5/5 [00:00<00:00,  8.09it/s][A
+                                             [A                                             100%|██████████| 2/2 [00:16<00:00,  1.40s/it]100%|██████████| 2/2 [00:16<00:00,  8.15s/it]
+  0%|          | 0/5 [00:00<?, ?it/s] 40%|████      | 2/5 [00:00<00:00, 13.30it/s] 80%|████████  | 4/5 [00:00<00:00,  8.60it/s]100%|██████████| 5/5 [00:00<00:00,  8.10it/s]100%|██████████| 5/5 [00:00<00:00,  8.60it/s]
+Some weights of LinearRoberta were not initialized from the model checkpoint at FacebookAI/roberta-base and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Map:   0%|          | 0/320 [00:00<?, ? examples/s]Map: 100%|██████████| 320/320 [00:00<00:00, 1576.94 examples/s]Map: 100%|██████████| 320/320 [00:00<00:00, 1460.91 examples/s]
+Map:   0%|          | 0/80 [00:00<?, ? examples/s]Map: 100%|██████████| 80/80 [00:00<00:00, 1146.07 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tc1home/UG/n2602664k/sc4001/member-b/src/sc4001_b/train.py", line 253, in <module>
+    main()
+  File "/tc1home/UG/n2602664k/sc4001/member-b/src/sc4001_b/train.py", line 229, in main
+    trainer.train(resume_from_checkpoint=True if a.resume else None)
+  File "/tc1home/UG/n2602664k/.conda/envs/sc4001/lib/python3.11/site-packages/transformers/trainer.py", line 2245, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/tc1home/UG/n2602664k/.conda/envs/sc4001/lib/python3.11/site-packages/transformers/trainer.py", line 2560, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tc1home/UG/n2602664k/.conda/envs/sc4001/lib/python3.11/site-packages/transformers/trainer.py", line 3736, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tc1home/UG/n2602664k/sc4001/member-b/src/sc4001_b/train.py", line 197, in compute_loss
+    penalty, raw = self.objective(net, inputs, outputs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tc1home/UG/n2602664k/sc4001/member-b/src/sc4001_b/objectives.py", line 78, in __call__
+    penalty = l2sp_penalty(model.roberta, self.reference)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tc1home/UG/n2602664k/sc4001/member-b/src/sc4001_b/objectives.py", line 44, in l2sp_penalty
+    term = (p - reference[name]).pow(2).sum()
+            ~~^~~~~~~~~~~~~~~~~
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu!
+  0%|          | 0/2 [00:00<?, ?it/s]
