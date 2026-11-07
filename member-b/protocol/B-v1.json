@@ -1,0 +1,85 @@
+{
+  "version": "B-v1",
+  "frozen_on": null,
+  "based_on": "A-v1 (identical data, model revision, head, length, precision, optimiser and selection rule)",
+  "development_note": "Draft. Grids may change only after a source-only pilot (IMDb validation, no test or target predictions); freeze with python -m sc4001_b.freeze before formal runs.",
+  "data": "artifacts/data-v1",
+  "runs": "runs/B-v1",
+  "results": "results/B-v1",
+  "data_content_reference": "../member-a/remote-records/data-v1/manifest_hashes.json (all entries except datasets state.json/dataset_info.json must match)",
+  "a_data_manifest_sha256": "74d278fb4419173b5aaf439f6b3723621b6e39484d2749ddacdc01665e964a78",
+  "model_id": "FacebookAI/roberta-base",
+  "model_revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "dataset_revisions": {
+    "imdb": "e6281661ce1c48d982bc483cf8a173c1bbeb5d31",
+    "yelp": "bbf1c97a1f0cf005e5aded43839fd814654a1557",
+    "amazon": "9d9c45c18f8c3cf1b23a3c27917b60cbf28f3289"
+  },
+  "budgets": [
+    400,
+    1600,
+    6400
+  ],
+  "seeds": [
+    13,
+    21,
+    42,
+    87,
+    100
+  ],
+  "max_length": 512,
+  "epochs": 10,
+  "batch_size": 8,
+  "gradient_accumulation": 4,
+  "precision": "FP32",
+  "methods": {
+    "M3": "full fine-tuning",
+    "M4": "stage 1 = frozen-encoder linear head (Member A's M1 with A's selected M1 LR for the same cell, retrained here); stage 2 = full fine-tuning from the stage-1 model",
+    "M6": "full fine-tuning + lambda * mean(1 - cos(pool(h_theta), pool(h_0))) on the same labelled batch; pool = mean over non-padding final-layer token states; h_0 = frozen pretrained encoder",
+    "L2SP": "control: full fine-tuning + lambda * 1/2 * ||w_encoder - w0||^2 (Li et al. 2018); AdamW weight decay 0.01 kept as in all methods"
+  },
+  "learning_rates": {
+    "M3": [
+      1e-05,
+      2e-05,
+      3e-05
+    ],
+    "M4": [
+      1e-05,
+      2e-05,
+      3e-05
+    ]
+  },
+  "lambdas": {
+    "M6": [
+      0.1,
+      1.0,
+      10.0
+    ],
+    "L2SP": [
+      0.01,
+      0.1,
+      1.0
+    ]
+  },
+  "inherited_learning_rate": {
+    "M6": "selected M3 LR of the same budget-seed cell",
+    "L2SP": "selected M3 LR of the same budget-seed cell",
+    "M4S1": "selected Member A M1 LR of the same cell"
+  },
+  "selection": "IMDb validation accuracy; earliest checkpoint for tied epochs; protocol list order for exact candidate ties; lambda = 0 (= M3) is not an M6/L2SP candidate",
+  "test_access": "Per cell, only after its selection file is written: winners of every method, and every M6/L2SP lambda candidate as a pre-registered ablation. IMDb official test, Yelp 5000, Amazon 5000 via Member A's locked evaluate.py",
+  "retention": "Keep configs, metrics, histories, logs, predictions and winner best/ models; remove recovery checkpoints, nonwinner weights (after evaluation) and stage-1 weights.",
+  "phase_order": [
+    "M3",
+    "M4",
+    "M6",
+    "L2SP"
+  ],
+  "member_a_code_used": [
+    "model.py",
+    "checkpoint.py",
+    "evaluate.py"
+  ],
+  "code_hashes": {}
+}
