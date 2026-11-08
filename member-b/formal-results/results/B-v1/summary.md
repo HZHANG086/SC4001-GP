@@ -13,6 +13,9 @@ Status: INCOMPLETE (interim; cells still missing). Mean ± sample SD over paired
 | M3 | 400 | 5 | 92.30 ± 0.41 | 93.28 ± 0.59 | 92.19 ± 1.14 | 92.73 ± 0.75 |
 | M3 | 1600 | 5 | 93.27 ± 0.43 | 92.88 ± 1.23 | 91.53 ± 1.49 | 92.21 ± 1.28 |
 | M3 | 6400 | 5 | 94.41 ± 0.28 | 94.73 ± 0.69 | 93.04 ± 0.51 | 93.89 ± 0.54 |
+| M6 | 400 | 5 | 92.25 ± 0.46 | 92.84 ± 0.73 | 91.22 ± 0.89 | 92.03 ± 0.68 |
+| M6 | 1600 | 5 | 93.54 ± 0.38 | 93.58 ± 0.78 | 92.22 ± 0.90 | 92.90 ± 0.77 |
+| M6 | 6400 | 5 | 94.49 ± 0.15 | 94.68 ± 0.53 | 93.17 ± 0.74 | 93.92 ± 0.61 |
 
 ## Paired differences (percentage points)
 
@@ -21,6 +24,9 @@ Status: INCOMPLETE (interim; cells still missing). Mean ± sample SD over paired
 | M3 − M2 | 400 | 1.43 ± 1.36 | 1.20 ± 0.36 | 5 |
 | M3 − M2 | 1600 | -0.26 ± 0.54 | -0.25 ± 1.91 | 5 |
 | M3 − M2 | 6400 | 0.20 ± 0.33 | 0.01 ± 0.71 | 5 |
+| M6 − M3 | 400 | -0.06 ± 0.62 | -0.70 ± 0.76 | 5 |
+| M6 − M3 | 1600 | 0.27 ± 0.48 | 0.69 ± 1.78 | 5 |
+| M6 − M3 | 6400 | 0.08 ± 0.25 | 0.04 ± 0.35 | 5 |
 
 ## Cost and representation drift (means over seeds)
 
@@ -35,5 +41,25 @@ Status: INCOMPLETE (interim; cells still missing). Mean ± sample SD over paired
 | M3 | 400 | 124,056,578 | 3.6 | 10.4 | 4.87 | 0.4380 |
 | M3 | 1600 | 124,056,578 | 8.4 | 25.1 | 4.91 | 0.5014 |
 | M3 | 6400 | 124,056,578 | 28.0 | 84.2 | 4.92 | 0.4510 |
+| M6 | 400 | 124,056,578 | 3.9 | 11.6 | 4.93 | 0.1891 |
+| M6 | 1600 | 124,056,578 | 10.3 | 30.7 | 4.97 | 0.1371 |
+| M6 | 6400 | 124,056,578 | 35.5 | 106.0 | 4.98 | 0.0235 |
+
+## Lambda ablation (pre-registered; lambda = 0 is the selected M3 run)
+
+| Method | Labels | lambda | n | Val acc | IMDb | OOD mean | Val feature drift |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| M6 | 400 | 0 | 5 | 93.75 | 92.30 | 92.73 | 0.4380 |
+| M6 | 400 | 0.01 | 5 | 92.00 | 91.81 | 92.50 | 0.3983 |
+| M6 | 400 | 0.1 | 5 | 93.50 | 92.30 | 92.23 | 0.1436 |
+| M6 | 400 | 1 | 5 | 93.50 | 92.49 | 92.36 | 0.0129 |
+| M6 | 1600 | 0 | 5 | 94.19 | 93.27 | 92.21 | 0.5014 |
+| M6 | 1600 | 0.01 | 5 | 94.12 | 93.39 | 92.38 | 0.1712 |
+| M6 | 1600 | 0.1 | 5 | 93.81 | 93.38 | 92.40 | 0.0388 |
+| M6 | 1600 | 1 | 5 | 93.81 | 93.49 | 92.86 | 0.0108 |
+| M6 | 6400 | 0 | 5 | 94.56 | 94.41 | 93.89 | 0.4510 |
+| M6 | 6400 | 0.01 | 5 | 94.42 | 94.17 | 93.90 | 0.0859 |
+| M6 | 6400 | 0.1 | 5 | 94.23 | 94.43 | 94.00 | 0.0212 |
+| M6 | 6400 | 1 | 5 | 94.47 | 94.51 | 94.43 | 0.0042 |
 
 A higher OOD mean with an unchanged or lower IMDb score is not evidence of better transfer by itself; read both absolute scores. Five seeds do not by themselves establish significance. M4 times include its stage-1 head training. Drift is the mean pooled-representation cosine distance from the pretrained encoder on IMDb validation data (correlational evidence only).

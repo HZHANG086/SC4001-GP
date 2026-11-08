@@ -306,6 +306,108 @@
       "selected_train_seconds": 1682.5961160808802,
       "search_train_seconds_recorded": 5052.806498441472,
       "selected_peak_allocated_gib": 4.923130226135254
+    },
+    {
+      "method": "M6",
+      "budget": 400,
+      "n_seeds": 5,
+      "imdb_accuracy": {
+        "mean": 0.9224559999999999,
+        "sample_std": 0.004618623171465718,
+        "n": 5
+      },
+      "yelp_accuracy": {
+        "mean": 0.9284,
+        "sample_std": 0.007341661937191041,
+        "n": 5
+      },
+      "amazon_accuracy": {
+        "mean": 0.91224,
+        "sample_std": 0.008862730956087979,
+        "n": 5
+      },
+      "ood_accuracy": {
+        "mean": 0.92032,
+        "sample_std": 0.006820337235063968,
+        "n": 5
+      },
+      "val_feature_distance": {
+        "mean": 0.18905422925949097,
+        "sample_std": 0.1731078174702049,
+        "n": 5
+      },
+      "trainable_parameters": 124056578,
+      "selected_train_seconds": 231.5648309826851,
+      "search_train_seconds_recorded": 698.5757939353585,
+      "selected_peak_allocated_gib": 4.925486278533936
+    },
+    {
+      "method": "M6",
+      "budget": 1600,
+      "n_seeds": 5,
+      "imdb_accuracy": {
+        "mean": 0.935392,
+        "sample_std": 0.0037948807622901685,
+        "n": 5
+      },
+      "yelp_accuracy": {
+        "mean": 0.93576,
+        "sample_std": 0.007835049457406146,
+        "n": 5
+      },
+      "amazon_accuracy": {
+        "mean": 0.92224,
+        "sample_std": 0.00902817811078183,
+        "n": 5
+      },
+      "ood_accuracy": {
+        "mean": 0.9289999999999999,
+        "sample_std": 0.007673982017179906,
+        "n": 5
+      },
+      "val_feature_distance": {
+        "mean": 0.13712944090366364,
+        "sample_std": 0.0763965644204493,
+        "n": 5
+      },
+      "trainable_parameters": 124056578,
+      "selected_train_seconds": 617.3429165698587,
+      "search_train_seconds_recorded": 1840.242692456767,
+      "selected_peak_allocated_gib": 4.966468620300293
+    },
+    {
+      "method": "M6",
+      "budget": 6400,
+      "n_seeds": 5,
+      "imdb_accuracy": {
+        "mean": 0.944872,
+        "sample_std": 0.001461889188687038,
+        "n": 5
+      },
+      "yelp_accuracy": {
+        "mean": 0.94676,
+        "sample_std": 0.0052619388061816135,
+        "n": 5
+      },
+      "amazon_accuracy": {
+        "mean": 0.93172,
+        "sample_std": 0.00735336657592969,
+        "n": 5
+      },
+      "ood_accuracy": {
+        "mean": 0.93924,
+        "sample_std": 0.006057474721366973,
+        "n": 5
+      },
+      "val_feature_distance": {
+        "mean": 0.02348837330006063,
+        "sample_std": 0.023652971149933276,
+        "n": 5
+      },
+      "trainable_parameters": 124056578,
+      "selected_train_seconds": 2131.8751633327456,
+      "search_train_seconds_recorded": 6359.098588341847,
+      "selected_peak_allocated_gib": 4.98191204071045
     }
   ],
   "paired": [
@@ -488,7 +590,332 @@
         "87": 0.0034000000000000696,
         "100": 0.006500000000000061
       }
+    },
+    {
+      "comparison": "M6 - M3",
+      "budget": 400,
+      "metric": "imdb_accuracy",
+      "mean_difference": -0.0005920000000000147,
+      "sample_std": 0.006165413205941638,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.0016399999999999748,
+        "21": 0.00647999999999993,
+        "42": 0.0046399999999999775,
+        "87": -0.003960000000000075,
+        "100": -0.008479999999999932
+      }
+    },
+    {
+      "comparison": "M6 - M3",
+      "budget": 400,
+      "metric": "yelp_accuracy",
+      "mean_difference": -0.004360000000000008,
+      "sample_std": 0.00724624040451323,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.0043999999999999595,
+        "21": -0.0041999999999999815,
+        "42": -0.007000000000000006,
+        "87": -0.00019999999999997797,
+        "100": -0.014800000000000035
+      }
+    },
+    {
+      "comparison": "M6 - M3",
+      "budget": 400,
+      "metric": "amazon_accuracy",
+      "mean_difference": -0.009680000000000022,
+      "sample_std": 0.008725365321864766,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.0008000000000000229,
+        "21": -0.0026000000000000467,
+        "42": -0.012600000000000056,
+        "87": -0.01319999999999999,
+        "100": -0.02080000000000004
+      }
+    },
+    {
+      "comparison": "M6 - M3",
+      "budget": 400,
+      "metric": "ood_accuracy",
+      "mean_difference": -0.007020000000000026,
+      "sample_std": 0.007577730530970338,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.0025999999999999357,
+        "21": -0.0033999999999999586,
+        "42": -0.009800000000000031,
+        "87": -0.006700000000000039,
+        "100": -0.017800000000000038
+      }
+    },
+    {
+      "comparison": "M6 - M3",
+      "budget": 1600,
+      "metric": "imdb_accuracy",
+      "mean_difference": 0.002727999999999975,
+      "sample_std": 0.004827206231351631,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.009079999999999977,
+        "21": -0.0025600000000000067,
+        "42": 0.0011599999999999389,
+        "87": 0.006319999999999992,
+        "100": -0.00036000000000002697
+      }
+    },
+    {
+      "comparison": "M6 - M3",
+      "budget": 1600,
+      "metric": "yelp_accuracy",
+      "mean_difference": 0.006919999999999993,
+      "sample_std": 0.01595907265476289,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.02980000000000005,
+        "21": -0.009600000000000053,
+        "42": -0.0011999999999999789,
+        "87": 0.016599999999999948,
+        "100": -0.0010000000000000009
+      }
+    },
+    {
+      "comparison": "M6 - M3",
+      "budget": 1600,
+      "metric": "amazon_accuracy",
+      "mean_difference": 0.006959999999999989,
+      "sample_std": 0.019791109114953596,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.033399999999999985,
+        "21": -0.013000000000000012,
+        "42": -0.007000000000000006,
+        "87": 0.02179999999999993,
+        "100": -0.00039999999999995595
+      }
+    },
+    {
+      "comparison": "M6 - M3",
+      "budget": 1600,
+      "metric": "ood_accuracy",
+      "mean_difference": 0.006939999999999969,
+      "sample_std": 0.017828151895247033,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.03159999999999996,
+        "21": -0.011300000000000088,
+        "42": -0.0040999999999999925,
+        "87": 0.019199999999999995,
+        "100": -0.0007000000000000339
+      }
+    },
+    {
+      "comparison": "M6 - M3",
+      "budget": 6400,
+      "metric": "imdb_accuracy",
+      "mean_difference": 0.0008080000000000087,
+      "sample_std": 0.0024760290789891783,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.005120000000000013,
+        "21": -0.0007200000000000539,
+        "42": 0.00043999999999999595,
+        "87": 0.00012000000000000899,
+        "100": -0.0009199999999999209
+      }
+    },
+    {
+      "comparison": "M6 - M3",
+      "budget": 6400,
+      "metric": "yelp_accuracy",
+      "mean_difference": -0.0005199999999999872,
+      "sample_std": 0.004442071588797285,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.0046000000000000485,
+        "21": 0.0010000000000000009,
+        "42": -0.0021999999999999797,
+        "87": -0.007199999999999984,
+        "100": 0.0011999999999999789
+      }
+    },
+    {
+      "comparison": "M6 - M3",
+      "budget": 6400,
+      "metric": "amazon_accuracy",
+      "mean_difference": 0.0012799999999999923,
+      "sample_std": 0.0028411265371327747,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.0038000000000000256,
+        "21": 0.00019999999999997797,
+        "42": 0.0015999999999999348,
+        "87": -0.0030000000000000027,
+        "100": 0.0038000000000000256
+      }
+    },
+    {
+      "comparison": "M6 - M3",
+      "budget": 6400,
+      "metric": "ood_accuracy",
+      "mean_difference": 0.00037999999999998034,
+      "sample_std": 0.0035223571653084703,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.0041999999999999815,
+        "21": 0.0006000000000000449,
+        "42": -0.000300000000000078,
+        "87": -0.005099999999999993,
+        "100": 0.0024999999999999467
+      }
     }
   ],
-  "lambda_ablation": []
+  "lambda_ablation": [
+    {
+      "method": "M6",
+      "budget": 400,
+      "lam": 0.0,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.9375,
+      "val_feature_distance": 0.4379888927936554,
+      "imdb_accuracy": 0.923048,
+      "yelp_accuracy": 0.93276,
+      "amazon_accuracy": 0.9219200000000001,
+      "ood_accuracy": 0.92734
+    },
+    {
+      "method": "M6",
+      "budget": 400,
+      "lam": 0.01,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.92,
+      "val_feature_distance": 0.3983237326145172,
+      "imdb_accuracy": 0.9181360000000001,
+      "yelp_accuracy": 0.9336,
+      "amazon_accuracy": 0.9164,
+      "ood_accuracy": 0.925
+    },
+    {
+      "method": "M6",
+      "budget": 400,
+      "lam": 0.1,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.935,
+      "val_feature_distance": 0.14364466816186905,
+      "imdb_accuracy": 0.923032,
+      "yelp_accuracy": 0.93032,
+      "amazon_accuracy": 0.91424,
+      "ood_accuracy": 0.92228
+    },
+    {
+      "method": "M6",
+      "budget": 400,
+      "lam": 1.0,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.935,
+      "val_feature_distance": 0.012851542830467225,
+      "imdb_accuracy": 0.92488,
+      "yelp_accuracy": 0.92872,
+      "amazon_accuracy": 0.91852,
+      "ood_accuracy": 0.92362
+    },
+    {
+      "method": "M6",
+      "budget": 1600,
+      "lam": 0.0,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.941875,
+      "val_feature_distance": 0.501417453289032,
+      "imdb_accuracy": 0.932664,
+      "yelp_accuracy": 0.92884,
+      "amazon_accuracy": 0.91528,
+      "ood_accuracy": 0.92206
+    },
+    {
+      "method": "M6",
+      "budget": 1600,
+      "lam": 0.01,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.94125,
+      "val_feature_distance": 0.1711755782365799,
+      "imdb_accuracy": 0.933872,
+      "yelp_accuracy": 0.9316,
+      "amazon_accuracy": 0.91592,
+      "ood_accuracy": 0.92376
+    },
+    {
+      "method": "M6",
+      "budget": 1600,
+      "lam": 0.1,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.938125,
+      "val_feature_distance": 0.038783036433160306,
+      "imdb_accuracy": 0.93384,
+      "yelp_accuracy": 0.9328,
+      "amazon_accuracy": 0.91528,
+      "ood_accuracy": 0.92404
+    },
+    {
+      "method": "M6",
+      "budget": 1600,
+      "lam": 1.0,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.938125,
+      "val_feature_distance": 0.010793521367013455,
+      "imdb_accuracy": 0.934864,
+      "yelp_accuracy": 0.93564,
+      "amazon_accuracy": 0.92152,
+      "ood_accuracy": 0.92858
+    },
+    {
+      "method": "M6",
+      "budget": 6400,
+      "lam": 0.0,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.945625,
+      "val_feature_distance": 0.4510000505298376,
+      "imdb_accuracy": 0.944064,
+      "yelp_accuracy": 0.94728,
+      "amazon_accuracy": 0.93044,
+      "ood_accuracy": 0.93886
+    },
+    {
+      "method": "M6",
+      "budget": 6400,
+      "lam": 0.01,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.94421875,
+      "val_feature_distance": 0.08592109879478813,
+      "imdb_accuracy": 0.941712,
+      "yelp_accuracy": 0.94644,
+      "amazon_accuracy": 0.93152,
+      "ood_accuracy": 0.93898
+    },
+    {
+      "method": "M6",
+      "budget": 6400,
+      "lam": 0.1,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.94234375,
+      "val_feature_distance": 0.02118762311525643,
+      "imdb_accuracy": 0.9443280000000001,
+      "yelp_accuracy": 0.94632,
+      "amazon_accuracy": 0.93376,
+      "ood_accuracy": 0.94004
+    },
+    {
+      "method": "M6",
+      "budget": 6400,
+      "lam": 1.0,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.9446875,
+      "val_feature_distance": 0.004227889515459537,
+      "imdb_accuracy": 0.945104,
+      "yelp_accuracy": 0.94992,
+      "amazon_accuracy": 0.9386,
+      "ood_accuracy": 0.94426
+    }
+  ]
 }
