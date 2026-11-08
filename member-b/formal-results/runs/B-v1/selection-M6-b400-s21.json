@@ -1,0 +1,13 @@
+{
+  "winner": "runs/B-v1/M6-b400-s21-lam1",
+  "source_val_accuracy": 0.9875,
+  "lr": 2e-05,
+  "lam": 1.0,
+  "candidate_runs": [
+    "runs/B-v1/M6-b400-s21-lam0.01",
+    "runs/B-v1/M6-b400-s21-lam0.1",
+    "runs/B-v1/M6-b400-s21-lam1"
+  ],
+  "stage1_run": null,
+  "selection": "IMDb validation accuracy, protocol list order for exact ties"
+}
