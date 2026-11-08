@@ -2,7 +2,7 @@
 
 Member B component: full fine-tuning (M3), staged LP-FT (M4), our feature-preservation method (M6), and a weight-preservation control (L2-SP). Everything is run under Member A's A-v1 protocol, so all six methods are directly comparable on the same splits, seeds and test sets.
 
-**Status (2026-11-07): code complete and tested locally (14 tests). Protocol B-v1 is a draft until the GPU pilot confirms the grids; no formal results yet.**
+**Status (2026-11-08): protocol B-v1 frozen; formal runs in progress on TC1. M3 is complete (15/15 cells); M6, M4 and L2-SP are running. Interim tables: [formal-results/results/B-v1/summary.md](formal-results/results/B-v1/summary.md). Records without weights: `formal-results/runs/B-v1/`.**
 
 ## Research question
 
