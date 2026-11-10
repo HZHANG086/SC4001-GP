@@ -1,0 +1,46 @@
+{
+  "training_seconds_per_optimizer_step": [
+    0.9638506844639778,
+    0.9650744162499905,
+    0.9646875765174627,
+    0.9649909548461437,
+    0.9671898409724236
+  ],
+  "training_loss_diagnostic_only": [
+    0.6854494363069534,
+    0.6956017315387726,
+    0.6810704469680786,
+    0.6545087993144989,
+    0.652313843369484
+  ],
+  "training_examples_per_second": 33.15516938168446,
+  "warmup_peak": {
+    "allocated_bytes": 4700173312,
+    "reserved_bytes": 5014290432
+  },
+  "training_peak": {
+    "allocated_bytes": 4696241152,
+    "reserved_bytes": 5014290432
+  },
+  "inference_peak": {
+    "allocated_bytes": 653112320,
+    "reserved_bytes": 773849088
+  },
+  "inference_seconds": 1.4216861091554165,
+  "inference_examples_per_second": 112.54242337294234,
+  "trainable_parameters": 124056578,
+  "total_parameters": 124056578,
+  "optimizer_state_tensors": 597,
+  "intrinsic_reference": null,
+  "teacher_present_training": false,
+  "teacher_used_in_loss": false,
+  "microbatch": 8,
+  "accumulation": 4,
+  "fixture": false,
+  "gpu": "Tesla V100-PCIE-32GB",
+  "gpu_total_bytes": 34072559616,
+  "job_id": "73356",
+  "elapsed_seconds": 8.499944413080812,
+  "interpretation": "Short fixed-shape microbenchmark; not full-run cost or model accuracy",
+  "saved_model": false
+}

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "executed_tests": 3,
+  "date": "2026-11-11",
+  "command": "python -m unittest discover -s member-c/tests -p test_m5_diagnostics.py -v",
+  "scope": "CPU fixtures: shared cost kernel preserves frozen LoRA base; prediction audit rejects duplicate IDs, wrong labels, invalid probabilities and wrong predictions; collector rejects mixed GPU hardware and changed token inputs. Not GPU results."
+}

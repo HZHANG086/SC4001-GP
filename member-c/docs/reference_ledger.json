@@ -1,0 +1,41 @@
+{
+  "checked_on": "2026-11-11",
+  "sources": [
+    {
+      "key": "cka",
+      "url": "https://proceedings.mlr.press/v97/kornblith19a.html",
+      "verified": "Primary landing-page title/authors and abstract-level methodological scope",
+      "claim_scope": "CKA representation comparison; no claim that CKA proves causality or semantics",
+      "human_read_status": "not attested"
+    },
+    {
+      "key": "lpft",
+      "url": "https://arxiv.org/abs/2202.10054",
+      "verified": "Primary landing-page title/authors and abstract-level methodological scope",
+      "claim_scope": "Motivation for staged linear probing/full tuning; vision evidence is not NLP validation",
+      "human_read_status": "not attested"
+    },
+    {
+      "key": "l2sp",
+      "url": "https://arxiv.org/abs/1802.01483",
+      "verified": "Primary landing-page title/authors and abstract-level methodological scope",
+      "claim_scope": "Pretrained-parameter anchoring baseline",
+      "human_read_status": "not attested"
+    },
+    {
+      "key": "delta",
+      "url": "https://arxiv.org/abs/1901.09229",
+      "verified": "Primary landing-page title/authors and abstract-level methodological scope",
+      "claim_scope": "Related feature preservation with attention; our method is not a DELTA reproduction",
+      "human_read_status": "not attested"
+    },
+    {
+      "key": "lora",
+      "url": "https://arxiv.org/abs/2106.09685",
+      "verified": "Primary landing-page title/authors and abstract-level methodological scope",
+      "claim_scope": "Established low-rank frozen-base adaptation comparator",
+      "human_read_status": "not attested"
+    }
+  ],
+  "past_coursework_search": "Not yet performed: user requested it after first complete C version, which awaits M5."
+}

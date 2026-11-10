@@ -1,0 +1,37 @@
+{
+  "fixture": false,
+  "elapsed_seconds": 50.46133930794895,
+  "gpu": "Tesla V100-PCIE-32GB",
+  "job_id": "73355",
+  "versions": {
+    "torch": "2.5.1",
+    "transformers": "4.51.3",
+    "datasets": "3.5.0",
+    "numpy": "1.26.4",
+    "python": "3.11.15"
+  },
+  "data_metadata_files_checked": [
+    "amazon_test_indices.json",
+    "audit.json",
+    "sources.json",
+    "splits/b1600_s100.json",
+    "splits/b1600_s13.json",
+    "splits/b1600_s21.json",
+    "splits/b1600_s42.json",
+    "splits/b1600_s87.json",
+    "splits/b400_s100.json",
+    "splits/b400_s13.json",
+    "splits/b400_s21.json",
+    "splits/b400_s42.json",
+    "splits/b400_s87.json",
+    "splits/b6400_s100.json",
+    "splits/b6400_s13.json",
+    "splits/b6400_s21.json",
+    "splits/b6400_s42.json",
+    "splits/b6400_s87.json",
+    "yelp_test_indices.json"
+  ],
+  "models_completed": 4,
+  "inference_only": true,
+  "saved_activations": false
+}

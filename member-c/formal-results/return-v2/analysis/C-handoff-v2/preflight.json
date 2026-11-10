@@ -1,0 +1,11 @@
+{
+  "status": "PASSED",
+  "versions": {
+    "torch": "2.5.1",
+    "transformers": "4.51.3",
+    "datasets": "3.5.0",
+    "numpy": "1.26.4"
+  },
+  "selected_models": 60,
+  "note": "Existence and metadata only; full weight hashes and GPU replay checked in allocated jobs"
+}

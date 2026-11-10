@@ -1,0 +1,63 @@
+{
+  "audited_on": "2026-11-11",
+  "sources": [
+    {
+      "path": "/Users/zhangheng/Desktop/CCDS/SC4001/GP/Material/project_handout.pdf",
+      "sha256": "1b6bd92a730ca88ebb3c378e15fac583048e1120b66815427e5a2b12fe412fd0"
+    },
+    {
+      "path": "/Users/zhangheng/Desktop/CCDS/SC4001/LEC/0_overview.pdf",
+      "sha256": "7ffad5759333f7c4d2a2a0e40ab92e47a2510c462cd459ec777be92e6f5ede30"
+    },
+    {
+      "path": "/Users/zhangheng/Desktop/CCDS/SC4001/LEC/10_transformers.pdf",
+      "sha256": "13ccc26ef9ed03cfdd7f3549393bea74bc1ba4feed05b01d9da97ebfba84662c"
+    },
+    {
+      "path": "/Users/zhangheng/Desktop/CCDS/SC4001/LEC/11_autoencoders.pdf",
+      "sha256": "7d2e2df2c9ba603ad7f154ee59aa9453fb32359ce3086d69c9d718178a9f3b81"
+    },
+    {
+      "path": "/Users/zhangheng/Desktop/CCDS/SC4001/LEC/12_gan.pdf",
+      "sha256": "0a98d6ae828e1a28dd3da99f4fcf3cec114174244b49c6c17520d8ef473db1d0"
+    },
+    {
+      "path": "/Users/zhangheng/Desktop/CCDS/SC4001/LEC/1_foundations.pdf",
+      "sha256": "5e2234c4a89401971a839dbb3971c1125efac9ef4e8d3d3c49ca822bf3c42d7e"
+    },
+    {
+      "path": "/Users/zhangheng/Desktop/CCDS/SC4001/LEC/2_regression_classification.pdf",
+      "sha256": "f53fb22554da55dc6c451137d7a12879b44b022915cd4f6d532c98223106fb80"
+    },
+    {
+      "path": "/Users/zhangheng/Desktop/CCDS/SC4001/LEC/3_neuron_layers.pdf",
+      "sha256": "caed766a68ed9633df2593e8ee70081fdca6776690310d6f22961162f3d9a33b"
+    },
+    {
+      "path": "/Users/zhangheng/Desktop/CCDS/SC4001/LEC/4_dnn.pdf",
+      "sha256": "e68f26887ceb0e103581e9b88219276b46613d8bde9b86ba3fdb7a310cef004d"
+    },
+    {
+      "path": "/Users/zhangheng/Desktop/CCDS/SC4001/LEC/5_model_selection.pdf",
+      "sha256": "97ba114616e7a017b0a6e8cb68655a189c3bb4997c42a9e5ebc8dabb258be85d"
+    },
+    {
+      "path": "/Users/zhangheng/Desktop/CCDS/SC4001/LEC/6_cnn.pdf",
+      "sha256": "e31d57c974cb63632382c2738d673c030cceee7f785d6ebaf86dd98d92c72587"
+    },
+    {
+      "path": "/Users/zhangheng/Desktop/CCDS/SC4001/LEC/7_cnn_architectures.pdf",
+      "sha256": "46dfebc0d5114311c87883baf3c9b204cc3c1c6e343d32caeb645a6c52469f73"
+    },
+    {
+      "path": "/Users/zhangheng/Desktop/CCDS/SC4001/LEC/8_rnn.pdf",
+      "sha256": "9d343496aaf12a3617c1015723466ba23c7fd9dedcfb84d8ba3600898a872ee4"
+    },
+    {
+      "path": "/Users/zhangheng/Desktop/CCDS/SC4001/LEC/9_attention.pdf",
+      "sha256": "fd4c50d4c2382cbe6db7b95a1442cba789bf639e84d87d596ed6379b27ec5334"
+    }
+  ],
+  "extracted_text_cache": "GP/tmp/goal-audit",
+  "team_scope_source": "member-b/HANDOFF_C.md"
+}

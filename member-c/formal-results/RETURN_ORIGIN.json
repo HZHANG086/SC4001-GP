@@ -1,0 +1,8 @@
+{
+  "source_archive_sha256": "72edd7ceedfb16bcbd985f722b8672ef7be69cbaefbb670cddaf2f84d33d0c39",
+  "received_on": "2026-11-11",
+  "scope": "60 B-selected checkpoints and 27 V100 cost probes",
+  "audit": "GP/output/C-return-v2-review/review_audit.json",
+  "raw_files": "return-v2/",
+  "not_included": "Actual model weights and activations"
+}

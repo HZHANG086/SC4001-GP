@@ -1,0 +1,11 @@
+Completed M3 budget=400 seed=13
+Completed L2SP budget=400 seed=13
+Completed M4 budget=400 seed=13
+Completed M6 budget=400 seed=13
+Completed M1/clean/repeat-1
+Completed M2/clean/repeat-1
+Completed M3/clean/repeat-1
+Completed M4/clean/repeat-1
+Completed M6/clean/repeat-1
+Completed L2SP/clean/repeat-1
+Smoke passed. Submit the full chain from the login node with start_bundle.sh full.

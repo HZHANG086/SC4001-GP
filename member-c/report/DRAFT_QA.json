@@ -1,0 +1,14 @@
+{
+  "status": "DRAFT_RENDER_AND_LAYOUT_CHECKED",
+  "page_count": 7,
+  "main_content_pages": 5,
+  "reference_pages": 1,
+  "appendix_pages": 1,
+  "paper": "A4",
+  "body_font": "Arial, 10pt; embedded subset",
+  "style": "Black text, colorblind-friendly scientific figures; grayscale versions available",
+  "pdf_sha256": "83fde010e5d19d76272d081029fe37f93b59ed4eff04af95d26edf61ac969313",
+  "visual_checks": "All initial pages inspected; revised figure pages 2/4 and appendix checked at 1400px. Final text-only corrections rerendered for pages 4/5.",
+  "not_final": "M5 still queued; integration and user-requested later public-coursework search outstanding.",
+  "compile": "Tectonic 0.15.0; project-local licensed fonts for editor preview only, excluded from Git and delivery."
+}

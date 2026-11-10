@@ -1,0 +1,33 @@
+{
+  "style": "Restrained colorblind-friendly conference-style; not an official ICML palette",
+  "colors": {
+    "M1": "#222222",
+    "M2": "#222222",
+    "M3": "#222222",
+    "M4": "#222222",
+    "M5": "#222222",
+    "M6": "#222222",
+    "L2SP": "#222222"
+  },
+  "grayscale": true,
+  "uncertainty": "Accuracy/ablation: five-seed sample SD. CKA: thin individual seed curves, bold mean. Scatter: one point per seed with OOD domains averaged.",
+  "status": "Preliminary until required M5 results integrated",
+  "files": {
+    "member-c/report/figures-grayscale/01_accuracy.pdf": "0785f5f75be35d4a435dbdcf183c8fbff7790dba9d83004c872c6ca1cd146f98",
+    "member-c/report/figures-grayscale/01_accuracy.svg": "e115b60d33bb774c48d70b92263de8b62ea9a55e32ef3453aa0d2464f8d71863",
+    "member-c/report/figures-grayscale/01_accuracy.png": "e90dd07287b80a27d1458bbdea3ca2eb7b03b65c8cc487a2f5c106584d101138",
+    "member-c/report/figures-grayscale/02_cka_layers.pdf": "c53d5ab20f62b2342669bfe40a1886c851be290205b188c19970168136509206",
+    "member-c/report/figures-grayscale/02_cka_layers.svg": "6ceee7ab85073c6be512b980adf92ffba1026a7547eb9cd24cf6f4e277327fa3",
+    "member-c/report/figures-grayscale/02_cka_layers.png": "bbe39d6579c8e9b9871938031a54deb73878a6f69c4d1b2d00c14ca210b6f516",
+    "member-c/report/figures-grayscale/03_cka_accuracy.pdf": "bc4d49f5683202ad2944a04ecfae7efefc230f6b56cbf5c42902663b236e1015",
+    "member-c/report/figures-grayscale/03_cka_accuracy.svg": "6327ef73f2deec643a4f3662a540bf26a8c7a3f9b67ace07d0894df1d29a14db",
+    "member-c/report/figures-grayscale/03_cka_accuracy.png": "993291c2bced61e689b6c3620c38d005210784a22a0bc4a55feb007c889f508e",
+    "member-c/report/figures-grayscale/04_lambda_ablation.pdf": "78c27d8fb3a1ccfb3943fe25fdd76b7cdd67290baf4773842ae5b8d3ebb28a7f",
+    "member-c/report/figures-grayscale/04_lambda_ablation.svg": "55dbce82c1ee76b713b6be5a876adb0b93cae920c2f94c93ebf5c42cc8f9c256",
+    "member-c/report/figures-grayscale/04_lambda_ablation.png": "a542d00c5240927f1926b51d64d3b035c7c6ef86fbff4061faa82da6e03e92d2",
+    "member-c/report/figures-grayscale/05_v100_cost.pdf": "2ec01aea214c7b4265fbc24914317a3fbe90dadb0cc0e72d78059b5467233ceb",
+    "member-c/report/figures-grayscale/05_v100_cost.svg": "95e5c7bbf9e5364fd8924c61335ad91fd23852790c8754c7ec1bb9c443109c1a",
+    "member-c/report/figures-grayscale/05_v100_cost.png": "3e956f8a73d5ee2b589de83135dc2a9d6a607663d9fdcfec19a0cc105b490471"
+  },
+  "source_script_sha256": "b50389ba5dc93b5d929d5ef009316e248d4d37cfc963dad36d1df7238c7fb05d"
+}

@@ -1,0 +1,26 @@
+{
+  "status": "MATCHES_A_V1",
+  "content_files_checked": [
+    "amazon_test_indices.json",
+    "audit.json",
+    "sources.json",
+    "splits/b1600_s100.json",
+    "splits/b1600_s13.json",
+    "splits/b1600_s21.json",
+    "splits/b1600_s42.json",
+    "splits/b1600_s87.json",
+    "splits/b400_s100.json",
+    "splits/b400_s13.json",
+    "splits/b400_s21.json",
+    "splits/b400_s42.json",
+    "splits/b400_s87.json",
+    "splits/b6400_s100.json",
+    "splits/b6400_s13.json",
+    "splits/b6400_s21.json",
+    "splits/b6400_s42.json",
+    "splits/b6400_s87.json",
+    "yelp_test_indices.json"
+  ],
+  "preparation": "Original A frozen prepare.py on local CPU; no model training",
+  "destination": "RTX 6000 Ada server shared personal directory"
+}

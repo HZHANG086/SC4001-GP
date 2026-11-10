@@ -1,0 +1,33 @@
+{
+  "style": "Restrained colorblind-friendly conference-style; not an official ICML palette",
+  "colors": {
+    "M1": "#777777",
+    "M2": "#0072B2",
+    "M3": "#222222",
+    "M4": "#009E73",
+    "M5": "#CC79A7",
+    "M6": "#D55E00",
+    "L2SP": "#E69F00"
+  },
+  "grayscale": false,
+  "uncertainty": "Accuracy/ablation: five-seed sample SD. CKA: thin individual seed curves, bold mean. Scatter: one point per seed with OOD domains averaged.",
+  "status": "Preliminary until required M5 results integrated",
+  "files": {
+    "member-c/report/figures/01_accuracy.pdf": "d537b387ba929d48c7a9b26bdcfe924118a79366844d1d72c23ad4c985f22cc3",
+    "member-c/report/figures/01_accuracy.svg": "9ca884ef6b6a554fb682e9de19736f26981afb3013c65a38a479bd9092780fbe",
+    "member-c/report/figures/01_accuracy.png": "c3b07ed162c0d27602b9199ebd972fe074283d6fcbdec2d6bd95bdd4ae1da8ac",
+    "member-c/report/figures/02_cka_layers.pdf": "3ef396a3ccb57693b687afd22040506be5eb6aae1df96c42a7921007c3702e1e",
+    "member-c/report/figures/02_cka_layers.svg": "0974c830746dfa0ed4cf74e861e19cb967bd772a7cb4e6b9af0951792308dfe6",
+    "member-c/report/figures/02_cka_layers.png": "d525314b33a7753f223c7905b0ebe5824f999737b865e4601465ecca206f8e02",
+    "member-c/report/figures/03_cka_accuracy.pdf": "e5d04f962a3bb00344130713e2a9eb19462d414655563a8357a06b4ac74afc6b",
+    "member-c/report/figures/03_cka_accuracy.svg": "9e406b455c7cb0179cec6a24d0b3af1cf86439546ef6cc38147f126baa2ea5b5",
+    "member-c/report/figures/03_cka_accuracy.png": "51f86a3ca450bdc574ed8c3bc47563513655d656c53e72869fdd860c44c253ee",
+    "member-c/report/figures/04_lambda_ablation.pdf": "04d2924a45100145a800607fafce28803d780db3b7f4e6a027380117b4a6192e",
+    "member-c/report/figures/04_lambda_ablation.svg": "0901df4cf34372b816169d171d5f33a5f3718787c589665b0c6c187158ddf6b5",
+    "member-c/report/figures/04_lambda_ablation.png": "a90c0e458635cb44aface68ed364c6fbe5ae80a7ea64b72cda8be2dffa3d9061",
+    "member-c/report/figures/05_v100_cost.pdf": "a0b6a0dc98202b72813fd69eafe69b5d24343853de777e2b008d17c31a9e7856",
+    "member-c/report/figures/05_v100_cost.svg": "7a8b75918e1bb1255ed0eee5711faab4b0a9838ecf5458f994fb6e380c208fd4",
+    "member-c/report/figures/05_v100_cost.png": "4bcaef6c43650cb9fc8d40f383b16c4c2c7a06621f03c2d22693d8119eeda4e7"
+  },
+  "source_script_sha256": "b50389ba5dc93b5d929d5ef009316e248d4d37cfc963dad36d1df7238c7fb05d"
+}
