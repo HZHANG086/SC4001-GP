@@ -1,0 +1,14 @@
+{
+  "eval_loss": 0.08861683309078217,
+  "eval_accuracy": 0.975,
+  "eval_runtime": 0.7307,
+  "eval_samples_per_second": 109.483,
+  "eval_steps_per_second": 6.843,
+  "epoch": 10.0,
+  "train_wall_seconds_this_invocation": 215.73874814156443,
+  "peak_cuda_allocated_bytes": 5227945472,
+  "peak_cuda_reserved_bytes": 5800722432,
+  "gpu": "Tesla V100-PCIE-32GB",
+  "best_checkpoint": "runs/B-v1/M4-b400-s21-lr3e-05/checkpoints/checkpoint-40",
+  "val_feature_distance": 0.032754887640476224
+}

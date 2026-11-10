@@ -1,0 +1,43 @@
+{
+  "data": "artifacts/data-v1",
+  "out": "runs/B-v1/M4-b6400-s42-lr1e-05",
+  "method": "M4",
+  "budget": 6400,
+  "seed": 42,
+  "lr": 1e-05,
+  "lam": null,
+  "stage1": "runs/B-v1/M4S1-b6400-s42-lr1e-02",
+  "length": 512,
+  "epochs": 10,
+  "batch": 8,
+  "accumulation": 4,
+  "max_steps": -1,
+  "cpu": false,
+  "resume": false,
+  "stage": "formal",
+  "model_path": null,
+  "protocol": "B-v1",
+  "model_id": "FacebookAI/roberta-base",
+  "model_revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "split_sha256": "c85d2048685b7f20caaaacf1a1a6640d988850daec39af216992d3abe8f2a603",
+  "data_manifest_sha256": "74d278fb4419173b5aaf439f6b3723621b6e39484d2749ddacdc01665e964a78",
+  "dataset_revisions": {
+    "imdb": "e6281661ce1c48d982bc483cf8a173c1bbeb5d31",
+    "yelp": "bbf1c97a1f0cf005e5aded43839fd814654a1557",
+    "amazon": "9d9c45c18f8c3cf1b23a3c27917b60cbf28f3289"
+  },
+  "smoke": false,
+  "stage1_record": {
+    "run": "runs/B-v1/M4S1-b6400-s42-lr1e-02",
+    "lr": 0.01,
+    "source_val_accuracy": 0.896875,
+    "train_wall_seconds": 608.4712394978851,
+    "weights_sha256": "d96f865480808c54deb08768672e8aea46471684924e16c7411721de46feb347"
+  },
+  "code_sha256": {
+    "train.py": "cbb4da2c62b539e6e6bec193b3ab637e1bb3fb8642ca41a4bb4080ed8e19e81b",
+    "objectives.py": "b26b6a0f01c5be209108f34e245c02d2d826ee50b6ca19b415bfde455f5f4ed6",
+    "sc4001_a/model.py": "16cac1c2550027cc457967ae671947ec6d3ba69eb0a1af3fd804aab4d1934d72",
+    "sc4001_a/checkpoint.py": "48e5496a06e8013f86b4b16bacee2ce7a9c189796736315f854b063e3276e605"
+  }
+}
