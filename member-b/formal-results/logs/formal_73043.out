@@ -1,0 +1,18 @@
+TRAIN runs/B-v1/M4S1-b400-s21-lr1e-02
+TRAIN runs/B-v1/M4-b400-s21-lr1e-05
+TRAIN runs/B-v1/M4-b400-s21-lr2e-05
+TRAIN runs/B-v1/M4-b400-s21-lr3e-05
+FINAL_EVALUATE runs/B-v1/M4-b400-s21-lr1e-05
+CELL_COMPLETE M4 400 21 winner runs/B-v1/M4-b400-s21-lr1e-05
+TRAIN runs/B-v1/M4S1-b1600-s21-lr1e-02
+TRAIN runs/B-v1/M4-b1600-s21-lr1e-05
+TRAIN runs/B-v1/M4-b1600-s21-lr2e-05
+TRAIN runs/B-v1/M4-b1600-s21-lr3e-05
+FINAL_EVALUATE runs/B-v1/M4-b1600-s21-lr1e-05
+CELL_COMPLETE M4 1600 21 winner runs/B-v1/M4-b1600-s21-lr1e-05
+TRAIN runs/B-v1/M4S1-b6400-s21-lr1e-02
+TRAIN runs/B-v1/M4-b6400-s21-lr1e-05
+TRAIN runs/B-v1/M4-b6400-s21-lr2e-05
+TRAIN runs/B-v1/M4-b6400-s21-lr3e-05
+FINAL_EVALUATE runs/B-v1/M4-b6400-s21-lr1e-05
+CELL_COMPLETE M4 6400 21 winner runs/B-v1/M4-b6400-s21-lr1e-05

@@ -1,0 +1,205 @@
+Sat Nov  7 14:14:57 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.173.02             Driver Version: 580.173.02     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-PCIE-32GB           Off |   00000000:37:00.0 Off |                    0 |
+| N/A   67C    P0             43W /  250W |       0MiB /  32768MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+{'loss': 0.6949, 'grad_norm': 2.4410181045532227, 'learning_rate': 1.8e-05, 'epoch': 1.0}
+{'eval_loss': 0.68625408411026, 'eval_accuracy': 0.65, 'eval_runtime': 0.7313, 'eval_samples_per_second': 109.398, 'eval_steps_per_second': 6.837, 'epoch': 1.0}
+{'loss': 0.6797, 'grad_norm': 3.9751362800598145, 'learning_rate': 1.8e-05, 'epoch': 2.0}
+{'eval_loss': 0.6558860540390015, 'eval_accuracy': 0.5875, 'eval_runtime': 0.7309, 'eval_samples_per_second': 109.459, 'eval_steps_per_second': 6.841, 'epoch': 2.0}
+{'loss': 0.5265, 'grad_norm': 8.197702407836914, 'learning_rate': 1.577777777777778e-05, 'epoch': 3.0}
+{'eval_loss': 0.3146273195743561, 'eval_accuracy': 0.8875, 'eval_runtime': 0.7313, 'eval_samples_per_second': 109.399, 'eval_steps_per_second': 6.837, 'epoch': 3.0}
+{'loss': 0.2214, 'grad_norm': 7.422910690307617, 'learning_rate': 1.3555555555555557e-05, 'epoch': 4.0}
+{'eval_loss': 0.35366424918174744, 'eval_accuracy': 0.8875, 'eval_runtime': 0.7289, 'eval_samples_per_second': 109.756, 'eval_steps_per_second': 6.86, 'epoch': 4.0}
+{'loss': 0.1527, 'grad_norm': 14.253561973571777, 'learning_rate': 1.1333333333333334e-05, 'epoch': 5.0}
+{'eval_loss': 0.3655012845993042, 'eval_accuracy': 0.9, 'eval_runtime': 0.7304, 'eval_samples_per_second': 109.533, 'eval_steps_per_second': 6.846, 'epoch': 5.0}
+{'loss': 0.1001, 'grad_norm': 15.690649032592773, 'learning_rate': 9.111111111111112e-06, 'epoch': 6.0}
+{'eval_loss': 0.3554878532886505, 'eval_accuracy': 0.9, 'eval_runtime': 0.7291, 'eval_samples_per_second': 109.731, 'eval_steps_per_second': 6.858, 'epoch': 6.0}
+{'loss': 0.077, 'grad_norm': 3.9489974975585938, 'learning_rate': 6.88888888888889e-06, 'epoch': 7.0}
+{'eval_loss': 0.41142407059669495, 'eval_accuracy': 0.9125, 'eval_runtime': 0.7285, 'eval_samples_per_second': 109.816, 'eval_steps_per_second': 6.864, 'epoch': 7.0}
+{'loss': 0.0267, 'grad_norm': 2.682002305984497, 'learning_rate': 4.666666666666667e-06, 'epoch': 8.0}
+{'eval_loss': 0.39533576369285583, 'eval_accuracy': 0.9, 'eval_runtime': 0.7291, 'eval_samples_per_second': 109.724, 'eval_steps_per_second': 6.858, 'epoch': 8.0}
+{'loss': 0.0186, 'grad_norm': 0.8600223660469055, 'learning_rate': 2.4444444444444447e-06, 'epoch': 9.0}
+{'eval_loss': 0.40314561128616333, 'eval_accuracy': 0.9125, 'eval_runtime': 0.7269, 'eval_samples_per_second': 110.055, 'eval_steps_per_second': 6.878, 'epoch': 9.0}
+{'loss': 0.0262, 'grad_norm': 0.24359430372714996, 'learning_rate': 2.2222222222222224e-07, 'epoch': 10.0}
+{'eval_loss': 0.4476606845855713, 'eval_accuracy': 0.9, 'eval_runtime': 0.7258, 'eval_samples_per_second': 110.228, 'eval_steps_per_second': 6.889, 'epoch': 10.0}
+{'train_runtime': 211.335, 'train_samples_per_second': 15.142, 'train_steps_per_second': 0.473, 'train_loss': 0.2523779885470867, 'epoch': 10.0}
+{
+  "eval_loss": 0.41142407059669495,
+  "eval_accuracy": 0.9125,
+  "eval_runtime": 0.741,
+  "eval_samples_per_second": 107.961,
+  "eval_steps_per_second": 6.748,
+  "epoch": 10.0,
+  "train_wall_seconds_this_invocation": 211.46836338751018,
+  "peak_cuda_allocated_bytes": 5268237824,
+  "peak_cuda_reserved_bytes": 5968494592,
+  "gpu": "Tesla V100-PCIE-32GB",
+  "best_checkpoint": "runs/pilot-M3-b400/checkpoints/checkpoint-70",
+  "val_feature_distance": 0.5211567401885986
+}
+{'loss': 0.696, 'grad_norm': 2.9514012336730957, 'learning_rate': 1.8e-05, 'train_feature_preservation': 0.0010234439745545388, 'epoch': 1.0}
+{'eval_loss': 0.6865445375442505, 'eval_accuracy': 0.5375, 'eval_runtime': 0.7299, 'eval_samples_per_second': 109.6, 'eval_steps_per_second': 6.85, 'epoch': 1.0}
+{'loss': 0.6813, 'grad_norm': 4.475729465484619, 'learning_rate': 1.8e-05, 'train_feature_preservation': 0.002116144075989723, 'epoch': 2.0}
+{'eval_loss': 0.6573832631111145, 'eval_accuracy': 0.675, 'eval_runtime': 0.7293, 'eval_samples_per_second': 109.699, 'eval_steps_per_second': 6.856, 'epoch': 2.0}
+{'loss': 0.5415, 'grad_norm': 5.427926063537598, 'learning_rate': 1.577777777777778e-05, 'train_feature_preservation': 0.014458781853318215, 'epoch': 3.0}
+{'eval_loss': 0.3145267069339752, 'eval_accuracy': 0.8875, 'eval_runtime': 0.7303, 'eval_samples_per_second': 109.54, 'eval_steps_per_second': 6.846, 'epoch': 3.0}
+{'loss': 0.2932, 'grad_norm': 4.7490620613098145, 'learning_rate': 1.3555555555555557e-05, 'train_feature_preservation': 0.07462349850684405, 'epoch': 4.0}
+{'eval_loss': 0.30630582571029663, 'eval_accuracy': 0.8875, 'eval_runtime': 0.7292, 'eval_samples_per_second': 109.715, 'eval_steps_per_second': 6.857, 'epoch': 4.0}
+{'loss': 0.1845, 'grad_norm': 16.800418853759766, 'learning_rate': 1.1333333333333334e-05, 'train_feature_preservation': 0.039091428741812706, 'epoch': 5.0}
+{'eval_loss': 0.28223735094070435, 'eval_accuracy': 0.8875, 'eval_runtime': 0.7276, 'eval_samples_per_second': 109.946, 'eval_steps_per_second': 6.872, 'epoch': 5.0}
+{'loss': 0.1296, 'grad_norm': 4.824693202972412, 'learning_rate': 9.111111111111112e-06, 'train_feature_preservation': 0.02741208877414465, 'epoch': 6.0}
+{'eval_loss': 0.3237457275390625, 'eval_accuracy': 0.9, 'eval_runtime': 0.727, 'eval_samples_per_second': 110.036, 'eval_steps_per_second': 6.877, 'epoch': 6.0}
+{'loss': 0.0938, 'grad_norm': 9.183123588562012, 'learning_rate': 6.88888888888889e-06, 'train_feature_preservation': 0.026823734864592552, 'epoch': 7.0}
+{'eval_loss': 0.3442070186138153, 'eval_accuracy': 0.9125, 'eval_runtime': 0.7267, 'eval_samples_per_second': 110.084, 'eval_steps_per_second': 6.88, 'epoch': 7.0}
+{'loss': 0.0609, 'grad_norm': 2.066667318344116, 'learning_rate': 4.666666666666667e-06, 'train_feature_preservation': 0.02458000499755144, 'epoch': 8.0}
+{'eval_loss': 0.32950764894485474, 'eval_accuracy': 0.9125, 'eval_runtime': 0.7272, 'eval_samples_per_second': 110.015, 'eval_steps_per_second': 6.876, 'epoch': 8.0}
+{'loss': 0.052, 'grad_norm': 1.403722882270813, 'learning_rate': 2.4444444444444447e-06, 'train_feature_preservation': 0.02225441001355648, 'epoch': 9.0}
+{'eval_loss': 0.29732418060302734, 'eval_accuracy': 0.925, 'eval_runtime': 0.7278, 'eval_samples_per_second': 109.92, 'eval_steps_per_second': 6.87, 'epoch': 9.0}
+{'loss': 0.045, 'grad_norm': 0.9261444211006165, 'learning_rate': 2.2222222222222224e-07, 'train_feature_preservation': 0.018840249814093112, 'epoch': 10.0}
+{'eval_loss': 0.3383113741874695, 'eval_accuracy': 0.9125, 'eval_runtime': 0.7304, 'eval_samples_per_second': 109.533, 'eval_steps_per_second': 6.846, 'epoch': 10.0}
+{'train_runtime': 228.2868, 'train_samples_per_second': 14.017, 'train_steps_per_second': 0.438, 'train_loss': 0.2777656751871109, 'epoch': 10.0}
+{
+  "eval_loss": 0.29732418060302734,
+  "eval_accuracy": 0.925,
+  "eval_runtime": 0.7259,
+  "eval_samples_per_second": 110.201,
+  "eval_steps_per_second": 6.888,
+  "epoch": 10.0,
+  "train_wall_seconds_this_invocation": 228.42847871035337,
+  "peak_cuda_allocated_bytes": 5327196672,
+  "peak_cuda_reserved_bytes": 5997854720,
+  "gpu": "Tesla V100-PCIE-32GB",
+  "best_checkpoint": "runs/pilot-M6-b400/checkpoints/checkpoint-90",
+  "val_feature_distance": 0.016849112510681153
+}
+{'loss': 0.6954, 'grad_norm': 2.417062759399414, 'learning_rate': 1.8e-05, 'train_l2sp': 0.006198331790074008, 'epoch': 1.0}
+{'eval_loss': 0.6864220499992371, 'eval_accuracy': 0.625, 'eval_runtime': 0.7284, 'eval_samples_per_second': 109.831, 'eval_steps_per_second': 6.864, 'epoch': 1.0}
+{'loss': 0.6887, 'grad_norm': 3.7408227920532227, 'learning_rate': 1.8e-05, 'train_l2sp': 0.0795174989849329, 'epoch': 2.0}
+{'eval_loss': 0.6610094308853149, 'eval_accuracy': 0.625, 'eval_runtime': 0.7282, 'eval_samples_per_second': 109.86, 'eval_steps_per_second': 6.866, 'epoch': 2.0}
+{'loss': 0.5863, 'grad_norm': 7.50290060043335, 'learning_rate': 1.577777777777778e-05, 'train_l2sp': 0.20259324908256532, 'epoch': 3.0}
+{'eval_loss': 0.3675263524055481, 'eval_accuracy': 0.8875, 'eval_runtime': 0.728, 'eval_samples_per_second': 109.894, 'eval_steps_per_second': 6.868, 'epoch': 3.0}
+{'loss': 0.2866, 'grad_norm': 6.665774345397949, 'learning_rate': 1.3555555555555557e-05, 'train_l2sp': 0.44698476493358613, 'epoch': 4.0}
+{'eval_loss': 0.3656771779060364, 'eval_accuracy': 0.875, 'eval_runtime': 0.7276, 'eval_samples_per_second': 109.947, 'eval_steps_per_second': 6.872, 'epoch': 4.0}
+{'loss': 0.2139, 'grad_norm': 29.393789291381836, 'learning_rate': 1.1333333333333334e-05, 'train_l2sp': 0.6134210586547851, 'epoch': 5.0}
+{'eval_loss': 0.3846946656703949, 'eval_accuracy': 0.8875, 'eval_runtime': 0.7262, 'eval_samples_per_second': 110.16, 'eval_steps_per_second': 6.885, 'epoch': 5.0}
+{'loss': 0.2249, 'grad_norm': 2.3910601139068604, 'learning_rate': 9.111111111111112e-06, 'train_l2sp': 0.650188660621643, 'epoch': 6.0}
+{'eval_loss': 0.3245986998081207, 'eval_accuracy': 0.8875, 'eval_runtime': 0.7282, 'eval_samples_per_second': 109.854, 'eval_steps_per_second': 6.866, 'epoch': 6.0}
+{'loss': 0.1402, 'grad_norm': 15.981900215148926, 'learning_rate': 6.88888888888889e-06, 'train_l2sp': 0.6535990595817566, 'epoch': 7.0}
+{'eval_loss': 0.3574546277523041, 'eval_accuracy': 0.9125, 'eval_runtime': 0.7311, 'eval_samples_per_second': 109.427, 'eval_steps_per_second': 6.839, 'epoch': 7.0}
+{'loss': 0.1059, 'grad_norm': 12.398157119750977, 'learning_rate': 4.666666666666667e-06, 'train_l2sp': 0.6249443709850311, 'epoch': 8.0}
+{'eval_loss': 0.39050284028053284, 'eval_accuracy': 0.9, 'eval_runtime': 0.7284, 'eval_samples_per_second': 109.835, 'eval_steps_per_second': 6.865, 'epoch': 8.0}
+{'loss': 0.1295, 'grad_norm': 0.7801846861839294, 'learning_rate': 2.4444444444444447e-06, 'train_l2sp': 0.5904210925102233, 'epoch': 9.0}
+{'eval_loss': 0.3523274064064026, 'eval_accuracy': 0.9125, 'eval_runtime': 0.7293, 'eval_samples_per_second': 109.695, 'eval_steps_per_second': 6.856, 'epoch': 9.0}
+{'loss': 0.0847, 'grad_norm': 0.41271257400512695, 'learning_rate': 2.2222222222222224e-07, 'train_l2sp': 0.5745303094387054, 'epoch': 10.0}
+{'eval_loss': 0.3839810788631439, 'eval_accuracy': 0.9125, 'eval_runtime': 0.7296, 'eval_samples_per_second': 109.65, 'eval_steps_per_second': 6.853, 'epoch': 10.0}
+{'train_runtime': 222.3583, 'train_samples_per_second': 14.391, 'train_steps_per_second': 0.45, 'train_loss': 0.3156082713603973, 'epoch': 10.0}
+{
+  "eval_loss": 0.3574546277523041,
+  "eval_accuracy": 0.9125,
+  "eval_runtime": 0.7377,
+  "eval_samples_per_second": 108.446,
+  "eval_steps_per_second": 6.778,
+  "epoch": 10.0,
+  "train_wall_seconds_this_invocation": 222.5000554919243,
+  "peak_cuda_allocated_bytes": 6624694272,
+  "peak_cuda_reserved_bytes": 7222591488,
+  "gpu": "Tesla V100-PCIE-32GB",
+  "best_checkpoint": "runs/pilot-L2SP-b400/checkpoints/checkpoint-70",
+  "val_feature_distance": 0.4404249668121338
+}
+{'loss': 0.6998, 'grad_norm': 1.8788341283798218, 'learning_rate': 9e-06, 'epoch': 0.06}
+{'loss': 0.6832, 'grad_norm': 18.13292121887207, 'learning_rate': 1.9e-05, 'epoch': 0.12}
+{'loss': 0.651, 'grad_norm': 7.6387739181518555, 'learning_rate': 1.9e-05, 'epoch': 0.19}
+{'loss': 0.4286, 'grad_norm': 42.16046905517578, 'learning_rate': 1.7888888888888892e-05, 'epoch': 0.25}
+{'loss': 0.3224, 'grad_norm': 12.818471908569336, 'learning_rate': 1.677777777777778e-05, 'epoch': 0.31}
+{'loss': 0.2298, 'grad_norm': 10.08283519744873, 'learning_rate': 1.5666666666666667e-05, 'epoch': 0.38}
+{'loss': 0.311, 'grad_norm': 17.652692794799805, 'learning_rate': 1.4555555555555556e-05, 'epoch': 0.44}
+{'loss': 0.2261, 'grad_norm': 5.222671985626221, 'learning_rate': 1.3444444444444447e-05, 'epoch': 0.5}
+{'loss': 0.2074, 'grad_norm': 21.073543548583984, 'learning_rate': 1.2333333333333334e-05, 'epoch': 0.56}
+{'loss': 0.1928, 'grad_norm': 32.98119354248047, 'learning_rate': 1.1222222222222224e-05, 'epoch': 0.62}
+{'loss': 0.3315, 'grad_norm': 26.274791717529297, 'learning_rate': 1.0111111111111111e-05, 'epoch': 0.69}
+{'loss': 0.2284, 'grad_norm': 12.470268249511719, 'learning_rate': 9e-06, 'epoch': 0.75}
+{'loss': 0.2215, 'grad_norm': 8.900168418884277, 'learning_rate': 7.88888888888889e-06, 'epoch': 0.81}
+{'loss': 0.2216, 'grad_norm': 2.445831775665283, 'learning_rate': 6.777777777777779e-06, 'epoch': 0.88}
+{'loss': 0.2734, 'grad_norm': 12.946303367614746, 'learning_rate': 5.666666666666667e-06, 'epoch': 0.94}
+{'loss': 0.2158, 'grad_norm': 9.414013862609863, 'learning_rate': 4.555555555555556e-06, 'epoch': 1.0}
+{'eval_loss': 0.1943850815296173, 'eval_accuracy': 0.94140625, 'eval_runtime': 11.5488, 'eval_samples_per_second': 110.834, 'eval_steps_per_second': 6.927, 'epoch': 1.0}
+{'loss': 0.1154, 'grad_norm': 3.4478323459625244, 'learning_rate': 3.444444444444445e-06, 'epoch': 1.06}
+{'loss': 0.1011, 'grad_norm': 2.0988752841949463, 'learning_rate': 2.3333333333333336e-06, 'epoch': 1.12}
+{'loss': 0.1435, 'grad_norm': 1.2819334268569946, 'learning_rate': 1.2222222222222223e-06, 'epoch': 1.19}
+{'loss': 0.1339, 'grad_norm': 11.960378646850586, 'learning_rate': 1.1111111111111112e-07, 'epoch': 1.25}
+{'eval_loss': 0.2016373574733734, 'eval_accuracy': 0.9375, 'eval_runtime': 11.5442, 'eval_samples_per_second': 110.878, 'eval_steps_per_second': 6.93, 'epoch': 1.25}
+{'train_runtime': 233.3811, 'train_samples_per_second': 27.423, 'train_steps_per_second': 0.857, 'train_loss': 0.29691087126731874, 'epoch': 1.25}
+{
+  "eval_loss": 0.1943850815296173,
+  "eval_accuracy": 0.94140625,
+  "eval_runtime": 11.4909,
+  "eval_samples_per_second": 111.392,
+  "eval_steps_per_second": 6.962,
+  "epoch": 1.25,
+  "train_wall_seconds_this_invocation": 233.53706443309784,
+  "peak_cuda_allocated_bytes": 5262423552,
+  "peak_cuda_reserved_bytes": 6415187968,
+  "gpu": "Tesla V100-PCIE-32GB",
+  "best_checkpoint": "runs/pilot-M3-b6400-steps/checkpoints/checkpoint-160",
+  "val_feature_distance": 0.3692372485995293
+}
+{'loss': 0.7009, 'grad_norm': 3.475050210952759, 'learning_rate': 9e-06, 'train_feature_preservation': 0.0010398773476481438, 'epoch': 0.06}
+{'loss': 0.6843, 'grad_norm': 2.838217258453369, 'learning_rate': 1.9e-05, 'train_feature_preservation': 0.0013298137113451959, 'epoch': 0.12}
+{'loss': 0.6544, 'grad_norm': 7.196228981018066, 'learning_rate': 1.9e-05, 'train_feature_preservation': 0.0038502560928463936, 'epoch': 0.19}
+{'loss': 0.4964, 'grad_norm': 26.34339714050293, 'learning_rate': 1.7888888888888892e-05, 'train_feature_preservation': 0.043063340708613396, 'epoch': 0.25}
+{'loss': 0.3782, 'grad_norm': 23.894624710083008, 'learning_rate': 1.677777777777778e-05, 'train_feature_preservation': 0.06071754135191441, 'epoch': 0.31}
+{'loss': 0.2748, 'grad_norm': 14.336344718933105, 'learning_rate': 1.5666666666666667e-05, 'train_feature_preservation': 0.032709754258394244, 'epoch': 0.38}
+{'loss': 0.2282, 'grad_norm': 6.101528644561768, 'learning_rate': 1.4555555555555556e-05, 'train_feature_preservation': 0.02304109875112772, 'epoch': 0.44}
+{'loss': 0.2176, 'grad_norm': 11.29739761352539, 'learning_rate': 1.3444444444444447e-05, 'train_feature_preservation': 0.023158610239624976, 'epoch': 0.5}
+{'loss': 0.2817, 'grad_norm': 42.6375732421875, 'learning_rate': 1.2333333333333334e-05, 'train_feature_preservation': 0.022408886812627316, 'epoch': 0.56}
+{'loss': 0.2131, 'grad_norm': 28.217823028564453, 'learning_rate': 1.1222222222222224e-05, 'train_feature_preservation': 0.01659389715641737, 'epoch': 0.62}
+{'loss': 0.314, 'grad_norm': 30.71595001220703, 'learning_rate': 1.0111111111111111e-05, 'train_feature_preservation': 0.016067475080490112, 'epoch': 0.69}
+{'loss': 0.2513, 'grad_norm': 19.22974395751953, 'learning_rate': 9e-06, 'train_feature_preservation': 0.014962028153240681, 'epoch': 0.75}
+{'loss': 0.2289, 'grad_norm': 10.155012130737305, 'learning_rate': 7.88888888888889e-06, 'train_feature_preservation': 0.016054741851985455, 'epoch': 0.81}
+{'loss': 0.219, 'grad_norm': 2.8355565071105957, 'learning_rate': 6.777777777777779e-06, 'train_feature_preservation': 0.015622294135391712, 'epoch': 0.88}
+{'loss': 0.2364, 'grad_norm': 15.586501121520996, 'learning_rate': 5.666666666666667e-06, 'train_feature_preservation': 0.01495053544640541, 'epoch': 0.94}
+{'loss': 0.2039, 'grad_norm': 6.1025071144104, 'learning_rate': 4.555555555555556e-06, 'train_feature_preservation': 0.012526167556643486, 'epoch': 1.0}
+{'eval_loss': 0.18046262860298157, 'eval_accuracy': 0.93671875, 'eval_runtime': 11.5258, 'eval_samples_per_second': 111.055, 'eval_steps_per_second': 6.941, 'epoch': 1.0}
+{'loss': 0.1092, 'grad_norm': 2.468998432159424, 'learning_rate': 3.444444444444445e-06, 'train_feature_preservation': 0.012279265746474265, 'epoch': 1.06}
+{'loss': 0.1149, 'grad_norm': 4.701406478881836, 'learning_rate': 2.3333333333333336e-06, 'train_feature_preservation': 0.013736557774245739, 'epoch': 1.12}
+{'loss': 0.146, 'grad_norm': 2.211135149002075, 'learning_rate': 1.2222222222222223e-06, 'train_feature_preservation': 0.014076858013868331, 'epoch': 1.19}
+{'loss': 0.1389, 'grad_norm': 3.694967746734619, 'learning_rate': 1.1111111111111112e-07, 'train_feature_preservation': 0.01383728738874197, 'epoch': 1.25}
+{'eval_loss': 0.18772588670253754, 'eval_accuracy': 0.94140625, 'eval_runtime': 11.5371, 'eval_samples_per_second': 110.946, 'eval_steps_per_second': 6.934, 'epoch': 1.25}
+{'train_runtime': 286.1758, 'train_samples_per_second': 22.364, 'train_steps_per_second': 0.699, 'train_loss': 0.3046043813228607, 'epoch': 1.25}
+{
+  "eval_loss": 0.18772588670253754,
+  "eval_accuracy": 0.94140625,
+  "eval_runtime": 11.4956,
+  "eval_samples_per_second": 111.347,
+  "eval_steps_per_second": 6.959,
+  "epoch": 1.25,
+  "train_wall_seconds_this_invocation": 286.33140164613724,
+  "peak_cuda_allocated_bytes": 5336164864,
+  "peak_cuda_reserved_bytes": 6419382272,
+  "gpu": "Tesla V100-PCIE-32GB",
+  "best_checkpoint": "runs/pilot-M6-b6400-steps/checkpoints/checkpoint-200",
+  "val_feature_distance": 0.013711184496060014
+}
+| run | val acc | train s | peak GiB | val drift | last regulariser |
+| pilot-L2SP-b400 | 0.9125 | 223 | 6.17 | 0.4404 | 0.5745303094387054 |
+| pilot-M3-b400 | 0.9125 | 211 | 4.91 | 0.5212 | - |
+| pilot-M3-b6400-steps | 0.9414 | 234 | 4.90 | 0.3692 | - |
+| pilot-M6-b400 | 0.9250 | 228 | 4.96 | 0.0168 | 0.018840249814093112 |
+| pilot-M6-b6400-steps | 0.9414 | 286 | 4.97 | 0.0137 | 0.01383728738874197 |

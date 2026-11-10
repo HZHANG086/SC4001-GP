@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sc4001-b"
+version = "0.1.0"
+requires-python = ">=3.10"
+# Same pins as member-a; sc4001_a is imported from ../member-a/protocol/locked_src via PYTHONPATH.
+dependencies = ["transformers==4.51.3", "datasets==3.5.0", "accelerate==1.6.0", "numpy==1.26.4", "pyarrow==19.0.1", "pandas==2.2.3", "safetensors==0.5.3"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,15 @@
+{
+  "imdb": {
+    "accuracy": 0.50656,
+    "n": 25000
+  },
+  "yelp": {
+    "accuracy": 0.501,
+    "n": 5000
+  },
+  "amazon": {
+    "accuracy": 0.5042,
+    "n": 5000
+  },
+  "ood_mean_accuracy": 0.5025999999999999
+}
