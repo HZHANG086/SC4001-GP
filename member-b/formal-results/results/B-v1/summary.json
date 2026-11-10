@@ -1,5 +1,5 @@
 {
-  "complete": false,
+  "complete": true,
   "mean_std": [
     {
       "method": "M1",
@@ -308,6 +308,108 @@
       "selected_peak_allocated_gib": 4.923130226135254
     },
     {
+      "method": "M4",
+      "budget": 400,
+      "n_seeds": 5,
+      "imdb_accuracy": {
+        "mean": 0.924008,
+        "sample_std": 0.004763057841345185,
+        "n": 5
+      },
+      "yelp_accuracy": {
+        "mean": 0.91864,
+        "sample_std": 0.030574302935635324,
+        "n": 5
+      },
+      "amazon_accuracy": {
+        "mean": 0.91692,
+        "sample_std": 0.019581930446204734,
+        "n": 5
+      },
+      "ood_accuracy": {
+        "mean": 0.91778,
+        "sample_std": 0.02483741129828141,
+        "n": 5
+      },
+      "val_feature_distance": {
+        "mean": 0.08990991786122322,
+        "sample_std": 0.13211306082350385,
+        "n": 5
+      },
+      "trainable_parameters": 124056578,
+      "selected_train_seconds": 282.6997622784227,
+      "search_train_seconds_recorded": 694.7903183139861,
+      "selected_peak_allocated_gib": 4.868859767913818
+    },
+    {
+      "method": "M4",
+      "budget": 1600,
+      "n_seeds": 5,
+      "imdb_accuracy": {
+        "mean": 0.939008,
+        "sample_std": 0.004487083685424197,
+        "n": 5
+      },
+      "yelp_accuracy": {
+        "mean": 0.93476,
+        "sample_std": 0.015597051003314676,
+        "n": 5
+      },
+      "amazon_accuracy": {
+        "mean": 0.92804,
+        "sample_std": 0.011059294733390537,
+        "n": 5
+      },
+      "ood_accuracy": {
+        "mean": 0.9314,
+        "sample_std": 0.012975939272360964,
+        "n": 5
+      },
+      "val_feature_distance": {
+        "mean": 0.02395339749753475,
+        "sample_std": 0.008160587871801723,
+        "n": 5
+      },
+      "trainable_parameters": 124056578,
+      "selected_train_seconds": 683.3106218557805,
+      "search_train_seconds_recorded": 1692.1970395144076,
+      "selected_peak_allocated_gib": 4.9084038734436035
+    },
+    {
+      "method": "M4",
+      "budget": 6400,
+      "n_seeds": 5,
+      "imdb_accuracy": {
+        "mean": 0.946344,
+        "sample_std": 0.0034576986566211727,
+        "n": 5
+      },
+      "yelp_accuracy": {
+        "mean": 0.95012,
+        "sample_std": 0.007540026525152278,
+        "n": 5
+      },
+      "amazon_accuracy": {
+        "mean": 0.93716,
+        "sample_std": 0.010858545022239395,
+        "n": 5
+      },
+      "ood_accuracy": {
+        "mean": 0.94364,
+        "sample_std": 0.008652340723757937,
+        "n": 5
+      },
+      "val_feature_distance": {
+        "mean": 0.025496543440967797,
+        "sample_std": 0.008612133564235066,
+        "n": 5
+      },
+      "trainable_parameters": 124056578,
+      "selected_train_seconds": 2312.1762144591657,
+      "search_train_seconds_recorded": 5716.085304579698,
+      "selected_peak_allocated_gib": 4.923130226135254
+    },
+    {
       "method": "M6",
       "budget": 400,
       "n_seeds": 5,
@@ -408,6 +510,108 @@
       "selected_train_seconds": 2131.8751633327456,
       "search_train_seconds_recorded": 6359.098588341847,
       "selected_peak_allocated_gib": 4.98191204071045
+    },
+    {
+      "method": "L2SP",
+      "budget": 400,
+      "n_seeds": 5,
+      "imdb_accuracy": {
+        "mean": 0.919768,
+        "sample_std": 0.005703220143042006,
+        "n": 5
+      },
+      "yelp_accuracy": {
+        "mean": 0.93028,
+        "sample_std": 0.007668898225951356,
+        "n": 5
+      },
+      "amazon_accuracy": {
+        "mean": 0.91724,
+        "sample_std": 0.013640674470127963,
+        "n": 5
+      },
+      "ood_accuracy": {
+        "mean": 0.92376,
+        "sample_std": 0.010544572063388817,
+        "n": 5
+      },
+      "val_feature_distance": {
+        "mean": 0.3471312910318375,
+        "sample_std": 0.09805829531962482,
+        "n": 5
+      },
+      "trainable_parameters": 124056578,
+      "selected_train_seconds": 212.82248644679785,
+      "search_train_seconds_recorded": 647.3711951117963,
+      "selected_peak_allocated_gib": 6.143354320526123
+    },
+    {
+      "method": "L2SP",
+      "budget": 1600,
+      "n_seeds": 5,
+      "imdb_accuracy": {
+        "mean": 0.934144,
+        "sample_std": 0.003017893304939735,
+        "n": 5
+      },
+      "yelp_accuracy": {
+        "mean": 0.9351999999999999,
+        "sample_std": 0.017565306715227033,
+        "n": 5
+      },
+      "amazon_accuracy": {
+        "mean": 0.91896,
+        "sample_std": 0.025185472002724106,
+        "n": 5
+      },
+      "ood_accuracy": {
+        "mean": 0.92708,
+        "sample_std": 0.021209479012931954,
+        "n": 5
+      },
+      "val_feature_distance": {
+        "mean": 0.4222441917657852,
+        "sample_std": 0.04304904016409762,
+        "n": 5
+      },
+      "trainable_parameters": 124056578,
+      "selected_train_seconds": 546.842887512967,
+      "search_train_seconds_recorded": 1638.0869895428418,
+      "selected_peak_allocated_gib": 6.17883710861206
+    },
+    {
+      "method": "L2SP",
+      "budget": 6400,
+      "n_seeds": 5,
+      "imdb_accuracy": {
+        "mean": 0.9446,
+        "sample_std": 0.0015228919856641297,
+        "n": 5
+      },
+      "yelp_accuracy": {
+        "mean": 0.94852,
+        "sample_std": 0.006244357452933017,
+        "n": 5
+      },
+      "amazon_accuracy": {
+        "mean": 0.93608,
+        "sample_std": 0.006680718524230782,
+        "n": 5
+      },
+      "ood_accuracy": {
+        "mean": 0.9423,
+        "sample_std": 0.006394919858762897,
+        "n": 5
+      },
+      "val_feature_distance": {
+        "mean": 0.3612240200489759,
+        "sample_std": 0.05136441593631761,
+        "n": 5
+      },
+      "trainable_parameters": 124056578,
+      "selected_train_seconds": 1843.6567484371365,
+      "search_train_seconds_recorded": 5592.4627912256865,
+      "selected_peak_allocated_gib": 6.198401069641113
     }
   ],
   "paired": [
@@ -592,6 +796,186 @@
       }
     },
     {
+      "comparison": "M4 - M3",
+      "budget": 400,
+      "metric": "imdb_accuracy",
+      "mean_difference": 0.0009600000000000053,
+      "sample_std": 0.007766852644411362,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.0015199999999999658,
+        "21": 0.0032399999999999096,
+        "42": 0.011280000000000068,
+        "87": -0.0010000000000000009,
+        "100": -0.010239999999999916
+      }
+    },
+    {
+      "comparison": "M4 - M3",
+      "budget": 400,
+      "metric": "yelp_accuracy",
+      "mean_difference": -0.014120000000000021,
+      "sample_std": 0.03365132983999292,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.008399999999999963,
+        "21": -0.06140000000000001,
+        "42": 0.018999999999999906,
+        "87": -0.00019999999999997797,
+        "100": -0.03639999999999999
+      }
+    },
+    {
+      "comparison": "M4 - M3",
+      "budget": 400,
+      "metric": "amazon_accuracy",
+      "mean_difference": -0.005000000000000027,
+      "sample_std": 0.026874895348633448,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.01859999999999995,
+        "21": -0.04080000000000006,
+        "42": 0.023599999999999954,
+        "87": -0.006199999999999983,
+        "100": -0.020199999999999996
+      }
+    },
+    {
+      "comparison": "M4 - M3",
+      "budget": 400,
+      "metric": "ood_accuracy",
+      "mean_difference": -0.009560000000000035,
+      "sample_std": 0.030005466168683242,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.013499999999999845,
+        "21": -0.05109999999999992,
+        "42": 0.021299999999999875,
+        "87": -0.0031999999999999806,
+        "100": -0.028299999999999992
+      }
+    },
+    {
+      "comparison": "M4 - M3",
+      "budget": 1600,
+      "metric": "imdb_accuracy",
+      "mean_difference": 0.006343999999999994,
+      "sample_std": 0.004620528108344314,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.011479999999999935,
+        "21": 0.0040000000000000036,
+        "42": 0.0025199999999999667,
+        "87": 0.011240000000000028,
+        "100": 0.0024800000000000377
+      }
+    },
+    {
+      "comparison": "M4 - M3",
+      "budget": 1600,
+      "metric": "yelp_accuracy",
+      "mean_difference": 0.005919999999999992,
+      "sample_std": 0.01756052391017987,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.01639999999999997,
+        "21": 0.011599999999999944,
+        "42": -0.011799999999999922,
+        "87": 0.02639999999999998,
+        "100": -0.013000000000000012
+      }
+    },
+    {
+      "comparison": "M4 - M3",
+      "budget": 1600,
+      "metric": "amazon_accuracy",
+      "mean_difference": 0.012760000000000016,
+      "sample_std": 0.019012311800514926,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.02180000000000004,
+        "21": 0.0232,
+        "42": -0.009399999999999964,
+        "87": 0.03359999999999996,
+        "100": -0.00539999999999996
+      }
+    },
+    {
+      "comparison": "M4 - M3",
+      "budget": 1600,
+      "metric": "ood_accuracy",
+      "mean_difference": 0.009339999999999949,
+      "sample_std": 0.0182235561842358,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.019099999999999895,
+        "21": 0.01739999999999997,
+        "42": -0.010599999999999943,
+        "87": 0.029999999999999916,
+        "100": -0.009200000000000097
+      }
+    },
+    {
+      "comparison": "M4 - M3",
+      "budget": 6400,
+      "metric": "imdb_accuracy",
+      "mean_difference": 0.002279999999999993,
+      "sample_std": 0.005907825319015407,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.00983999999999996,
+        "21": 0.005919999999999925,
+        "42": 0.0021999999999999797,
+        "87": -0.005199999999999982,
+        "100": -0.0013599999999999168
+      }
+    },
+    {
+      "comparison": "M4 - M3",
+      "budget": 6400,
+      "metric": "yelp_accuracy",
+      "mean_difference": 0.0028400000000000205,
+      "sample_std": 0.006994855252255057,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.013800000000000034,
+        "21": -0.0013999999999999568,
+        "42": 0.005800000000000027,
+        "87": -0.0030000000000000027,
+        "100": -0.0010000000000000009
+      }
+    },
+    {
+      "comparison": "M4 - M3",
+      "budget": 6400,
+      "metric": "amazon_accuracy",
+      "mean_difference": 0.006720000000000015,
+      "sample_std": 0.009137395690239098,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.01200000000000001,
+        "21": -0.006000000000000005,
+        "42": 0.007000000000000006,
+        "87": 0.018000000000000016,
+        "100": 0.0026000000000000467
+      }
+    },
+    {
+      "comparison": "M4 - M3",
+      "budget": 6400,
+      "metric": "ood_accuracy",
+      "mean_difference": 0.0047800000000000065,
+      "sample_std": 0.0063974213555150206,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.012899999999999912,
+        "21": -0.0036999999999999256,
+        "42": 0.006400000000000072,
+        "87": 0.007500000000000062,
+        "100": 0.0007999999999999119
+      }
+    },
+    {
       "comparison": "M6 - M3",
       "budget": 400,
       "metric": "imdb_accuracy",
@@ -770,9 +1154,693 @@
         "87": -0.005099999999999993,
         "100": 0.0024999999999999467
       }
+    },
+    {
+      "comparison": "M6 - L2SP",
+      "budget": 400,
+      "metric": "imdb_accuracy",
+      "mean_difference": 0.0026879999999999795,
+      "sample_std": 0.00479961665135873,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.005319999999999991,
+        "21": 0.0033199999999999896,
+        "42": 0.0006399999999999739,
+        "87": 0.008399999999999963,
+        "100": -0.0042400000000000215
+      }
+    },
+    {
+      "comparison": "M6 - L2SP",
+      "budget": 400,
+      "metric": "yelp_accuracy",
+      "mean_difference": -0.0018799999999999928,
+      "sample_std": 0.009371872811770338,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.01200000000000001,
+        "21": -0.0031999999999999806,
+        "42": 0.0018000000000000238,
+        "87": -0.007600000000000051,
+        "100": -0.012399999999999967
+      }
+    },
+    {
+      "comparison": "M6 - L2SP",
+      "budget": 400,
+      "metric": "amazon_accuracy",
+      "mean_difference": -0.0050000000000000044,
+      "sample_std": 0.009437160589923256,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.0008000000000000229,
+        "21": 0.0038000000000000256,
+        "42": -0.0010000000000000009,
+        "87": -0.009000000000000008,
+        "100": -0.019600000000000062
+      }
+    },
+    {
+      "comparison": "M6 - L2SP",
+      "budget": 400,
+      "metric": "ood_accuracy",
+      "mean_difference": -0.0034400000000000207,
+      "sample_std": 0.00875973743898755,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.006399999999999961,
+        "21": 0.000300000000000078,
+        "42": 0.00039999999999995595,
+        "87": -0.008300000000000085,
+        "100": -0.016000000000000014
+      }
+    },
+    {
+      "comparison": "M6 - L2SP",
+      "budget": 1600,
+      "metric": "imdb_accuracy",
+      "mean_difference": 0.0012479999999999603,
+      "sample_std": 0.003552508972543203,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.00024000000000001798,
+        "21": -0.0023200000000000998,
+        "42": -0.00031999999999998696,
+        "87": 0.0021999999999999797,
+        "100": 0.006919999999999926
+      }
+    },
+    {
+      "comparison": "M6 - L2SP",
+      "budget": 1600,
+      "metric": "yelp_accuracy",
+      "mean_difference": 0.0005600000000000272,
+      "sample_std": 0.017829974761619818,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.005599999999999938,
+        "21": -0.011199999999999988,
+        "42": -0.006000000000000005,
+        "87": 0.032200000000000006,
+        "100": -0.006599999999999939
+      }
+    },
+    {
+      "comparison": "M6 - L2SP",
+      "budget": 1600,
+      "metric": "amazon_accuracy",
+      "mean_difference": 0.003279999999999994,
+      "sample_std": 0.022398035628152735,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.009000000000000008,
+        "21": -0.01100000000000001,
+        "42": 0.00039999999999995595,
+        "87": 0.04259999999999997,
+        "100": -0.006599999999999939
+      }
+    },
+    {
+      "comparison": "M6 - L2SP",
+      "budget": 1600,
+      "metric": "ood_accuracy",
+      "mean_difference": 0.0019200000000000107,
+      "sample_std": 0.020051359056183753,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.007299999999999973,
+        "21": -0.01110000000000011,
+        "42": -0.0028000000000000247,
+        "87": 0.0374000000000001,
+        "100": -0.006599999999999939
+      }
+    },
+    {
+      "comparison": "M6 - L2SP",
+      "budget": 6400,
+      "metric": "imdb_accuracy",
+      "mean_difference": 0.00027199999999998336,
+      "sample_std": 0.0009197390934389992,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.0011200000000000099,
+        "21": 0.0005199999999999649,
+        "42": -0.00012000000000000899,
+        "87": 0.0011999999999999789,
+        "100": 0.0008799999999999919
+      }
+    },
+    {
+      "comparison": "M6 - L2SP",
+      "budget": 6400,
+      "metric": "yelp_accuracy",
+      "mean_difference": -0.001760000000000006,
+      "sample_std": 0.006473638853071744,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.013000000000000012,
+        "21": 0.00039999999999995595,
+        "42": 0.0023999999999999577,
+        "87": -0.0011999999999999789,
+        "100": 0.0026000000000000467
+      }
+    },
+    {
+      "comparison": "M6 - L2SP",
+      "budget": 6400,
+      "metric": "amazon_accuracy",
+      "mean_difference": -0.004360000000000008,
+      "sample_std": 0.004701914503688896,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.010800000000000032,
+        "21": -0.0050000000000000044,
+        "42": -0.0028000000000000247,
+        "87": -0.00539999999999996,
+        "100": 0.0021999999999999797
+      }
+    },
+    {
+      "comparison": "M6 - L2SP",
+      "budget": 6400,
+      "metric": "ood_accuracy",
+      "mean_difference": -0.0030600000000000406,
+      "sample_std": 0.005403054691561045,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.011900000000000022,
+        "21": -0.0023000000000000798,
+        "42": -0.000200000000000089,
+        "87": -0.0032999999999999696,
+        "100": 0.0023999999999999577
+      }
+    },
+    {
+      "comparison": "M6 - M4",
+      "budget": 400,
+      "metric": "imdb_accuracy",
+      "mean_difference": -0.00155200000000002,
+      "sample_std": 0.004012121633250949,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.0031599999999999406,
+        "21": 0.0032400000000000206,
+        "42": -0.00664000000000009,
+        "87": -0.0029600000000000737,
+        "100": 0.0017599999999999838
+      }
+    },
+    {
+      "comparison": "M6 - M4",
+      "budget": 400,
+      "metric": "yelp_accuracy",
+      "mean_difference": 0.009760000000000013,
+      "sample_std": 0.031440865128046315,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.0040000000000000036,
+        "21": 0.05720000000000003,
+        "42": -0.025999999999999912,
+        "87": 0.0,
+        "100": 0.021599999999999953
+      }
+    },
+    {
+      "comparison": "M6 - M4",
+      "budget": 400,
+      "metric": "amazon_accuracy",
+      "mean_difference": -0.004679999999999995,
+      "sample_std": 0.02750621747896282,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.017799999999999927,
+        "21": 0.03820000000000001,
+        "42": -0.03620000000000001,
+        "87": -0.007000000000000006,
+        "100": -0.0006000000000000449
+      }
+    },
+    {
+      "comparison": "M6 - M4",
+      "budget": 400,
+      "metric": "ood_accuracy",
+      "mean_difference": 0.002540000000000009,
+      "sample_std": 0.029374955319114906,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.01089999999999991,
+        "21": 0.047699999999999965,
+        "42": -0.031099999999999905,
+        "87": -0.0035000000000000586,
+        "100": 0.010499999999999954
+      }
+    },
+    {
+      "comparison": "M6 - M4",
+      "budget": 1600,
+      "metric": "imdb_accuracy",
+      "mean_difference": -0.0036160000000000194,
+      "sample_std": 0.0020939149934990214,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.0023999999999999577,
+        "21": -0.00656000000000001,
+        "42": -0.0013600000000000279,
+        "87": -0.0049200000000000355,
+        "100": -0.0028400000000000647
+      }
+    },
+    {
+      "comparison": "M6 - M4",
+      "budget": 1600,
+      "metric": "yelp_accuracy",
+      "mean_difference": 0.0010000000000000009,
+      "sample_std": 0.015623699945915512,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.013400000000000079,
+        "21": -0.021199999999999997,
+        "42": 0.010599999999999943,
+        "87": -0.009800000000000031,
+        "100": 0.01200000000000001
+      }
+    },
+    {
+      "comparison": "M6 - M4",
+      "budget": 1600,
+      "metric": "amazon_accuracy",
+      "mean_difference": -0.005800000000000027,
+      "sample_std": 0.019018412131405704,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.011599999999999944,
+        "21": -0.03620000000000001,
+        "42": 0.0023999999999999577,
+        "87": -0.011800000000000033,
+        "100": 0.0050000000000000044
+      }
+    },
+    {
+      "comparison": "M6 - M4",
+      "budget": 1600,
+      "metric": "ood_accuracy",
+      "mean_difference": -0.00239999999999998,
+      "sample_std": 0.01719214937115197,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.012500000000000067,
+        "21": -0.02870000000000006,
+        "42": 0.00649999999999995,
+        "87": -0.01079999999999992,
+        "100": 0.008500000000000063
+      }
+    },
+    {
+      "comparison": "M6 - M4",
+      "budget": 6400,
+      "metric": "imdb_accuracy",
+      "mean_difference": -0.0014719999999999844,
+      "sample_std": 0.004667110455088868,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.0047199999999999465,
+        "21": -0.006639999999999979,
+        "42": -0.0017599999999999838,
+        "87": 0.005319999999999991,
+        "100": 0.00043999999999999595
+      }
+    },
+    {
+      "comparison": "M6 - M4",
+      "budget": 6400,
+      "metric": "yelp_accuracy",
+      "mean_difference": -0.0033600000000000075,
+      "sample_std": 0.005487075723917047,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.009199999999999986,
+        "21": 0.0023999999999999577,
+        "42": -0.008000000000000007,
+        "87": -0.0041999999999999815,
+        "100": 0.0021999999999999797
+      }
+    },
+    {
+      "comparison": "M6 - M4",
+      "budget": 6400,
+      "metric": "amazon_accuracy",
+      "mean_difference": -0.005440000000000023,
+      "sample_std": 0.010359922779634989,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.008199999999999985,
+        "21": 0.006199999999999983,
+        "42": -0.005400000000000071,
+        "87": -0.02100000000000002,
+        "100": 0.0011999999999999789
+      }
+    },
+    {
+      "comparison": "M6 - M4",
+      "budget": 6400,
+      "metric": "ood_accuracy",
+      "mean_difference": -0.004400000000000026,
+      "sample_std": 0.007140028011149552,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.00869999999999993,
+        "21": 0.0042999999999999705,
+        "42": -0.00670000000000015,
+        "87": -0.012600000000000056,
+        "100": 0.0017000000000000348
+      }
+    },
+    {
+      "comparison": "L2SP - M3",
+      "budget": 400,
+      "metric": "imdb_accuracy",
+      "mean_difference": -0.003279999999999994,
+      "sample_std": 0.006917051394922542,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.006959999999999966,
+        "21": 0.0031599999999999406,
+        "42": 0.0040000000000000036,
+        "87": -0.012360000000000038,
+        "100": -0.0042399999999999105
+      }
+    },
+    {
+      "comparison": "L2SP - M3",
+      "budget": 400,
+      "metric": "yelp_accuracy",
+      "mean_difference": -0.0024800000000000156,
+      "sample_std": 0.0064414284130152825,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.007600000000000051,
+        "21": -0.0010000000000000009,
+        "42": -0.00880000000000003,
+        "87": 0.007400000000000073,
+        "100": -0.0024000000000000687
+      }
+    },
+    {
+      "comparison": "L2SP - M3",
+      "budget": 400,
+      "metric": "amazon_accuracy",
+      "mean_difference": -0.0046800000000000175,
+      "sample_std": 0.004612157846388206,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.0,
+        "21": -0.006400000000000072,
+        "42": -0.011600000000000055,
+        "87": -0.0041999999999999815,
+        "100": -0.0011999999999999789
+      }
+    },
+    {
+      "comparison": "L2SP - M3",
+      "budget": 400,
+      "metric": "ood_accuracy",
+      "mean_difference": -0.0035800000000000055,
+      "sample_std": 0.0042979064671069865,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": -0.0038000000000000256,
+        "21": -0.0037000000000000366,
+        "42": -0.010199999999999987,
+        "87": 0.0016000000000000458,
+        "100": -0.0018000000000000238
+      }
+    },
+    {
+      "comparison": "L2SP - M3",
+      "budget": 1600,
+      "metric": "imdb_accuracy",
+      "mean_difference": 0.0014800000000000147,
+      "sample_std": 0.006085458076431035,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.009319999999999995,
+        "21": -0.00023999999999990695,
+        "42": 0.0014799999999999258,
+        "87": 0.0041200000000000125,
+        "100": -0.007279999999999953
+      }
+    },
+    {
+      "comparison": "L2SP - M3",
+      "budget": 1600,
+      "metric": "yelp_accuracy",
+      "mean_difference": 0.0063599999999999655,
+      "sample_std": 0.0183795538574798,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.03539999999999999,
+        "21": 0.0015999999999999348,
+        "42": 0.0048000000000000265,
+        "87": -0.015600000000000058,
+        "100": 0.005599999999999938
+      }
+    },
+    {
+      "comparison": "L2SP - M3",
+      "budget": 1600,
+      "metric": "amazon_accuracy",
+      "mean_difference": 0.0036799999999999945,
+      "sample_std": 0.02376913965628542,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.04239999999999999,
+        "21": -0.0020000000000000018,
+        "42": -0.007399999999999962,
+        "87": -0.02080000000000004,
+        "100": 0.006199999999999983
+      }
+    },
+    {
+      "comparison": "L2SP - M3",
+      "budget": 1600,
+      "metric": "ood_accuracy",
+      "mean_difference": 0.005019999999999958,
+      "sample_std": 0.02094628845404359,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.038899999999999935,
+        "21": -0.00019999999999997797,
+        "42": -0.0012999999999999678,
+        "87": -0.018200000000000105,
+        "100": 0.005899999999999905
+      }
+    },
+    {
+      "comparison": "L2SP - M3",
+      "budget": 6400,
+      "metric": "imdb_accuracy",
+      "mean_difference": 0.0005360000000000254,
+      "sample_std": 0.0033075187074300817,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.006240000000000023,
+        "21": -0.0012400000000000189,
+        "42": 0.0005600000000000049,
+        "87": -0.0010799999999999699,
+        "100": -0.0017999999999999128
+      }
+    },
+    {
+      "comparison": "L2SP - M3",
+      "budget": 6400,
+      "metric": "yelp_accuracy",
+      "mean_difference": 0.0012400000000000189,
+      "sample_std": 0.009507260383517452,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.01760000000000006,
+        "21": 0.0006000000000000449,
+        "42": -0.0045999999999999375,
+        "87": -0.006000000000000005,
+        "100": -0.0014000000000000679
+      }
+    },
+    {
+      "comparison": "L2SP - M3",
+      "budget": 6400,
+      "metric": "amazon_accuracy",
+      "mean_difference": 0.005640000000000001,
+      "sample_std": 0.0052161288327647985,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.014600000000000057,
+        "21": 0.005199999999999982,
+        "42": 0.0043999999999999595,
+        "87": 0.0023999999999999577,
+        "100": 0.0016000000000000458
+      }
+    },
+    {
+      "comparison": "L2SP - M3",
+      "budget": 6400,
+      "metric": "ood_accuracy",
+      "mean_difference": 0.0034400000000000207,
+      "sample_std": 0.007275163228409384,
+      "n_seeds": 5,
+      "per_seed_differences": {
+        "13": 0.016100000000000003,
+        "21": 0.0029000000000001247,
+        "42": -9.999999999998899e-05,
+        "87": -0.0018000000000000238,
+        "100": 9.999999999998899e-05
+      }
     }
   ],
   "lambda_ablation": [
+    {
+      "method": "L2SP",
+      "budget": 400,
+      "lam": 0.0,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.9375,
+      "val_feature_distance": 0.4379888927936554,
+      "imdb_accuracy": 0.923048,
+      "yelp_accuracy": 0.93276,
+      "amazon_accuracy": 0.9219200000000001,
+      "ood_accuracy": 0.92734
+    },
+    {
+      "method": "L2SP",
+      "budget": 400,
+      "lam": 0.1,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.9325,
+      "val_feature_distance": 0.3471312910318375,
+      "imdb_accuracy": 0.919768,
+      "yelp_accuracy": 0.93028,
+      "amazon_accuracy": 0.91724,
+      "ood_accuracy": 0.92376
+    },
+    {
+      "method": "L2SP",
+      "budget": 400,
+      "lam": 1.0,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.9075,
+      "val_feature_distance": 0.2330998319387436,
+      "imdb_accuracy": 0.909712,
+      "yelp_accuracy": 0.92932,
+      "amazon_accuracy": 0.91344,
+      "ood_accuracy": 0.92138
+    },
+    {
+      "method": "L2SP",
+      "budget": 400,
+      "lam": 10.0,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.5225,
+      "val_feature_distance": 0.00029043659567832945,
+      "imdb_accuracy": 0.509784,
+      "yelp_accuracy": 0.50536,
+      "amazon_accuracy": 0.50384,
+      "ood_accuracy": 0.5045999999999999
+    },
+    {
+      "method": "L2SP",
+      "budget": 1600,
+      "lam": 0.0,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.941875,
+      "val_feature_distance": 0.501417453289032,
+      "imdb_accuracy": 0.932664,
+      "yelp_accuracy": 0.92884,
+      "amazon_accuracy": 0.91528,
+      "ood_accuracy": 0.92206
+    },
+    {
+      "method": "L2SP",
+      "budget": 1600,
+      "lam": 0.1,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.935625,
+      "val_feature_distance": 0.40120596319437024,
+      "imdb_accuracy": 0.933712,
+      "yelp_accuracy": 0.93524,
+      "amazon_accuracy": 0.9186799999999999,
+      "ood_accuracy": 0.92696
+    },
+    {
+      "method": "L2SP",
+      "budget": 1600,
+      "lam": 1.0,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.933125,
+      "val_feature_distance": 0.3600405667722225,
+      "imdb_accuracy": 0.928392,
+      "yelp_accuracy": 0.93164,
+      "amazon_accuracy": 0.91736,
+      "ood_accuracy": 0.9245
+    },
+    {
+      "method": "L2SP",
+      "budget": 1600,
+      "lam": 10.0,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.5475,
+      "val_feature_distance": 0.0007183970138430596,
+      "imdb_accuracy": 0.535312,
+      "yelp_accuracy": 0.52368,
+      "amazon_accuracy": 0.52504,
+      "ood_accuracy": 0.52436
+    },
+    {
+      "method": "L2SP",
+      "budget": 6400,
+      "lam": 0.0,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.945625,
+      "val_feature_distance": 0.4510000505298376,
+      "imdb_accuracy": 0.944064,
+      "yelp_accuracy": 0.94728,
+      "amazon_accuracy": 0.93044,
+      "ood_accuracy": 0.93886
+    },
+    {
+      "method": "L2SP",
+      "budget": 6400,
+      "lam": 0.1,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.9410937500000001,
+      "val_feature_distance": 0.3612240200489759,
+      "imdb_accuracy": 0.9446,
+      "yelp_accuracy": 0.94852,
+      "amazon_accuracy": 0.93608,
+      "ood_accuracy": 0.9423
+    },
+    {
+      "method": "L2SP",
+      "budget": 6400,
+      "lam": 1.0,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.9378125,
+      "val_feature_distance": 0.3273227056488395,
+      "imdb_accuracy": 0.940144,
+      "yelp_accuracy": 0.95224,
+      "amazon_accuracy": 0.93832,
+      "ood_accuracy": 0.94528
+    },
+    {
+      "method": "L2SP",
+      "budget": 6400,
+      "lam": 10.0,
+      "n_seeds": 5,
+      "source_val_accuracy": 0.88421875,
+      "val_feature_distance": 0.15948494623415171,
+      "imdb_accuracy": 0.882688,
+      "yelp_accuracy": 0.89124,
+      "amazon_accuracy": 0.88156,
+      "ood_accuracy": 0.8864
+    },
     {
       "method": "M6",
       "budget": 400,
