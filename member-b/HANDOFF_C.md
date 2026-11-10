@@ -24,7 +24,7 @@ The results themselves are described in [formal-results/README.md](formal-result
 
 | Models | Status | Location |
 |---|---|---|
-| B's 60 selected models (M3, M4, M6 and L2-SP × 3 budgets × 5 seeds) | Kept, 0.5 GB each, 29 GB in total | TC1, Member B's account: `runs/B-v1/<winner>/best/`. The winner names are in `selection-*.json`. **Ask Member B for access.** |
+| B's 60 selected models (M3, M4, M6 and L2-SP × 3 budgets × 5 seeds) | Kept, 0.5 GB each, 29 GB in total | TC1, Member B's account, listed in [formal-results/selected_models.tsv](formal-results/selected_models.tsv). They are not copied out: Member B runs your analysis script on them (see "Running analysis on B's models" below). |
 | A's 30 selected models (M1, M2) | Kept according to A-v1's retention rule | Member A's TC1 account. Ask Member A. |
 | Non-selected candidates, and M4 stage-1 models | **Deleted** by protocol to stay within storage; configs, metrics and histories are kept | Not available. Retraining is required if ever needed. |
 | Pretrained reference model | Public | `FacebookAI/roberta-base`, revision `e2da8e2f811d1448a5b465c236feacd80ffbac7b` |
@@ -37,6 +37,23 @@ from transformers import AutoTokenizer
 model = LinearRoberta.from_pretrained('<run>/best', use_safetensors=True).eval()
 tok = AutoTokenizer.from_pretrained('<run>/best')
 ```
+
+### Running analysis on B's models (CKA and similar)
+
+TC1 home directories cannot be shared with a single user: the file system does not support per-user permissions, and the shared scratch area is limited to admin-created project groups. So instead of copying 29 GB of weights, **you send the script and Member B runs it** as a SLURM job on the B models. The outputs are committed back to the repository.
+
+**What to send:** a Python script (or a branch containing one) that:
+1. Takes the model list as input. The rows of `selected_models.tsv` give `model_dir` relative to `member-b/`. Accept a `--models` TSV, plus `--data` (path to `artifacts/data-v1`) and `--out` (an output folder).
+2. Loads each model with `LinearRoberta.from_pretrained(model_dir, use_safetensors=True)`, as in the snippet above. The pretrained reference is `FacebookAI/roberta-base` at the revision in the table above.
+3. Writes small result files only (CSV/JSON, e.g. one CKA value per model × layer). It should not save activations or weights.
+4. Runs on 1 V100 (32 GB) within 6 hours. Batching or a fixed input subset keeps it within this.
+5. Uses only packages that are already installed in the TC1 environment: `torch 2.5.1`, `transformers 4.51.3`, `datasets 3.5.0`, `numpy 1.26.4`, `pandas 2.2.3`. There is no `scipy`, `scikit-learn` or `peft`. CKA is a few lines of `torch`/`numpy`. If you need anything else, say which packages and versions.
+
+**Which models:** `cka_subset = yes` marks a pre-chosen subset: all 4 methods × 3 budgets for seed 13, the first seed in the protocol list (12 models, about 6 GB). It was fixed in advance, before any CKA results, so the choice cannot be influenced by outcomes. Running all 60 is also possible if the script fits in the time limit, or split it across jobs.
+
+**What you get back:** the `--out` folder, the job log and the job ID, committed under `member-b/analysis/<your script name>/`, so the figures trace back to a recorded run. Expect one turnaround per job. A test run on 1–2 models first catches errors cheaply.
+
+Test your script locally before sending it. Any model saved with `LinearRoberta.save_pretrained`, e.g. a tiny random one as in `tests/fixtures.py`, behaves the same way.
 
 ### Data (needed for M5 training, CKA inputs and error analysis)
 
@@ -74,6 +91,8 @@ To sit in the same tables as M1–M6, M5 follows the same protocol as A and B:
 3. It refuses to run if `test/` already exists. Each winner is evaluated exactly once.
 4. It needs a GPU, so run it inside a SLURM job.
 
+`peft` is not installed in the shared TC1 environment. Install it in your own environment, and record its version in each run's `environment.txt` (B's `train.py` already writes this).
+
 **The quickest route** is to copy B's structure:
 - `src/sc4001_b/train.py`: add an `M5` branch that wraps `model.roberta` with LoRA and keeps the head trainable;
 - `sweep.py`: resume, selection, evaluation and pruning;
@@ -96,7 +115,7 @@ Split jobs by seed (about 3 h each) and resubmit a timed-out job to resume it. A
 - **Paired differences per seed:** `summary.json` → `paired` → `per_seed_differences`.
 - **Per-example paired bootstrap:** use the prediction files of the selected runs. The same `example_id` values appear for every method and seed.
 - **Drift vs accuracy (Spearman):** `val_feature_distance` against `ood_accuracy` in `per_seed.csv`. There is one value per B run; M1/M2 have none (M1's encoder is frozen, so its drift is 0 by construction).
-- **CKA inputs:** the selected models (section 2), the pretrained reference, and texts from data-v1. Using test texts for analysis is fine, as long as nothing is selected or tuned on them.
+- **CKA inputs:** the selected models (run by Member B; see section 2), the pretrained reference, and texts from data-v1, which is already prepared on Member B's account for these jobs. Using test texts for analysis is fine, as long as nothing is selected or tuned on them.
 
 ## 5. Git
 
