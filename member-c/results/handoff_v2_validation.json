@@ -1,0 +1,47 @@
+{
+  "version": "C-handoff-v2",
+  "status": "LOCAL_TESTS_PASSED_REAL_GPU_PENDING",
+  "tests_passed": 21,
+  "test_log_sha256": "c26ab2dbd25bebb34bca4f4c78563ace62ba1b5259aabdc7176bbee027a3ffbb",
+  "test_environment": "GP/.venv-c: torch 2.5.1, transformers 4.51.3, datasets 3.5.0, numpy 1.26.4",
+  "shell_syntax": "bash -n passed for all three entry scripts",
+  "A_B_unchanged": true,
+  "coverage": [
+    "saved tiny models and archived probability replay for all four B methods",
+    "CKA and statistical invariances",
+    "all nine cost profiles backward and optimizer updates",
+    "frozen layer preservation",
+    "8190-row/180-replay grid and 27-process cost collection",
+    "corrupt, missing, synthetic, wrong GPU and wrong teacher outputs rejected",
+    "queue success/failure/final-stage with mocked scheduler"
+  ],
+  "limits": [
+    "no TC1 GPU execution",
+    "real 60 weights not locally available",
+    "cluster nested sbatch not exercised",
+    "performance and scientific results pending"
+  ],
+  "analysis_provenance": "Existing A/B statistical outputs retain their original audit run; this validation covers the later handoff extension.",
+  "source_files": {
+    "src/sc4001_c/__init__.py": "9b7d803fa9f8a677685ae22223b1372fb6926b6254e0fe6c136dda9ee1e8f138",
+    "src/sc4001_c/analyze.py": "58c36630545ad2c27594108e34fcb6b291f443ea746f719c23fc17f03988ff5c",
+    "src/sc4001_c/benchmark.py": "72d75f067ff59292acda441a6d4954325e21a449e659e8c7fdd013583e1dd82b",
+    "src/sc4001_c/bootstrap.py": "5839e984fdc275ea1ed44ff683fa260a2c3a2ec0004610f8136e3a215f7808e7",
+    "src/sc4001_c/cka.py": "3359c6307cd82cc9fc45e71dc060a9cfb125b9c6126f5dbfb339110e26d93f57",
+    "src/sc4001_c/collect_cka.py": "36f4fed2afd3db490fe91ed56614b281e90ff0823b88db09e821c025345652ea",
+    "src/sc4001_c/common.py": "255840b9d60339306e195523fbdb62d8f2ddf21b1c31f759236657fe4d2d9778",
+    "src/sc4001_c/handoff.py": "b7702115b50137abf9716e5f7004e5af8b0bbef848206abbf16e5faeb494e781",
+    "src/sc4001_c/plots.py": "6c03f390a82bc961d5dae4b82138e651d4902b5db403fdfa2bcf05df97a6d963",
+    "src/sc4001_c/report.py": "dcf2a5163bf0efe230fc9f8ba8d71e9e3db73f385d7fc5784e12ec46ec1b280c",
+    "src/sc4001_c/stats.py": "c1afd90fae7366b898f653a1380c5d98c4e392fd5a2421893b31cfc867942264",
+    "src/sc4001_c/texts.py": "d1701c89ed634bb5a81d6abb83c7f0836a2741bd744e6062013dcdf49a4692bf",
+    "scripts/cka.sbatch": "5cb28baf1f96841a10d05b232b118a0b2f07615c63b92710ba171c6ceead558a",
+    "scripts/run_bundle.sbatch": "6334515db3a2c06cbba15150702cd50e7ef52aefc5b1f033ae44df1005371a0c",
+    "scripts/start_bundle.sh": "5af3f26b731e6ac2fd9ec4b26a191513ffe33702d662e40a6c47205fffbc8fbd",
+    "tests/test_analysis.py": "014b7f83df8066411f082bbf8e474d5ef2ddd68ba7fe19bfa731146394c6b633",
+    "tests/test_cka_integration.py": "aa7305eebcc25ba7f5eee450026f3803eacc59f3ac932272ab87085b53f23edb",
+    "tests/test_handoff.py": "9ac9ea5b97f81c1db3630fcd7e1a909ff24e497d663074fa379f61bbdc98b1da",
+    "protocol/C-analysis-v1.json": "ec0531f2633b7eddb9738029a142e4e58cbf184c4357533cf39526eca5d0a06e",
+    "protocol/C-handoff-v2.json": "10b99e3d8dce4c7724a1fece3934250401abdf88087cd42b180f168403efa36a"
+  }
+}

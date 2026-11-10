@@ -146,7 +146,7 @@ def main(argv=None):
     p.add_argument('--data',type=Path,required=True)
     p.add_argument('--data-reference',type=Path,required=True)
     p.add_argument('--out',type=Path,required=True)
-    p.add_argument('--methods',nargs='+',default=['M3','M6'])
+    p.add_argument('--methods',nargs='+',default=['M3','M4','M6','L2SP'])
     p.add_argument('--seeds',nargs='+',type=int,default=[13])
     p.add_argument('--budgets',nargs='+',type=int,default=[400,1600,6400])
     p.add_argument('--samples',type=int,default=256)
@@ -160,7 +160,7 @@ def main(argv=None):
     if not fixture and not torch.cuda.is_available():
         raise SystemExit('CUDA unavailable; use an allocated GPU, not the login node')
     if not fixture and a.samples!=256:
-        raise ValueError('Formal C-v1 fixes 256 inputs/domain; change protocol version to change sample size')
+        raise ValueError('Formal C-v2 fixes 256 inputs/domain; change protocol version to change sample size')
     device=torch.device('cpu' if fixture else 'cuda')
     torch.manual_seed(20261110); np.random.seed(20261110)
     if not fixture:
@@ -177,7 +177,7 @@ def main(argv=None):
     expected={(m,b,s) for m in a.methods for b in a.budgets for s in a.seeds}
     if len(keys)!=len(chosen) or keys!=expected:
         raise ValueError('Incomplete or duplicate requested model grid')
-    chosen.sort(key=lambda r:(a.methods.index(r['method']),int(r['budget']),int(r['seed'])))
+    chosen.sort(key=lambda r:(r['method']!='M3',r['method'],int(r['budget']),int(r['seed'])))
     samples={d:select_samples(load_from_disk(str(a.data/f'{d}_test')),a.samples) for d in DOMAINS}
     sample_manifest={d:[{'example_id':r['example_id'],'label':r['label'],
                          'text_sha256':hashlib.sha256(r['text'].encode()).hexdigest()} for r in rows]
@@ -194,9 +194,12 @@ def main(argv=None):
             raise ValueError('Manifest does not identify frozen winner')
         model_info.append({**r,'weight_sha256':digest(folder/'model.safetensors'),
                            'config_sha256':digest(folder/'config.json')})
-    signature={'version':'C-CKA-v1','fixture':fixture,'samples':sample_manifest,'models':model_info,
+    signature={'version':'C-CKA-v2','fixture':fixture,'samples':sample_manifest,'models':model_info,
                'base_model':model_id,'base_revision':revision,'batch':a.batch,'max_length':32 if fixture else 512,
-               'script_sha256':digest(Path(__file__)),'common_sha256':digest(Path(__file__).with_name('common.py'))}
+               'script_sha256':digest(Path(__file__)),'common_sha256':digest(Path(__file__).with_name('common.py')),
+               'model_code_sha256':digest(Path(__import__('sc4001_a.model',fromlist=['x']).__file__)),
+               'versions':{'torch':torch.__version__,'transformers':transformers.__version__,
+                           'datasets':datasets.__version__,'numpy':np.__version__}}
     if (a.out/'manifest.json').exists():
         if load(a.out/'manifest.json')!=signature:
             raise ValueError('Existing output uses different inputs/code; choose a new output folder')
@@ -240,7 +243,7 @@ def main(argv=None):
             if any(archived[x['example_id']]['label']!=x['label'] for x in input_rows):
                 raise ValueError('CKA inputs/archived labels differ')
             delta=float(abs(probs-expected_probs).max())
-            if delta>1e-4:
+            if not np.isfinite(delta) or delta>1e-4:
                 raise ValueError(f'Checkpoint replay probability mismatch {m}/{b}/{s}/{d}: {delta}')
             verification.append({'method':m,'budget':b,'seed':s,'domain':d,'max_probability_difference':delta,
                                  'prediction_file_sha256':digest(pred_path),'n':len(probs)})
@@ -248,7 +251,7 @@ def main(argv=None):
                 {'method':m,'reference':'pretrained','budget':b,'seed':s,'domain':d}))
             if m=='M3':
                 m3_features[b,s,d]=features
-            elif m=='M6' and (b,s,d) in m3_features:
+            elif m in ('M4','M6','L2SP') and (b,s,d) in m3_features:
                 collected.extend(compare_features(features,m3_features[b,s,d],
                     {'method':m,'reference':'M3','budget':b,'seed':s,'domain':d}))
         del model; gc.collect()
@@ -265,7 +268,7 @@ def main(argv=None):
                      'datasets':datasets.__version__,'numpy':np.__version__,'python':platform.python_version()},
          'data_metadata_files_checked':checked,'models_completed':len(chosen),
          'inference_only':True,'saved_activations':False})
-    (a.out/'COMPLETE').write_text('SYNTHETIC_TEST_ONLY\n' if fixture else 'C-CKA-v1 completed\n')
+    (a.out/'COMPLETE').write_text('SYNTHETIC_TEST_ONLY\n' if fixture else 'C-CKA-v2 completed\n')
 
 
 if __name__=='__main__':

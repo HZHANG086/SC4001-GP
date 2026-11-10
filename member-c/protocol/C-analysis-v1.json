@@ -4,9 +4,26 @@
   "upstream_commit": "f442a4462364ce0c53cbae45febbfcfc8238988c",
   "status": "Post-hoc analysis of frozen A/B results; not a retroactive preregistration",
   "no_model_selection": true,
-  "methods": ["M1", "M2", "M3", "M4", "M6", "L2SP"],
-  "budgets": [400, 1600, 6400],
-  "seeds": [13, 21, 42, 87, 100],
+  "methods": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M6",
+    "L2SP"
+  ],
+  "budgets": [
+    400,
+    1600,
+    6400
+  ],
+  "seeds": [
+    13,
+    21,
+    42,
+    87,
+    100
+  ],
   "focal_estimand": "Mean paired M6-M3 OOD accuracy difference in percentage points, separately for each budget; OOD is the equal mean of Yelp and Amazon",
   "inference_unit": "One paired training seed, conditional on the source pool and test domains; n=5",
   "interval": "Approximate 95% paired-t interval, unadjusted; normality of five differences cannot be established reliably",
@@ -18,20 +35,40 @@
   "strata": "True-label class; token lengths <=128, 129-512, >512 including special tokens; regex negation markers. Descriptive, not causal or gold linguistic annotations",
   "cost": "Separate selected training, incremental search and standalone search. M6/L2SP include inherited M3 search in standalone cost; M4 includes inherited M1 search. Keep successful-invocation timing caveat and diagnostic-teacher memory caveat",
   "cka": {
-    "status": "PROTOCOL_AND_CODE_READY; real TC1 execution pending",
-    "models": ["M3", "M6"],
+    "status": "SUPERSEDED before real execution by C-handoff-v2.json; keep original analysis plan for provenance",
+    "models": [
+      "M3",
+      "M6"
+    ],
     "n_selected_models": 30,
     "jobs": "One seed per job (6 models); optional seed-13/budget-400 smoke job first",
     "inputs": "256 fixed balanced test examples per domain (128 per class); sorted SHA256(SC4001-C-v1-20261110|example_id) within class; same IDs for every model and seed",
-    "domains": ["imdb", "yelp", "amazon"],
-    "pooling": ["CLS", "mean over all non-padding tokens, including special tokens"],
+    "domains": [
+      "imdb",
+      "yelp",
+      "amazon"
+    ],
+    "pooling": [
+      "CLS",
+      "mean over all non-padding tokens, including special tokens"
+    ],
     "layers": "Embedding layer 0 and encoder layers 1-12; degenerate constant CLS embeddings are NA",
-    "metrics": ["centered linear CKA", "debiased linear CKA sensitivity", "fixed shuffled-input CKA control", "mean cosine distance"],
-    "comparisons": ["M3 vs pretrained", "M6 vs pretrained", "M6 vs paired M3"],
+    "metrics": [
+      "centered linear CKA",
+      "debiased linear CKA sensitivity",
+      "fixed shuffled-input CKA control",
+      "mean cosine distance"
+    ],
+    "comparisons": [
+      "M3 vs pretrained",
+      "M6 vs pretrained",
+      "M6 vs paired M3"
+    ],
     "checks": "Data metadata hashes, model/config/selection agreement, checkpoint SHA256, fixed sample manifest, max archived-probability replay discrepancy <=1e-4",
     "precision": "FP32 inference, eval mode, no TF32; float64 CPU similarity calculations",
     "outputs": "Small CSV/JSON and execution log only. No saved weights or hidden activations",
-    "interpretation": "Descriptive representation similarity, not proof of semantic preservation or causality"
+    "interpretation": "Descriptive representation similarity, not proof of semantic preservation or causality",
+    "superseded_by": "C-handoff-v2.json"
   },
   "references": [
     "https://proceedings.mlr.press/v97/kornblith19a.html",

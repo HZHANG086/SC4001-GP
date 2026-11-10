@@ -38,7 +38,7 @@ class CKAIntegration(unittest.TestCase):
             dump(data/'manifest_hashes.json',{'sources.json':digest(data/'sources.json')})
             (data/'READY').write_text('fixture')
             entries=[]
-            for method in ('M3','M6'):
+            for method in ('M3','M4','M6','L2SP'):
                 run=Path('runs/B-v1')/f'{method}-b400-s13-test'; folder=root/run/'best'
                 model=LinearRoberta.from_pretrained(ref).eval()
                 if method=='M6':
@@ -57,11 +57,11 @@ class CKAIntegration(unittest.TestCase):
                 w=csv.DictWriter(f,fieldnames=list(entries[0]),delimiter='\t');w.writeheader();w.writerows(entries)
             args=['--models',str(manifest),'--model-base',str(root),'--archive',str(archive),
                   '--data',str(data),'--data-reference',str(data),'--out',str(root/'out'),
-                  '--methods','M3','M6','--seeds','13','--budgets','400','--samples','8','--batch','4',
+                  '--methods','M6','L2SP','M4','M3','--seeds','13','--budgets','400','--samples','8','--batch','4',
                   '--cpu-fixture','--reference-fixture',str(ref)]
             main(args)
             records=read_csv(root/'out/cka.csv')
-            self.assertEqual(len(records),54) # 3 comparisons * 3 domains * 2 pools * 3 layers
+            self.assertEqual(len(records),126) # 7 comparisons * 3 domains * 2 pools * 3 layers
             selected=[r for r in records if r['method']=='M3' and r['status']=='ok']
             self.assertTrue(all(abs(float(r['linear_cka'])-1)<1e-8 for r in selected))
             self.assertTrue((root/'out/COMPLETE').exists())
