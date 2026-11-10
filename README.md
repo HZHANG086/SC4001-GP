@@ -15,6 +15,6 @@ The completed Member A experiments use RoBERTa-base, three label budgets, and fi
 
 Read the [Member A README](member-a/README.md) for the research objective, methods, experimental protocol, result tables, and reproduction commands. The [English results summary](member-a/formal-results/results/A-v1/summary.md) provides accuracy statistics and paired comparisons; [per-seed records](member-a/formal-results/results/A-v1/per_seed.csv) expose the underlying measurements.
 
-The Member B experiments are also complete: 60 cells, 4 methods × 3 budgets × 5 seeds. For analysis and the report, start with the [Member B results guide](member-b/formal-results/README.md). It covers the files, the columns, the analysis rules and the main findings. The [combined A+B tables](member-b/formal-results/results/B-v1/summary.md) cover all six methods.
+The Member B experiments are also complete: 60 cells, 4 methods × 3 budgets × 5 seeds. For analysis and the report, start with the [Member B results guide](member-b/formal-results/README.md); Member C's dependencies (weights, data, M5 requirements) are listed in the [handoff](member-b/HANDOFF_C.md). It covers the files, the columns, the analysis rules and the main findings. The [combined A+B tables](member-b/formal-results/results/B-v1/summary.md) cover all six methods.
 
 Model weights and downloaded datasets are excluded from the repository. Environment and data reconstruction instructions are included with the implementation.

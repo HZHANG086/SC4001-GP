@@ -4,6 +4,8 @@ Member B component: full fine-tuning (M3), staged LP-FT (M4), our feature-preser
 
 **Status (2026-11-10): formal runs complete (60/60 B-v1 cells, protocol B-v1 frozen).**
 
+**Member C: start with [HANDOFF_C.md](HANDOFF_C.md).** It covers model weights, data, M5 (LoRA) protocol requirements and what is not in the repository.
+
 **Using the results (analysis, figures, report): start with [formal-results/README.md](formal-results/README.md).** It covers which files to use, what every column means, the analysis rules and the main findings. The final tables are in [formal-results/results/B-v1/summary.md](formal-results/results/B-v1/summary.md).
 
 ## Research question
