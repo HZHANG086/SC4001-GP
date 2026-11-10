@@ -1,0 +1,134 @@
+{
+  "python": "3.10.12",
+  "numpy": "1.26.4",
+  "pandas": "2.2.3",
+  "scipy": "1.15.3",
+  "slurm_job_id": "12371",
+  "gpu_requested": false,
+  "audit": {
+    "status": "PASS",
+    "verified_input_files": 1879,
+    "prediction_files": 450,
+    "prediction_rows": 5250000,
+    "byte_identical_tables": {
+      "accuracy_summary.csv": true,
+      "paired_comparisons.csv": false,
+      "cost_accounting.csv": true,
+      "error_transitions.csv": true,
+      "case_sample_ids.csv": true,
+      "error_stability.csv": true,
+      "bootstrap_sensitivity.csv": true
+    },
+    "table_checks": {
+      "accuracy_summary.csv": {
+        "equivalent": true,
+        "rows": 72,
+        "roundoff_differences": [],
+        "max_absolute_difference": 0.0,
+        "absolute_tolerance": 1e-12,
+        "approximate_columns": [
+          "ci95_high",
+          "ci95_low",
+          "p_t_approx",
+          "p_t_approx_holm"
+        ]
+      },
+      "paired_comparisons.csv": {
+        "equivalent": true,
+        "rows": 72,
+        "roundoff_differences": [
+          {
+            "csv_line": 47,
+            "column": "p_t_approx",
+            "reference": "0.48609472077393484",
+            "observed": "0.4860947207739349",
+            "absolute_difference": 5.551115123125783e-17
+          },
+          {
+            "csv_line": 48,
+            "column": "p_t_approx",
+            "reference": "0.4832754452579188",
+            "observed": "0.4832754452579189",
+            "absolute_difference": 5.551115123125783e-17
+          }
+        ],
+        "max_absolute_difference": 5.551115123125783e-17,
+        "absolute_tolerance": 1e-12,
+        "approximate_columns": [
+          "ci95_high",
+          "ci95_low",
+          "p_t_approx",
+          "p_t_approx_holm"
+        ]
+      },
+      "cost_accounting.csv": {
+        "equivalent": true,
+        "rows": 90,
+        "roundoff_differences": [],
+        "max_absolute_difference": 0.0,
+        "absolute_tolerance": 1e-12,
+        "approximate_columns": [
+          "ci95_high",
+          "ci95_low",
+          "p_t_approx",
+          "p_t_approx_holm"
+        ]
+      },
+      "error_transitions.csv": {
+        "equivalent": true,
+        "rows": 270,
+        "roundoff_differences": [],
+        "max_absolute_difference": 0.0,
+        "absolute_tolerance": 1e-12,
+        "approximate_columns": [
+          "ci95_high",
+          "ci95_low",
+          "p_t_approx",
+          "p_t_approx_holm"
+        ]
+      },
+      "case_sample_ids.csv": {
+        "equivalent": true,
+        "rows": 36,
+        "roundoff_differences": [],
+        "max_absolute_difference": 0.0,
+        "absolute_tolerance": 1e-12,
+        "approximate_columns": [
+          "ci95_high",
+          "ci95_low",
+          "p_t_approx",
+          "p_t_approx_holm"
+        ]
+      },
+      "error_stability.csv": {
+        "equivalent": true,
+        "rows": 9,
+        "roundoff_differences": [],
+        "max_absolute_difference": 0.0,
+        "absolute_tolerance": 1e-12,
+        "approximate_columns": [
+          "ci95_high",
+          "ci95_low",
+          "p_t_approx",
+          "p_t_approx_holm"
+        ]
+      },
+      "bootstrap_sensitivity.csv": {
+        "equivalent": true,
+        "rows": 3,
+        "roundoff_differences": [],
+        "max_absolute_difference": 0.0,
+        "absolute_tolerance": 1e-12,
+        "approximate_columns": [
+          "ci95_high",
+          "ci95_low",
+          "p_t_approx",
+          "p_t_approx_holm"
+        ]
+      }
+    },
+    "roundoff_policy": "Only approximate t-test probabilities and t-interval endpoints permit absolute differences <=1e-12. Every differing cell is logged. All other fields and every original input hash remain exact.",
+    "scope": "Offline source-choice and full-prediction recomputation, then frozen statistical/error/bootstrap functions. No Git history required.",
+    "not_repeated": "Training, raw data preparation, GPU inference, checkpoint-file hashing, or historical selection timing verification."
+  }
+}

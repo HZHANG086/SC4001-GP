@@ -1,0 +1,26 @@
+{
+  "status": "CODE_ZIP_PREFLIGHT_PASS_NOT_FINAL_C_DELIVERY",
+  "archive_name": "SC4001-code-PREFLIGHT-v2.zip",
+  "archive_sha256": "37b65b572db13e9c60a2a02a1779a8d2134faec51cf0b5febeb34639a595be84",
+  "archive_bytes": 79739964,
+  "source_commit": "05b37e35d3c38cb79a346665a7d74d302fb6823b",
+  "manifest_files": 4132,
+  "transport_and_extracted_file_hashes": "All 4,132 hashes checked on Linux; no Git metadata or model weights included.",
+  "linux_cpu_job": "12371",
+  "linux_versions": {
+    "python": "3.10.12",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3"
+  },
+  "recomputed_prediction_files": 450,
+  "recomputed_prediction_rows": 5250000,
+  "equivalent_tables": 7,
+  "first_attempt": "Job 12370 failed the old byte-only check. Two approximate t p-values differed by 5.55e-17. Original logs, tables and reviewed differences retained.",
+  "comparison_tests": {
+    "passed": 3,
+    "scope": "Observed roundoff is recorded; nonfinite/material p-value changes, exact-field changes and malformed rows fail."
+  },
+  "local_execution_boundary": "Earlier no-Git Mac copy passed complete recomputation (standalone_reproduction.json). A later ZIP-extracted Mac attempt was stopped after sustained dependency-read delays; this attempt is not claimed as a pass. The fresh Linux ZIP run completed successfully.",
+  "not_complete": "M5 real runs, final report integration, post-first-complete public-coursework search and final delivery acceptance remain pending."
+}

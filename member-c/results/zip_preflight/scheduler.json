@@ -1,0 +1,16 @@
+[
+  {
+    "job_id": "12370",
+    "observed_utc": "2026-11-10T18:23:42.168724+00:00",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "slurm_load_jobs error: Invalid job id specified\n"
+  },
+  {
+    "job_id": "12371",
+    "observed_utc": "2026-11-10T18:23:42.208383+00:00",
+    "returncode": 0,
+    "stdout": "JobId=12371 JobName=sc4001-gp-zip UserId=zhangh(1024) GroupId=zhangh(1024) MCS_label=N/A Priority=66 Nice=0 Account=(null) QOS=(null) JobState=COMPLETED Reason=None Dependency=(null) Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:01:04 TimeLimit=00:30:00 TimeMin=N/A SubmitTime=2026-11-10T18:20:38 EligibleTime=2026-11-10T18:20:38 AccrueTime=2026-11-10T18:20:38 StartTime=2026-11-10T18:20:39 EndTime=2026-11-10T18:21:43 Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-10T18:20:39 Scheduler=Main Partition=6000ada AllocNode:Sid=MICL-TaoDCWS1:3200710 ReqNodeList=(null) ExcNodeList=(null) NodeList=localhost BatchHost=localhost NumNodes=1 NumCPUs=2 NumTasks=1 CPUs/Task=2 ReqB:S:C:T=0:0:*:* TRES=cpu=2,node=1,billing=2 Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=2 MinMemoryNode=8G MinTmpDiskNode=0 Features=(null) DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null) Command=/share/zhangh/sc4001-gp-c/checks/ZIP-preflight-05b37e3/zip-preflight-05b37e3.sbatch WorkDir=/share/zhangh/sc4001-gp-c/checks/ZIP-preflight-05b37e3 StdErr=/share/zhangh/sc4001-gp-c/checks/ZIP-preflight-05b37e3/zip-preflight-12371.err StdIn=/dev/null StdOut=/share/zhangh/sc4001-gp-c/checks/ZIP-preflight-05b37e3/zip-preflight-12371.out Power= \n",
+    "stderr": ""
+  }
+]

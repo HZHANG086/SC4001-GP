@@ -75,3 +75,5 @@ python member-c/scripts/export_code.py --verify /path/to/SC4001-code-snapshot.zi
 ```
 
 Compare the external `.zip.sha256` value with the delivered archive before extraction. `PACKAGE_MANIFEST.json` describes the archived version and points to the current-status and reproduction instructions. An export is a versioned snapshot, not a certificate that M5, the report, the later public-coursework review or the overall goal has finished. The final deliverable must be rebuilt from the completed, audited version; do not submit the explicitly incomplete preflight snapshot.
+
+Actual preflight evidence: `results/zip_preflight/PREFLIGHT.json`. Archive version `05b37e3` contains 4,132 files (79,739,964 bytes); Linux CPU job 12371 fully recomputed 450 prediction files/5,250,000 rows and all seven tables after extraction. It used Python 3.10.12, NumPy 1.26.4, pandas 2.2.3 and SciPy 1.15.3. Both the first failed byte-only attempt and the successful rerun are retained. This check excludes unfinished M5 results and is not the final submission package.
