@@ -23,7 +23,7 @@ After evaluation, `diagnostics.sbatch` verifies its own frozen source hashes and
 2. `python -m sc4001_c.m5_cka`: 15 models, the same 256 balanced examples per domain as C-v2, 1,170 layer/pool rows and 45 probability replays; only the pretrained reference is required.
 3. Shared clean probes for M1/M2/M3/M4/M6/L2-SP plus the LoRA-specific probe, three fresh processes each on Ada. The LoRA wrapper explicitly prevents the shared benchmark from unfreezing its backbone. M5 inference is unmerged and is not used as a deployment comparison.
 
-GPU work belongs in allocated Slurm jobs, not an interactive login session. The system currently has four allocated GPUs; do not interrupt other users' work or unrelated held jobs.
+GPU work belongs in allocated Slurm jobs, not an interactive login session. Each formal stage requests one of the server's four GPUs through Slurm. Check live scheduler availability rather than assuming spare capacity; do not interrupt other users' work or unrelated held jobs.
 
 ## Recovery
 
