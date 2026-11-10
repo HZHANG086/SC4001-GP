@@ -2,9 +2,10 @@
 
 Updated 2026-11-11, Asia/Singapore. ACTIVE; not complete.
 
-- Previous goal turn: concrete progress (audited return, draft report, LoRA/diagnostic pipeline, commit 017cbe6). This turn: real GPU progress verified; operational accounting issue repaired and tested.
+- Previous goal turn: concrete progress, committed/pushed as 71a717c (verified standalone reproduction and report integration guide). Current turn: verified live wait followed by a real state transition; first formal stage completed and next stage started.
 - Requirements/lecture audit: `docs/requirements_audit.md`. Six-method data/statistics/CKA/cost analysis and 7-page academic draft are available. The draft has five main pages, one reference page and one appendix, and excludes unfinished M5.
-- Ada smoke job 12366 succeeded on RTX 6000 Ada; two steps, merge discrepancy 4.47e-8. Formal job 12367 is RUNNING. Latest saved snapshot: `results/Ada-live-status.json`, 8/45 complete candidates, 0/15 formal test evaluations. The old November 12 queue estimate is superseded.
+- Ada smoke job 12366 succeeded on RTX 6000 Ada; two steps, merge discrepancy 4.47e-8. Formal job 12367 completed successfully (live terminal scheduler record: COMPLETED, 0:0, 47:30); job 12369 is RUNNING. Latest saved snapshot: `results/Ada-live-status.json`, 9/45 complete candidates, 0/15 formal test evaluations. The old November 12 queue estimate is superseded.
+- Stage 0 acceptance: all nine real seed-13 candidates pass formal-config, ten-epoch, parameter-count and merged-checkpoint hash checks; maximum merge discrepancy 9.42e-6. Evidence: `results/Ada-stage0-check.json` and `results/Ada-live-evidence/`. Still no target tests.
 - Training remains on its original frozen M5-v1 protocol. No B weights needed. All 45 candidates and 15 source-only decisions precede target testing. Existing A/B and historical C evidence are unchanged.
 - Server historical Slurm accounting is disabled. Operational amendment adds live snapshots, start/exit events for future stages, and nonfatal accounting capture in return packaging. Stage 0 was already submitted and keeps its old shell script; externally observed status plus its existing completion log will be retained. Original diagnostic protocol preserved alongside amendment.
 - Complete local suite: 31 tests passed; `results/validation_31_tests.log`. This includes actual offline training/resume fixtures, preservation of frozen backbone during probes, corrupted-return rejection and packaging with disabled accounting. Tests are not formal GPU results.
