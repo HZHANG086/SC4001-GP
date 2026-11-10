@@ -1,15 +1,15 @@
 # C completion goal status
 
-Date: 2026-11-11. Status: ACTIVE; not complete.
+Updated 2026-11-11, Asia/Singapore. ACTIVE; not complete.
 
-- Course requirements and lecture map audited: `docs/requirements_audit.md`.
-- Existing A/B statistical outputs and v2 GPU return accepted; six-method result interpretation is available, not the final report.
-- Team-required M5 LoRA has no formal results. User authorized RTX 6000 Ada; the known server is `zhangh@10.96.41.85`. SSH has been restored using user-authorized authentication. Work is isolated under `/share/zhangh/sc4001-gp-c`; the pinned environment and synchronized data/base model are ready. System disk is nearly full and will not host GP artifacts. Four GPUs currently busy; Slurm submission required.
-- The full 26-test suite and three focused diagnostic tests (one added after the 28-test full-suite run) pass, including zero-update identity, frozen-base gradients, merged checkpoint reload and bit-identical interrupted/resumed training. Real GPU smoke 12366 and formal stage 0 job 12367 are queued. The redundant never-started data job 12365 was cancelled after synchronized data verification; subsequent diagnostics are chained automatically. The current scheduler estimate for smoke is 2026-11-12 17:39 Singapore, subject to change.
-- User deferred group/name/student-number details; produce C insert-ready prose rather than invent identifiers.
-- Style: academic English prose, black text; restrained colorblind-friendly conference-style plots with grayscale-readable styles. Course single-column Arial 10pt overrides any ICML two-column template.
-- Still required: actual M5 training/evaluation; M5 integration into the existing six-method analysis, figures and academic draft; final reproduction package; first-version completion; public previous-coursework search and applied revisions; final artifact/runtime/content audit.
+- Previous goal turn: concrete progress (audited return, draft report, LoRA/diagnostic pipeline, commit 017cbe6). This turn: real GPU progress verified; operational accounting issue repaired and tested.
+- Requirements/lecture audit: `docs/requirements_audit.md`. Six-method data/statistics/CKA/cost analysis and 7-page academic draft are available. The draft has five main pages, one reference page and one appendix, and excludes unfinished M5.
+- Ada smoke job 12366 succeeded on RTX 6000 Ada; two steps, merge discrepancy 4.47e-8. Formal job 12367 is RUNNING. Latest saved snapshot: `results/Ada-live-status.json`, 6/45 complete candidates, 0/15 formal test evaluations. The old November 12 queue estimate is superseded.
+- Training remains on its original frozen M5-v1 protocol. No B weights needed. All 45 candidates and 15 source-only decisions precede target testing. Existing A/B and historical C evidence are unchanged.
+- Server historical Slurm accounting is disabled. Operational amendment adds live snapshots, start/exit events for future stages, and nonfatal accounting capture in return packaging. Stage 0 was already submitted and keeps its old shell script; externally observed status plus its existing completion log will be retained. Original diagnostic protocol preserved alongside amendment.
+- Complete local suite: 31 tests passed; `results/validation_31_tests.log`. This includes actual offline training/resume fixtures, preservation of frozen backbone during probes, corrupted-return rejection and packaging with disabled accounting. Tests are not formal GPU results.
+- Current entry point: `CURRENT.md`; runtime/recovery guide: `docs/M5_RUNBOOK.md`. Remote root `/share/zhangh/sc4001-gp-c/project`. Do not restart a live job or touch unrelated held jobs.
+- Still required: finish real M5 training/test/CKA/matched cost, retrieve and independently audit return, integrate actual results into prose/figures/statistics, create first complete package, then public previous-coursework search and useful revisions, final requirement/runtime/PDF audit.
+- User deferred group identifiers. Academic English/black text; restrained colorblind-friendly plots plus grayscale versions; course A4/single-column/Arial 10pt takes precedence over conference templates.
 
-No course-system upload or message to teammates has been authorized. A/B frozen evidence is read-only. Goal must remain active while required real runs or deliverables remain incomplete.
-
-Current entry point: `CURRENT.md`; historical README/manifest remain unchanged for provenance. `report/latex/main.tex` is an incomplete six-method draft, not first complete delivery. Local new diagnostics (frozen before M5 results) cover prediction audit, 15-model CKA and 21 matched-Ada cost probes.
+No course-system submission or teammate message authorized. Do not mark the goal complete while required runs/deliverables remain unfinished.

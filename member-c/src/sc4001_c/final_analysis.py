@@ -32,6 +32,11 @@ def main(argv=None):
         parent=a.m5.parent.parent
         if load(parent/'M5-audit/audit.json')['status']!='PASS' or load(parent/'M5-diagnostics/audit.json')['status']!='PASS':
             raise ValueError('M5 prediction and diagnostic audits must pass first')
+        local=load(a.repo/'member-c/results/M5-local-audit/local_audit.json')
+        if local['status']!='PASS' or len(local['checks'])!=45:raise ValueError('Independent local prediction audit required')
+        raw=parent.parent.parent
+        for check in local['checks']:
+            if digest(raw/check['path'])!=check['sha256']:raise ValueError('M5 predictions changed since local audit')
         m5cka=pd.read_csv(parent/'M5-CKA/cka.csv')
         cka=pd.concat([cka,m5cka],ignore_index=True)
         # Hardware-specific costs remain separate; their figures must name the GPU.
@@ -85,7 +90,10 @@ def main(argv=None):
     # Comparisons of existing six methods use the earlier audited paired inference tables.
     inputs=[a.repo/'member-b/formal-results/results/B-v1/per_seed.csv',a.repo/'member-b/formal-results/results/B-v1/ablation.csv',
             root/'RETURN_MANIFEST.json',a.repo/'member-c/results/C-v1/paired_comparisons.csv']
-    if a.m5:inputs.append(a.m5)
+    if a.m5:
+        inputs.extend([a.m5,parent/'M5-CKA/cka.csv',parent/'M5-CKA/manifest.json',
+            parent/'M5-audit/audit.json',parent/'M5-diagnostics/audit.json',
+            parent/'M5-diagnostics/ada_cost_summary.csv',a.repo/'member-c/results/M5-local-audit/local_audit.json'])
     dump(a.out/'analysis_manifest.json',{'version':'C-final-analysis-v1','scope':'Descriptive synthesis plus existing paired statistical audit',
         'M5_included':a.m5 is not None,'status':'ANALYSIS_READY_FOR_WRITING' if a.m5 else 'PARTIAL_M5_REAL_RUNS_PENDING',
         'source_hashes':{str(x):digest(x) for x in inputs},'script_sha256':digest(Path(__file__)),

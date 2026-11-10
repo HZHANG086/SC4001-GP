@@ -9,7 +9,7 @@
     "/Users/zhangheng/Desktop/CCDS/SC4001/GP/SC4001-GP/member-c/formal-results/return-v2/analysis/C-handoff-v2/RETURN_MANIFEST.json": "3caeae6db128420b4b22ef1d1cf635c2e143a08c2f79f53aa44ef0c7cf5a87da",
     "/Users/zhangheng/Desktop/CCDS/SC4001/GP/SC4001-GP/member-c/results/C-v1/paired_comparisons.csv": "5142fdada656d17c265f22d84c1a605525c4e8fae9987f7071c3de629a217d8c"
   },
-  "script_sha256": "531a74d4b8dac8fff8d272011c052108bcfae584532cc3d13ae37264eeb0c15c",
+  "script_sha256": "dd35c135fd53d9afb0ef4488fa110a785730509272e595147f39b55cdaf5e087",
   "counts": {
     "selected_cells": 90,
     "cka_rows": 8190,

@@ -16,6 +16,17 @@
     "lora.py": "ddcc8dc4f2e8b93194c392637ab2191d04efdf20121231a08ba6774b7e887270",
     "stats.py": "c1afd90fae7366b898f653a1380c5d98c4e392fd5a2421893b31cfc867942264",
     "m5_collect.py": "397a4a69149045d5bdd94ff76792f9b4a3b6d77060eb9a0036c65403f188b591",
-    "m5_package.py": "87225651010b4b6143f273ae8ead261e0be1b752052ed241dc2f181e74491815"
-  }
+    "m5_package.py": "d0330a0cca8cecf854b5d87b41014da1da4d339ef4574f71af4e7f9c55b7de4a",
+    "job_record.py": "272237f05b83837814484651ee14f67e6483784f2116e7a9dde6f97719e13bb4"
+  },
+  "operational_amendments": [
+    {
+      "date": "2026-11-11 Asia/Singapore",
+      "reason": "Live server evidence: Slurm historical accounting is disabled. Packaging must preserve the error and live snapshots instead of failing. Future job scripts record start/exit events.",
+      "initial_protocol_sha256": "a6851d8c532076854959ff899e41c5fad33cbc7eebdb8858a886369416d27d5c",
+      "unchanged": "Training, data, candidate grids, source selection, test protocol, statistical families, CKA and cost measurements. No M5 target results observed.",
+      "stage0_caveat": "Already running stage 0 retains its submitted script; external live snapshots and original EXIT_CODE log provide evidence for it.",
+      "return_scope": "Include small GPU smoke records; preserve original large weights; independently validate manifest before local extraction."
+    }
+  ]
 }

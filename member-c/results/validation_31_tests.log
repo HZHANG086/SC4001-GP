@@ -1,0 +1,149 @@
+Raw transcript SHA256: c4ca2452693cdab7cfb7c5737959ae6efbcde17ee6d7750d68958b942e9e1471
+Terminal escapes and blank lines removed; observations unchanged.
+test_aligns_by_id_and_rejects_corruption (test_analysis.PredictionTests.test_aligns_by_id_and_rejects_corruption) ... ok
+test_balanced_sampling_is_order_independent (test_analysis.RepresentationTests.test_balanced_sampling_is_order_independent) ... ok
+test_feature_space_formula (test_analysis.RepresentationTests.test_feature_space_formula) ... ok
+test_invariances (test_analysis.RepresentationTests.test_invariances) ... ok
+test_pair_alignment_matters (test_analysis.RepresentationTests.test_pair_alignment_matters) ... ok
+test_zero_variance_is_missing_not_perfect (test_analysis.RepresentationTests.test_zero_variance_is_missing_not_perfect) ... ok
+test_crossed_bootstrap_extremes_and_reproducibility (test_analysis.StatisticalTests.test_crossed_bootstrap_extremes_and_reproducibility) ... ok
+test_exact_pairing_matches_scipy (test_analysis.StatisticalTests.test_exact_pairing_matches_scipy) ... ok
+test_holm_known_result (test_analysis.StatisticalTests.test_holm_known_result) ... ok
+test_probabilities (test_analysis.StatisticalTests.test_probabilities) ... ok
+test_small_n_discreteness_and_ties (test_analysis.StatisticalTests.test_small_n_discreteness_and_ties) ... ok
+test_saved_models_replay_and_resumption (test_cka_integration.CKAIntegration.test_saved_models_replay_and_resumption) ...
+Saving the dataset (0/1 shards):   0%|          | 0/24 [00:00<?, ? examples/s]
+Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 2717.10 examples/s]
+Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 2630.41 examples/s]
+Saving the dataset (0/1 shards):   0%|          | 0/24 [00:00<?, ? examples/s]
+Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 25536.10 examples/s]
+Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 21467.97 examples/s]
+Saving the dataset (0/1 shards):   0%|          | 0/24 [00:00<?, ? examples/s]
+Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 29589.45 examples/s]
+Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 24636.15 examples/s]
+Completed M3 budget=400 seed=13
+Completed L2SP budget=400 seed=13
+Completed M4 budget=400 seed=13
+Completed M6 budget=400 seed=13
+Matching complete output already exists; skipped.
+ok
+test_full_grid_and_corrupt_replay_rejected (test_handoff.CollectionTests.test_full_grid_and_corrupt_replay_rejected) ... ok
+test_missing_comparison_rejected (test_handoff.CollectionTests.test_missing_comparison_rejected) ... ok
+test_synthetic_result_rejected (test_handoff.CollectionTests.test_synthetic_result_rejected) ... ok
+test_all_processes_and_teacher_tamper (test_handoff.CostCollectionTests.test_all_processes_and_teacher_tamper) ... ok
+test_gpu_mismatch_rejected (test_handoff.CostCollectionTests.test_gpu_mismatch_rejected) ... ok
+test_all_methods_and_teacher_profiles_backward (test_handoff.CostKernelTests.test_all_methods_and_teacher_profiles_backward) ... ok
+test_failure_never_submits_next_job (test_handoff.QueueScriptTests.test_failure_never_submits_next_job) ... ok
+test_last_stage_runs_nine_fresh_probes_then_packages (test_handoff.QueueScriptTests.test_last_stage_runs_nine_fresh_probes_then_packages) ... ok
+test_success_submits_exactly_one_successor (test_handoff.QueueScriptTests.test_success_submits_exactly_one_successor) ... ok
+test_double_attachment_and_merge_rejected (test_lora.LoRATests.test_double_attachment_and_merge_rejected) ... ok
+test_identity_freezing_gradient_merge_and_plain_reload (test_lora.LoRATests.test_identity_freezing_gradient_merge_and_plain_reload) ... ok
+test_trainer_export_and_interrupted_resume_match (test_lora.LoRATests.test_trainer_export_and_interrupted_resume_match) ...
+Saving the dataset (0/1 shards):   0%|          | 0/500 [00:00<?, ? examples/s]
+Saving the dataset (1/1 shards): 100%|██████████| 500/500 [00:00<00:00, 425904.14 examples/s]
+Saving the dataset (1/1 shards): 100%|██████████| 500/500 [00:00<00:00, 356901.29 examples/s]
+/Users/zhangheng/Desktop/CCDS/SC4001/GP/.venv-c/lib/python3.12/site-packages/datasets/utils/_dill.py:385: DeprecationWarning: co_lnotab is deprecated, use co_lines instead.
+  obj.co_lnotab,  # for < python 3.10 [not counted in args]
+Map:   0%|          | 0/320 [00:00<?, ? examples/s]
+Map: 100%|██████████| 320/320 [00:00<00:00, 25999.60 examples/s]
+Map:   0%|          | 0/80 [00:00<?, ? examples/s]
+Map: 100%|██████████| 80/80 [00:00<00:00, 25085.55 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]
+ 50%|█████     | 1/2 [00:00<00:00, 63.67it/s]
+100%|██████████| 1/1 [00:00<00:00, 2069.22it/s]
+                                               {'eval_loss': 0.684140682220459, 'eval_accuracy': 0.625, 'eval_runtime': 0.0025, 'eval_samples_per_second': 6341.794, 'eval_steps_per_second': 396.362, 'epoch': 1.0}
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 2/2 [00:00<00:00, 58.05it/s]
+100%|██████████| 1/1 [00:00<00:00, 3153.61it/s]
+100%|██████████| 2/2 [00:00<00:00, 49.31it/s]
+100%|██████████| 2/2 [00:00<00:00, 49.03it/s]
+{'eval_loss': 0.6849736571311951, 'eval_accuracy': 0.625, 'eval_runtime': 0.0019, 'eval_samples_per_second': 8470.133, 'eval_steps_per_second': 529.383, 'epoch': 2.0}
+{'train_runtime': 0.0408, 'train_samples_per_second': 1568.743, 'train_steps_per_second': 49.023, 'train_loss': 0.7009807825088501, 'epoch': 2.0}
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00, 14315.03it/s]
+/Users/zhangheng/Desktop/CCDS/SC4001/GP/.venv-c/lib/python3.12/site-packages/datasets/utils/_dill.py:385: DeprecationWarning: co_lnotab is deprecated, use co_lines instead.
+  obj.co_lnotab,  # for < python 3.10 [not counted in args]
+{
+  "eval_loss": 0.684140682220459,
+  "eval_accuracy": 0.625,
+  "eval_runtime": 0.0017,
+  "eval_samples_per_second": 9657.341,
+  "eval_steps_per_second": 603.584,
+  "epoch": 2.0,
+  "train_wall_seconds_this_invocation": 0.1017164580989629,
+  "peak_cuda_allocated_bytes": null,
+  "peak_cuda_reserved_bytes": null,
+  "gpu": null,
+  "best_checkpoint": "/var/folders/p8/r57jqjl13p5_6s2y1_hfv09r0000gn/T/tmpmcvz4md1/continuous/checkpoints/checkpoint-1",
+  "global_step": 2,
+  "merge_max_abs_logit_difference": 0.0,
+  "checkpoint_weight_sha256": "30c1d5d125b5c42d8e43addd91ddb92c7d7a35edb4291e1d217a65f5d82393d6",
+  "versions": {
+    "torch": "2.5.1",
+    "transformers": "4.51.3",
+    "datasets": "3.5.0",
+    "python": "3.12.5"
+  },
+  "job_id": null,
+  "runtime_includes_epoch_validation_and_saving": true,
+  "timing_note": "This invocation only; see invocations and Slurm ledger for interruptions. Training peak captured before post-training validation and merge."
+}
+Map:   0%|          | 0/80 [00:00<?, ? examples/s]
+Map: 100%|██████████| 80/80 [00:00<00:00, 28189.89 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]
+ 50%|█████     | 1/2 [00:00<00:00, 78.48it/s]
+100%|██████████| 1/1 [00:00<00:00, 3269.14it/s]
+ 50%|█████     | 1/2 [00:00<00:00, 58.38it/s]
+/Users/zhangheng/Desktop/CCDS/SC4001/GP/.venv-c/lib/python3.12/site-packages/datasets/utils/_dill.py:385: DeprecationWarning: co_lnotab is deprecated, use co_lines instead.
+  obj.co_lnotab,  # for < python 3.10 [not counted in args]
+{'eval_loss': 0.684140682220459, 'eval_accuracy': 0.625, 'eval_runtime': 0.0018, 'eval_samples_per_second': 8949.042, 'eval_steps_per_second': 559.315, 'epoch': 1.0}
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 2/2 [00:00<00:00, 142.24it/s]
+100%|██████████| 1/1 [00:00<00:00, 3679.21it/s]
+100%|██████████| 2/2 [00:00<00:00, 103.30it/s]
+100%|██████████| 2/2 [00:00<00:00, 102.16it/s]
+{'eval_loss': 0.6849736571311951, 'eval_accuracy': 0.625, 'eval_runtime': 0.0016, 'eval_samples_per_second': 10088.524, 'eval_steps_per_second': 630.533, 'epoch': 2.0}
+{'train_runtime': 0.0196, 'train_samples_per_second': 3266.314, 'train_steps_per_second': 102.072, 'train_loss': 0.34967175126075745, 'epoch': 2.0}
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00, 15650.39it/s]
+ok
+test_prune_guard (test_lora.SelectionTests.test_prune_guard) ... ok
+test_source_only_tie_order_and_immutable_decision (test_lora.SelectionTests.test_source_only_tie_order_and_immutable_decision) ... ok
+test_collector_rejects_mixed_hardware_and_changed_inputs (test_m5_diagnostics.DiagnosticTests.test_collector_rejects_mixed_hardware_and_changed_inputs) ... ok
+test_prediction_audit_rejects_duplicate_label_and_probability_corruption (test_m5_diagnostics.DiagnosticTests.test_prediction_audit_rejects_duplicate_label_and_probability_corruption) ... ok
+test_shared_benchmark_never_unfreezes_lora_base (test_m5_diagnostics.DiagnosticTests.test_shared_benchmark_never_unfreezes_lora_base) ... ok
+test_disabled_accounting_preserves_evidence_and_excludes_weights (test_m5_package.ReturnPackageTests.test_disabled_accounting_preserves_evidence_and_excludes_weights) ... ok
+test_return_import_rejects_path_traversal_and_tampering (test_m5_package.ReturnPackageTests.test_return_import_rejects_path_traversal_and_tampering) ... ok
+----------------------------------------------------------------------
+Ran 31 tests in 2.596s
+OK
+{
+  "eval_loss": 0.684140682220459,
+  "eval_accuracy": 0.625,
+  "eval_runtime": 0.0016,
+  "eval_samples_per_second": 9889.311,
+  "eval_steps_per_second": 618.082,
+  "epoch": 2.0,
+  "train_wall_seconds_this_invocation": 0.0740538330283016,
+  "peak_cuda_allocated_bytes": null,
+  "peak_cuda_reserved_bytes": null,
+  "gpu": null,
+  "best_checkpoint": "/var/folders/p8/r57jqjl13p5_6s2y1_hfv09r0000gn/T/tmpmcvz4md1/resumed/checkpoints/checkpoint-1",
+  "global_step": 2,
+  "merge_max_abs_logit_difference": 0.0,
+  "checkpoint_weight_sha256": "30c1d5d125b5c42d8e43addd91ddb92c7d7a35edb4291e1d217a65f5d82393d6",
+  "versions": {
+    "torch": "2.5.1",
+    "transformers": "4.51.3",
+    "datasets": "3.5.0",
+    "python": "3.12.5"
+  },
+  "job_id": null,
+  "runtime_includes_epoch_validation_and_saving": true,
+  "timing_note": "This invocation only; see invocations and Slurm ledger for interruptions. Training peak captured before post-training validation and merge."
+}
+M5_DIAGNOSTICS_COLLECTED
+RETURN_ARCHIVE /var/folders/p8/r57jqjl13p5_6s2y1_hfv09r0000gn/T/tmpc7e9ncog/return/M5-return-v1.tar.gz BYTES 1352

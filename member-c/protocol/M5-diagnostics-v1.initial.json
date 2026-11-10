@@ -1,0 +1,21 @@
+{
+  "version": "M5-diagnostics-v1",
+  "status": "FROZEN_BEFORE_M5_RESULTS",
+  "date": "2026-11-11",
+  "purpose": "Complete LoRA comparator: prediction audit, exploratory paired OOD comparisons, representation diagnostics, and hardware-matched computation probes.",
+  "selection": "All 45 candidate training runs and 15 source selections before M5 tests; diagnostics never revise selection.",
+  "statistics": "18 M5-minus-existing-method OOD contrasts (6 methods x 3 budgets); separate exploratory Holm family; original M6 focal family unchanged. Five paired seeds, unadjusted t intervals and exact sign flips; no claim of confirmatory preregistration.",
+  "cka": "15 M5 winners, same 256 balanced inputs/domain and C-v2 frozen extractor/estimators; 1170 rows, 45 prediction replays; 45 expected degenerate layer-0 CLS rows. Pretrained reference only. Cross-hardware deterministic numerical variation disclosed.",
+  "cost": "Same Ada hardware, six existing clean methods and M5 x three fresh processes; shared C-v2 kernel/input IDs/FP32/noTF32/512/batch8/accum4/warmup2/measured5. M4 is phase2 proxy. Training-cost only for cross-method LoRA comparison; unmerged M5 inference excluded from deployment claims.",
+  "code_hashes": {
+    "m5_audit.py": "4182776e44415345b9683adea87a704aea61a7ac45d0b4ead767c7c60b8245d6",
+    "m5_cka.py": "861788f663bc243fdc00e173325df7e3f51592a694c17a4b962108f62ab30dc4",
+    "m5_benchmark.py": "55bd915aa9b1e2ffea8891f6cbd93512cdb9e8ec37a2634846ee245ee87e952c",
+    "benchmark.py": "72d75f067ff59292acda441a6d4954325e21a449e659e8c7fdd013583e1dd82b",
+    "cka.py": "3359c6307cd82cc9fc45e71dc060a9cfb125b9c6126f5dbfb339110e26d93f57",
+    "lora.py": "ddcc8dc4f2e8b93194c392637ab2191d04efdf20121231a08ba6774b7e887270",
+    "stats.py": "c1afd90fae7366b898f653a1380c5d98c4e392fd5a2421893b31cfc867942264",
+    "m5_collect.py": "397a4a69149045d5bdd94ff76792f9b4a3b6d77060eb9a0036c65403f188b591",
+    "m5_package.py": "87225651010b4b6143f273ae8ead261e0be1b752052ed241dc2f181e74491815"
+  }
+}

@@ -13,7 +13,14 @@ source member-c/scripts/ada/activate.sh
 export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
 stage="${1:?Supply stage 0..5}"
 [[ "$stage" =~ ^[0-5]$ ]] || { echo 'Invalid stage'; exit 2; }
-trap 'code=$?; echo "EXIT_CODE=$code stage=$stage"' EXIT
+finish() {
+  code=$?
+  python -m sc4001_c.job_record --event exit --exit-code "$code" || true
+  echo "EXIT_CODE=$code stage=$stage"
+  exit "$code"
+}
+trap finish EXIT
+python -m sc4001_c.job_record --event start
 python - <<'PY'
 from pathlib import Path
 from sc4001_c.common import load

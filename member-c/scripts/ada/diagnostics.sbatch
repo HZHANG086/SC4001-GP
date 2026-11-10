@@ -11,7 +11,14 @@ set -euo pipefail
 cd "${SLURM_SUBMIT_DIR:?}"
 source member-c/scripts/ada/activate.sh
 export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
-trap 'code=$?; echo "EXIT_CODE=$code"' EXIT
+finish() {
+  code=$?
+  python -m sc4001_c.job_record --event exit --exit-code "$code" || true
+  echo "EXIT_CODE=$code"
+  exit "$code"
+}
+trap finish EXIT
+python -m sc4001_c.job_record --event start
 python - <<'PY'
 from pathlib import Path
 from sc4001_c.common import load,digest
