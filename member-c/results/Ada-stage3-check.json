@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "stage": 3,
+  "seed": 87,
+  "job_id": "12375",
+  "source_candidates_validated": [
+    {
+      "run": "M5-b400-s87-lr1e-04",
+      "checkpoint_weight_sha256": "fa6035026a1b8295ff52034a53704900d9cac6e92feaafbaba28b615005581f9",
+      "merge_max_abs_logit_difference": 9.685754776000977e-08,
+      "global_step": 100
+    },
+    {
+      "run": "M5-b400-s87-lr3e-04",
+      "checkpoint_weight_sha256": "1e92451282bac0dc84b0dc2b7e3e74d5f9ec98def67908e94621f8e48cd21666",
+      "merge_max_abs_logit_difference": 7.152557373046875e-07,
+      "global_step": 100
+    },
+    {
+      "run": "M5-b400-s87-lr1e-03",
+      "checkpoint_weight_sha256": "06f3bc53ad6f29651e498ee8e2b0a6bd3e72816bfab78a221192727036ad0ccd",
+      "merge_max_abs_logit_difference": 9.5367431640625e-07,
+      "global_step": 100
+    },
+    {
+      "run": "M5-b1600-s87-lr1e-04",
+      "checkpoint_weight_sha256": "810f4e149a84183aabd6cf7a1315c49b5f7e8d5e59d9b5c5f19721f99060255a",
+      "merge_max_abs_logit_difference": 2.384185791015625e-06,
+      "global_step": 400
+    },
+    {
+      "run": "M5-b1600-s87-lr3e-04",
+      "checkpoint_weight_sha256": "8926531c74aed98db396567268203aec691c77d74174ffbcdb20e98b9468b7d8",
+      "merge_max_abs_logit_difference": 6.735324859619141e-06,
+      "global_step": 400
+    },
+    {
+      "run": "M5-b1600-s87-lr1e-03",
+      "checkpoint_weight_sha256": "05773fa16b3cd2d659d0cd233a9786b47f4a321a1e8154bbfa775dfcaf5f4776",
+      "merge_max_abs_logit_difference": 5.7220458984375e-06,
+      "global_step": 400
+    },
+    {
+      "run": "M5-b6400-s87-lr1e-04",
+      "checkpoint_weight_sha256": "978cec56fad39bc9b8ef6e236e8d1b8af915d30bc2ca8e5667fa9b8699744f6a",
+      "merge_max_abs_logit_difference": 2.205371856689453e-06,
+      "global_step": 1600
+    },
+    {
+      "run": "M5-b6400-s87-lr3e-04",
+      "checkpoint_weight_sha256": "6f811badbaf1d17a7aa71cadf6becec5905a5d0ece1f94dcfd07a3d88c63c504",
+      "merge_max_abs_logit_difference": 9.194016456604004e-06,
+      "global_step": 1600
+    },
+    {
+      "run": "M5-b6400-s87-lr1e-03",
+      "checkpoint_weight_sha256": "db40ff6bd6d63de7500aaeb95b98676149de6702e63cbe3bf487ad99ba4a11b1",
+      "merge_max_abs_logit_difference": 7.62939453125e-06,
+      "global_step": 1600
+    }
+  ],
+  "tests_not_yet_run": true,
+  "scope": "Remote validation of nine formal configs, ten epochs, parameter counts, merged checkpoint hashes and recorded merge checks. Not target evaluation or local weight hashing."
+}
