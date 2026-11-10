@@ -1,0 +1,29 @@
+{
+  "observed_utc": "2026-11-10T21:20:20.093916+00:00",
+  "status": "REMOTE_OBSERVATION_UNAVAILABLE",
+  "job_id": "12377",
+  "last_valid_observation": {
+    "unix_time": 1794345361.1158674,
+    "state": "RUNNING",
+    "formal_tests_complete": 3,
+    "current_model": "M5-b400-s21-lr1e-03",
+    "current_prediction_bytes": 3349859,
+    "selection_lock_unchanged": true
+  },
+  "checks": [
+    {
+      "kind": "existing_control_connection",
+      "result": "independent live lookup timed out after 25 seconds; observer transport later exited 255"
+    },
+    {
+      "kind": "new_direct_ip_connection",
+      "result": "SSH TCP connection to 10.96.41.85:22 timed out"
+    },
+    {
+      "kind": "provided_dns_name",
+      "result": "MICL-TaoDCWS1.dynip.ntu.edu.sg did not resolve"
+    }
+  ],
+  "interpretation": "Connection loss is not a scheduler terminal state. Current remote job status is unknown. No training/evaluation job was restarted or cancelled.",
+  "user_input_pending": "Confirm campus network or NTU VPN restoration. No password requested."
+}
