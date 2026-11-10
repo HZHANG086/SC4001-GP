@@ -1,0 +1,23 @@
+{
+  "imdb": {
+    "n": 25000,
+    "labels_match": true,
+    "positive_n": 12500,
+    "truncated_n": 3193,
+    "text_file_sha256": "6c3ded0362f442f34e5c9dac43d1e1be2330514fd2733e15ddd859b92fce82f7"
+  },
+  "yelp": {
+    "n": 5000,
+    "labels_match": true,
+    "positive_n": 2500,
+    "truncated_n": 212,
+    "text_file_sha256": "0a29781339b6f41f6c0f71df7fc20bc0a879f4cb23a3df0473872ccb184318ea"
+  },
+  "amazon": {
+    "n": 5000,
+    "labels_match": true,
+    "positive_n": 2500,
+    "truncated_n": 1,
+    "text_file_sha256": "c29a98122eef3b18a3b191da969950c84d4321c82eeef77c8ff3022cdf3446dd"
+  }
+}

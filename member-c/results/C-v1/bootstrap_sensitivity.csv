@@ -1,0 +1,4 @@
+comparison,budget,metric,mean_difference_pp,replicates,rng_seed,conditional_fixed_models_low,conditional_fixed_models_high,crossed_seeds_and_examples_low,crossed_seeds_and_examples_high
+M6-M3,400,ood_accuracy,-0.7020000000000001,10000,20261110,-0.852,-0.55,-1.3320000000000003,-0.086
+M6-M3,1600,ood_accuracy,0.694,10000,20261110,0.5460000000000002,0.84,-0.6540500000000001,2.162099999999999
+M6-M3,6400,ood_accuracy,0.038000000000000006,10000,20261110,-0.09599999999999999,0.174,-0.30005,0.348

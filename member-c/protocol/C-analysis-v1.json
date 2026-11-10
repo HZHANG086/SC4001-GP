@@ -1,0 +1,42 @@
+{
+  "version": "C-analysis-v1",
+  "date": "2026-11-10",
+  "upstream_commit": "f442a4462364ce0c53cbae45febbfcfc8238988c",
+  "status": "Post-hoc analysis of frozen A/B results; not a retroactive preregistration",
+  "no_model_selection": true,
+  "methods": ["M1", "M2", "M3", "M4", "M6", "L2SP"],
+  "budgets": [400, 1600, 6400],
+  "seeds": [13, 21, 42, 87, 100],
+  "focal_estimand": "Mean paired M6-M3 OOD accuracy difference in percentage points, separately for each budget; OOD is the equal mean of Yelp and Amazon",
+  "inference_unit": "One paired training seed, conditional on the source pool and test domains; n=5",
+  "interval": "Approximate 95% paired-t interval, unadjusted; normality of five differences cannot be established reliably",
+  "sensitivity": "Exact two-sided paired sign-flip test, all 32 assignments; minimum possible p is 0.0625. Both this and t-test outputs are reported, not cherry-picked",
+  "multiplicity": "Holm separately over 3 focal OOD comparisons and 69 secondary comparisons; intervals are explicitly unadjusted",
+  "bootstrap": "10000 replicates; fixed domain and label proportions; shared example resampling across all five seeds; conditional fixed-model and crossed seed/example intervals reported separately; exploratory small-n sensitivity",
+  "calibration": "Brier, clipped binary NLL (1e-12), top-label ECE with 15 equal-width confidence bins; descriptive only, no calibration fitting",
+  "cases": "M6 vs M3, all 3 budgets and 3 domains, seed 13, all four correctness-transition categories; one smallest SHA256(C-v1-case|example_id) per category. No case cherry-picking after reading text",
+  "strata": "True-label class; token lengths <=128, 129-512, >512 including special tokens; regex negation markers. Descriptive, not causal or gold linguistic annotations",
+  "cost": "Separate selected training, incremental search and standalone search. M6/L2SP include inherited M3 search in standalone cost; M4 includes inherited M1 search. Keep successful-invocation timing caveat and diagnostic-teacher memory caveat",
+  "cka": {
+    "status": "PROTOCOL_AND_CODE_READY; real TC1 execution pending",
+    "models": ["M3", "M6"],
+    "n_selected_models": 30,
+    "jobs": "One seed per job (6 models); optional seed-13/budget-400 smoke job first",
+    "inputs": "256 fixed balanced test examples per domain (128 per class); sorted SHA256(SC4001-C-v1-20261110|example_id) within class; same IDs for every model and seed",
+    "domains": ["imdb", "yelp", "amazon"],
+    "pooling": ["CLS", "mean over all non-padding tokens, including special tokens"],
+    "layers": "Embedding layer 0 and encoder layers 1-12; degenerate constant CLS embeddings are NA",
+    "metrics": ["centered linear CKA", "debiased linear CKA sensitivity", "fixed shuffled-input CKA control", "mean cosine distance"],
+    "comparisons": ["M3 vs pretrained", "M6 vs pretrained", "M6 vs paired M3"],
+    "checks": "Data metadata hashes, model/config/selection agreement, checkpoint SHA256, fixed sample manifest, max archived-probability replay discrepancy <=1e-4",
+    "precision": "FP32 inference, eval mode, no TF32; float64 CPU similarity calculations",
+    "outputs": "Small CSV/JSON and execution log only. No saved weights or hidden activations",
+    "interpretation": "Descriptive representation similarity, not proof of semantic preservation or causality"
+  },
+  "references": [
+    "https://proceedings.mlr.press/v97/kornblith19a.html",
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.permutation_test.html",
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_rel.html",
+    "https://huggingface.co/docs/transformers/v4.51.3/model_doc/roberta"
+  ]
+}

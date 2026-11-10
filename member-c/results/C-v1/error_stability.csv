@@ -1,0 +1,10 @@
+budget,domain,n_unique_examples,fixed_in_at_least_3_seeds,broken_in_at_least_3_seeds,ever_fixed_and_ever_broken
+400,imdb,25000,24,20,422
+400,yelp,5000,3,8,70
+400,amazon,5000,3,10,72
+1600,imdb,25000,36,14,472
+1600,yelp,5000,4,5,118
+1600,amazon,5000,3,3,141
+6400,imdb,25000,23,22,298
+6400,yelp,5000,3,4,50
+6400,amazon,5000,7,1,71

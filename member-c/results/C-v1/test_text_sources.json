@@ -1,0 +1,41 @@
+{
+  "files": {
+    "imdb": {
+      "path": "../.cache-c/test-texts/imdb_texts.jsonl",
+      "sha256": "6c3ded0362f442f34e5c9dac43d1e1be2330514fd2733e15ddd859b92fce82f7",
+      "n": 25000,
+      "dataset_revision": "e6281661ce1c48d982bc483cf8a173c1bbeb5d31"
+    },
+    "yelp": {
+      "path": "../.cache-c/test-texts/yelp_texts.jsonl",
+      "sha256": "0a29781339b6f41f6c0f71df7fc20bc0a879f4cb23a3df0473872ccb184318ea",
+      "n": 5000,
+      "dataset_revision": "bbf1c97a1f0cf005e5aded43839fd814654a1557"
+    },
+    "amazon": {
+      "path": "../.cache-c/test-texts/amazon_texts.jsonl",
+      "sha256": "c29a98122eef3b18a3b191da969950c84d4321c82eeef77c8ff3022cdf3446dd",
+      "n": 5000,
+      "dataset_revision": "9d9c45c18f8c3cf1b23a3c27917b60cbf28f3289"
+    }
+  },
+  "sources": {
+    "datasets": {
+      "imdb": "stanfordnlp/imdb",
+      "yelp": "fancyzhx/yelp_polarity",
+      "amazon": "fancyzhx/amazon_polarity"
+    },
+    "revisions": {
+      "imdb": "e6281661ce1c48d982bc483cf8a173c1bbeb5d31",
+      "yelp": "bbf1c97a1f0cf005e5aded43839fd814654a1557",
+      "amazon": "9d9c45c18f8c3cf1b23a3c27917b60cbf28f3289"
+    },
+    "model_id": "FacebookAI/roberta-base",
+    "model_revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+    "label_mapping": {
+      "0": "negative",
+      "1": "positive"
+    }
+  },
+  "definition": "IMDb unchanged; Yelp/Amazon selected by A fixed indices; Amazon title + newline + content"
+}

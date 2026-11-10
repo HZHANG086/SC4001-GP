@@ -1,0 +1,11 @@
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.15.3
+matplotlib==3.10.7
+# Rebuilding public text joins / running the optional integration test:
+torch==2.5.1
+transformers==4.51.3
+datasets==3.5.0
+pyarrow==19.0.1
+safetensors==0.5.3
+# TC1 CKA uses only packages already installed by B; scipy/matplotlib are NOT required there.

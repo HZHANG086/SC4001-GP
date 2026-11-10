@@ -1,0 +1,24 @@
+{
+  "status": "AI-assisted descriptive draft; team review pending; not causal attribution or gold annotation",
+  "sampling": "36 deterministic cases, one per correctness category/domain/budget at seed 13. The 18 discordant cases below are ALL discordant cases in that fixed sample, not a handpicked winning subset.",
+  "cases": [
+    {"example_id":"imdb:test:14564","budget":400,"category":"fixed_by_left","observation":"对低成本动作片总体肯定，同时承认演员和情节局限；混合褒贬。M6 此例预测正确，不能据此声称普遍更懂转折。"},
+    {"example_id":"imdb:test:6668","budget":400,"category":"broken_by_left","observation":"肯定选题立意，但批评纪录片形式削弱戏剧效果；整体负面。M6 在此例把评价方向判断错。"},
+    {"example_id":"yelp:test:26456","budget":400,"category":"fixed_by_left","observation":"活动体验失望，后半段提出以后参加的建议；建议与叙事不改变当前负面评价。"},
+    {"example_id":"yelp:test:21228","budget":400,"category":"broken_by_left","observation":"以热狗店应当脏乱等反话衬托店内干净和服务好。797 token，会截断；反话与截断均为可观察现象，尚不能认定具体误判原因。"},
+    {"example_id":"amazon:test:279014","budget":400,"category":"fixed_by_left","observation":"喜欢电影本身，但购买的 DVD 缺英语字幕而要求退货；评价对象涉及作品与商品版本的区别。"},
+    {"example_id":"amazon:test:376027","budget":400,"category":"broken_by_left","observation":"纠正商品是黄色打印组件而非整机的误解，且肯定自己的打印机；否定词并不直接代表负面情感。"},
+    {"example_id":"imdb:test:6450","budget":1600,"category":"fixed_by_left","observation":"批评儿童片角色、笑点和拖沓情节，仅肯定个别演员；局部正面并不抵消总体负面。"},
+    {"example_id":"imdb:test:2385","budget":1600,"category":"broken_by_left","observation":"总体认为电影差，但认可音乐、场景等；模型仍可能被局部赞美干扰。此处是解释假说，未做反事实检验。"},
+    {"example_id":"yelp:test:17621","budget":1600,"category":"fixed_by_left","observation":"对食品和接待失望，仅肯定啤酒与部分服务；总体负面。"},
+    {"example_id":"yelp:test:2329","budget":1600,"category":"broken_by_left","observation":"多次用餐经历有好有坏，标签为正面，文字混合且整体立场不十分单一。不要把该标签当作完全无歧义的文本真值。"},
+    {"example_id":"amazon:test:39550","budget":1600,"category":"fixed_by_left","observation":"配送及时、碟片完好，但包装盒损坏使购买者不满；商品状态比配送赞美更决定此标签。"},
+    {"example_id":"amazon:test:93463","budget":1600,"category":"broken_by_left","observation":"笔记本工作正常，但卖家未回复内存升级问题；产品评价与售后抱怨并存。"},
+    {"example_id":"imdb:test:540","budget":6400,"category":"fixed_by_left","observation":"肯定演员，批评导演和剪辑未完整表现人物经历；总体负面。"},
+    {"example_id":"imdb:test:12764","budget":6400,"category":"broken_by_left","observation":"1196 token 的长影评，先讨论导演其他作品，再讨论目标电影；超过 512 token。仅凭这例不能把错误归因为截断。"},
+    {"example_id":"yelp:test:14555","budget":6400,"category":"fixed_by_left","observation":"食品好吃，但高峰期缺货和等待时间导致负面体验；食物与服务两个评价方面冲突。"},
+    {"example_id":"yelp:test:10810","budget":6400,"category":"broken_by_left","observation":"只有一个极短的态度表达，缺少上下文；可解释性有限，不宜编造更具体的语义原因。"},
+    {"example_id":"amazon:test:62900","budget":6400,"category":"fixed_by_left","observation":"书有概览价值，但图片和内容不值得购买，最终建议跳过或借阅；结论负面。"},
+    {"example_id":"amazon:test:100773","budget":6400,"category":"broken_by_left","observation":"先赞扬耳机，随后说明第二天损坏并明确不建议购买；时间转折和耐用性投诉决定总体负面。"}
+  ]
+}

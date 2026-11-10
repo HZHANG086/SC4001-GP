@@ -1,0 +1,14 @@
+{
+  "B_job_count": 18,
+  "B_allocation_seconds_including_eval": 203631,
+  "B_allocation_hours_including_eval": 56.564166666666665,
+  "resumed_candidate": "M6-b6400-s21-lam1",
+  "job_ids": [
+    "72808",
+    "72909"
+  ],
+  "impact": "Search time for M6 b6400 s21 omits prior invocation; selected model lam0.01 itself was not resumed.",
+  "unrecoverable_from_validation_json": "Full pre-interruption per-candidate training time",
+  "do_not_sum_standalone_costs": "Upstream searches are shared in this actual project.",
+  "memory": "B M3/M4/L2SP include an otherwise unnecessary diagnostic teacher; raw memory is implementation-specific."
+}
