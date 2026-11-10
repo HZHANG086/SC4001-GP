@@ -9,6 +9,7 @@ import argparse
 from pathlib import Path
 from .common import load,dump,digest,read_csv,read_predictions,selected_rows,run_path,DOMAINS,SIZES
 from .analyze import statistics,errors
+from .table_compare import compare_tables
 
 
 def verify_inputs(repo):
@@ -79,12 +80,16 @@ def main(argv=None):
     names=('accuracy_summary.csv','paired_comparisons.csv','cost_accounting.csv','error_transitions.csv',
            'case_sample_ids.csv','error_stability.csv','bootstrap_sensitivity.csv')
     matches={n:digest(a.out/n)==digest(repo/'member-c/results/C-v1'/n) for n in names}
-    dump(a.out/'reproduction_audit.json',{'status':'PASS' if all(matches.values()) else 'OUTPUT_DIFFERENCES_REQUIRE_REVIEW',
+    checks={n:compare_tables(repo/'member-c/results/C-v1'/n,a.out/n) for n in names}
+    equivalent=all(x['equivalent'] for x in checks.values())
+    dump(a.out/'reproduction_audit.json',{'status':'PASS' if equivalent else 'OUTPUT_DIFFERENCES_REQUIRE_REVIEW',
         'verified_input_files':checked,'prediction_files':files,'prediction_rows':count,'byte_identical_tables':matches,
+        'table_checks':checks,
+        'roundoff_policy':'Only approximate t-test probabilities and t-interval endpoints permit absolute differences <=1e-12. Every differing cell is logged. All other fields and every original input hash remain exact.',
         'scope':'Offline source-choice and full-prediction recomputation, then frozen statistical/error/bootstrap functions. No Git history required.',
         'not_repeated':'Training, raw data preparation, GPU inference, checkpoint-file hashing, or historical selection timing verification.'})
-    if not all(matches.values()):raise ValueError('Recomputed tables differ; review numeric/version differences rather than overwrite reference outputs')
-    print('OFFLINE_REPRODUCTION_PASS',files,'prediction files;',count,'rows;',len(matches),'identical tables')
+    if not equivalent:raise ValueError('Recomputed tables differ beyond the narrow roundoff policy; inspect the audit without overwriting reference outputs')
+    print('OFFLINE_REPRODUCTION_PASS',files,'prediction files;',count,'rows;',len(checks),'equivalent tables')
 
 
 if __name__=='__main__':main()

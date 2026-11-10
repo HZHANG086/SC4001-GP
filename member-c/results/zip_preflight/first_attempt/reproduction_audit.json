@@ -1,0 +1,17 @@
+{
+  "status": "OUTPUT_DIFFERENCES_REQUIRE_REVIEW",
+  "verified_input_files": 1879,
+  "prediction_files": 450,
+  "prediction_rows": 5250000,
+  "byte_identical_tables": {
+    "accuracy_summary.csv": true,
+    "paired_comparisons.csv": false,
+    "cost_accounting.csv": true,
+    "error_transitions.csv": true,
+    "case_sample_ids.csv": true,
+    "error_stability.csv": true,
+    "bootstrap_sensitivity.csv": true
+  },
+  "scope": "Offline source-choice and full-prediction recomputation, then frozen statistical/error/bootstrap functions. No Git history required.",
+  "not_repeated": "Training, raw data preparation, GPU inference, checkpoint-file hashing, or historical selection timing verification."
+}

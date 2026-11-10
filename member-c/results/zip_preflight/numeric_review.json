@@ -1,0 +1,112 @@
+{
+  "status": "SEVEN_ACTUAL_LINUX_TABLES_EQUIVALENT_UNDER_REVIEWED_POLICY",
+  "scope": "Comparison of actual outputs from job 12370, not a replacement for rerunning the updated entry point.",
+  "checks": {
+    "error_stability.csv": {
+      "equivalent": true,
+      "rows": 9,
+      "roundoff_differences": [],
+      "max_absolute_difference": 0.0,
+      "absolute_tolerance": 1e-12,
+      "approximate_columns": [
+        "ci95_high",
+        "ci95_low",
+        "p_t_approx",
+        "p_t_approx_holm"
+      ]
+    },
+    "bootstrap_sensitivity.csv": {
+      "equivalent": true,
+      "rows": 3,
+      "roundoff_differences": [],
+      "max_absolute_difference": 0.0,
+      "absolute_tolerance": 1e-12,
+      "approximate_columns": [
+        "ci95_high",
+        "ci95_low",
+        "p_t_approx",
+        "p_t_approx_holm"
+      ]
+    },
+    "error_transitions.csv": {
+      "equivalent": true,
+      "rows": 270,
+      "roundoff_differences": [],
+      "max_absolute_difference": 0.0,
+      "absolute_tolerance": 1e-12,
+      "approximate_columns": [
+        "ci95_high",
+        "ci95_low",
+        "p_t_approx",
+        "p_t_approx_holm"
+      ]
+    },
+    "case_sample_ids.csv": {
+      "equivalent": true,
+      "rows": 36,
+      "roundoff_differences": [],
+      "max_absolute_difference": 0.0,
+      "absolute_tolerance": 1e-12,
+      "approximate_columns": [
+        "ci95_high",
+        "ci95_low",
+        "p_t_approx",
+        "p_t_approx_holm"
+      ]
+    },
+    "cost_accounting.csv": {
+      "equivalent": true,
+      "rows": 90,
+      "roundoff_differences": [],
+      "max_absolute_difference": 0.0,
+      "absolute_tolerance": 1e-12,
+      "approximate_columns": [
+        "ci95_high",
+        "ci95_low",
+        "p_t_approx",
+        "p_t_approx_holm"
+      ]
+    },
+    "paired_comparisons.csv": {
+      "equivalent": true,
+      "rows": 72,
+      "roundoff_differences": [
+        {
+          "csv_line": 47,
+          "column": "p_t_approx",
+          "reference": "0.48609472077393484",
+          "observed": "0.4860947207739349",
+          "absolute_difference": 5.551115123125783e-17
+        },
+        {
+          "csv_line": 48,
+          "column": "p_t_approx",
+          "reference": "0.4832754452579188",
+          "observed": "0.4832754452579189",
+          "absolute_difference": 5.551115123125783e-17
+        }
+      ],
+      "max_absolute_difference": 5.551115123125783e-17,
+      "absolute_tolerance": 1e-12,
+      "approximate_columns": [
+        "ci95_high",
+        "ci95_low",
+        "p_t_approx",
+        "p_t_approx_holm"
+      ]
+    },
+    "accuracy_summary.csv": {
+      "equivalent": true,
+      "rows": 72,
+      "roundoff_differences": [],
+      "max_absolute_difference": 0.0,
+      "absolute_tolerance": 1e-12,
+      "approximate_columns": [
+        "ci95_high",
+        "ci95_low",
+        "p_t_approx",
+        "p_t_approx_holm"
+      ]
+    }
+  }
+}

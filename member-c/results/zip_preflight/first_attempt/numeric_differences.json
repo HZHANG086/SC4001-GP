@@ -1,0 +1,21 @@
+{
+  "status": "REVIEWED_FLOATING_POINT_DIFFERENCES_ONLY",
+  "rows": 72,
+  "max_absolute_difference": 5.551115123125783e-17,
+  "differences": [
+    {
+      "row": 45,
+      "column": "p_t_approx",
+      "mac": "0.48609472077393484",
+      "linux": "0.4860947207739349",
+      "absolute_difference": 5.551115123125783e-17
+    },
+    {
+      "row": 46,
+      "column": "p_t_approx",
+      "mac": "0.4832754452579188",
+      "linux": "0.4832754452579189",
+      "absolute_difference": 5.551115123125783e-17
+    }
+  ]
+}

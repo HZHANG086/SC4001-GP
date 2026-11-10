@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/share/zhangh/sc4001-gp-c/checks/ZIP-preflight-051e13f/unpacked/member-c/src/sc4001_c/reproduce.py", line 90, in <module>
+    if __name__=='__main__':main()
+  File "/share/zhangh/sc4001-gp-c/checks/ZIP-preflight-051e13f/unpacked/member-c/src/sc4001_c/reproduce.py", line 86, in main
+    if not all(matches.values()):raise ValueError('Recomputed tables differ; review numeric/version differences rather than overwrite reference outputs')
+ValueError: Recomputed tables differ; review numeric/version differences rather than overwrite reference outputs
