@@ -2,7 +2,9 @@
 
 Member B component: full fine-tuning (M3), staged LP-FT (M4), our feature-preservation method (M6), and a weight-preservation control (L2-SP). Everything is run under Member A's A-v1 protocol, so all six methods are directly comparable on the same splits, seeds and test sets.
 
-**Status (2026-11-10): formal runs complete (60/60 B-v1 cells, protocol B-v1 frozen). Final tables: [formal-results/results/B-v1/summary.md](formal-results/results/B-v1/summary.md). Records without weights: `formal-results/runs/B-v1/`.**
+**Status (2026-11-10): formal runs complete (60/60 B-v1 cells, protocol B-v1 frozen).**
+
+**Using the results (analysis, figures, report): start with [formal-results/README.md](formal-results/README.md).** It covers which files to use, what every column means, the analysis rules and the main findings. The final tables are in [formal-results/results/B-v1/summary.md](formal-results/results/B-v1/summary.md).
 
 ## Research question
 
@@ -50,19 +52,17 @@ Related ideas exist (DELTA, Li et al. 2019; LwF; R3F). Our contribution is the *
 
 The full specification is in [protocol/B-v1.json](protocol/B-v1.json). `python -m sc4001_b.freeze` locks the code by hash into `protocol/locked_src/`; formal jobs only run the locked copy.
 
-## Expected GPU cost
+## Measured GPU cost (TC1, V100 32 GB)
 
-These are estimates to be replaced by the pilot. They scale A's measured V100 times (M2 at 6,400 labels: 13 minutes per run) to full back-propagation:
-
-| Phase | Training runs | Estimated GPU hours |
+| Phase | Training runs | Training GPU hours |
 |---|---:|---:|
-| M3 | 45 | ≈ 13 |
-| M4 | 15 stage-1 + 45 | ≈ 14 |
-| M6 | 45 (teacher forward ≈ +30%) | ≈ 16 |
-| L2-SP | 45 | ≈ 13 |
-| Test evaluation | 30 winners + 90 λ candidates | ≈ 9 |
+| M3 | 45 | 10.0 |
+| M4 | 15 stage-1 + 45 | 1.2 + 10.1 |
+| M6 | 45 (includes the teacher forward pass) | 12.4 |
+| L2-SP | 45 | 10.9 |
+| **Total** | 195 | **44.5** (about 56 including test evaluation) |
 
-If time runs short, the agreed fallback order keeps M3, M6, and the λ = 0 control at every budget. L2-SP is reduced to budgets 400 and 1,600 first, then M4 reuses the M3 LR.
+The full grid ran, so none of the planned fallbacks were needed.
 
 ## How to run (from `member-b/` on the TC1 login node; all compute via SLURM)
 
@@ -86,7 +86,7 @@ A job that hits the time limit can simply be resubmitted with the same command. 
 
 ## Outputs
 
-`runs/B-v1/<candidate>/` follows Member A's layout: `run_config.json`, `parameters.json`, `validation.json`, `history.json`, `source/`, `best/` (winners only), and `test/{metrics.json,*_predictions.jsonl}`. `selection-<method>-b<budget>-s<seed>.json` records each frozen choice. `results/B-v1/` holds the combined A+B tables.
+`runs/B-v1/<candidate>/` follows Member A's layout: `run_config.json`, `parameters.json`, `validation.json`, `history.json`, `source/`, `best/` (winners only), and `test/{metrics.json,*_predictions.jsonl}`. `selection-<method>-b<budget>-s<seed>.json` records each frozen choice. `results/B-v1/` holds the combined A+B tables. The committed copies of both, without weights, are in `formal-results/`.
 
 ## Tests
 
