@@ -21,6 +21,9 @@ def check(condition, message):
 
 
 def audit(repo, out, rows):
+    source_commit=load(repo/'member-c/protocol/C-analysis-v1.json')['upstream_commit']
+    subprocess.run(['git','diff','--exit-code',source_commit,'--','member-a','member-b'],
+                   cwd=repo,check=True,stdout=subprocess.DEVNULL)
     expected = {(m,b,s) for m in METHODS for b in BUDGETS for s in SEEDS}
     check(len(rows) == 90 and {(r['method'],r['budget'],r['seed']) for r in rows} == expected,
           'Missing/duplicate selected cell')
@@ -153,8 +156,10 @@ def audit(repo, out, rows):
         check(len(match)==1 and r['model_dir']==match[0]['run']+'/best', 'Model manifest mismatch')
     write_csv(out/'source_file_hashes.csv', evidence)
     write_csv(out/'prediction_metrics.csv', metric_rows)
-    dump(out/'audit.json', {'status':'PASSED_ARCHIVED_RECORDS', 'source_commit':subprocess.check_output(
-        ['git','rev-parse','HEAD'],cwd=repo,text=True).strip(), 'candidate_runs':len(configs),
+    dump(out/'audit.json', {'status':'PASSED_ARCHIVED_RECORDS', 'source_commit':source_commit,
+        'analysis_checkout_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=repo,text=True).strip(),
+        'analysis_source_hashes':{p.name:digest(p) for p in Path(__file__).parent.glob('*.py')},
+        'candidate_runs':len(configs),
         'selected_cells':len(rows),'tested_runs':tested_runs,'prediction_files':pred_files,
         'prediction_rows':pred_count,'hashed_files':len(evidence),'model_manifest_rows':60,
         'raw_data_content':'Not yet checked by this stage; see text_join_audit.json',

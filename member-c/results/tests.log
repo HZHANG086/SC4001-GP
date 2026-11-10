@@ -9,15 +9,15 @@ test_exact_pairing_matches_scipy (test_analysis.StatisticalTests.test_exact_pair
 test_holm_known_result (test_analysis.StatisticalTests.test_holm_known_result) ... ok
 test_probabilities (test_analysis.StatisticalTests.test_probabilities) ... ok
 test_small_n_discreteness_and_ties (test_analysis.StatisticalTests.test_small_n_discreteness_and_ties) ... ok
-test_saved_models_replay_and_resumption (test_cka_integration.CKAIntegration.test_saved_models_replay_and_resumption) ... Saving the dataset (0/1 shards):   0%|          | 0/24 [00:00<?, ? examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 3022.01 examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 2924.81 examples/s]
-Saving the dataset (0/1 shards):   0%|          | 0/24 [00:00<?, ? examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 26427.75 examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 22344.79 examples/s]
-Saving the dataset (0/1 shards):   0%|          | 0/24 [00:00<?, ? examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 30311.14 examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 25184.71 examples/s]
+test_saved_models_replay_and_resumption (test_cka_integration.CKAIntegration.test_saved_models_replay_and_resumption) ... Saving the dataset (0/1 shards):   0%|          | 0/24 [00:00<?, ? examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 4805.62 examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 4576.64 examples/s]
+Saving the dataset (0/1 shards):   0%|          | 0/24 [00:00<?, ? examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 27302.22 examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 22898.84 examples/s]
+Saving the dataset (0/1 shards):   0%|          | 0/24 [00:00<?, ? examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 31088.11 examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 26024.64 examples/s]
 Completed M3 budget=400 seed=13
 Completed M6 budget=400 seed=13
 Matching complete output already exists; skipped.
 ok
 
 ----------------------------------------------------------------------
-Ran 12 tests in 3.121s
+Ran 12 tests in 3.397s
 
 OK

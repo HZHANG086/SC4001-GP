@@ -1,6 +1,19 @@
 {
   "status": "PASSED_ARCHIVED_RECORDS",
   "source_commit": "f442a4462364ce0c53cbae45febbfcfc8238988c",
+  "analysis_checkout_commit": "06f7cc2c3e54846b5971353f10354853f4d1ad24",
+  "analysis_source_hashes": {
+    "bootstrap.py": "5839e984fdc275ea1ed44ff683fa260a2c3a2ec0004610f8136e3a215f7808e7",
+    "cka.py": "218c24ceecd100dcc786c1785d6a3d4f871d603e6893cef4a05d5934aa840acc",
+    "collect_cka.py": "8625005742e9dd4af3be92ac8d877d11da28e699d5354289ab0b9e2ba1bdb0ff",
+    "__init__.py": "9b7d803fa9f8a677685ae22223b1372fb6926b6254e0fe6c136dda9ee1e8f138",
+    "plots.py": "6c03f390a82bc961d5dae4b82138e651d4902b5db403fdfa2bcf05df97a6d963",
+    "common.py": "255840b9d60339306e195523fbdb62d8f2ddf21b1c31f759236657fe4d2d9778",
+    "stats.py": "c1afd90fae7366b898f653a1380c5d98c4e392fd5a2421893b31cfc867942264",
+    "texts.py": "d1701c89ed634bb5a81d6abb83c7f0836a2741bd744e6062013dcdf49a4692bf",
+    "report.py": "6d16809873d12dad2a2f609d7a804b01c8105081c756ac4f8d495b3226ca9cfd",
+    "analyze.py": "58c36630545ad2c27594108e34fcb6b291f443ea746f719c23fc17f03988ff5c"
+  },
   "candidate_runs": 285,
   "selected_cells": 90,
   "tested_runs": 150,
