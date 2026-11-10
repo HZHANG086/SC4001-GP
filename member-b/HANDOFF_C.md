@@ -40,7 +40,7 @@ tok = AutoTokenizer.from_pretrained('<run>/best')
 
 ### Data (needed for M5 training, CKA inputs and error analysis)
 
-- The prepared data `artifacts/data-v1/` (816 MB) is not committed. Rebuild it on TC1 with Member A's prepare job (see `../member-a/README.md`, "prepare.sbatch --source-lock remote-records/data-v1/sources.json"). It must match A-v1's manifest; `sc4001_b.sweep` contains a file-by-file check (`check_data_matches_a`) you can reuse.
+- The prepared data `artifacts/data-v1/` (816 MB) is not committed. Rebuild it on TC1 with Member A's prepare job (see `../member-a/README.md`, "prepare.sbatch --source-lock remote-records/data-v1/sources.json"). It should match A-v1's manifest; `sc4001_b.sweep` contains a file-by-file check (`check_data_matches_a`) you can reuse.
 - Contents:
   - `imdb_test` (25,000 examples), `yelp_test` (5,000) and `amazon_test` (5,000), each with columns `text`, `label` and `example_id`;
   - `imdb_train`;
@@ -54,7 +54,7 @@ tok = AutoTokenizer.from_pretrained('<run>/best')
 
 ## 3. M5 (LoRA): what makes it comparable
 
-M5 must follow the same protocol as A and B, or it cannot be put in the same tables.
+To sit in the same tables as M1–M6, M5 follows the same protocol as A and B:
 
 | Item | Required value |
 |---|---|
@@ -89,7 +89,7 @@ All of these already satisfy the rules above. Then produce M5 rows with the same
 - at most 2 jobs submitted at once;
 - 6 h wall time per job.
 
-Split jobs by seed (about 3 h each) and resubmit a timed-out job to resume it. **Start as soon as possible; the report deadline is 16 Nov 23:59.**
+Split jobs by seed (about 3 h each) and resubmit a timed-out job to resume it. At about 15 GPU-hours on one GPU, M5 takes roughly a day of queue time end to end.
 
 ## 4. Statistics and representation analysis: what is available
 
