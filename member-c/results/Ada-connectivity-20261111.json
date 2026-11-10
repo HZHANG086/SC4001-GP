@@ -25,5 +25,19 @@
     }
   ],
   "interpretation": "Connection loss is not a scheduler terminal state. Current remote job status is unknown. No training/evaluation job was restarted or cancelled.",
-  "user_input_pending": "Confirm campus network or NTU VPN restoration. No password requested."
+  "user_input_pending": "Confirm campus network or NTU VPN restoration. No password requested.",
+  "revalidation_utc": "2026-11-10T21:23:53.528063+00:00",
+  "consecutive_affected_goal_turns": 3,
+  "latest_revalidation": {
+    "command_scope": "Read-only SSH lookup of original Slurm job 12377",
+    "exit_code": 255,
+    "stderr": "ssh: connect to host 10.96.41.85 port 22: Operation timed out",
+    "new_experiment_submitted": false
+  },
+  "local_fallback_checked": {
+    "M5_live_formal_prediction_files": 0,
+    "M5_live_return_manifests": 0,
+    "complete_M5_return_available": false
+  },
+  "goal_blocker": "Remote results and current scheduler state unavailable across three consecutive goal turns. Existing independent local work is complete; actual M5 integration cannot proceed without restored server access or the completed return."
 }
