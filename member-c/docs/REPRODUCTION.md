@@ -55,3 +55,21 @@ python member-c/scripts/build_report.py --tectonic /path/to/tectonic
 ```
 
 The current builder produces the explicitly incomplete six-method draft and refuses a table containing M5 until the prose has been revised. PDF export alone is not acceptance: render all pages, verify tables/labels/references and confirm the whole group's main content stays within ten pages. The course also requires the group's own identification, integration and AI-use review; these cannot be inferred from code execution.
+
+## Exporting and checking the code ZIP
+
+From a clean, committed checkout, export all tracked code and experiment evidence:
+
+```bash
+python member-c/scripts/export_code.py --out ../output/SC4001-code-snapshot.zip
+```
+
+The exporter includes the archived per-example predictions needed for offline statistics. It rejects tracked weights, recovery tensors, caches and font binaries, records file sizes/SHA256 hashes and the source commit, then re-reads every archive member to verify its bytes. It does not overwrite an existing delivery. Keep generated archives outside the checkout.
+
+The ZIP can be checked without Git using the included script after extraction:
+
+```bash
+python member-c/scripts/export_code.py --verify /path/to/SC4001-code-snapshot.zip
+```
+
+Compare the external `.zip.sha256` value with the delivered archive before extraction. `PACKAGE_MANIFEST.json` describes the archived version and points to the current-status and reproduction instructions. An export is a versioned snapshot, not a certificate that M5, the report, the later public-coursework review or the overall goal has finished. The final deliverable must be rebuilt from the completed, audited version; do not submit the explicitly incomplete preflight snapshot.
