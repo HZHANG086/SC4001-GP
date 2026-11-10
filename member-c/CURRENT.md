@@ -12,14 +12,15 @@
 | 六方法综合分析和正式风格图 | `results/C-final`、`report/figures`；不是包含 M5 的最终版 |
 | C 学术正文草稿 | `report/latex/main.tex`；Arial 10pt、A4、单栏，黑色正文和彩色科研图 |
 | M5 LoRA 训练代码 | `src/sc4001_c/lora*.py`，协议 `protocol/M5-v1.json` |
+| 无 Git、无权重的独立复算 | `results/standalone_reproduction.json`；450 个预测文件、525 万行记录、七张统计表、21 张综合结果 CSV 及十张彩色/灰度 PNG 完全一致 |
 | 本地验证 | 完整 31 项测试通过，包含 LoRA、诊断、记账服务关闭和安全回传测试。小模型测试不代表正式实验已完成 |
-| M5 真实 GPU 实验 | 真实 GPU 两步验证通过；12367 正在训练，当前 6/45 个候选完成、0/15 个正式评测完成；见 results/Ada-live-status.json |
+| M5 真实 GPU 实验 | 真实 GPU 两步验证通过；12367 正在训练，当前 8/45 个候选完成、0/15 个正式评测完成；见 results/Ada-live-status.json |
 | 最终报告与交付包 | 待 M5 完成后合并和验收 |
 | 往届公开项目检索 | 按用户要求，在第一版完整交付之后开展，目前尚未到该阶段 |
 
 ## 复算现有结果
 
-以下命令从仓库根目录执行；使用 `requirements-analysis.txt` 所列分析环境。
+以下命令从仓库根目录执行；使用 `requirements-final.txt` 所列完整分析环境。无 Git 历史的 ZIP 复现步骤见 `docs/REPRODUCTION.md`；主报告分工、术语与页数整合见 `docs/REPORT_INTEGRATION.md`。
 
 ```bash
 export PYTHONPATH=member-c/src:member-a/protocol/locked_src:member-b/protocol/locked_src
@@ -50,3 +51,5 @@ M6 提高了平均池化表示的 CKA，但相对 M3 的 OOD 准确率差值分�
 所有草稿中 M5 的状态必须保持明确，不能填入估计的准确率。案例中的 AI 解释需要组员复核；不要将未发生的人工审核写成事实。组名/姓名/学号由用户暂缓提供，不编造。
 
 服务器未启用 Slurm 历史记账。已保留实时状态快照，并为后续批次增加开始/退出留档；打包时保留记账失败证据，不伪造分配时长。此运行层修正未改变训练或分析方案；原诊断协议存于 `protocol/M5-diagnostics-v1.initial.json`。
+
+服务器已补装 SciPy 1.15.3，供训练后的统计审计使用；采用不更新其他依赖的安装方式，训练库版本不变。记录见 `results/Ada-scipy-install.txt`。各候选环境清单保留实际状态，不回填早期尚未安装的包。

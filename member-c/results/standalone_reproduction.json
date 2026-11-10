@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "date": "2026-11-11",
+  "execution": "Separate copy with no Git repository and no model weights; actual full archived-prediction recomputation.",
+  "git_check_returncode": 128,
+  "audit": {
+    "status": "PASS",
+    "verified_input_files": 1879,
+    "prediction_files": 450,
+    "prediction_rows": 5250000,
+    "byte_identical_tables": {
+      "accuracy_summary.csv": true,
+      "paired_comparisons.csv": true,
+      "cost_accounting.csv": true,
+      "error_transitions.csv": true,
+      "case_sample_ids.csv": true,
+      "error_stability.csv": true,
+      "bootstrap_sensitivity.csv": true
+    },
+    "scope": "Offline source-choice and full-prediction recomputation, then frozen statistical/error/bootstrap functions. No Git history required.",
+    "not_repeated": "Training, raw data preparation, GPU inference, checkpoint-file hashing, or historical selection timing verification."
+  },
+  "reproduce_source_sha256": "48c510edefd5636e62bde01f3b0dc874b3624d914a0f8fbb44a658d754732542",
+  "command": "PYTHONPATH=<standalone>/member-c/src python -m sc4001_c.reproduce --repo <standalone> --out <standalone>/reproduced/C-v1",
+  "not_claimed": "No GPU rerun, raw-data reconstruction, weight-file verification or completed M5 experiment.",
+  "synthesis_csv_byte_identical": {
+    "ablation_imdb_accuracy.csv": true,
+    "ablation_ood_accuracy.csv": true,
+    "ablation_source_val_accuracy.csv": true,
+    "ablation_val_feature_distance.csv": true,
+    "amazon_accuracy_summary.csv": true,
+    "cka_accuracy_associations.csv": true,
+    "cka_accuracy_per_seed.csv": true,
+    "cka_by_domain.csv": true,
+    "cka_layer_summary.csv": true,
+    "cka_ood_per_seed.csv": true,
+    "cka_paired_effects.csv": true,
+    "imdb_accuracy_summary.csv": true,
+    "lambda_selection_counts.csv": true,
+    "ood_accuracy_summary.csv": true,
+    "recomputed/cka_all_seeds.csv": true,
+    "recomputed/cost_all_repeats.csv": true,
+    "recomputed/cost_summary.csv": true,
+    "recomputed/prediction_replay_all.csv": true,
+    "selected_models.csv": true,
+    "trainable_parameters.csv": true,
+    "yelp_accuracy_summary.csv": true
+  },
+  "color_figure_png_byte_identical": {
+    "01_accuracy.png": true,
+    "02_cka_layers.png": true,
+    "03_cka_accuracy.png": true,
+    "04_lambda_ablation.png": true,
+    "05_v100_cost.png": true
+  },
+  "figure_comparison_note": "PNG pixels/bytes checked; PDF/SVG metadata may vary between executions. This is reproduction of the existing six-method draft, not a completed M5 result.",
+  "grayscale_figure_png_byte_identical": {
+    "01_accuracy.png": true,
+    "02_cka_layers.png": true,
+    "03_cka_accuracy.png": true,
+    "04_lambda_ablation.png": true,
+    "05_v100_cost.png": true
+  },
+  "generated_figure_files": {
+    "color": 15,
+    "grayscale": 15
+  }
+}

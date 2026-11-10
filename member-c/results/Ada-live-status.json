@@ -1,7 +1,7 @@
 {
-  "observed_unix": 1794331588.281014,
+  "observed_unix": 1794332603.9860353,
   "live_scheduler_rows": [
-    "12367|sc4001-gp-M5|RUNNING|20:47|localhost"
+    "12367|sc4001-gp-M5|RUNNING|37:42|localhost"
   ],
   "completed_candidates": [
     "M5-b1600-s13-lr1e-03",
@@ -9,9 +9,11 @@
     "M5-b1600-s13-lr3e-04",
     "M5-b400-s13-lr1e-03",
     "M5-b400-s13-lr1e-04",
-    "M5-b400-s13-lr3e-04"
+    "M5-b400-s13-lr3e-04",
+    "M5-b6400-s13-lr1e-04",
+    "M5-b6400-s13-lr3e-04"
   ],
-  "n_completed_candidates": 6,
+  "n_completed_candidates": 8,
   "formal_test_files": 0,
   "smoke": {
     "eval_loss": 0.692430317401886,

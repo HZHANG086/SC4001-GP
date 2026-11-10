@@ -1,0 +1,7 @@
+Using Python 3.10.12 environment at: /share/zhangh/sc4001-gp-c/env
+Resolved 1 package in 270ms
+Downloading scipy (35.9MiB)
+ Downloading scipy
+Prepared 1 package in 4.23s
+Installed 1 package in 119ms
+ + scipy==1.15.3
