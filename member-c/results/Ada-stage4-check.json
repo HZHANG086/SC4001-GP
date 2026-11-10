@@ -1,0 +1,164 @@
+{
+  "status": "PASS",
+  "stage": 4,
+  "seed": 100,
+  "job_id": "12376",
+  "observed_unix": 1794344722.493409,
+  "source_candidates_validated": [
+    {
+      "run": "M5-b400-s100-lr1e-04",
+      "seed": 100,
+      "checkpoint_weight_sha256_recorded": "596fb36005fca15b9f6df3c99a07e0ee15897178fc0ee6d53c29adb84dec8410",
+      "merge_max_abs_logit_difference": 7.450580596923828e-08,
+      "global_step": 100,
+      "weight_verification": "nonwinner pruned after global source-only lock; recorded training hash retained"
+    },
+    {
+      "run": "M5-b400-s100-lr3e-04",
+      "seed": 100,
+      "checkpoint_weight_sha256_recorded": "426dc58557d9bd590b3d56130934e3f95f1065e5ed39348da6b7da770047f7cd",
+      "merge_max_abs_logit_difference": 1.7285346984863281e-06,
+      "global_step": 100,
+      "weight_verification": "nonwinner pruned after global source-only lock; recorded training hash retained"
+    },
+    {
+      "run": "M5-b400-s100-lr1e-03",
+      "seed": 100,
+      "checkpoint_weight_sha256_recorded": "de7f9418db4e43e19d11716a187749bf1edd34e2a50569a3776c9a9aaf3ed660",
+      "merge_max_abs_logit_difference": 3.337860107421875e-06,
+      "global_step": 100,
+      "weight_verification": "selected weight independently hashed now"
+    },
+    {
+      "run": "M5-b1600-s100-lr1e-04",
+      "seed": 100,
+      "checkpoint_weight_sha256_recorded": "8b107d6b21c8dce9f77b99ad4db94d437aabc7c8bbbcfea1d06f79ee0d791c2a",
+      "merge_max_abs_logit_difference": 3.0994415283203125e-06,
+      "global_step": 400,
+      "weight_verification": "selected weight independently hashed now"
+    },
+    {
+      "run": "M5-b1600-s100-lr3e-04",
+      "seed": 100,
+      "checkpoint_weight_sha256_recorded": "38841ea5ca3bd6ca47406c2901f6c0115ef4096d3111683f34c53d1ae81280f3",
+      "merge_max_abs_logit_difference": 1.3470649719238281e-05,
+      "global_step": 400,
+      "weight_verification": "nonwinner pruned after global source-only lock; recorded training hash retained"
+    },
+    {
+      "run": "M5-b1600-s100-lr1e-03",
+      "seed": 100,
+      "checkpoint_weight_sha256_recorded": "461ab1a71c8f87b43bd78adb4eb666da9d475fd7c285444bbba77a99befed32f",
+      "merge_max_abs_logit_difference": 1.9073486328125e-06,
+      "global_step": 400,
+      "weight_verification": "nonwinner pruned after global source-only lock; recorded training hash retained"
+    },
+    {
+      "run": "M5-b6400-s100-lr1e-04",
+      "seed": 100,
+      "checkpoint_weight_sha256_recorded": "52edf1f64dcd14f4c9701338c6fcedc833b82bf2e83ff1af6a47bb15d41213a7",
+      "merge_max_abs_logit_difference": 3.030523657798767e-06,
+      "global_step": 1600,
+      "weight_verification": "nonwinner pruned after global source-only lock; recorded training hash retained"
+    },
+    {
+      "run": "M5-b6400-s100-lr3e-04",
+      "seed": 100,
+      "checkpoint_weight_sha256_recorded": "e525e2fd15fb67fd84608b2648ee9a0d36d8e64b9c7663d9929d59d2c74a12de",
+      "merge_max_abs_logit_difference": 2.9802322387695312e-06,
+      "global_step": 1600,
+      "weight_verification": "nonwinner pruned after global source-only lock; recorded training hash retained"
+    },
+    {
+      "run": "M5-b6400-s100-lr1e-03",
+      "seed": 100,
+      "checkpoint_weight_sha256_recorded": "0a691bf17532d1b3ab4a8ab44663fafc5e30a2eb6329459b30e8b46ce6156d29",
+      "merge_max_abs_logit_difference": 2.008676528930664e-05,
+      "global_step": 1600,
+      "weight_verification": "selected weight independently hashed now"
+    }
+  ],
+  "all_formal_candidates_validated": 45,
+  "all_source_only_choices_recomputed": 15,
+  "selected_checkpoint_hashes_verified": [
+    {
+      "run": "M5-b400-s13-lr1e-03",
+      "sha256": "d4b439f72d303eecb047a2b344ba9b35217fd0d1e541b155ce7119dba34d39cb",
+      "source_only_choice_recomputed": true
+    },
+    {
+      "run": "M5-b1600-s13-lr3e-04",
+      "sha256": "41c06fead1ca40eb2c9cd0d6bc32316a7bb8c2e6a8f0d86e67261cb8e7530dbe",
+      "source_only_choice_recomputed": true
+    },
+    {
+      "run": "M5-b6400-s13-lr1e-04",
+      "sha256": "1a60f6fdd3804b47e5b49aea1ba8cfabb795c95079c6741cda2e21272a91f5b3",
+      "source_only_choice_recomputed": true
+    },
+    {
+      "run": "M5-b400-s21-lr1e-03",
+      "sha256": "e76f047e4f350d12e2078e98ed05a9f7b24f665a498e3165abc833df5058c6a4",
+      "source_only_choice_recomputed": true
+    },
+    {
+      "run": "M5-b1600-s21-lr3e-04",
+      "sha256": "c8d7f5c40a8372c0085a408fd8deb4e8737b6ccd1eaac63836e4118a6896f952",
+      "source_only_choice_recomputed": true
+    },
+    {
+      "run": "M5-b6400-s21-lr3e-04",
+      "sha256": "a08d43fa2c300b3260511545334450d497717628500129afcfbeee8392b06338",
+      "source_only_choice_recomputed": true
+    },
+    {
+      "run": "M5-b400-s42-lr1e-03",
+      "sha256": "ecdf24907ca18db8b6926656e6e401557454e79fff908646f2fb765435e75bc1",
+      "source_only_choice_recomputed": true
+    },
+    {
+      "run": "M5-b1600-s42-lr3e-04",
+      "sha256": "fc2ae189ad30bb2e16b7cb008e31ad4f9757ca62addb85d54f2a32773b8f7749",
+      "source_only_choice_recomputed": true
+    },
+    {
+      "run": "M5-b6400-s42-lr3e-04",
+      "sha256": "4822e31e4565111cb2ad6034e29df94a9ff2bae00b99c62bbbf16e1bcf829db4",
+      "source_only_choice_recomputed": true
+    },
+    {
+      "run": "M5-b400-s87-lr3e-04",
+      "sha256": "1e92451282bac0dc84b0dc2b7e3e74d5f9ec98def67908e94621f8e48cd21666",
+      "source_only_choice_recomputed": true
+    },
+    {
+      "run": "M5-b1600-s87-lr3e-04",
+      "sha256": "8926531c74aed98db396567268203aec691c77d74174ffbcdb20e98b9468b7d8",
+      "source_only_choice_recomputed": true
+    },
+    {
+      "run": "M5-b6400-s87-lr3e-04",
+      "sha256": "6f811badbaf1d17a7aa71cadf6becec5905a5d0ece1f94dcfd07a3d88c63c504",
+      "source_only_choice_recomputed": true
+    },
+    {
+      "run": "M5-b400-s100-lr1e-03",
+      "sha256": "de7f9418db4e43e19d11716a187749bf1edd34e2a50569a3776c9a9aaf3ed660",
+      "source_only_choice_recomputed": true
+    },
+    {
+      "run": "M5-b1600-s100-lr1e-04",
+      "sha256": "8b107d6b21c8dce9f77b99ad4db94d437aabc7c8bbbcfea1d06f79ee0d791c2a",
+      "source_only_choice_recomputed": true
+    },
+    {
+      "run": "M5-b6400-s100-lr1e-03",
+      "sha256": "0a691bf17532d1b3ab4a8ab44663fafc5e30a2eb6329459b30e8b46ce6156d29",
+      "source_only_choice_recomputed": true
+    }
+  ],
+  "selection_lock_sha256": "e95f4eb727bfccf3544041408e02977272b5eae3a0de3bc19d18595f1df27aa3",
+  "all_training_attempts_successful_without_restart": true,
+  "formal_test_metric_files_at_check": 0,
+  "scope": "All 45 configurations, ten-epoch histories, trainable parameter counts, merge records and 15 source-only choices independently rechecked. All 15 retained weights hashed on GPU host. Nonwinner weights were already pruned under the frozen protocol; their recorded training hashes are retained, not claimed freshly rehashed. Formal evaluation is a separate ongoing stage."
+}
