@@ -1,0 +1,17 @@
+{
+  "job": "12373",
+  "python": "3.10.12",
+  "source_sha256": {
+    "member-c/src/sc4001_c/m5_import.py": "f969738f9509143c016efd498269181a96d23745a55f2836e2d6a60b30609710",
+    "member-c/src/sc4001_c/final_analysis.py": "52d72bbb5ef281e6d189357906fc91100c09356522ac5a523a53cba95bc4f403",
+    "member-c/src/sc4001_c/table_compare.py": "5e8e24422176ff530525960eb40098f7bc8a156029094735cfaeb6d6b5248dd2",
+    "member-c/tests/test_m5_import_stats.py": "14dacefcfc91568f8f0d3ba46fd485c3b31eadc934292a1d03db1843029e3e45"
+  },
+  "scheduler_returncode": 0,
+  "scheduler_stdout": "JobId=12373 JobName=sc4001-gp-audit-test UserId=zhangh(1024) GroupId=zhangh(1024) MCS_label=N/A Priority=133 Nice=0 Account=(null) QOS=(null) JobState=COMPLETED Reason=None Dependency=(null) Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:32 TimeLimit=00:15:00 TimeMin=N/A SubmitTime=2026-11-10T18:42:29 EligibleTime=2026-11-10T18:42:29 AccrueTime=2026-11-10T18:42:29 StartTime=2026-11-10T18:42:30 EndTime=2026-11-10T18:43:02 Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-10T18:42:30 Scheduler=Main Partition=6000ada AllocNode:Sid=MICL-TaoDCWS1:3389338 ReqNodeList=(null) ExcNodeList=(null) NodeList=localhost BatchHost=localhost NumNodes=1 NumCPUs=2 NumTasks=1 CPUs/Task=2 ReqB:S:C:T=0:0:*:* TRES=cpu=2,node=1,billing=2 Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=2 MinMemoryNode=8G MinTmpDiskNode=0 Features=(null) DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null) Command=/share/zhangh/sc4001-gp-c/checks/M5-import-stat-audit-v2/M5-import-stat-audit.sbatch WorkDir=/share/zhangh/sc4001-gp-c/checks/M5-import-stat-audit-v2 StdErr=/share/zhangh/sc4001-gp-c/checks/M5-import-stat-audit-v2/audit-test-12373.err StdIn=/dev/null StdOut=/share/zhangh/sc4001-gp-c/checks/M5-import-stat-audit-v2/audit-test-12373.out Power= \n",
+  "scheduler_stderr": "",
+  "status": "PASS",
+  "tests": 37,
+  "scope": "CPU synthetic fixtures, including training/resume, diagnostics, safe packaging, cross-platform roundoff and independent M5 paired-statistics/return binding. Not formal M5 GPU outcomes.",
+  "test_payload_sha256": "6860fff4e8577d0529953304d968eb04f76905074f8b61a6801b41b93501ad1c"
+}

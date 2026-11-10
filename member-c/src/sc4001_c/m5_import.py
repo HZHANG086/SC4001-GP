@@ -14,8 +14,44 @@ import pandas as pd
 from .common import load,dump,digest
 from .m5_audit import audit_predictions
 from .lora_sweep import validate_run,run_name
+from .stats import paired_stats,holm
+from .table_compare import compare_tables
 
 MANIFEST='member-c/results/M5-diagnostics/RETURN_MANIFEST.json'
+
+
+def verify_accepted_return(raw,audit):
+    """Bind a local acceptance record to the exact return used in synthesis."""
+    manifest=raw/MANIFEST
+    if digest(manifest)!=audit.get('return_manifest_sha256'):
+        raise ValueError('M5 return differs from independently accepted archive')
+    for name,sha in load(manifest)['files'].items():
+        path=raw/name
+        if not path.resolve().is_relative_to(raw.resolve()) or digest(path)!=sha:
+            raise ValueError('M5 return file changed since acceptance: '+name)
+
+
+def recompute_comparisons(selected,reference,spec):
+    """Recompute the frozen 18-contrast family from verified prediction means."""
+    methods=('M1','M2','M3','M4','M6','L2SP')
+    expected={(b,s) for b in spec['budgets'] for s in spec['seeds']}
+    if len(selected)!=15 or set(selected[['budget','seed']].itertuples(index=False,name=None))!=expected:
+        raise ValueError('Invalid M5 statistical replication grid')
+    old_expected={(m,b,s) for m in methods for b,s in expected}
+    if len(reference)!=90 or set(reference[['method','budget','seed']].itertuples(index=False,name=None))!=old_expected:
+        raise ValueError('Invalid reference statistical replication grid')
+    comparisons=[]
+    for budget in spec['budgets']:
+        target=selected[selected.budget==budget].set_index('seed').loc[spec['seeds']]
+        for method in methods:
+            ref=reference[(reference.budget==budget)&(reference.method==method)].set_index('seed').loc[spec['seeds']]
+            differences=100*(target.ood_accuracy-ref.ood_accuracy).to_numpy()
+            comparisons.append({'comparison':'M5-'+method,'budget':budget,'metric':'ood_accuracy',
+                'family':'M5_secondary_18',**paired_stats(differences),
+                **{f'diff_seed_{s}':v for s,v in zip(spec['seeds'],differences)}})
+    for p in ('p_signflip_exact','p_t_approx'):
+        for row,value in zip(comparisons,holm([r[p] for r in comparisons])):row[p+'_holm']=value
+    return pd.DataFrame(comparisons)
 
 
 def verified_extract(archive_path,destination):
@@ -67,7 +103,7 @@ def audit_local(raw,repo,out):
         with files[0].open() as f:refs[d]={x['example_id']:x['label'] for x in (json.loads(line) for line in f)}
     per_seed=pd.read_csv(member/'results/M5-v1/per_seed.csv').set_index(['budget','seed'])
     if len(per_seed)!=15 or set(per_seed.index)!=expected:raise ValueError('Wrong per-seed table grid')
-    checks=[];metrics=[]
+    checks=[];metrics=[];observed_selected=[]
     for sel in lock['selections']:
         b,s=sel['budget'],sel['seed']
         candidates=[root/run_name(b,s,lr) for lr in spec['learning_rates']]
@@ -90,10 +126,22 @@ def audit_local(raw,repo,out):
             metrics.append({'method':'M5','budget':b,'seed':s,'domain':d,'n':n,**m})
             checks.append({'path':str(path.relative_to(raw)),'sha256':digest(path),'n':n})
         if abs(np.mean(observed)-per_seed.loc[(b,s),'ood_accuracy'])>1e-12:raise ValueError('OOD average differs')
+        observed_selected.append({'budget':b,'seed':s,'ood_accuracy':float(np.mean(observed))})
     out.mkdir(parents=True,exist_ok=True)
     pd.DataFrame(metrics).to_csv(out/'prediction_metrics_recomputed.csv',index=False)
+    reference=repo/'member-b/formal-results/results/B-v1/per_seed.csv'
+    recomputed=out/'paired_comparisons_recomputed.csv'
+    recompute_comparisons(pd.DataFrame(observed_selected),pd.read_csv(reference),spec).to_csv(recomputed,index=False)
+    returned=member/'results/M5-audit/paired_comparisons.csv'
+    comparison_check=compare_tables(returned,recomputed)
+    if not comparison_check['equivalent']:raise ValueError('M5 paired statistics do not independently reproduce: '+str(comparison_check))
     dump(out/'local_audit.json',{'status':'PASS','candidate_records':45,'selected_models':15,
+        'return_manifest_sha256':digest(raw/MANIFEST),
         'prediction_files':45,'prediction_rows':sum(x['n'] for x in checks),'checks':checks,
+        'paired_statistics':{'comparisons':18,'check':comparison_check,
+            'returned_sha256':digest(returned),'recomputed_sha256':digest(recomputed),
+            'reference_per_seed_sha256':digest(reference),
+            'scope':'Recomputed from independently validated M5 predictions and frozen A/B seed rows; same 18-contrast family and five paired seeds.'},
         'CKA_inputs':'All 768 sample IDs, labels and text hashes match B, with the same frozen estimator source.',
         'weight_boundary':'Weights not downloaded. Retained remote weight hashes and 45 subset probability replays; not independent local weight hashing.',
         'target_selection':'Source choices independently recomputed from all candidate validation records; target predictions only read after checking each frozen choice.'})

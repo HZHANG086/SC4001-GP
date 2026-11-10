@@ -11,6 +11,7 @@ from scipy.stats import spearmanr
 from .common import load,dump,digest
 from .collect_cka import collect
 from .handoff import collect_cost
+from .m5_import import verify_accepted_return
 
 
 def main(argv=None):
@@ -34,7 +35,14 @@ def main(argv=None):
             raise ValueError('M5 prediction and diagnostic audits must pass first')
         local=load(a.repo/'member-c/results/M5-local-audit/local_audit.json')
         if local['status']!='PASS' or len(local['checks'])!=45:raise ValueError('Independent local prediction audit required')
+        stats_check=local.get('paired_statistics',{})
+        if stats_check.get('comparisons')!=18 or not stats_check.get('check',{}).get('equivalent'):
+            raise ValueError('Independent M5 paired-statistics audit required')
+        if (digest(parent/'M5-audit/paired_comparisons.csv')!=stats_check['returned_sha256']
+                or digest(a.repo/'member-b/formal-results/results/B-v1/per_seed.csv')!=stats_check['reference_per_seed_sha256']):
+            raise ValueError('M5 statistical evidence changed since local audit')
         raw=parent.parent.parent
+        verify_accepted_return(raw,local)
         for check in local['checks']:
             if digest(raw/check['path'])!=check['sha256']:raise ValueError('M5 predictions changed since local audit')
         m5cka=pd.read_csv(parent/'M5-CKA/cka.csv')
@@ -93,6 +101,7 @@ def main(argv=None):
     if a.m5:
         inputs.extend([a.m5,parent/'M5-CKA/cka.csv',parent/'M5-CKA/manifest.json',
             parent/'M5-audit/audit.json',parent/'M5-diagnostics/audit.json',
+            parent/'M5-audit/paired_comparisons.csv',
             parent/'M5-diagnostics/ada_cost_summary.csv',a.repo/'member-c/results/M5-local-audit/local_audit.json'])
     dump(a.out/'analysis_manifest.json',{'version':'C-final-analysis-v1','scope':'Descriptive synthesis plus existing paired statistical audit',
         'M5_included':a.m5 is not None,'status':'ANALYSIS_READY_FOR_WRITING' if a.m5 else 'PARTIAL_M5_REAL_RUNS_PENDING',

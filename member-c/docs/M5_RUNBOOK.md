@@ -51,6 +51,6 @@ python -m sc4001_c.final_analysis \
 python -m sc4001_c.final_plots
 ```
 
-The importer rejects unsafe paths, duplicate/unmanifested files, changed hashes and overwriting an existing import. It independently checks all source selections, all 45 prediction files and their test IDs/labels, metrics, and correspondence of M5/B CKA samples. A fresh import destination is required for a second archive; preserve earlier returns. Local auditing does not claim to hash the weights that remain on Ada.
+The importer rejects unsafe paths, duplicate/unmanifested files, changed hashes and overwriting an existing import. It independently checks all source selections, all 45 prediction files and their test IDs/labels, metrics, and correspondence of M5/B CKA samples. A fresh import destination is required for a second archive; preserve earlier returns. It also independently recomputes the 18 paired OOD contrasts from validated predictions and frozen A/B seed rows, including uncertainty and the two Holm adjustments. Approximate t quantities follow the narrow, logged roundoff policy in REPRODUCTION.md; all other fields remain exact. The acceptance record binds to the full return manifest; synthesis rechecks every included file and the reference-statistics hashes. Local auditing does not claim to hash the weights that remain on Ada.
 
 The current report builder deliberately rejects a results table containing M5 until the six-method draft's prose, figures and completion boundary have been revised. Updating a table alone is insufficient to produce the final report.
