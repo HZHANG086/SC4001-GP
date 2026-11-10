@@ -1,0 +1,77 @@
+test_aligns_by_id_and_rejects_corruption (test_analysis.PredictionTests) ... ok
+test_balanced_sampling_is_order_independent (test_analysis.RepresentationTests) ... ok
+test_feature_space_formula (test_analysis.RepresentationTests) ... ok
+test_invariances (test_analysis.RepresentationTests) ... ok
+test_pair_alignment_matters (test_analysis.RepresentationTests) ... ok
+test_zero_variance_is_missing_not_perfect (test_analysis.RepresentationTests) ... ok
+test_crossed_bootstrap_extremes_and_reproducibility (test_analysis.StatisticalTests) ... ok
+test_exact_pairing_matches_scipy (test_analysis.StatisticalTests) ... ok
+test_holm_known_result (test_analysis.StatisticalTests) ... ok
+test_probabilities (test_analysis.StatisticalTests) ... ok
+test_small_n_discreteness_and_ties (test_analysis.StatisticalTests) ... ok
+test_saved_models_replay_and_resumption (test_cka_integration.CKAIntegration) ... Saving the dataset (0/1 shards):   0%|          | 0/24 [00:00<?, ? examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 5787.24 examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 5427.76 examples/s]
+Saving the dataset (0/1 shards):   0%|          | 0/24 [00:00<?, ? examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 7285.47 examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 6732.88 examples/s]
+Saving the dataset (0/1 shards):   0%|          | 0/24 [00:00<?, ? examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 7247.70 examples/s]Saving the dataset (1/1 shards): 100%|██████████| 24/24 [00:00<00:00, 6874.97 examples/s]
+ok
+test_full_grid_and_corrupt_replay_rejected (test_handoff.CollectionTests) ... ok
+test_missing_comparison_rejected (test_handoff.CollectionTests) ... ok
+test_synthetic_result_rejected (test_handoff.CollectionTests) ... ok
+test_all_processes_and_teacher_tamper (test_handoff.CostCollectionTests) ... ok
+test_gpu_mismatch_rejected (test_handoff.CostCollectionTests) ... ok
+test_all_methods_and_teacher_profiles_backward (test_handoff.CostKernelTests) ... ok
+test_failure_never_submits_next_job (test_handoff.QueueScriptTests) ... ok
+test_last_stage_runs_nine_fresh_probes_then_packages (test_handoff.QueueScriptTests) ... ok
+test_success_submits_exactly_one_successor (test_handoff.QueueScriptTests) ... ok
+test_double_attachment_and_merge_rejected (test_lora.LoRATests) ... ok
+test_identity_freezing_gradient_merge_and_plain_reload (test_lora.LoRATests) ... ok
+test_trainer_export_and_interrupted_resume_match (test_lora.LoRATests) ... Saving the dataset (0/1 shards):   0%|          | 0/500 [00:00<?, ? examples/s]Saving the dataset (1/1 shards): 100%|██████████| 500/500 [00:00<00:00, 137374.03 examples/s]Saving the dataset (1/1 shards): 100%|██████████| 500/500 [00:00<00:00, 127231.21 examples/s]
+Map:   0%|          | 0/320 [00:00<?, ? examples/s]Map: 100%|██████████| 320/320 [00:00<00:00, 11413.46 examples/s]
+Map:   0%|          | 0/80 [00:00<?, ? examples/s]Map: 100%|██████████| 80/80 [00:00<00:00, 4597.00 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A                                     
+                                     [A 50%|█████     | 1/2 [00:00<00:00, 24.90it/s]
+100%|██████████| 1/1 [00:00<00:00, 1958.13it/s][A
+                                               [A
+  0%|          | 0/1 [00:00<?, ?it/s][A                                             
+                                     [A100%|██████████| 2/2 [00:00<00:00, 19.57it/s]
+100%|██████████| 1/1 [00:00<00:00, 2255.00it/s][A
+                                               [A                                             100%|██████████| 2/2 [00:00<00:00, 15.07it/s]100%|██████████| 2/2 [00:00<00:00, 15.02it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 3483.64it/s]
+Map:   0%|          | 0/80 [00:00<?, ? examples/s]Map: 100%|██████████| 80/80 [00:00<00:00, 4553.03 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+                                     [A                                     
+100%|██████████| 1/1 [00:00<00:00, 2538.92it/s][A 50%|█████     | 1/2 [00:00<00:00, 25.74it/s]
+                                               [A 50%|█████     | 1/2 [00:00<00:00, 18.68it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A                                     
+                                     [A100%|██████████| 2/2 [00:00<00:00, 24.62it/s]
+100%|██████████| 1/1 [00:00<00:00, 1916.08it/s][A
+                                               [A                                             100%|██████████| 2/2 [00:00<00:00, 19.73it/s]100%|██████████| 2/2 [00:00<00:00, 19.66it/s]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 3440.77it/s]
+ok
+test_prune_guard (test_lora.SelectionTests) ... ok
+test_source_only_tie_order_and_immutable_decision (test_lora.SelectionTests) ... ok
+test_collector_rejects_mixed_hardware_and_changed_inputs (test_m5_diagnostics.DiagnosticTests) ... ok
+test_prediction_audit_rejects_duplicate_label_and_probability_corruption (test_m5_diagnostics.DiagnosticTests) ... ok
+test_shared_benchmark_never_unfreezes_lora_base (test_m5_diagnostics.DiagnosticTests) ... ok
+test_duplicate_or_missing_seed_cannot_become_a_replicate (test_m5_import_stats.ImportStatisticsTests) ... ok
+test_known_paired_effect_and_exact_test_family (test_m5_import_stats.ImportStatisticsTests) ... ok
+test_synthesis_rejects_changed_cka_or_another_return_manifest (test_m5_import_stats.ImportStatisticsTests) ... ok
+test_disabled_accounting_preserves_evidence_and_excludes_weights (test_m5_package.ReturnPackageTests) ... ok
+test_return_import_rejects_path_traversal_and_tampering (test_m5_package.ReturnPackageTests) ... ok
+test_corrupt_missing_and_unmanifested_inputs_rejected_before_analysis (test_m5_raw_reproduction.RawReturnReproductionTests) ... ok
+test_links_traversal_and_output_inside_raw_are_rejected (test_m5_raw_reproduction.RawReturnReproductionTests) ... usage: python -m unittest [-h] (--archive ARCHIVE | --raw RAW)
+                          [--destination DESTINATION] [--repo REPO]
+                          [--out OUT]
+python -m unittest: error: --out must be outside the immutable raw return
+ok
+test_raw_cli_reaudits_without_archive_or_mutating_input (test_m5_raw_reproduction.RawReturnReproductionTests) ... ok
+test_exact_predictions_counts_and_randomization_fields_remain_strict (test_table_compare.TableComparisonTests) ... ok
+test_observed_linux_roundoff_is_recorded (test_table_compare.TableComparisonTests) ... ok
+test_real_statistical_changes_and_nonfinite_values_fail (test_table_compare.TableComparisonTests) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 8.101s
+
+OK

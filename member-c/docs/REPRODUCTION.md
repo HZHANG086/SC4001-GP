@@ -80,4 +80,6 @@ Actual preflight evidence: `results/zip_preflight/PREFLIGHT.json`. Archive versi
 
 ## CPU verification tests
 
-With the PYTHONPATH above, run `python -m unittest discover -s member-c/tests -v`. The updated 37-test suite passed in an allocated CPU-only Linux job; `results/validation-37-tests` records raw logs, source hashes and scope. Tests use small synthetic fixtures for training/resume, CKA, costs, archive integrity, roundoff handling and paired-statistics re-execution. Fixture output must never be presented as a formal GPU experiment.
+With the PYTHONPATH above, run `python -m unittest discover -s member-c/tests -v`. The updated 40-test suite passed in an allocated CPU-only Linux job; `results/validation-40-tests` records raw logs, source hashes and scope. Tests use small synthetic fixtures for training/resume, CKA, costs, archive integrity, roundoff handling and paired-statistics re-execution. Fixture output must never be presented as a formal GPU experiment.
+
+For an already extracted M5 return, `m5_import --raw` performs the same independent numerical audit after checking the complete file inventory and manifest hashes; see M5_RUNBOOK.md. This avoids shipping a redundant tar archive inside the final code ZIP. The real M5-inclusive extracted-package test remains pending the return.

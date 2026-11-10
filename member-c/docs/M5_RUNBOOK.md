@@ -53,4 +53,14 @@ python -m sc4001_c.final_plots
 
 The importer rejects unsafe paths, duplicate/unmanifested files, changed hashes and overwriting an existing import. It independently checks all source selections, all 45 prediction files and their test IDs/labels, metrics, and correspondence of M5/B CKA samples. A fresh import destination is required for a second archive; preserve earlier returns. It also independently recomputes the 18 paired OOD contrasts from validated predictions and frozen A/B seed rows, including uncertainty and the two Holm adjustments. Approximate t quantities follow the narrow, logged roundoff policy in REPRODUCTION.md; all other fields remain exact. The acceptance record binds to the full return manifest; synthesis rechecks every included file and the reference-statistics hashes. Local auditing does not claim to hash the weights that remain on Ada.
 
+An already extracted return can be independently re-audited without retaining a second copy of the original tar archive. This is the entry point for the eventual portable code ZIP:
+
+```bash
+python -m sc4001_c.m5_import \
+  --raw ../received/M5-return-v1 \
+  --out reproduced/M5-local-audit
+```
+
+Raw mode first verifies the complete file inventory and all manifest checksums, rejecting extra or missing files, symbolic links and unsafe paths, then runs the same prediction and statistical audit as archive import. The output must be outside the immutable raw return. It does not invent an archive checksum when no archive was supplied. Verify the enclosing delivery ZIP's published checksum separately; an internal manifest alone is not evidence of external provenance. This command is documented before the real return arrives and is not a claim of completed M5 reproduction; final delivery instructions will name the actual included path.
+
 The current report builder deliberately rejects a results table containing M5 until the six-method draft's prose, figures and completion boundary have been revised. Updating a table alone is insufficient to produce the final report.

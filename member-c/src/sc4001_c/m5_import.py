@@ -31,6 +31,24 @@ def verify_accepted_return(raw,audit):
             raise ValueError('M5 return file changed since acceptance: '+name)
 
 
+def verified_existing(raw):
+    """Check a ZIP-delivered raw return before repeating its numerical audit."""
+    manifest=load(raw/MANIFEST)
+    expected=set(manifest['files'])|{MANIFEST}
+    for name in expected:
+        p=PurePosixPath(name)
+        if p.is_absolute() or '..' in p.parts or not p.parts or p.parts[0]!='member-c':
+            raise ValueError('Unsafe or unexpected return path')
+    actual=set()
+    for path in raw.rglob('*'):
+        if path.is_symlink():raise ValueError('Symlinks are not allowed in a raw return')
+        if path.is_file():actual.add(path.relative_to(raw).as_posix())
+    if actual!=expected:raise ValueError('Unmanifested or missing files in raw return')
+    for name,sha in manifest['files'].items():
+        if digest(raw/name)!=sha:raise ValueError('Returned file checksum mismatch: '+name)
+    return manifest
+
+
 def recompute_comparisons(selected,reference,spec):
     """Recompute the frozen 18-contrast family from verified prediction means."""
     methods=('M1','M2','M3','M4','M6','L2SP')
@@ -148,14 +166,25 @@ def audit_local(raw,repo,out):
 
 
 def main(argv=None):
-    p=argparse.ArgumentParser();p.add_argument('--archive',type=Path,required=True)
-    p.add_argument('--destination',type=Path,required=True);p.add_argument('--repo',type=Path,default=Path('.'))
+    p=argparse.ArgumentParser();source=p.add_mutually_exclusive_group(required=True)
+    source.add_argument('--archive',type=Path)
+    source.add_argument('--raw',type=Path,help='Re-audit an already extracted, manifest-complete return')
+    p.add_argument('--destination',type=Path);p.add_argument('--repo',type=Path,default=Path('.'))
     p.add_argument('--out',type=Path,default=Path('member-c/results/M5-local-audit'))
-    a=p.parse_args(argv);manifest=verified_extract(a.archive,a.destination)
-    audit_local(a.destination,a.repo,a.out)
-    dump(a.out/'import.json',{'archive_sha256':digest(a.archive),'manifest_files':len(manifest['files']),
-        'destination':str(a.destination),'status':'CHECKSUM_AND_LOCAL_PREDICTION_AUDIT_PASSED'})
-    print('M5_RETURN_IMPORTED_AND_AUDITED')
+    a=p.parse_args(argv)
+    if a.archive and a.destination is None:p.error('--archive requires --destination')
+    if a.raw and a.destination is not None:p.error('--destination is only for archive extraction')
+    raw=a.raw if a.raw is not None else a.destination
+    if a.out.resolve().is_relative_to(raw.resolve()):
+        p.error('--out must be outside the immutable raw return')
+    manifest=verified_existing(raw) if a.raw else verified_extract(a.archive,raw)
+    audit_local(raw,a.repo,a.out)
+    record={'manifest_files':len(manifest['files']),'return_manifest_sha256':digest(raw/MANIFEST),
+        'destination':str(raw),'mode':'existing_raw' if a.raw else 'archive_import',
+        'status':'CHECKSUM_AND_LOCAL_PREDICTION_AUDIT_PASSED'}
+    if a.archive:record['archive_sha256']=digest(a.archive)
+    dump(a.out/'import.json',record)
+    print('M5_RETURN_REAUDITED' if a.raw else 'M5_RETURN_IMPORTED_AND_AUDITED')
 
 
 if __name__=='__main__':main()
