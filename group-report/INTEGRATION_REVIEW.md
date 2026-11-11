@@ -7,7 +7,7 @@ Authority: original `GP/Material/project_handout.pdf`, last updated 10 October 2
 | Requirement | Report location / outcome |
 |---|---|
 | Focused question and justified investigation | Abstract and sections 1–3; representation preservation versus transfer, with controlled feature and weight penalties. |
-| Introduction and existing techniques | Sections 1–2; eight verified primary references. |
+| Introduction and existing techniques | Sections 1–2; eleven verified primary references. |
 | Methods and suitable baselines | Section 3 and Table 1; seven strategies with the same encoder/head. |
 | Test/development separation | Section 4; source-only selection, predefined ablations and honest later M5 chronology. |
 | Experiments, failures and limitations | Sections 5–9; paired uncertainty, layer/pooling controls, negative outcomes, error strata and matched cost probes. |
@@ -40,3 +40,7 @@ The final narrative reconciles A's historical pending text, B's unsupported one-
 3. Submit the PDF and associated code ZIP via NTULearn. No NTULearn submission or merge into `main` is claimed here.
 
 This review checks evidence and presentation; it cannot guarantee a grade or replace the instructor's assessment.
+
+## Grading-focused follow-up
+
+See `RUBRIC_REVIEW_ZH.md` for the subsequent review. It adds close NLP prior work, clearer contribution-to-experiment mapping, notation and training defaults, macro-F1 sensitivity from existing audited metrics, measured probe variability, and a more carefully bounded conclusion. Existing A/B/C raw results and scientific code remain unchanged. The new metric-sensitivity aggregate is independently checked by `scripts/audit_report.py`. `QA.json` now certifies the revised PDF; original PDF and code delivery remain in the earlier output directory.

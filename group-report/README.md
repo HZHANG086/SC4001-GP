@@ -6,6 +6,8 @@ The PDF has 13 physical pages: cover, 8 main pages, 1 reference page and 3 optio
 
 **Before submission:** fill in the group number and three names (left blank at the user's request). Each member must review the interpretation, confirm their contributions and add any additional AI tools/purposes to section 11. This is a completed integrated report with those team-owned details deferred, not a claim that the team has already approved the declaration. Submit the PDF and code ZIP through NTULearn yourselves.
 
+The grading-focused revision is documented in [评分标准复查与修改记录](RUBRIC_REVIEW_ZH.md). The [evidence map](EVIDENCE_MAP.md) links the unified report sections to A/B/C sources. Additional macro-F1 sensitivity results are in `evidence/metric_sensitivity.csv`.
+
 ## What is included
 
 - `latex/main.tex`: editable report text, references, captions and cover.
@@ -13,7 +15,7 @@ The PDF has 13 physical pages: cover, 8 main pages, 1 reference page and 3 optio
 - `latex/images/`: five existing scientific figures copied without alteration.
 - `scripts/build_report.py`: generate tables and compile the report.
 - `scripts/audit_report.py`: independently recompute core seed-level summaries and paired intervals, check source hashes/protocols, and check PDF structure.
-- `GENERATED_VALUES.json`: 391 formatted numeric entries and 21 input-file hashes. Repeated display of the same value is counted as another entry, not another independent claim.
+- `GENERATED_VALUES.json`: 394 formatted numeric entries and 22 input-file hashes. Repeated display of the same value is counted as another entry, not another independent claim.
 - `QA.json`: automated audit result; `INTEGRATION_REVIEW.md`: visual and content review with explicit limitations.
 - `CITATION_LEDGER.md`: original-source links and the claims they support.
 - `INTEGRATION_PLAN.md`: source branch commits and resolved A/B/C draft conflicts.

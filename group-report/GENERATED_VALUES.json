@@ -1,6 +1,6 @@
 {
   "status": "GENERATED_FROM_AUDITED_SOURCES",
-  "numeric_entries": 391,
+  "numeric_entries": 394,
   "values": [
     {
       "key": "imdb/M1/400/mean",
@@ -1821,6 +1821,24 @@
       "source": "member-c/results/C-final/selected_models.csv"
     },
     {
+      "key": "FoneMaxGap",
+      "value": 0.12180971446497324,
+      "printed": "0.122",
+      "source": "member-c/results/C-v1/prediction_metrics.csv; member-c/results/M5-local-audit/prediction_metrics_recomputed.csv"
+    },
+    {
+      "key": "CostSDMin",
+      "value": 0.000879953429453,
+      "printed": "0.00088",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "CostSDMax",
+      "value": 0.0037392740869247,
+      "printed": "0.00374",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
       "key": "ProbeMemory",
       "value": 0.6279311180114746,
       "printed": "0.628",
@@ -2359,9 +2377,10 @@
     "member-c/results/C-v1/paired_comparisons.csv": "5142fdada656d17c265f22d84c1a605525c4e8fae9987f7071c3de629a217d8c",
     "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv": "8364b7e8f789820002cd042f2137a5ffe2e5ae77af56be9728fa49b2ab698c1d",
     "member-c/results/C-final/selected_models.csv": "01e1f62b408f14aa3910ec5c46304c1b650fcee820f13b0e982d0f8bfdd49046",
+    "member-c/results/C-v1/prediction_metrics.csv": "1b111619decd03e7001b9039db5779c7711841ac01aef62e63714d1e8e5181e0",
+    "member-c/results/M5-local-audit/prediction_metrics_recomputed.csv": "1f3702c69338a8b32ebcf85b2e4923bdc6e1d7a8c4d9ad6ecdc6e44798c499a9",
     "member-c/results/C-final/ada_cost_summary.csv": "b8f10ebdbacd18de724051a427f206b2a5b3fd0063ae6e4055ccd0487c756940",
     "member-c/results/C-final/recomputed/cka_all_seeds.csv": "bc6943e84289414d853cc751154857a91b63f196a96120562b76cd56eadc3c79",
-    "member-c/results/C-v1/prediction_metrics.csv": "1b111619decd03e7001b9039db5779c7711841ac01aef62e63714d1e8e5181e0",
     "member-c/results/C-v1/error_cases_with_excerpts.csv": "981d0350ea1b5401ad95d43aae3c84aa16956c23d32afa563bd34db53c331aef",
     "member-a/protocol/A-v1.json": "112e7abb91531eff521da1d93f28449e74d92172c74606d30e057449d482de40",
     "member-b/protocol/B-v1.json": "0118c13b5c37faeb10293ec23ac52046a270b473bbc16d198759923ccc192fa0",
@@ -2372,5 +2391,5 @@
     "member-c/report/figures/05_v100_cost.pdf": "6bc990df5664372c4c50a2ba6e3f2fc2cb764a08501272a58e350e09e4fa14bd",
     "member-c/report/figures/06_ada_cost.pdf": "f88b8d0e069a46f926c30e3befe460ff3ab162c6bb8399de5ef09cb053219b9c"
   },
-  "generator_sha256": "a3c58e3caf236a470159e9ff1b2715c607192953b43ecac2b241d4d5e9660729"
+  "generator_sha256": "9d75ab551ed49dafd46dcb90586e2ad9289b23d39ef98a2756fab761829dae3a"
 }

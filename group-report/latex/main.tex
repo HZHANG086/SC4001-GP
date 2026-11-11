@@ -47,29 +47,32 @@ Member C name: & \rule{75mm}{0.4pt}
 \hypersetup{pageanchor=true}
 \label{mainstart}
 \section*{Abstract}
-Adapting a pretrained language model with few labels may improve classification while changing representations that support transfer. We investigate whether preserving those representations improves sentiment classification outside the labelled source domain. Seven adaptation strategies share RoBERTa-base, a linear CLS classifier, three IMDb label budgets and five paired seeds; Yelp and Amazon are held out for evaluation. We compare accuracy, representation geometry, regularization ablations, errors and computational cost. A mean-pooled feature-preservation penalty increases last-layer out-of-domain centered kernel alignment from 0.108 to 0.652 at the largest budget, yet changes accuracy by only +0.038 percentage points. Its accuracy effects vary across budgets and seeds. LoRA achieves \OODLoRAHigh\% out-of-domain accuracy at the largest budget and reduces measured allocated memory and step time relative to full tuning, but is less stable at the smallest budget and more expensive than tuning only the final two layers. These results distinguish successful representation preservation from improved transfer. The contribution is a controlled investigation of this distinction, with negative outcomes, uncertainty and reproducible evidence retained.
+Does preserving pretrained representations improve sentiment classification outside the labelled training domain? We compare seven adaptation strategies using RoBERTa-base, three IMDb label budgets and five paired seeds, with Yelp and Amazon held out for evaluation. A token-mean feature penalty increases final-layer out-of-domain (OOD) centered kernel alignment (CKA) from 0.108 to 0.652 at the largest budget, while changing accuracy by only +0.038 percentage points; effects vary across budgets and seeds. Low-rank adaptation (LoRA) reaches \OODLoRAHigh\% out-of-domain accuracy and lowers measured memory and step time relative to full tuning, but is less stable at the smallest budget and more expensive than tuning the final two layers. The study distinguishes measurable representation preservation from predictive transfer through controlled comparisons, ablations, uncertainty and cost analysis.
 
 \section{Introduction}
 A sentiment classifier trained on movie reviews may be deployed on restaurant or product reviews, where vocabulary, review length and evaluative conventions differ. Limited labelled data make adaptation choices consequential: freezing a pretrained encoder may retain generic features but constrain task learning, while unrestricted tuning can change those features. Our question is: \textbf{does preserving pretrained representations improve out-of-domain sentiment classification under limited source labels, and at what computational cost?}
 
 We use IMDb as the only labelled training domain and evaluate unchanged models on Yelp and Amazon. The study separates freezing, partial tuning, full tuning, staged linear probing and tuning, low-rank adaptation, feature preservation and weight preservation. It tests a concrete hypothesis: anchoring a pretrained sentence representation may retain transferable information while the classifier adapts to source labels. This hypothesis requires two distinct checks: the representation must actually be preserved, and preservation must accompany improved target prediction. A successful first check does not establish the second.
 
-Our contribution has three parts. First, we adapt a pooled cosine-preservation objective to a shared text-classification pipeline and compare it with established alternatives under fixed data, head and source-only selection rules. Second, we test its behavior through paired accuracy, layerwise geometry, penalty sweeps and error transitions. Third, we distinguish parameter efficiency from measured computational cost using matched hardware probes and separately recorded search costs. We do not claim to invent LoRA, LP-FT, L2-SP or representation regularization.
+Our contribution is a controlled investigation of when preservation and transfer disagree. We adapt a pooled cosine objective to a shared sentiment pipeline (Section~\ref{sec:methods}), test preservation against paired accuracy, ablations and failures (Sections~\ref{sec:accuracy}--\ref{sec:ablation}), and distinguish parameter efficiency from measured computation (Section~\ref{sec:cost}). The focal comparison adds feature preservation to full tuning; weight anchoring and staged tuning test alternative forms of preservation. Frozen, partial and low-rank adaptation establish practical reference points. The contribution is this adaptation and analysis, not the invention of these established techniques.
 
 \section{Related work and positioning}
-RoBERTa revisits the optimization and data choices of language-model pretraining \cite{roberta}. A common original pretrained checkpoint lets us vary adaptation without confounding the comparison with different backbones or prior sentiment fine-tuning. IMDb supplies the source task \cite{imdb}; the Yelp and Amazon polarity datasets provide external review domains \cite{reviews}.
+RoBERTa revisits the optimization and data choices of language-model pretraining~\cite{roberta}. A common original pretrained checkpoint lets us vary adaptation without confounding the comparison with different backbones or prior sentiment fine-tuning. IMDb supplies the source task~\cite{imdb}; the Yelp and Amazon polarity datasets provide external review domains~\cite{reviews}.
 
-Kumar et al. show that full fine-tuning can distort useful features under distribution shift and motivate linear probing followed by fine-tuning (LP-FT) \cite{lpft}. Their vision experiments motivate our question; they do not establish that freezing should outperform tuning in sentiment analysis. LoRA learns low-rank updates to frozen weights, providing a parameter-efficient comparator \cite{lora}. L2-SP anchors weights to their pretrained values \cite{l2sp}, whereas DELTA constrains selected convolutional feature maps using attention \cite{delta}. Our token-mean cosine penalty is a simpler adaptation of the preservation idea, not a reproduction of DELTA. CKA supplies a diagnostic of representation geometry \cite{cka}, which we interpret separately from predictive accuracy.
+Kumar et al. show that full fine-tuning can distort useful features under distribution shift and motivate linear probing followed by fine-tuning (LP-FT)~\cite{lpft}. Their vision experiments motivate our question; they do not establish that freezing should outperform tuning in sentiment analysis. LoRA learns low-rank updates to frozen weights, providing a parameter-efficient comparator~\cite{lora}. L2-SP anchors weights to their pretrained values~\cite{l2sp}, whereas DELTA constrains selected convolutional feature maps using attention~\cite{delta}. Our token-mean cosine penalty is a simpler adaptation of the preservation idea, not a reproduction of DELTA. CKA supplies a diagnostic of representation geometry~\cite{cka}, which we interpret separately from predictive accuracy.
+
+Related work on natural language processing (NLP) already regularizes adaptation. RecAdam combines pretraining simulation with a gradual shift to the downstream objective~\cite{recadam}; SMART combines smoothness regularization with proximal optimization~\cite{smart}; R3F uses noise-based regularization to reduce representational collapse~\cite{r3f}. Our fixed-teacher, token-mean cosine penalty differs from these mechanisms. We do not benchmark these methods: our narrower question is whether increased geometric similarity accompanies better transfer under a common low-label protocol.
 
 \clearpage
-\section{Methods}
+\section{Methods}\label{sec:methods}
 \subsection{Shared encoder and classifier}
-Let $H_\theta(x)\in\mathbb{R}^{T\times d}$ denote the final token representations of RoBERTa-base. Every method predicts two sentiment classes using the same linear head,
+Let $H_\theta(x)\in\mathbb{R}^{T\times d}$ denote RoBERTa-base's final states, with $T$ tokens and width $d=768$. For a labelled minibatch $\mathcal B$, all methods use the same two-class linear head and cross-entropy objective in Equation~\ref{eq:classifier},
 \begin{equation}
- p(y\mid x)=\operatorname{softmax}(W_c H_\theta(x)_0+b_c),\qquad
+ p(\cdot\mid x)=\operatorname{softmax}(W_c H_\theta(x)_0+b_c),\qquad
  \mathcal{L}_{\mathrm{CE}}=-\frac{1}{|\mathcal B|}\sum_{(x,y)\in\mathcal B}\log p(y\mid x).
+\label{eq:classifier}
 \end{equation}
-The first-token state is referred to as CLS. There is no additional nonlinear classification head or pooler. All runs start from the same original pretrained revision, except the second stage of LP-FT, which starts from its own source-selected first-stage checkpoint.
+Here $W_c\in\mathbb R^{2\times d}$ and $b_c\in\mathbb R^2$ are trainable; the first-token state is called CLS. There is no nonlinear head or pooler. Table~\ref{tab:methods} defines the adaptation controls. All runs start from the same pretrained revision except LP-FT's second stage, which starts from its source-selected first-stage checkpoint.
 
 \begin{center}
 \input{methods_table.tex}
@@ -77,11 +80,12 @@ The first-token state is referred to as CLS. There is no additional nonlinear cl
 \end{center}
 
 \subsection{Feature and weight preservation}
-For M6, the teacher $H_0$ is the frozen pretrained encoder in evaluation mode. Its outputs are computed without gradients on the \emph{same labelled minibatch} used for classification; no target or additional unlabelled text is used. With attention mask $m_t$, define
+For M6, $H_0$ is the frozen pretrained teacher in evaluation mode. It processes the \emph{same labelled minibatch} without gradients; no target or additional unlabelled text is used. Equation~\ref{eq:feature} defines token-mean pooling and its cosine penalty, with attention mask $m_t\in\{0,1\}$:
 \begin{equation}
  z_\theta(x)=\frac{\sum_t m_t H_\theta(x)_t}{\sum_t m_t},\quad
  \mathcal R_{\mathrm{feat}}=\frac{1}{|\mathcal B|}\sum_{x\in\mathcal B}
  \left(1-\frac{z_\theta(x)^\top z_0(x)}{\|z_\theta(x)\|\,\|z_0(x)\|}\right).
+\label{eq:feature}
 \end{equation}
 The training objective is $\mathcal L_{\mathrm{CE}}+\lambda\mathcal R_{\mathrm{feat}}$. Pooling includes special tokens and excludes padding. The student uses its training-mode forward pass. The penalty anchors the token mean, whereas the classifier reads CLS; this distinction is central to interpreting the diagnostics.
 
@@ -106,7 +110,7 @@ Budgets of 400, 1,600 and 6,400 include \emph{training and validation labels}: 3
 The official 25,000-example IMDb test set is retained unchanged, including 201 normalized duplicate extra rows. Yelp and Amazon each use 5,000 balanced examples from their official test splits, with fixed sampling seed 20261027. Target duplicates, overlap with source texts and overlap between selected target sets are removed. Amazon input concatenates title, newline and content. Target labels serve only the fixed balanced sampling and evaluation; they do not train models or select configurations. Model and dataset revisions, IDs and split hashes are archived.
 
 \subsection{Training, selection and experimental chronology}
-All candidates use ten epochs, FP32, maximum length 512, dynamic padding, batch eight and four-step gradient accumulation. AdamW uses weight decay 0.01 and warmup ratio 0.1. Source-validation accuracy selects the epoch, breaking ties in favor of the earliest checkpoint; candidate ties follow fixed list order. This is checkpoint selection over ten trained epochs, not early termination or a train-plus-validation refit.
+All candidates use ten epochs, FP32, length cap 512, dynamic padding, batch eight and four-step accumulation (effective batch 32). AdamW uses weight decay 0.01, $(\beta_1,\beta_2)=(0.9,0.999)$ and $\epsilon=10^{-8}$. Learning rates decay linearly after 10\% warmup; gradient norm is clipped at 1.0. Source-validation accuracy selects the epoch, with earliest-epoch and fixed candidate-order tie breaking (Table~\ref{tab:grid}). Training still runs all ten epochs, without early termination or a train-plus-validation refit.
 
 \begin{center}
 \input{search_table.tex}
@@ -115,33 +119,36 @@ All candidates use ten epochs, FP32, maximum length 512, dynamic padding, batch 
 A source-only development pilot selected length 512; B's source-only pilot informed its penalty grids. A's 90 candidate runs preceded its test access. B recorded each cell's selection before testing winners and all predefined M6/L2-SP ablation candidates. M5 was designed after A/B results were available, but all 45 of its candidates and 15 source-only selections were completed before M5 target testing. The full study contains 330 candidate-training records, including 15 M4 first-stage runs, and 105 selected method/budget/seed cells. A/B ran on V100; M5 ran on RTX 6000 Ada. The analyses are exploratory rather than retrospectively preregistered confirmation. Matched Ada probes support cost comparisons across all seven methods.
 
 \clearpage
-\section{Predictive performance and uncertainty}
+\section{Predictive performance and uncertainty}\label{sec:accuracy}
 \subsection{Metrics and statistical units}
-The primary outcome is the equal mean of Yelp and Amazon accuracy \emph{within a seed}, followed by the five-seed mean and sample SD. IMDb measures source-domain test accuracy. Differences are paired by seed and budget. We report unadjusted 95\% paired-$t$ intervals, while recognizing that five seeds cannot establish their distributional assumptions. Exact two-sided sign-flip tests enumerate $2^5$ assignments; their minimum attainable $p$ is 0.0625. Holm correction is applied separately to three focal M6--M3 OOD comparisons, 69 original secondary contrasts and 18 later M5 contrasts. Layers, domains, examples and cost processes do not count as additional trained-model replications.
+The primary outcome is the equal mean of Yelp and Amazon accuracy \emph{within a seed}, followed by the five-seed mean and sample standard deviation (SD). Accuracy is interpretable on these balanced binary tests; Table~\ref{tab:accuracy} also reports source-domain IMDb accuracy. Differences are paired by seed and budget. Unadjusted 95\% paired-$t$ intervals assume a distribution that five seeds cannot establish. Exact two-sided sign-flip tests enumerate $2^5$ assignments, with minimum attainable $p=0.0625$. Holm correction is applied separately to three focal M6--M3 OOD comparisons, 69 original secondary contrasts and 18 later M5 contrasts. Layers, domains, examples and cost processes are not additional trained-model replications.
 
 \begin{center}
 \input{accuracy_table.tex}
 \captionof{table}{Source and target accuracy (\%), mean $\pm$ sample SD over five paired seeds. OOD is the equal mean of the two target domains, not an average including IMDb. All models are selected using source-validation accuracy only.}\label{tab:accuracy}
 \end{center}
-M2 exceeds M1's mean OOD accuracy by \MtwoMinusMoneLow, \MtwoMinusMoneMid\ and \MtwoMinusMoneHigh\ points as budgets increase. Thus some encoder adaptation helps substantially in this setting. At budget 6,400, M2 and M3 reach \OODPartialHigh\% and \OODFullHigh\%, despite very different trainable-parameter counts. This is close observed performance, not a statistical equivalence result. M3 has the highest mean at budget 400 and M4 at 6,400. At 1,600, M5 exceeds M4 by only \LoRAvsLPMid\ points; ranking rounded means is not evidence of a reliable advantage.
+M2 improves on M1's mean OOD accuracy by \MtwoMinusMoneLow, \MtwoMinusMoneMid\ and \MtwoMinusMoneHigh\ points as budgets increase. Thus some encoder adaptation helps substantially in this setting. At budget 6,400, M2 and M3 reach \OODPartialHigh\% and \OODFullHigh\%, despite very different trainable-parameter counts. This is close observed performance, not a statistical equivalence result. M3 has the highest mean at budget 400 and M4 at 6,400. At 1,600, M5 leads M4 by only \LoRAvsLPMid\ points; ranking rounded means is not evidence of a reliable advantage.
 
 \begin{center}
 \input{paired_table.tex}
 \captionof{table}{Paired OOD differences from full fine-tuning, in percentage points. Wins count positive seedwise differences. Intervals are approximate paired-$t$ intervals; exact tests have limited resolution with five seeds.}\label{tab:paired}
 \end{center}
-M6 wins in only one, two and three seeds at the increasing budgets; its medium-budget positive mean is not a majority-seed improvement. Its exact Holm-adjusted $p$ values are 0.375, 1.000 and 1.000; all three M5--M3 values are 1.000. These results do not establish either consistent superiority or equivalence. No fixed one-percentage-point threshold is used to declare significance.
+M6 wins in only one, two and three seeds at the increasing budgets; its medium-budget positive mean is not a majority-seed improvement. Its exact Holm-adjusted $p$ values are 0.375, 1.000 and 1.000; all three M5--M3 values are 1.000. These results do not establish either consistent improvement or equivalence. No fixed one-percentage-point threshold is used to declare significance.
 
 For sensitivity, 10,000 bootstrap replicates retain example pairing. Conditional fixed-model intervals omit retraining variation. At budget 400, the crossed seed/example interval for M6--M3 is $[-1.332,-0.086]$ points, while its paired-$t$ interval crosses zero. We retain this small-sample sensitivity rather than select the most favorable procedure; crossed intervals at the other budgets also span zero. A low-budget M5 seed reaches only \LoRAFailure\% OOD accuracy, and its OOD SD is \LoRASDLow\ points. Failed or unstable outcomes remain in the report.
 
+As a metric sensitivity check, we average per-domain macro-F1 (the mean of both classes' F1 scores) within each seed. Across all 21 method/budget cells, its five-seed mean differs from OOD accuracy by at most \FoneMaxGap\ points and retains the same method ordering at every budget. This supports the descriptive ranking across these two metrics, not statistically reliable advantages.
+
 \clearpage
 \section{Representation preservation versus transfer}
-Representation diagnostics use the same 256 deterministically selected, balanced examples from each domain for every checkpoint. We analyze the embedding output and all 12 encoder layers, both CLS states and means over non-padding tokens. For centered feature matrices $X,Y$, linear CKA is
+Representation diagnostics use the same 256 deterministically selected, balanced examples per domain for every checkpoint. We analyze embeddings and all 12 encoder layers, using CLS states and token means. For centered matrices $X,Y\in\mathbb R^{256\times d}$, Equation~\ref{eq:cka} defines linear centered kernel alignment (CKA), with Frobenius norm $\|\cdot\|_F$:
 \begin{equation}
  \operatorname{CKA}(X,Y)=\frac{\|X^\top Y\|_F^2}{\|X^\top X\|_F\,\|Y^\top Y\|_F}.
+\label{eq:cka}
 \end{equation}
-The implementation uses centered Gram matrices with float64 accumulation after FP32 feature extraction. It also computes a debiased sensitivity estimate, a fixed input-permutation control and pointwise cosine distance. CKA describes geometry rather than semantic correctness or a causal mechanism \cite{cka}. Constant layer-0 CLS states have undefined CKA and are omitted, not scored as perfect preservation.
+The implementation uses centered Gram matrices with float64 accumulation after FP32 feature extraction. It also computes a debiased sensitivity estimate, a fixed input-permutation control and pointwise cosine distance. CKA describes geometry rather than semantic correctness or a causal mechanism~\cite{cka}. Constant layer-0 CLS states have undefined CKA and are omitted, not scored as perfect preservation.
 
-\fig{02_cka_layers.pdf}{1}{Layerwise OOD CKA to the pretrained encoder. Targets are averaged within each seed; thin lines show individual seeds and thick lines show means. Rows distinguish token-mean and CLS pooling. M5 shares inputs and estimators but uses Ada; B diagnostics use V100.}{fig:cka}
+\fig{02_cka_layers.pdf}{1}{M6 preserves token-mean geometry more strongly than full tuning, with a smaller difference for CLS. OOD CKA to pretraining averages targets within each seed; thin lines show five individual seeds and thick lines their means. Rows distinguish pooling. M5 uses Ada; B diagnostics use V100.}{fig:cka}
 
 M6 raises last-layer mean-pooled OOD CKA from M3's 0.104, 0.095 and 0.108 to 0.274, 0.213 and 0.652. Debiased values retain the pattern (M3: 0.088, 0.080, 0.093; M6: 0.259, 0.199, 0.643), well above M6's shuffled means of 0.018, 0.015 and 0.025. The objective therefore preserves measurable geometry. Its paired accuracy effects nevertheless change sign and remain seed-sensitive (Table~\ref{tab:paired}).
 
@@ -150,8 +157,9 @@ The effect is pooling-dependent: M6's final CLS CKA remains close to M3's, while
 M5's corresponding CKA values are 0.116, 0.137 and 0.150 (debiased: 0.099, 0.118, 0.132). A small trainable-parameter fraction does not guarantee preservation of this geometry. Within-method and within-budget rank associations use five points and remain descriptive; pooling budgets would confound representation change with additional labels. Appendix~\ref{app:diagnostics} provides per-domain diagnostics and seedwise plots. M1/M2 have accuracy and cost comparisons but no added CKA experiment.
 
 \clearpage
-\section{Regularization ablations and failure analysis}
-\fig{04_lambda_ablation.pdf}{1}{Predefined penalty sweeps, with mean OOD accuracy and sample SD over five seeds. Target outcomes describe all predefined candidates; they do not replace source-only selection. The two penalty coefficient scales are not directly comparable.}{fig:ablation}
+\section{Regularization ablations and failure analysis}\label{sec:ablation}
+Figure~\ref{fig:ablation} tests sensitivity to preservation strength while retaining the separately trained full-tuning control.
+\fig{04_lambda_ablation.pdf}{1}{Stronger preservation does not uniformly improve accuracy; the strongest L2-SP penalty can collapse performance. Points show predefined candidates' mean OOD accuracy and sample SD over five seeds. Target results do not replace source-only selection. Coefficient scales differ between objectives; axes use categorical positions for the tested values.}{fig:ablation}
 
 M6 selects $\lambda=0.01/0.1/1$ in 1/3/1, 4/0/1 and 1/2/2 seeds at budgets 400, 1,600 and 6,400. L2-SP selects 0.1 in 14 of 15 cells. Selected-model averages therefore mix regularization strengths. M3 is a separate $\lambda=0$ control, not a fallback in either penalty grid. At budget 6,400, M6's three-domain last-layer mean CKA ranges from roughly 0.35 to 0.99; the two seeds choosing $\lambda=1$ are near 0.98--0.99. An aggregate preservation score would conceal this heterogeneity. Strong L2-SP regularization can sharply reduce accuracy (Figure~\ref{fig:ablation}); retaining those candidates exposes the limits of the objective.
 
@@ -165,11 +173,11 @@ The length cap is another limitation. On IMDb at budget 6,400, M3 averages 92.28
 Changes at the example level are also unstable. At budget 1,600, 118 Yelp and 141 Amazon examples are fixed in at least one seed but broken in another. Only four Yelp and three Amazon examples are fixed in at least three seeds. The case file uses a fixed hash rule to select examples from each correctness-transition category at seed 13, retaining IDs, text hashes and short excerpts. Appendix~\ref{app:repro} shows a fixed-budget fix/regression pair. It illustrates recorded predictions, not a proven semantic mechanism. AI-assisted case interpretations are not treated as human-coded evidence.
 
 \clearpage
-\section{Computational cost and practical trade-offs}
+\section{Computational cost and practical trade-offs}\label{sec:cost}
 \subsection{What the measurements cover}
 We separate trainable parameters, complete candidate-training records, search, short computational probes and inference. A/B training used V100; M5 used RTX 6000 Ada. Raw times across these GPUs are not treated as method speedups. To compare methods on one platform, we ran matched Ada training probes for all seven methods. Each uses the same 32 source-training examples, tokenized and resident on the GPU, length 512, batch eight, accumulation four and FP32 with TF32 disabled. Two optimizer steps warm up each process and five steps are measured. Three fresh processes estimate timing variation; these are not additional training seeds.
 
-\fig{06_ada_cost.pdf}{1}{Matched RTX 6000 Ada training probes, three fresh processes per method. M4 represents its second stage only. M6 retains the teacher required by its loss; L2-SP retains its pretrained-weight snapshot. Memory is peak allocated tensor memory, not total device occupancy or a guaranteed provisioning requirement.}{fig:cost}
+\fig{06_ada_cost.pdf}{1}{LoRA costs less than full tuning but more than final-two-layer tuning on matched RTX 6000 Ada probes. Bars average three fresh processes; M4 represents stage two only. M6 retains its required teacher and L2-SP its weight snapshot. Peak allocated tensor memory is not total device occupancy. Step-time SDs range from \CostSDMin\ to \CostSDMax\ seconds; measured memory SDs are zero.}{fig:cost}
 
 M3 uses \FullMemory\ GiB and \FullStep\ seconds per optimizer step; M5 uses \LoRAMemory\ GiB and \LoRAStep\ seconds, reductions of \MemorySaving\% and \TimeSaving\%. Its 0.24\% trainable-parameter fraction does not imply proportionally low compute. M1 and M2 remain cheaper: \ProbeMemory\ and \PartialMemory\ GiB, with \ProbeStep\ and \PartialStep\ seconds per step. M5 consumes \MemoryVsPartial\% more memory and \TimeVsPartial\% more step time than M2; its budget-6,400 mean OOD advantage is only 0.176 points, with paired interval $[-0.394,0.746]$. LoRA saves optimizer state, but adapters in all layers still require backward computation.
 
@@ -182,14 +190,14 @@ All 45 M5 candidate invocations completed without resume and sum to \LoRATrainin
 
 \clearpage
 \section{Discussion and limitations}
-The central hypothesis separates into preservation and prediction. The feature objective successfully increases mean-pooled similarity to pretraining, yet paired target-accuracy effects remain mixed. This finding supports a conditional interpretation of preservation: geometry can be retained without providing the decision features needed for better transfer. The mismatch between the penalized mean representation and the CLS classifier is a plausible contributor, but a new controlled intervention would be needed to establish causality.
+The central hypothesis separates into preservation and prediction. The feature objective increases mean-pooled similarity to pretraining, but paired target-accuracy effects remain mixed. Higher geometric similarity therefore does not consistently accompany better transfer in these experiments. Pooling mismatch is a possible explanation, not an established mechanism. A future $2\times2$ ablation could cross CLS versus mean-pooled penalties with CLS versus mean-pooled classifiers under the same source-only protocol. This intervention was not run and is not counted as evidence.
 
 M1's weaker performance shows that retaining the encoder unchanged is not sufficient in this setting. M2 offers a strong practical trade-off at the largest budget: its observed OOD accuracy is close to full tuning with substantially less measured compute. LoRA also reduces measured resources relative to full tuning, but its benefit depends on the comparator and budget. Choosing an adaptation strategy from parameter count or the single highest mean would ignore instability and implementation costs.
 
-The study is limited to one encoder family, one source and two fixed review-domain targets. Balanced target subsets do not represent naturally imbalanced deployment traffic, and absolute accuracies across different datasets do not directly measure shift severity. Five paired seeds share a source pool and test sets; their intervals and exact tests have limited resolution. The 512-token cap and duplicate IMDb test rows affect interpretation. CKA depends on pooling, layer and a 256-example subset, and it does not establish semantic preservation. M5 diagnostics use Ada while B uses V100; inputs, estimators and precision match, but small numerical differences remain possible. Candidate grids are bounded and inherited searches make budgets unequal. Later analyses and M5 design were informed by A/B results, although selection remained source-only. None of these observations justifies retuning on the target sets.
+The study covers one encoder family, one source and two fixed review-domain targets. Balanced target subsets do not represent naturally imbalanced traffic; absolute accuracies across datasets do not measure shift severity. Five paired seeds share a source pool and tests, limiting statistical resolution. The length cap and duplicate IMDb test rows affect interpretation. Our split audit does not establish absence of overlap with RoBERTa's pretraining corpus. CKA depends on pooling, layer and 256 sampled inputs, without establishing semantic preservation. M5 diagnostics use Ada and B uses V100; matched inputs, estimators and precision do not exclude small numerical differences. Bounded grids and inherited searches make search budgets unequal. M5 design and later analyses followed A/B results, although selection stayed source-only. These limitations do not justify target-set retuning.
 
 \section{Conclusion}
-Under this controlled low-label sentiment protocol, preserving pretrained mean-pooled representations does not reliably improve cross-domain accuracy. Feature regularization, weight anchoring, staged adaptation and LoRA produce different geometric and computational effects; their ordering is not captured by one preservation score. The useful outcome is a measured trade-off and a supported negative result: evaluate target generalization and resource use directly, preserve paired uncertainty, and do not assume that smaller representational change or fewer trainable parameters guarantees a better method.
+Under the tested low-label sentiment protocol, we found no consistent accuracy benefit from token-mean preservation; five seeds do not rule out small or context-specific benefits. Feature regularization, weight anchoring, staged adaptation and LoRA have different geometric and computational effects. For movie-review models transferred to restaurant and product reviews, the practical lesson is to measure target accuracy and resource use directly: neither smaller representation change nor fewer trainable parameters guarantees a better trade-off.
 
 \section{Reproducibility, contributions and AI use}
 The repository preserves fixed protocols, source versions, selection records, per-example predictions, statistics and figure code. The offline audit covers 495 prediction files and 5,775,000 rows, including predefined ablations; 40 CPU tests and an actual extracted-package run passed. Tables and figures are linked to archived inputs and versioned code. Large checkpoints are retained separately and are unnecessary for re-analyzing the archived predictions; repeating training or representation extraction does require models and data.
@@ -200,7 +208,7 @@ The repository preserves fixed protocols, source versions, selection records, pe
 \label{mainend}
 
 \clearpage
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
 \bibitem{roberta} Y. Liu, M. Ott, N. Goyal, J. Du, M. Joshi, D. Chen, O. Levy, M. Lewis, L. Zettlemoyer and V. Stoyanov. RoBERTa: A Robustly Optimized BERT Pretraining Approach. arXiv:1907.11692, 2019. \url{https://doi.org/10.48550/arXiv.1907.11692}.
 \bibitem{imdb} A. L. Maas, R. E. Daly, P. T. Pham, D. Huang, A. Y. Ng and C. Potts. Learning Word Vectors for Sentiment Analysis. ACL-HLT, pp. 142--150, 2011. \url{https://aclanthology.org/P11-1015/}.
 \bibitem{reviews} X. Zhang, J. Zhao and Y. LeCun. Character-level Convolutional Networks for Text Classification. Advances in Neural Information Processing Systems 28, 2015. \url{https://doi.org/10.48550/arXiv.1509.01626}. Dataset distributions: \url{https://huggingface.co/datasets/fancyzhx/yelp_polarity} and \url{https://huggingface.co/datasets/fancyzhx/amazon_polarity}.
@@ -209,6 +217,9 @@ The repository preserves fixed protocols, source versions, selection records, pe
 \bibitem{l2sp} X. Li, Y. Grandvalet and F. Davoine. Explicit Inductive Bias for Transfer Learning with Convolutional Networks. ICML, 2018. \url{https://doi.org/10.48550/arXiv.1802.01483}.
 \bibitem{delta} X. Li, H. Xiong, H. Wang, Y. Rao, L. Liu, Z. Chen and J. Huan. DELTA: DEep Learning Transfer using Feature Map with Attention for Convolutional Networks. ICLR, 2019. \url{https://doi.org/10.48550/arXiv.1901.09229}.
 \bibitem{cka} S. Kornblith, M. Norouzi, H. Lee and G. Hinton. Similarity of Neural Network Representations Revisited. ICML, PMLR 97:3519--3529, 2019. \url{https://proceedings.mlr.press/v97/kornblith19a.html}.
+\bibitem{recadam} S. Chen, Y. Hou, Y. Cui, W. Che, T. Liu and X. Yu. Recall and Learn: Fine-tuning Deep Pretrained Language Models with Less Forgetting. EMNLP, pp. 7870--7881, 2020. \url{https://aclanthology.org/2020.emnlp-main.634/}.
+\bibitem{smart} H. Jiang, P. He, W. Chen, X. Liu, J. Gao and T. Zhao. SMART: Robust and Efficient Fine-Tuning for Pre-trained Natural Language Models through Principled Regularized Optimization. ACL, pp. 2177--2190, 2020. \url{https://aclanthology.org/2020.acl-main.197/}.
+\bibitem{r3f} A. Aghajanyan, A. Shrivastava, A. Gupta, N. Goyal, L. Zettlemoyer and S. Gupta. Better Fine-Tuning by Reducing Representational Collapse. arXiv:2008.03156, 2020. \url{https://arxiv.org/abs/2008.03156}.
 \end{thebibliography}
 
 \clearpage
@@ -230,13 +241,13 @@ The scientific evidence is frozen in A-v1, B-v1 and M5-v1. There are 90 A candid
 \input{domain_table.tex}
 \captionof{table}{Last-layer diagnostics by domain, averaged over five paired seeds. Differences are M6 minus M3. Mean CKA uses token means; cosine-distance differences refer to the same pooling. Accuracy differences use full test sets.}
 \end{center}
-At budget 6,400, mean-pooled cosine distance decreases from 0.385 to 0.023 on Amazon and from 0.370 to 0.022 on Yelp, yet accuracy changes are only +0.128 and -0.052 points. CLS CKA changes remain small even though CLS cosine distance decreases. Different diagnostics therefore capture different aspects of representation change; none is a semantic fidelity score.
+At budget 6,400, mean-pooled cosine distance decreases from 0.385 to 0.023 on Amazon and from 0.370 to 0.022 on Yelp, while accuracy changes are only +0.128 and -0.052 points. CLS CKA changes remain small even though CLS cosine distance decreases. Different diagnostics therefore capture different aspects of representation change; none is a semantic fidelity score.
 
 \fig{03_cka_accuracy.pdf}{0.94}{One point per selected model seed, with targets averaged within seed and budgets kept separate. The plot does not assert a pooled regression or causal trend.}{fig:scatter}
 
 \begin{center}
 \input{calibration_table.tex}
-\captionof{table}{Probability-quality differences, M6 minus M3. Negative values mean smaller Brier loss, binary NLL or descriptive 15-bin top-label ECE. NLL clips probabilities to $[10^{-12},1-10^{-12}]$. No calibration model is fitted.}
+\captionof{table}{Probability-quality differences, M6 minus M3. Negative values mean smaller Brier loss, binary negative log-likelihood (NLL) or 15-bin top-label expected calibration error (ECE). NLL clips probabilities to $[10^{-12},1-10^{-12}]$. No calibration model is fitted.}
 \end{center}
 At budget 400, Amazon Brier worsens while NLL and ECE improve; at 1,600, ECE worsens in all domains despite positive mean accuracy changes. These diagnostics do not justify target-based recalibration.
 

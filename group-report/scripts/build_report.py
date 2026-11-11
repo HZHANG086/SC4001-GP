@@ -114,7 +114,25 @@ def main():
     failure=selected[(selected.method=='M5')&(selected.budget==400)&(selected.seed==42)].iloc[0]
     macro('LoRAFailure',100*failure.ood_accuracy,'.2f',base+'selected_models.csv')
     macro('LoRATrainingHours',selected[selected.method=='M5'].search_train_seconds_recorded.sum()/3600,'.3f',base+'selected_models.csv')
+    # Report-only sensitivity analysis of previously audited predictions.
+    f1_sources=['member-c/results/C-v1/prediction_metrics.csv',
+                'member-c/results/M5-local-audit/prediction_metrics_recomputed.csv']
+    per_domain=pd.concat([csv(path) for path in f1_sources],ignore_index=True)
+    assert len(per_domain)==315 and not per_domain.duplicated(['method','budget','seed','domain']).any()
+    per_seed=per_domain[per_domain.domain.isin(['yelp','amazon'])].groupby(['method','budget','seed'])[['accuracy','macro_f1']].mean()*100
+    sensitivity=per_seed.groupby(['method','budget']).agg(['mean','std'])
+    sensitivity.columns=['_'.join(c) for c in sensitivity.columns]
+    assert len(sensitivity)==21
+    for b in BUDGETS:
+        cell=sensitivity.xs(b,level='budget')
+        assert cell.accuracy_mean.sort_values().index.tolist()==cell.macro_f1_mean.sort_values().index.tolist()
+    evidence=REPORT/'evidence';evidence.mkdir(exist_ok=True)
+    sensitivity.to_csv(evidence/'metric_sensitivity.csv')
+    macro('FoneMaxGap',(sensitivity.accuracy_mean-sensitivity.macro_f1_mean).abs().max(),'.3f','; '.join(f1_sources))
     cost=csv(base+'ada_cost_summary.csv').set_index('method')
+    assert (cost.peak_allocated_gib_sd==0).all()
+    macro('CostSDMin',cost.seconds_per_step_sd.min(),'.5f',base+'ada_cost_summary.csv')
+    macro('CostSDMax',cost.seconds_per_step_sd.max(),'.5f',base+'ada_cost_summary.csv')
     for m,prefix in [('M1','Probe'),('M2','Partial'),('M3','Full'),('M5','LoRA'),('M6','Feature'),('L2SP','Weight')]:
         macro(prefix+'Memory',cost.loc[m,'peak_allocated_gib_mean'],'.3f',base+'ada_cost_summary.csv')
         macro(prefix+'Step',cost.loc[m,'seconds_per_step_mean'],'.3f',base+'ada_cost_summary.csv')

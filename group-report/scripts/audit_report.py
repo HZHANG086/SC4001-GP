@@ -76,7 +76,23 @@ def main():
     tex = (REPORT/'latex/main.tex').read_text()
     cited = {k for group in re.findall(r'\\cite\{([^}]+)\}',tex) for k in group.split(',')}
     bib = set(re.findall(r'\\bibitem\{([^}]+)\}',tex))
-    check('Eight cited and resolved bibliography entries', cited==bib and len(bib)==8)
+    check('Eleven cited and resolved bibliography entries', cited==bib and len(bib)==11)
+    for label in ('eq:classifier','eq:feature','eq:cka'):
+        check('Equation defined and referenced: '+label, '\\label{'+label+'}' in tex and '\\ref{'+label+'}' in tex)
+    f1_input = rows('member-c/results/C-v1/prediction_metrics.csv') + rows('member-c/results/M5-local-audit/prediction_metrics_recomputed.csv')
+    sensitivity = rows('group-report/evidence/metric_sensitivity.csv')
+    for r in sensitivity:
+        for metric in ('accuracy','macro_f1'):
+            seed_values = []
+            for seed in ('13','21','42','87','100'):
+                v = [100*float(x[metric]) for x in f1_input if x['method']==r['method'] and x['budget']==r['budget'] and x['seed']==seed and x['domain'] in ('yelp','amazon')]
+                check(f'Two F1 sensitivity domains: {r["method"]}/{r["budget"]}/{seed}/{metric}',len(v)==2)
+                seed_values.append(statistics.mean(v))
+            for suffix, actual in [('mean',statistics.mean(seed_values)),('std',statistics.stdev(seed_values))]:
+                check(f'Independent metric sensitivity: {r["method"]}/{r["budget"]}/{metric}/{suffix}', math.isclose(actual,float(r[metric+'_'+suffix]),abs_tol=1e-10))
+    for budget in ('400','1600','6400'):
+        cell=[r for r in sensitivity if r['budget']==budget]
+        check('Macro-F1 preserves descriptive ordering: '+budget,[r['method'] for r in sorted(cell,key=lambda x:float(x['accuracy_mean']))]==[r['method'] for r in sorted(cell,key=lambda x:float(x['macro_f1_mean']))])
     aux = (args.build_dir/'main.aux').read_text()
     check('Main text starts at 1', bool(re.search(r'\\newlabel\{mainstart\}\{\{[^}]*\}\{1\}',aux)))
     check('Main text ends at 8', bool(re.search(r'\\newlabel\{mainend\}\{\{[^}]*\}\{8\}',aux)))
