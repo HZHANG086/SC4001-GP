@@ -1,0 +1,49 @@
+{
+  "reviewed_on": "2026-11-11",
+  "sequence": "After FIRST_COMPLETE.json recorded at 2026-11-11T03:34:34.446794+00:00",
+  "primary_course_authority": "GP/Material/project_handout.pdf (2026-10-10 update)",
+  "official_identity_source": "https://personal.ntu.edu.sg/asjagath/SC4001.html",
+  "repositories": [
+    {
+      "repository": "https://github.com/yukiwukii/imdb-with-transformer",
+      "metadata_url": "https://api.github.com/repos/yukiwukii/imdb-with-transformer",
+      "created_at": "2025-03-05T06:24:38Z",
+      "pushed_at": "2025-04-11T16:27:56Z",
+      "head_commit": "1ffd21a72eab7c06123775f4494a32e95daa1777",
+      "head_commit_date": "2025-04-11T16:27:56Z",
+      "license_label": "Apache-2.0",
+      "review_scope": "README and relevant linked report sections; no code reused or executed",
+      "grade_verified": false
+    },
+    {
+      "repository": "https://github.com/ztjhz/miniLM",
+      "metadata_url": "https://api.github.com/repos/ztjhz/miniLM",
+      "created_at": "2023-10-27T07:13:21Z",
+      "pushed_at": "2023-11-09T18:55:25Z",
+      "head_commit": "b74d927ae5486c627296059c7cf2ab0ce0fef166",
+      "head_commit_date": "2023-11-09T18:55:11Z",
+      "license_label": "not identified",
+      "review_scope": "README and relevant linked report sections; no code reused or executed",
+      "grade_verified": false
+    },
+    {
+      "repository": "https://github.com/oscarqjh/SC4001-Group-Project",
+      "metadata_url": "https://api.github.com/repos/oscarqjh/SC4001-Group-Project",
+      "created_at": "2025-10-12T03:29:49Z",
+      "pushed_at": "2025-11-08T12:43:44Z",
+      "head_commit": "aa25fef8b601a49bbd1c86881a368ef32c91a0ab",
+      "head_commit_date": "2025-11-08T12:43:37Z",
+      "license_label": "MIT",
+      "review_scope": "README and relevant linked report sections; no code reused or executed",
+      "grade_verified": false
+    }
+  ],
+  "changes": [
+    "docs/EXPERIMENT_GUIDE.md",
+    "scripts/reproduce_all.py",
+    "docs/REPRODUCTION.md"
+  ],
+  "scientific_protocol_or_result_changes": false,
+  "external_materials_redistributed": false,
+  "limits": "Not an exhaustive survey, no grade evidence, no historical handout equivalence asserted. Detailed scope and decisions in PUBLIC_COURSEWORK_REVIEW.md."
+}

@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "checked_utc": "2026-11-11T03:44:01.532446+00:00",
+  "A_B_frozen_base": "f442a4462364ce0c53cbae45febbfcfc8238988c",
+  "A_B_unchanged": true,
+  "historical_C_hashes_unchanged": 61,
+  "scientific_source_protocol_raw_report_unchanged_after_first_complete": true,
+  "pdf_sha256": "4cb74ca04d1124f431a58d60afad5db562b3b31e5c63e766aaafdc5d99e154b3",
+  "pdf_pages": 8,
+  "main_pages": 5,
+  "headline_numerical_checks": 107,
+  "numerical_source_hashes_match": true,
+  "wrapper_script_sha256": "95528f6b79eda5f23553c5a5ceaf8bb5386bef06b2ff094f944d171f2678e74c",
+  "wrapper_full_run_job": 12382,
+  "public_review": "docs/PUBLIC_COURSEWORK_REVIEW.md",
+  "scope": "Source/requirement/report acceptance before final clean-commit export. Exact final ZIP execution and remote publication are recorded in the delivery acceptance outside the archive."
+}

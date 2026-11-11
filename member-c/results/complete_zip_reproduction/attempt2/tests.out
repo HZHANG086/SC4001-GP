@@ -1,0 +1,64 @@
+Completed M3 budget=400 seed=13
+Completed L2SP budget=400 seed=13
+Completed M4 budget=400 seed=13
+Completed M6 budget=400 seed=13
+Matching complete output already exists; skipped.
+{'eval_loss': 0.684140682220459, 'eval_accuracy': 0.625, 'eval_runtime': 0.0061, 'eval_samples_per_second': 2611.138, 'eval_steps_per_second': 163.196, 'epoch': 1.0}
+{'eval_loss': 0.684953510761261, 'eval_accuracy': 0.625, 'eval_runtime': 0.0059, 'eval_samples_per_second': 2701.863, 'eval_steps_per_second': 168.866, 'epoch': 2.0}
+{'train_runtime': 0.1364, 'train_samples_per_second': 469.15, 'train_steps_per_second': 14.661, 'train_loss': 0.7002988457679749, 'epoch': 2.0}
+{
+  "eval_loss": 0.684140682220459,
+  "eval_accuracy": 0.625,
+  "eval_runtime": 0.0056,
+  "eval_samples_per_second": 2853.511,
+  "eval_steps_per_second": 178.344,
+  "epoch": 2.0,
+  "train_wall_seconds_this_invocation": 0.40732559096068144,
+  "peak_cuda_allocated_bytes": null,
+  "peak_cuda_reserved_bytes": null,
+  "gpu": null,
+  "best_checkpoint": "/tmp/tmpwc2igqni/continuous/checkpoints/checkpoint-1",
+  "global_step": 2,
+  "merge_max_abs_logit_difference": 0.0,
+  "checkpoint_weight_sha256": "4c3000744712936c1681944cf9449db39f7845c172d5763b15d7cf96f063f2cc",
+  "versions": {
+    "torch": "2.5.1+cu124",
+    "transformers": "4.51.3",
+    "datasets": "3.5.0",
+    "python": "3.10.12"
+  },
+  "job_id": "12381",
+  "runtime_includes_epoch_validation_and_saving": true,
+  "timing_note": "This invocation only; see invocations and Slurm ledger for interruptions. Training peak captured before post-training validation and merge."
+}
+{'eval_loss': 0.684140682220459, 'eval_accuracy': 0.625, 'eval_runtime': 0.0058, 'eval_samples_per_second': 2751.04, 'eval_steps_per_second': 171.94, 'epoch': 1.0}
+{'eval_loss': 0.684953510761261, 'eval_accuracy': 0.625, 'eval_runtime': 0.0059, 'eval_samples_per_second': 2698.712, 'eval_steps_per_second': 168.669, 'epoch': 2.0}
+{'train_runtime': 0.096, 'train_samples_per_second': 666.472, 'train_steps_per_second': 20.827, 'train_loss': 0.3501863479614258, 'epoch': 2.0}
+{
+  "eval_loss": 0.684140682220459,
+  "eval_accuracy": 0.625,
+  "eval_runtime": 0.0058,
+  "eval_samples_per_second": 2743.28,
+  "eval_steps_per_second": 171.455,
+  "epoch": 2.0,
+  "train_wall_seconds_this_invocation": 0.4114430118352175,
+  "peak_cuda_allocated_bytes": null,
+  "peak_cuda_reserved_bytes": null,
+  "gpu": null,
+  "best_checkpoint": "/tmp/tmpwc2igqni/resumed/checkpoints/checkpoint-1",
+  "global_step": 2,
+  "merge_max_abs_logit_difference": 0.0,
+  "checkpoint_weight_sha256": "4c3000744712936c1681944cf9449db39f7845c172d5763b15d7cf96f063f2cc",
+  "versions": {
+    "torch": "2.5.1+cu124",
+    "transformers": "4.51.3",
+    "datasets": "3.5.0",
+    "python": "3.10.12"
+  },
+  "job_id": "12381",
+  "runtime_includes_epoch_validation_and_saving": true,
+  "timing_note": "This invocation only; see invocations and Slurm ledger for interruptions. Training peak captured before post-training validation and merge."
+}
+M5_DIAGNOSTICS_COLLECTED
+RETURN_ARCHIVE /tmp/tmpd9k6u9m8/return/M5-return-v1.tar.gz BYTES 1360
+M5_RETURN_REAUDITED

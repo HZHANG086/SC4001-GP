@@ -1,0 +1,20 @@
+{
+  "status": "FIRST_COMPLETE_C_VERSION_VERIFIED",
+  "completed_before_public_coursework_search": true,
+  "recorded_utc": "2026-11-11T03:34:34.446794+00:00",
+  "source_commit": "819a69ffa5ef9086a9a22037b3d92c01762b6039",
+  "archive_name": "SC4001-C-code-v1.zip",
+  "archive_sha256": "af963dd4b61e73219636a165220f38f6e2b684baaa4d05a7bc68d5d5122cab44",
+  "pdf_sha256": "4cb74ca04d1124f431a58d60afad5db562b3b31e5c63e766aaafdc5d99e154b3",
+  "successful_job": 12381,
+  "tests_passed": 40,
+  "prediction_rows": 5775000,
+  "synthesis_tables": 22,
+  "scientific_figure_files": 36,
+  "scope": "Actual extraction, no Git, no weights; independent source choices and predictions, original seven statistics tables, M5 re-audit, full seven-method synthesis and color/grayscale plots. PDF layout/numbers independently audited locally.",
+  "first_attempt": {
+    "job": 12380,
+    "result": "Numerical stages passed; plotting failed because runtime lacked the declared matplotlib dependency. Logs retained. Fixed environment only and reran identical ZIP from fresh extraction."
+  },
+  "unchanged_training_versions": "NumPy 1.26.4, torch 2.5.1, transformers 4.51.3; matplotlib 3.10.7 installed for post-training reproduction."
+}

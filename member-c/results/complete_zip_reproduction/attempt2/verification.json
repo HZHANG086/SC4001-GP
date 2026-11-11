@@ -1,0 +1,277 @@
+{
+  "status": "PASS",
+  "archive_source_commit": "819a69ffa5ef9086a9a22037b3d92c01762b6039",
+  "zip_files": 4997,
+  "no_git": true,
+  "A_B_prediction_rows": 5250000,
+  "M5_prediction_rows": 525000,
+  "M5_paired_comparison_audit": {
+    "equivalent": true,
+    "rows": 18,
+    "roundoff_differences": [],
+    "max_absolute_difference": 0.0,
+    "absolute_tolerance": 1e-12,
+    "approximate_columns": [
+      "ci95_high",
+      "ci95_low",
+      "p_t_approx",
+      "p_t_approx_holm"
+    ]
+  },
+  "synthesis_tables": [
+    {
+      "table": "ablation_imdb_accuracy.csv",
+      "rows": 24,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 5.551115123125783e-17,
+          "cells_differing": 1
+        }
+      ]
+    },
+    {
+      "table": "ablation_ood_accuracy.csv",
+      "rows": 24,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 8.881784197001252e-16,
+          "cells_differing": 3
+        }
+      ]
+    },
+    {
+      "table": "ablation_source_val_accuracy.csv",
+      "rows": 24,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 8.881784197001252e-16,
+          "cells_differing": 2
+        }
+      ]
+    },
+    {
+      "table": "ablation_val_feature_distance.csv",
+      "rows": 24,
+      "byte_identical": false,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "ada_cost_summary.csv",
+      "rows": 7,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "amazon_accuracy_summary.csv",
+      "rows": 21,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 4.440892098500626e-16,
+          "cells_differing": 5
+        }
+      ]
+    },
+    {
+      "table": "cka_accuracy_associations.csv",
+      "rows": 30,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "cka_accuracy_per_seed.csv",
+      "rows": 150,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "cka_by_domain.csv",
+      "rows": 1872,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 1.1102230246251565e-16,
+          "cells_differing": 44
+        }
+      ]
+    },
+    {
+      "table": "cka_layer_summary.csv",
+      "rows": 624,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 1.1102230246251565e-16,
+          "cells_differing": 15
+        }
+      ]
+    },
+    {
+      "table": "cka_ood_per_seed.csv",
+      "rows": 3120,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "cosine_distance",
+          "max_absolute_difference": 6.776263578034403e-21,
+          "cells_differing": 5
+        }
+      ]
+    },
+    {
+      "table": "cka_paired_effects.csv",
+      "rows": 96,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "imdb_accuracy_summary.csv",
+      "rows": 21,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 1.6653345369377348e-16,
+          "cells_differing": 1
+        }
+      ]
+    },
+    {
+      "table": "lambda_selection_counts.csv",
+      "rows": 12,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "ood_accuracy_summary.csv",
+      "rows": 21,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 4.440892098500626e-16,
+          "cells_differing": 2
+        }
+      ]
+    },
+    {
+      "table": "recomputed/cka_all_seeds.csv",
+      "rows": 8190,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "recomputed/cost_all_repeats.csv",
+      "rows": 27,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "recomputed/cost_summary.csv",
+      "rows": 9,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "inference_examples_per_second_sd",
+          "max_absolute_difference": 1.1102230246251565e-16,
+          "cells_differing": 1
+        }
+      ]
+    },
+    {
+      "table": "recomputed/prediction_replay_all.csv",
+      "rows": 180,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "selected_models.csv",
+      "rows": 105,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "selected_train_seconds",
+          "max_absolute_difference": 4.547473508864641e-13,
+          "cells_differing": 5
+        },
+        {
+          "column": "search_train_seconds_recorded",
+          "max_absolute_difference": 4.547473508864641e-13,
+          "cells_differing": 3
+        },
+        {
+          "column": "stage1_train_seconds",
+          "max_absolute_difference": 5.684341886080802e-14,
+          "cells_differing": 1
+        }
+      ]
+    },
+    {
+      "table": "trainable_parameters.csv",
+      "rows": 7,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "yelp_accuracy_summary.csv",
+      "rows": 21,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 8.881784197001252e-16,
+          "cells_differing": 2
+        }
+      ]
+    }
+  ],
+  "generated_figure_files": [
+    "reproduced/figures/01_accuracy.png",
+    "reproduced/figures/02_cka_layers.png",
+    "reproduced/figures/03_cka_accuracy.png",
+    "reproduced/figures/04_lambda_ablation.png",
+    "reproduced/figures/05_v100_cost.png",
+    "reproduced/figures/06_ada_cost.png",
+    "reproduced/figures/01_accuracy.pdf",
+    "reproduced/figures/02_cka_layers.pdf",
+    "reproduced/figures/03_cka_accuracy.pdf",
+    "reproduced/figures/04_lambda_ablation.pdf",
+    "reproduced/figures/05_v100_cost.pdf",
+    "reproduced/figures/06_ada_cost.pdf",
+    "reproduced/figures/01_accuracy.svg",
+    "reproduced/figures/02_cka_layers.svg",
+    "reproduced/figures/03_cka_accuracy.svg",
+    "reproduced/figures/04_lambda_ablation.svg",
+    "reproduced/figures/05_v100_cost.svg",
+    "reproduced/figures/06_ada_cost.svg",
+    "reproduced/figures-grayscale/01_accuracy.png",
+    "reproduced/figures-grayscale/02_cka_layers.png",
+    "reproduced/figures-grayscale/03_cka_accuracy.png",
+    "reproduced/figures-grayscale/04_lambda_ablation.png",
+    "reproduced/figures-grayscale/05_v100_cost.png",
+    "reproduced/figures-grayscale/06_ada_cost.png",
+    "reproduced/figures-grayscale/01_accuracy.pdf",
+    "reproduced/figures-grayscale/02_cka_layers.pdf",
+    "reproduced/figures-grayscale/03_cka_accuracy.pdf",
+    "reproduced/figures-grayscale/04_lambda_ablation.pdf",
+    "reproduced/figures-grayscale/05_v100_cost.pdf",
+    "reproduced/figures-grayscale/06_ada_cost.pdf",
+    "reproduced/figures-grayscale/01_accuracy.svg",
+    "reproduced/figures-grayscale/02_cka_layers.svg",
+    "reproduced/figures-grayscale/03_cka_accuracy.svg",
+    "reproduced/figures-grayscale/04_lambda_ablation.svg",
+    "reproduced/figures-grayscale/05_v100_cost.svg",
+    "reproduced/figures-grayscale/06_ada_cost.svg"
+  ],
+  "scope": "Full original A/B prediction reproduction, new raw-return M5 audit, synthesis from that newly generated acceptance, all 36 scientific figure outputs and full CPU suite. Derived float tables use absolute 1e-12/no relative tolerance, exact strings and matching NaN positions. Original statistical reproduction retains its narrower t-only roundoff rule.",
+  "figure_boundary": "Linux sans-serif fallback may differ from local licensed Arial; timestamps/font rendering preclude a byte-identical PDF/SVG/PNG claim. Scientific data and styles are reproduced."
+}

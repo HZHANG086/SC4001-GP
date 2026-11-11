@@ -1,0 +1,28 @@
+JobId=12380 JobName=sc4001-c-final-repro
+   UserId=zhangh(1024) GroupId=zhangh(1024) MCS_label=N/A
+   Priority=66 Nice=0 Account=(null) QOS=(null)
+   JobState=FAILED Reason=NonZeroExitCode Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=1:0
+   RunTime=00:02:03 TimeLimit=00:30:00 TimeMin=N/A
+   SubmitTime=2026-11-11T03:27:49 EligibleTime=2026-11-11T03:27:49
+   AccrueTime=2026-11-11T03:27:49
+   StartTime=2026-11-11T03:27:50 EndTime=2026-11-11T03:29:53 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-11T03:27:50 Scheduler=Main
+   Partition=6000ada AllocNode:Sid=MICL-TaoDCWS1:2894715
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=localhost
+   BatchHost=localhost
+   NumNodes=1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=4,node=1,billing=4
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=4 MinMemoryNode=16G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/share/zhangh/sc4001-gp-c/checks/C-complete-819a69f/reproduce.sbatch
+   WorkDir=/share/zhangh/sc4001-gp-c/checks/C-complete-819a69f
+   StdErr=/share/zhangh/sc4001-gp-c/checks/C-complete-819a69f/complete-repro-12380.err
+   StdIn=/dev/null
+   StdOut=/share/zhangh/sc4001-gp-c/checks/C-complete-819a69f/complete-repro-12380.out
+   Power=
+   
+

@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "protected-output",
+      "exit_code": 2,
+      "diagnostic": "Choose a new output directory"
+    },
+    {
+      "check": "existing-output",
+      "exit_code": 2,
+      "diagnostic": "Choose a new output directory"
+    },
+    {
+      "check": "missing-dependencies",
+      "exit_code": 2,
+      "diagnostic": "Missing dependencies:"
+    }
+  ],
+  "scope": "Safety and dependency diagnostics only; full real-data wrapper execution is recorded separately."
+}

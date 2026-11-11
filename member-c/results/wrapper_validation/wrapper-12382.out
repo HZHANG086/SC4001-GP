@@ -1,0 +1,8 @@
+Running: tests
+Running: original-predictions
+Running: m5-predictions
+Running: synthesis
+Running: color-figures
+Running: grayscale-figures
+COMPLETE_REPRODUCTION_PASS: 5,775,000 predictions; 22 synthesis tables; 36 figures.
+Evidence: /share/zhangh/sc4001-gp-c/checks/C-wrapper-validation/outputs/verification.json

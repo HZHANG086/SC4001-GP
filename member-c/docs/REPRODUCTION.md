@@ -15,6 +15,14 @@ The GPU host initially lacked SciPy. Version 1.15.3 was added with `--no-deps` f
 
 ## Offline evidence and statistics
 
+After installing the dependencies above, the complete workflow can also be run with one command:
+
+```bash
+python member-c/scripts/reproduce_all.py --out reproduced/C-complete
+```
+
+It runs all 40 CPU tests, both prediction audits, synthesis and color/grayscale plotting, then compares all 22 synthesis CSVs and checks the 36 figure exports. It saves one stdout/stderr pair per stage and `verification.json`. An existing output directory is refused; failures retain their logs. Missing required packages are identified before any outputs are created. This wrapper is an organizational improvement after the public-coursework review; it does not change the frozen analysis or statistical definitions. The equivalent individual commands follow.
+
 ```bash
 python -m sc4001_c.reproduce --out reproduced/C-v1
 python -m sc4001_c.m5_import \
@@ -35,6 +43,8 @@ Cross-platform checking preserves exact input hashes and exact result fields. On
 `m5_import --raw` verifies all 809 M5 return-manifest files, independently audits 45 prediction files/525,000 rows and all 15 source-only decisions, and recomputes the 18 M5 contrasts. It rejects incomplete or changed raw directories and writes outside that immutable input. `final_analysis` uses this newly generated audit, verifies the original 244-file B manifest and complete M5 manifest, and combines 60 B models plus 15 M5 models for CKA. The 27 V100 and 21 Ada cost probes remain separate. Figure files are exported as PDF, SVG and PNG. Accuracy/ablation error bars are five-seed SDs; cost-process repetitions do not represent additional training seeds.
 
 An earlier six-method no-Git/no-weight check executed its four analysis/plot commands: seven historical statistics tables and 21 synthesis CSVs reproduced byte-for-byte; all ten color/grayscale PNGs matched exactly. The 30 PDF/SVG/PNG exports were generated successfully. Evidence is recorded in `results/standalone_reproduction.json`. PDF/SVG timestamps or identifiers can vary between runs.
+
+The complete seven-method version at commit `819a69f` was then exported and actually extracted on Linux. Job 12381 passed all 40 tests, all 5,775,000 predictions, both audits, 22 synthesis CSVs and all 36 figure exports. `results/complete_zip_reproduction/FIRST_COMPLETE.json` binds the ZIP/PDF hashes and original logs. Job 12380 had first passed the numerical stages but failed at plotting because the runtime lacked matplotlib; installing the already declared version 3.10.7 and repeating the same ZIP in a fresh directory resolved it. Both attempts remain recorded. This check preceded public-coursework review. The final archive is accompanied by a separate acceptance record so its own checksum need not be embedded recursively in itself.
 
 **Accepted M5 return:** `member-c/formal-results/M5-return-v1`. The original 8,084,794-byte archive has SHA256 `7812944d024e5ddd3d321d3884ea3c6c24e743c203d12083426661b7a59f2efa`; its raw files are included in the code ZIP, so the original tar archive is not needed for offline reproduction. Local audit tables reproduced the 18 returned statistical rows exactly. Server-side CKA adds 1,170 rows, 45 probability replays and 45 expected undefined layer-0 CLS values. No weights are needed for this numerical re-audit.
 

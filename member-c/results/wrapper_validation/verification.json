@@ -1,0 +1,353 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-11-11T03:40:32.020482+00:00",
+  "no_git": true,
+  "package_commit": "819a69ffa5ef9086a9a22037b3d92c01762b6039",
+  "script_sha256": "95528f6b79eda5f23553c5a5ceaf8bb5386bef06b2ff094f944d171f2678e74c",
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.7",
+    "torch": "2.5.1",
+    "transformers": "4.51.3",
+    "datasets": "3.5.0",
+    "accelerate": "1.6.0"
+  },
+  "steps": [
+    {
+      "name": "tests",
+      "exit_code": 0,
+      "arguments": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "member-c/tests",
+        "-v"
+      ]
+    },
+    {
+      "name": "original-predictions",
+      "exit_code": 0,
+      "arguments": [
+        "-m",
+        "sc4001_c.reproduce",
+        "--out",
+        "/share/zhangh/sc4001-gp-c/checks/C-wrapper-validation/outputs/C-v1"
+      ]
+    },
+    {
+      "name": "m5-predictions",
+      "exit_code": 0,
+      "arguments": [
+        "-m",
+        "sc4001_c.m5_import",
+        "--raw",
+        "member-c/formal-results/M5-return-v1",
+        "--out",
+        "/share/zhangh/sc4001-gp-c/checks/C-wrapper-validation/outputs/M5-local-audit"
+      ]
+    },
+    {
+      "name": "synthesis",
+      "exit_code": 0,
+      "arguments": [
+        "-m",
+        "sc4001_c.final_analysis",
+        "--m5",
+        "member-c/formal-results/M5-return-v1/member-c/results/M5-v1/per_seed.csv",
+        "--m5-audit",
+        "/share/zhangh/sc4001-gp-c/checks/C-wrapper-validation/outputs/M5-local-audit/local_audit.json",
+        "--out",
+        "/share/zhangh/sc4001-gp-c/checks/C-wrapper-validation/outputs/C-final"
+      ]
+    },
+    {
+      "name": "color-figures",
+      "exit_code": 0,
+      "arguments": [
+        "-m",
+        "sc4001_c.final_plots",
+        "--data",
+        "/share/zhangh/sc4001-gp-c/checks/C-wrapper-validation/outputs/C-final",
+        "--out",
+        "/share/zhangh/sc4001-gp-c/checks/C-wrapper-validation/outputs/figures"
+      ]
+    },
+    {
+      "name": "grayscale-figures",
+      "exit_code": 0,
+      "arguments": [
+        "-m",
+        "sc4001_c.final_plots",
+        "--data",
+        "/share/zhangh/sc4001-gp-c/checks/C-wrapper-validation/outputs/C-final",
+        "--grayscale",
+        "--out",
+        "/share/zhangh/sc4001-gp-c/checks/C-wrapper-validation/outputs/figures-grayscale"
+      ]
+    }
+  ],
+  "scope": "Offline evidence re-analysis and CPU tests; no new GPU experiments or human review.",
+  "A_B_prediction_rows": 5250000,
+  "M5_prediction_rows": 525000,
+  "synthesis_tables": [
+    {
+      "table": "ablation_imdb_accuracy.csv",
+      "rows": 24,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 5.551115123125783e-17,
+          "cells_differing": 1
+        }
+      ]
+    },
+    {
+      "table": "ablation_ood_accuracy.csv",
+      "rows": 24,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 8.881784197001252e-16,
+          "cells_differing": 3
+        }
+      ]
+    },
+    {
+      "table": "ablation_source_val_accuracy.csv",
+      "rows": 24,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 8.881784197001252e-16,
+          "cells_differing": 2
+        }
+      ]
+    },
+    {
+      "table": "ablation_val_feature_distance.csv",
+      "rows": 24,
+      "byte_identical": false,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "ada_cost_summary.csv",
+      "rows": 7,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "amazon_accuracy_summary.csv",
+      "rows": 21,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 4.440892098500626e-16,
+          "cells_differing": 5
+        }
+      ]
+    },
+    {
+      "table": "cka_accuracy_associations.csv",
+      "rows": 30,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "cka_accuracy_per_seed.csv",
+      "rows": 150,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "cka_by_domain.csv",
+      "rows": 1872,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 1.1102230246251565e-16,
+          "cells_differing": 44
+        }
+      ]
+    },
+    {
+      "table": "cka_layer_summary.csv",
+      "rows": 624,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 1.1102230246251565e-16,
+          "cells_differing": 15
+        }
+      ]
+    },
+    {
+      "table": "cka_ood_per_seed.csv",
+      "rows": 3120,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "cosine_distance",
+          "max_absolute_difference": 6.776263578034403e-21,
+          "cells_differing": 5
+        }
+      ]
+    },
+    {
+      "table": "cka_paired_effects.csv",
+      "rows": 96,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "imdb_accuracy_summary.csv",
+      "rows": 21,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 1.6653345369377348e-16,
+          "cells_differing": 1
+        }
+      ]
+    },
+    {
+      "table": "lambda_selection_counts.csv",
+      "rows": 12,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "ood_accuracy_summary.csv",
+      "rows": 21,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 4.440892098500626e-16,
+          "cells_differing": 2
+        }
+      ]
+    },
+    {
+      "table": "recomputed/cka_all_seeds.csv",
+      "rows": 8190,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "recomputed/cost_all_repeats.csv",
+      "rows": 27,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "recomputed/cost_summary.csv",
+      "rows": 9,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "inference_examples_per_second_sd",
+          "max_absolute_difference": 1.1102230246251565e-16,
+          "cells_differing": 1
+        }
+      ]
+    },
+    {
+      "table": "recomputed/prediction_replay_all.csv",
+      "rows": 180,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "selected_models.csv",
+      "rows": 105,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "selected_train_seconds",
+          "max_absolute_difference": 4.547473508864641e-13,
+          "cells_differing": 5
+        },
+        {
+          "column": "search_train_seconds_recorded",
+          "max_absolute_difference": 4.547473508864641e-13,
+          "cells_differing": 3
+        },
+        {
+          "column": "stage1_train_seconds",
+          "max_absolute_difference": 5.684341886080802e-14,
+          "cells_differing": 1
+        }
+      ]
+    },
+    {
+      "table": "trainable_parameters.csv",
+      "rows": 7,
+      "byte_identical": true,
+      "numeric_roundoff": []
+    },
+    {
+      "table": "yelp_accuracy_summary.csv",
+      "rows": 21,
+      "byte_identical": false,
+      "numeric_roundoff": [
+        {
+          "column": "std",
+          "max_absolute_difference": 8.881784197001252e-16,
+          "cells_differing": 2
+        }
+      ]
+    }
+  ],
+  "generated_figure_files": [
+    "figures/01_accuracy.pdf",
+    "figures/02_cka_layers.pdf",
+    "figures/03_cka_accuracy.pdf",
+    "figures/04_lambda_ablation.pdf",
+    "figures/05_v100_cost.pdf",
+    "figures/06_ada_cost.pdf",
+    "figures/01_accuracy.svg",
+    "figures/02_cka_layers.svg",
+    "figures/03_cka_accuracy.svg",
+    "figures/04_lambda_ablation.svg",
+    "figures/05_v100_cost.svg",
+    "figures/06_ada_cost.svg",
+    "figures/01_accuracy.png",
+    "figures/02_cka_layers.png",
+    "figures/03_cka_accuracy.png",
+    "figures/04_lambda_ablation.png",
+    "figures/05_v100_cost.png",
+    "figures/06_ada_cost.png",
+    "figures-grayscale/01_accuracy.pdf",
+    "figures-grayscale/02_cka_layers.pdf",
+    "figures-grayscale/03_cka_accuracy.pdf",
+    "figures-grayscale/04_lambda_ablation.pdf",
+    "figures-grayscale/05_v100_cost.pdf",
+    "figures-grayscale/06_ada_cost.pdf",
+    "figures-grayscale/01_accuracy.svg",
+    "figures-grayscale/02_cka_layers.svg",
+    "figures-grayscale/03_cka_accuracy.svg",
+    "figures-grayscale/04_lambda_ablation.svg",
+    "figures-grayscale/05_v100_cost.svg",
+    "figures-grayscale/06_ada_cost.svg",
+    "figures-grayscale/01_accuracy.png",
+    "figures-grayscale/02_cka_layers.png",
+    "figures-grayscale/03_cka_accuracy.png",
+    "figures-grayscale/04_lambda_ablation.png",
+    "figures-grayscale/05_v100_cost.png",
+    "figures-grayscale/06_ada_cost.png"
+  ],
+  "roundoff_policy": "Synthesis CSVs: absolute 1e-12, no relative tolerance; every difference logged. Original seven tables retain their narrower approximate-t-only policy.",
+  "figure_boundary": "Scientific data/styles reproduced. Font availability and PDF/SVG timestamps can change rendered bytes; this is not a pixel-identity claim.",
+  "finished_utc": "2026-11-11T03:42:43.337043+00:00"
+}

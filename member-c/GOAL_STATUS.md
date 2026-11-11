@@ -1,6 +1,6 @@
 # C completion goal status
 
-Updated 2026-11-11, Asia/Singapore. Work resumed after the user restored network access. Scientific C work and seven-method report are complete; final package validation, user-requested public-coursework comparison and closing audit remain in progress. Do not mark the full goal complete yet.
+Updated 2026-11-11, Asia/Singapore. Scientific C scope, seven-method report, first-complete archive verification, public-coursework comparison and implemented improvements are complete. Final delivery exports are versioned from this source; their exact archive execution and publication are recorded in the separate delivery acceptance file. Human group integration remains explicitly outside automated certification.
 
 ## Accepted evidence
 
@@ -12,13 +12,14 @@ Updated 2026-11-11, Asia/Singapore. Work resumed after the user restored network
 - Independent M5 acceptance: 45 predictions/525,000 rows, 15 source choices, 18 exact-reproduced paired contrasts, matched CKA input IDs/labels/text hashes. Local diagnostic reaggregation additionally checks all 21 Ada cost processes and the complete 1,170-row CKA/45-replay grid. Maximum replay discrepancy 9.059906e-06.
 - Seven-method synthesis: 105 selected cells, 9,360 CKA rows. Cost hardware groups and statistical repetition units remain separate. All six figures exported in color/grayscale PDF/SVG/PNG.
 - English C insert: report/C_analysis.pdf; five main pages, one reference page and two appendix pages, A4/single-column/Arial 10pt. Real M5 results included. Body text black, figures colorblind-friendly with grayscale variants. User deferred identifying information.
-- Full 40-test CPU suite passed at e85d0c4; current final-analysis audit-path option and plot legend update are to be included in the actual extracted-package run and full final checks. Do not retroactively claim earlier test hashes cover later code.
+- Full 40-test CPU suite passed again in jobs 12381 and 12382, with the current final-analysis audit-path option and plot legend update used in real-data reproduction. Earlier test hashes are not retroactively assigned to later code.
 
-## Remaining gates
+## Completed post-report gates
 
-1. Finish first complete ZIP and execute documented commands from its actual extraction, including all 5,775,000 prediction rows and all figures. Preserve original failed Linux byte-only preflight and narrow roundoff correction evidence.
-2. Only after that first complete version, search public previous SC4001 coursework; verify school/year/task comparability, record sources and apply justified improvements without copying or unsupported grade claims.
-3. Final source/numerical/requirement/PDF/ZIP audit; publish the final C branch and delivery files. No large weights/caches/fonts in the code package.
+1. Actual first-complete ZIP extraction: job 12381 passed 40 CPU tests, 5,775,000 prediction records, both independent audits, 22 synthesis tables and 36 figure exports. Job 12380's missing plotting dependency and environment-only fix are retained. FIRST_COMPLETE.json records the checkpoint before public-project search.
+2. Three public prior SC4001 reports inspected after that checkpoint. The source/comparability/license review is in docs/PUBLIC_COURSEWORK_REVIEW.md. No grade inference, external code import or change to the scientific result occurred.
+3. Implemented an experiment/evidence map and one-command reproduction. Actual job 12382 completed all stages, exit 0; three additional CLI checks passed. results/wrapper_validation binds the wrapper hash to its actual run. This used the first-complete extraction plus the new wrapper, not a claim that the old ZIP already contained it.
+4. Final requirement, provenance, numerical and PDF checks are summarized in docs/FINAL_ACCEPTANCE.md. The final exported archive carries its commit and file inventory. Its exact-byte execution evidence accompanies the delivery separately, avoiding recursive self-hashes.
 
 ## Human boundary
 

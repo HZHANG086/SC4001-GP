@@ -1,11 +1,14 @@
 # C 当前交付入口
 
-更新：2026-11-11（新加坡时间）。服务器连接已恢复；全部 M5 训练、正式评测、CKA 和匹配 Ada 成本实验已结束并通过独立回传验收。当前正在完成包含全部七种方法的第一版交付、公开往届材料比较和最后复现检查；不将这些尚在进行的步骤标为完成。
+更新：2026-11-11（新加坡时间）。C 的既定实验、分析、图表、学术正文、往届公开材料比较和改进均已完成。首个完整 ZIP 与改进后的一键复算均已实际通过：40 项 CPU 测试、577.5 万条预测、22 张综合 CSV、36 个图表导出。最终交付 ZIP 的具体校验值和独立执行记录随交付验收文件保存；不能用历史预检包替代。
 
 ## 优先阅读
 
 - `report/C_analysis.pdf`：可并入小组主报告的学术英文 C 正文，A4、单栏、Arial 10pt，黑色正文、彩色科研图；最终页数和实际渲染验收见 `report/FINAL_QA.json`。
 - `report/latex/main.tex`：可编辑正文；`report/figures` 和 `report/figures-grayscale`：六张科研图，均有 PDF/SVG/PNG。
+- `docs/EXPERIMENT_GUIDE.md`：报告问题、表格、代码和图表的一一对应；含一键复算命令。
+- `docs/PUBLIC_COURSEWORK_REVIEW.md`：完成首版后进行的往届检索及已落实改进。
+- `docs/FINAL_ACCEPTANCE.md`：验收清单和团队交接边界。
 - `docs/REPRODUCTION.md`：无需 Git 历史、无需模型权重的完整预测与统计复算。
 - `docs/REPORT_INTEGRATION.md`：与 A/B 合并、十页正文限制、成员与 AI 声明说明。
 - `docs/requirements_audit.md`：原课程要求、团队承诺和实际证据映射。
@@ -20,7 +23,7 @@
 | M5 回传 | `formal-results/M5-return-v1`；809 个清单文件全部校验，45 份预测、525,000 条记录、18 组配对统计独立复算通过；`results/M5-local-audit` |
 | M5 诊断 | 1,170 行 CKA、45 次预测复核、21 次七方法匹配 Ada 探针；回传中的 `M5-diagnostics/audit.json` |
 | 七方法综合结果 | `results/C-final`；105 个方法/预算/种子单元，9,360 行 CKA，硬件分开统计 |
-| 代码验证 | `results/validation-40-tests`：完整 40 项 CPU 合成测试通过；真实最终 ZIP 复现另行记录，不把合成测试当作正式实验 |
+| 代码验证 | `results/complete_zip_reproduction` 和 `results/wrapper_validation`：完整 40 项 CPU 测试及真实数据复算通过；不把合成测试当作正式实验 |
 
 ## 主要结论
 
