@@ -1,0 +1,2376 @@
+{
+  "status": "GENERATED_FROM_AUDITED_SOURCES",
+  "numeric_entries": 391,
+  "values": [
+    {
+      "key": "imdb/M1/400/mean",
+      "value": 81.0752,
+      "printed": "81.08",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M1/400/SD",
+      "value": 3.1898569246911377,
+      "printed": "3.19",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M1/400/mean",
+      "value": 82.736,
+      "printed": "82.74",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M1/400/SD",
+      "value": 3.481347440288032,
+      "printed": "3.48",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M1/1600/mean",
+      "value": 86.6728,
+      "printed": "86.67",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M1/1600/SD",
+      "value": 0.4970102614634822,
+      "printed": "0.50",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M1/1600/mean",
+      "value": 87.474,
+      "printed": "87.47",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M1/1600/SD",
+      "value": 0.8454466275289042,
+      "printed": "0.85",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M1/6400/mean",
+      "value": 89.53520000000002,
+      "printed": "89.54",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M1/6400/SD",
+      "value": 0.1036687030882461,
+      "printed": "0.10",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M1/6400/mean",
+      "value": 89.906,
+      "printed": "89.91",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M1/6400/SD",
+      "value": 1.0233425623905228,
+      "printed": "1.02",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M2/400/mean",
+      "value": 90.8712,
+      "printed": "90.87",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M2/400/SD",
+      "value": 1.1725166096904538,
+      "printed": "1.17",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M2/400/mean",
+      "value": 91.53,
+      "printed": "91.53",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M2/400/SD",
+      "value": 0.867611664283048,
+      "printed": "0.87",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M2/1600/mean",
+      "value": 93.524,
+      "printed": "93.52",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M2/1600/SD",
+      "value": 0.1865904606350467,
+      "printed": "0.19",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M2/1600/mean",
+      "value": 92.454,
+      "printed": "92.45",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M2/1600/SD",
+      "value": 1.0739785845164738,
+      "printed": "1.07",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M2/6400/mean",
+      "value": 94.2024,
+      "printed": "94.20",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M2/6400/SD",
+      "value": 0.0930634192365652,
+      "printed": "0.09",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M2/6400/mean",
+      "value": 93.88,
+      "printed": "93.88",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M2/6400/SD",
+      "value": 0.4905609034564376,
+      "printed": "0.49",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M3/400/mean",
+      "value": 92.3048,
+      "printed": "92.30",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M3/400/SD",
+      "value": 0.4108079843430505,
+      "printed": "0.41",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M3/400/mean",
+      "value": 92.734,
+      "printed": "92.73",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M3/400/SD",
+      "value": 0.7549039674024727,
+      "printed": "0.75",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M3/1600/mean",
+      "value": 93.2664,
+      "printed": "93.27",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M3/1600/SD",
+      "value": 0.4255593965593989,
+      "printed": "0.43",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M3/1600/mean",
+      "value": 92.20600000000002,
+      "printed": "92.21",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M3/1600/SD",
+      "value": 1.2766087889404487,
+      "printed": "1.28",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M3/6400/mean",
+      "value": 94.4064,
+      "printed": "94.41",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M3/6400/SD",
+      "value": 0.2823416370286136,
+      "printed": "0.28",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M3/6400/mean",
+      "value": 93.886,
+      "printed": "93.89",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M3/6400/SD",
+      "value": 0.5350981218430845,
+      "printed": "0.54",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M4/400/mean",
+      "value": 92.4008,
+      "printed": "92.40",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M4/400/SD",
+      "value": 0.4763057841345218,
+      "printed": "0.48",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M4/400/mean",
+      "value": 91.778,
+      "printed": "91.78",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M4/400/SD",
+      "value": 2.483741129828146,
+      "printed": "2.48",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M4/1600/mean",
+      "value": 93.9008,
+      "printed": "93.90",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M4/1600/SD",
+      "value": 0.4487083685424207,
+      "printed": "0.45",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M4/1600/mean",
+      "value": 93.14,
+      "printed": "93.14",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M4/1600/SD",
+      "value": 1.297593927236097,
+      "printed": "1.30",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M4/6400/mean",
+      "value": 94.6344,
+      "printed": "94.63",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M4/6400/SD",
+      "value": 0.3457698656621175,
+      "printed": "0.35",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M4/6400/mean",
+      "value": 94.364,
+      "printed": "94.36",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M4/6400/SD",
+      "value": 0.8652340723757914,
+      "printed": "0.87",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M5/400/mean",
+      "value": 90.37279999999998,
+      "printed": "90.37",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M5/400/SD",
+      "value": 1.8641081513689044,
+      "printed": "1.86",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M5/400/mean",
+      "value": 91.064,
+      "printed": "91.06",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M5/400/SD",
+      "value": 2.6688443191763707,
+      "printed": "2.67",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M5/1600/mean",
+      "value": 93.2792,
+      "printed": "93.28",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M5/1600/SD",
+      "value": 0.694978560820403,
+      "printed": "0.69",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M5/1600/mean",
+      "value": 93.15200000000002,
+      "printed": "93.15",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M5/1600/SD",
+      "value": 0.9940674021413256,
+      "printed": "0.99",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M5/6400/mean",
+      "value": 94.364,
+      "printed": "94.36",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M5/6400/SD",
+      "value": 0.2461869208548697,
+      "printed": "0.25",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M5/6400/mean",
+      "value": 94.056,
+      "printed": "94.06",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M5/6400/SD",
+      "value": 0.3945630494610486,
+      "printed": "0.39",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M6/400/mean",
+      "value": 92.2456,
+      "printed": "92.25",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M6/400/SD",
+      "value": 0.4618623171465745,
+      "printed": "0.46",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M6/400/mean",
+      "value": 92.032,
+      "printed": "92.03",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M6/400/SD",
+      "value": 0.6820337235063978,
+      "printed": "0.68",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M6/1600/mean",
+      "value": 93.5392,
+      "printed": "93.54",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M6/1600/SD",
+      "value": 0.3794880762290158,
+      "printed": "0.38",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M6/1600/mean",
+      "value": 92.9,
+      "printed": "92.90",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M6/1600/SD",
+      "value": 0.7673982017179869,
+      "printed": "0.77",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M6/6400/mean",
+      "value": 94.4872,
+      "printed": "94.49",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M6/6400/SD",
+      "value": 0.1461889188687053,
+      "printed": "0.15",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M6/6400/mean",
+      "value": 93.924,
+      "printed": "93.92",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M6/6400/SD",
+      "value": 0.6057474721366971,
+      "printed": "0.61",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/L2SP/400/mean",
+      "value": 91.9768,
+      "printed": "91.98",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/L2SP/400/SD",
+      "value": 0.5703220143042002,
+      "printed": "0.57",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/L2SP/400/mean",
+      "value": 92.376,
+      "printed": "92.38",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/L2SP/400/SD",
+      "value": 1.0544572063388844,
+      "printed": "1.05",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/L2SP/1600/mean",
+      "value": 93.4144,
+      "printed": "93.41",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/L2SP/1600/SD",
+      "value": 0.3017893304939731,
+      "printed": "0.30",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/L2SP/1600/mean",
+      "value": 92.70799999999998,
+      "printed": "92.71",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/L2SP/1600/SD",
+      "value": 2.1209479012931967,
+      "printed": "2.12",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/L2SP/6400/mean",
+      "value": 94.46,
+      "printed": "94.46",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/L2SP/6400/SD",
+      "value": 0.1522891985664126,
+      "printed": "0.15",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/L2SP/6400/mean",
+      "value": 94.23,
+      "printed": "94.23",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/L2SP/6400/SD",
+      "value": 0.6394919858762912,
+      "printed": "0.64",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M1/400/mean",
+      "value": 81.0752,
+      "printed": "81.08",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M1/400/SD",
+      "value": 3.1898569246911377,
+      "printed": "3.19",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M1/400/mean",
+      "value": 83.928,
+      "printed": "83.93",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M1/400/SD",
+      "value": 3.9162890598115982,
+      "printed": "3.92",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M1/400/mean",
+      "value": 81.544,
+      "printed": "81.54",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M1/400/SD",
+      "value": 3.0806947268432823,
+      "printed": "3.08",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M1/400/mean",
+      "value": 82.736,
+      "printed": "82.74",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M1/400/SD",
+      "value": 3.481347440288032,
+      "printed": "3.48",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M2/400/mean",
+      "value": 90.8712,
+      "printed": "90.87",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M2/400/SD",
+      "value": 1.1725166096904538,
+      "printed": "1.17",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M2/400/mean",
+      "value": 92.38,
+      "printed": "92.38",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M2/400/SD",
+      "value": 1.2285764119500264,
+      "printed": "1.23",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M2/400/mean",
+      "value": 90.68,
+      "printed": "90.68",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M2/400/SD",
+      "value": 0.8374962686484048,
+      "printed": "0.84",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M2/400/mean",
+      "value": 91.53,
+      "printed": "91.53",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M2/400/SD",
+      "value": 0.867611664283048,
+      "printed": "0.87",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M3/400/mean",
+      "value": 92.3048,
+      "printed": "92.30",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M3/400/SD",
+      "value": 0.4108079843430505,
+      "printed": "0.41",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M3/400/mean",
+      "value": 93.276,
+      "printed": "93.28",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M3/400/SD",
+      "value": 0.5898135298549901,
+      "printed": "0.59",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M3/400/mean",
+      "value": 92.192,
+      "printed": "92.19",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M3/400/SD",
+      "value": 1.137857636086343,
+      "printed": "1.14",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M3/400/mean",
+      "value": 92.734,
+      "printed": "92.73",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M3/400/SD",
+      "value": 0.7549039674024727,
+      "printed": "0.75",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M4/400/mean",
+      "value": 92.4008,
+      "printed": "92.40",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M4/400/SD",
+      "value": 0.4763057841345218,
+      "printed": "0.48",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M4/400/mean",
+      "value": 91.864,
+      "printed": "91.86",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M4/400/SD",
+      "value": 3.057430293563532,
+      "printed": "3.06",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M4/400/mean",
+      "value": 91.692,
+      "printed": "91.69",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M4/400/SD",
+      "value": 1.958193044620474,
+      "printed": "1.96",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M4/400/mean",
+      "value": 91.778,
+      "printed": "91.78",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M4/400/SD",
+      "value": 2.483741129828146,
+      "printed": "2.48",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M5/400/mean",
+      "value": 90.37279999999998,
+      "printed": "90.37",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M5/400/SD",
+      "value": 1.8641081513689044,
+      "printed": "1.86",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M5/400/mean",
+      "value": 91.952,
+      "printed": "91.95",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M5/400/SD",
+      "value": 2.2699162980162977,
+      "printed": "2.27",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M5/400/mean",
+      "value": 90.176,
+      "printed": "90.18",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M5/400/SD",
+      "value": 3.5789495665627946,
+      "printed": "3.58",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M5/400/mean",
+      "value": 91.064,
+      "printed": "91.06",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M5/400/SD",
+      "value": 2.6688443191763707,
+      "printed": "2.67",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M6/400/mean",
+      "value": 92.2456,
+      "printed": "92.25",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M6/400/SD",
+      "value": 0.4618623171465745,
+      "printed": "0.46",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M6/400/mean",
+      "value": 92.84000000000002,
+      "printed": "92.84",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M6/400/SD",
+      "value": 0.7341661937191073,
+      "printed": "0.73",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M6/400/mean",
+      "value": 91.224,
+      "printed": "91.22",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M6/400/SD",
+      "value": 0.8862730956087993,
+      "printed": "0.89",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M6/400/mean",
+      "value": 92.032,
+      "printed": "92.03",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M6/400/SD",
+      "value": 0.6820337235063978,
+      "printed": "0.68",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/L2SP/400/mean",
+      "value": 91.9768,
+      "printed": "91.98",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/L2SP/400/SD",
+      "value": 0.5703220143042002,
+      "printed": "0.57",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/L2SP/400/mean",
+      "value": 93.028,
+      "printed": "93.03",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/L2SP/400/SD",
+      "value": 0.7668898225951355,
+      "printed": "0.77",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/L2SP/400/mean",
+      "value": 91.724,
+      "printed": "91.72",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/L2SP/400/SD",
+      "value": 1.3640674470127985,
+      "printed": "1.36",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/L2SP/400/mean",
+      "value": 92.376,
+      "printed": "92.38",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/L2SP/400/SD",
+      "value": 1.0544572063388844,
+      "printed": "1.05",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M1/1600/mean",
+      "value": 86.6728,
+      "printed": "86.67",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M1/1600/SD",
+      "value": 0.4970102614634822,
+      "printed": "0.50",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M1/1600/mean",
+      "value": 88.964,
+      "printed": "88.96",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M1/1600/SD",
+      "value": 0.8981536616860165,
+      "printed": "0.90",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M1/1600/mean",
+      "value": 85.984,
+      "printed": "85.98",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M1/1600/SD",
+      "value": 1.075211607080204,
+      "printed": "1.08",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M1/1600/mean",
+      "value": 87.474,
+      "printed": "87.47",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M1/1600/SD",
+      "value": 0.8454466275289042,
+      "printed": "0.85",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M2/1600/mean",
+      "value": 93.524,
+      "printed": "93.52",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M2/1600/SD",
+      "value": 0.1865904606350467,
+      "printed": "0.19",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M2/1600/mean",
+      "value": 93.056,
+      "printed": "93.06",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M2/1600/SD",
+      "value": 1.0410955767843817,
+      "printed": "1.04",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M2/1600/mean",
+      "value": 91.852,
+      "printed": "91.85",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M2/1600/SD",
+      "value": 1.1449541475535123,
+      "printed": "1.14",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M2/1600/mean",
+      "value": 92.454,
+      "printed": "92.45",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M2/1600/SD",
+      "value": 1.0739785845164738,
+      "printed": "1.07",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M3/1600/mean",
+      "value": 93.2664,
+      "printed": "93.27",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M3/1600/SD",
+      "value": 0.4255593965593989,
+      "printed": "0.43",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M3/1600/mean",
+      "value": 92.884,
+      "printed": "92.88",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M3/1600/SD",
+      "value": 1.2341312734065202,
+      "printed": "1.23",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M3/1600/mean",
+      "value": 91.528,
+      "printed": "91.53",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M3/1600/SD",
+      "value": 1.4850319861875023,
+      "printed": "1.49",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M3/1600/mean",
+      "value": 92.20600000000002,
+      "printed": "92.21",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M3/1600/SD",
+      "value": 1.2766087889404487,
+      "printed": "1.28",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M4/1600/mean",
+      "value": 93.9008,
+      "printed": "93.90",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M4/1600/SD",
+      "value": 0.4487083685424207,
+      "printed": "0.45",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M4/1600/mean",
+      "value": 93.476,
+      "printed": "93.48",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M4/1600/SD",
+      "value": 1.5597051003314677,
+      "printed": "1.56",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M4/1600/mean",
+      "value": 92.804,
+      "printed": "92.80",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M4/1600/SD",
+      "value": 1.1059294733390537,
+      "printed": "1.11",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M4/1600/mean",
+      "value": 93.14,
+      "printed": "93.14",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M4/1600/SD",
+      "value": 1.297593927236097,
+      "printed": "1.30",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M5/1600/mean",
+      "value": 93.2792,
+      "printed": "93.28",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M5/1600/SD",
+      "value": 0.694978560820403,
+      "printed": "0.69",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M5/1600/mean",
+      "value": 93.92,
+      "printed": "93.92",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M5/1600/SD",
+      "value": 1.026839812239476,
+      "printed": "1.03",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M5/1600/mean",
+      "value": 92.384,
+      "printed": "92.38",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M5/1600/SD",
+      "value": 1.025124382697045,
+      "printed": "1.03",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M5/1600/mean",
+      "value": 93.15200000000002,
+      "printed": "93.15",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M5/1600/SD",
+      "value": 0.9940674021413256,
+      "printed": "0.99",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M6/1600/mean",
+      "value": 93.5392,
+      "printed": "93.54",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M6/1600/SD",
+      "value": 0.3794880762290158,
+      "printed": "0.38",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M6/1600/mean",
+      "value": 93.576,
+      "printed": "93.58",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M6/1600/SD",
+      "value": 0.7835049457406164,
+      "printed": "0.78",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M6/1600/mean",
+      "value": 92.224,
+      "printed": "92.22",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M6/1600/SD",
+      "value": 0.902817811078182,
+      "printed": "0.90",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M6/1600/mean",
+      "value": 92.9,
+      "printed": "92.90",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M6/1600/SD",
+      "value": 0.7673982017179869,
+      "printed": "0.77",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/L2SP/1600/mean",
+      "value": 93.4144,
+      "printed": "93.41",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/L2SP/1600/SD",
+      "value": 0.3017893304939731,
+      "printed": "0.30",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/L2SP/1600/mean",
+      "value": 93.52,
+      "printed": "93.52",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/L2SP/1600/SD",
+      "value": 1.7565306715227054,
+      "printed": "1.76",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/L2SP/1600/mean",
+      "value": 91.896,
+      "printed": "91.90",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/L2SP/1600/SD",
+      "value": 2.518547200272409,
+      "printed": "2.52",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/L2SP/1600/mean",
+      "value": 92.70799999999998,
+      "printed": "92.71",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/L2SP/1600/SD",
+      "value": 2.1209479012931967,
+      "printed": "2.12",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M1/6400/mean",
+      "value": 89.53520000000002,
+      "printed": "89.54",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M1/6400/SD",
+      "value": 0.1036687030882461,
+      "printed": "0.10",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M1/6400/mean",
+      "value": 91.228,
+      "printed": "91.23",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M1/6400/SD",
+      "value": 1.420464712690891,
+      "printed": "1.42",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M1/6400/mean",
+      "value": 88.584,
+      "printed": "88.58",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M1/6400/SD",
+      "value": 0.6516747655080726,
+      "printed": "0.65",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M1/6400/mean",
+      "value": 89.906,
+      "printed": "89.91",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M1/6400/SD",
+      "value": 1.0233425623905228,
+      "printed": "1.02",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M2/6400/mean",
+      "value": 94.2024,
+      "printed": "94.20",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M2/6400/SD",
+      "value": 0.0930634192365652,
+      "printed": "0.09",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M2/6400/mean",
+      "value": 94.472,
+      "printed": "94.47",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M2/6400/SD",
+      "value": 0.5749086884019069,
+      "printed": "0.57",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M2/6400/mean",
+      "value": 93.288,
+      "printed": "93.29",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M2/6400/SD",
+      "value": 0.4581702740248417,
+      "printed": "0.46",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M2/6400/mean",
+      "value": 93.88,
+      "printed": "93.88",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M2/6400/SD",
+      "value": 0.4905609034564376,
+      "printed": "0.49",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M3/6400/mean",
+      "value": 94.4064,
+      "printed": "94.41",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M3/6400/SD",
+      "value": 0.2823416370286136,
+      "printed": "0.28",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M3/6400/mean",
+      "value": 94.728,
+      "printed": "94.73",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M3/6400/SD",
+      "value": 0.6937722969389908,
+      "printed": "0.69",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M3/6400/mean",
+      "value": 93.044,
+      "printed": "93.04",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M3/6400/SD",
+      "value": 0.5134978091481947,
+      "printed": "0.51",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M3/6400/mean",
+      "value": 93.886,
+      "printed": "93.89",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M3/6400/SD",
+      "value": 0.5350981218430845,
+      "printed": "0.54",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M4/6400/mean",
+      "value": 94.6344,
+      "printed": "94.63",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M4/6400/SD",
+      "value": 0.3457698656621175,
+      "printed": "0.35",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M4/6400/mean",
+      "value": 95.012,
+      "printed": "95.01",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M4/6400/SD",
+      "value": 0.7540026525152287,
+      "printed": "0.75",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M4/6400/mean",
+      "value": 93.716,
+      "printed": "93.72",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M4/6400/SD",
+      "value": 1.0858545022239396,
+      "printed": "1.09",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M4/6400/mean",
+      "value": 94.364,
+      "printed": "94.36",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M4/6400/SD",
+      "value": 0.8652340723757914,
+      "printed": "0.87",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M5/6400/mean",
+      "value": 94.364,
+      "printed": "94.36",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M5/6400/SD",
+      "value": 0.2461869208548697,
+      "printed": "0.25",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M5/6400/mean",
+      "value": 94.952,
+      "printed": "94.95",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M5/6400/SD",
+      "value": 0.3859015418471424,
+      "printed": "0.39",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M5/6400/mean",
+      "value": 93.16,
+      "printed": "93.16",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M5/6400/SD",
+      "value": 0.5416641025580362,
+      "printed": "0.54",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M5/6400/mean",
+      "value": 94.056,
+      "printed": "94.06",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M5/6400/SD",
+      "value": 0.3945630494610486,
+      "printed": "0.39",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M6/6400/mean",
+      "value": 94.4872,
+      "printed": "94.49",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/M6/6400/SD",
+      "value": 0.1461889188687053,
+      "printed": "0.15",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M6/6400/mean",
+      "value": 94.676,
+      "printed": "94.68",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/M6/6400/SD",
+      "value": 0.526193880618159,
+      "printed": "0.53",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M6/6400/mean",
+      "value": 93.172,
+      "printed": "93.17",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/M6/6400/SD",
+      "value": 0.7353366575929718,
+      "printed": "0.74",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M6/6400/mean",
+      "value": 93.924,
+      "printed": "93.92",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/M6/6400/SD",
+      "value": 0.6057474721366971,
+      "printed": "0.61",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/L2SP/6400/mean",
+      "value": 94.46,
+      "printed": "94.46",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "imdb/L2SP/6400/SD",
+      "value": 0.1522891985664126,
+      "printed": "0.15",
+      "source": "member-c/results/C-final/imdb_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/L2SP/6400/mean",
+      "value": 94.852,
+      "printed": "94.85",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "yelp/L2SP/6400/SD",
+      "value": 0.6244357452933039,
+      "printed": "0.62",
+      "source": "member-c/results/C-final/yelp_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/L2SP/6400/mean",
+      "value": 93.608,
+      "printed": "93.61",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "amazon/L2SP/6400/SD",
+      "value": 0.6680718524230786,
+      "printed": "0.67",
+      "source": "member-c/results/C-final/amazon_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/L2SP/6400/mean",
+      "value": 94.23,
+      "printed": "94.23",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "ood/L2SP/6400/SD",
+      "value": 0.6394919858762912,
+      "printed": "0.64",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "M1/trainable",
+      "value": 1538.0,
+      "printed": "1,538",
+      "source": "member-c/results/C-final/trainable_parameters.csv"
+    },
+    {
+      "key": "M2/trainable",
+      "value": 14177282.0,
+      "printed": "14,177,282",
+      "source": "member-c/results/C-final/trainable_parameters.csv"
+    },
+    {
+      "key": "M3/trainable",
+      "value": 124056578.0,
+      "printed": "124,056,578",
+      "source": "member-c/results/C-final/trainable_parameters.csv"
+    },
+    {
+      "key": "M4/trainable",
+      "value": 124056578.0,
+      "printed": "124,056,578",
+      "source": "member-c/results/C-final/trainable_parameters.csv"
+    },
+    {
+      "key": "M5/trainable",
+      "value": 296450.0,
+      "printed": "296,450",
+      "source": "member-c/results/C-final/trainable_parameters.csv"
+    },
+    {
+      "key": "M6/trainable",
+      "value": 124056578.0,
+      "printed": "124,056,578",
+      "source": "member-c/results/C-final/trainable_parameters.csv"
+    },
+    {
+      "key": "L2SP/trainable",
+      "value": 124056578.0,
+      "printed": "124,056,578",
+      "source": "member-c/results/C-final/trainable_parameters.csv"
+    },
+    {
+      "key": "imdb_train_pool/n",
+      "value": 24779.0,
+      "printed": "24,779",
+      "source": "member-a/remote-records/data-v1/audit.json"
+    },
+    {
+      "key": "imdb_train_pool/median",
+      "value": 224.0,
+      "printed": "224",
+      "source": "member-a/remote-records/data-v1/audit.json"
+    },
+    {
+      "key": "imdb_train_pool/p95",
+      "value": 775.0,
+      "printed": "775",
+      "source": "member-a/remote-records/data-v1/audit.json"
+    },
+    {
+      "key": "imdb_train_pool/trunc512",
+      "value": 13.6809395052262,
+      "printed": "13.68",
+      "source": "member-a/remote-records/data-v1/audit.json"
+    },
+    {
+      "key": "imdb/n",
+      "value": 25000.0,
+      "printed": "25,000",
+      "source": "member-a/remote-records/data-v1/audit.json"
+    },
+    {
+      "key": "imdb/median",
+      "value": 221.0,
+      "printed": "221",
+      "source": "member-a/remote-records/data-v1/audit.json"
+    },
+    {
+      "key": "imdb/p95",
+      "value": 754.0,
+      "printed": "754",
+      "source": "member-a/remote-records/data-v1/audit.json"
+    },
+    {
+      "key": "imdb/trunc512",
+      "value": 12.772,
+      "printed": "12.77",
+      "source": "member-a/remote-records/data-v1/audit.json"
+    },
+    {
+      "key": "yelp/n",
+      "value": 5000.0,
+      "printed": "5,000",
+      "source": "member-a/remote-records/data-v1/audit.json"
+    },
+    {
+      "key": "yelp/median",
+      "value": 127.0,
+      "printed": "127",
+      "source": "member-a/remote-records/data-v1/audit.json"
+    },
+    {
+      "key": "yelp/p95",
+      "value": 486.0,
+      "printed": "486",
+      "source": "member-a/remote-records/data-v1/audit.json"
+    },
+    {
+      "key": "yelp/trunc512",
+      "value": 4.24,
+      "printed": "4.24",
+      "source": "member-a/remote-records/data-v1/audit.json"
+    },
+    {
+      "key": "amazon/n",
+      "value": 5000.0,
+      "printed": "5,000",
+      "source": "member-a/remote-records/data-v1/audit.json"
+    },
+    {
+      "key": "amazon/median",
+      "value": 88.0,
+      "printed": "88",
+      "source": "member-a/remote-records/data-v1/audit.json"
+    },
+    {
+      "key": "amazon/p95",
+      "value": 202.0,
+      "printed": "202",
+      "source": "member-a/remote-records/data-v1/audit.json"
+    },
+    {
+      "key": "amazon/trunc512",
+      "value": 0.02,
+      "printed": "0.02",
+      "source": "member-a/remote-records/data-v1/audit.json"
+    },
+    {
+      "key": "M6--M3/400/mean",
+      "value": -0.7020000000000026,
+      "printed": "-0.702",
+      "source": "member-c/results/C-v1/paired_comparisons.csv"
+    },
+    {
+      "key": "M6--M3/400/ci95_low",
+      "value": -1.6428995188395408,
+      "printed": "-1.643",
+      "source": "member-c/results/C-v1/paired_comparisons.csv"
+    },
+    {
+      "key": "M6--M3/400/ci95_high",
+      "value": 0.2388995188395355,
+      "printed": "+0.239",
+      "source": "member-c/results/C-v1/paired_comparisons.csv"
+    },
+    {
+      "key": "M6--M3/1600/mean",
+      "value": 0.6939999999999968,
+      "printed": "+0.694",
+      "source": "member-c/results/C-v1/paired_comparisons.csv"
+    },
+    {
+      "key": "M6--M3/1600/ci95_low",
+      "value": -1.5196574362836524,
+      "printed": "-1.520",
+      "source": "member-c/results/C-v1/paired_comparisons.csv"
+    },
+    {
+      "key": "M6--M3/1600/ci95_high",
+      "value": 2.907657436283646,
+      "printed": "+2.908",
+      "source": "member-c/results/C-v1/paired_comparisons.csv"
+    },
+    {
+      "key": "M6--M3/6400/mean",
+      "value": 0.037999999999998,
+      "printed": "+0.038",
+      "source": "member-c/results/C-v1/paired_comparisons.csv"
+    },
+    {
+      "key": "M6--M3/6400/ci95_low",
+      "value": -0.399358408097862,
+      "printed": "-0.399",
+      "source": "member-c/results/C-v1/paired_comparisons.csv"
+    },
+    {
+      "key": "M6--M3/6400/ci95_high",
+      "value": 0.475358408097858,
+      "printed": "+0.475",
+      "source": "member-c/results/C-v1/paired_comparisons.csv"
+    },
+    {
+      "key": "M5--M3/400/mean",
+      "value": -1.6700000000000004,
+      "printed": "-1.670",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv"
+    },
+    {
+      "key": "M5--M3/400/ci95_low",
+      "value": -5.060004227645659,
+      "printed": "-5.060",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv"
+    },
+    {
+      "key": "M5--M3/400/ci95_high",
+      "value": 1.7200042276456582,
+      "printed": "+1.720",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv"
+    },
+    {
+      "key": "M5--M3/1600/mean",
+      "value": 0.946,
+      "printed": "+0.946",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv"
+    },
+    {
+      "key": "M5--M3/1600/ci95_low",
+      "value": -1.5947825466009995,
+      "printed": "-1.595",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv"
+    },
+    {
+      "key": "M5--M3/1600/ci95_high",
+      "value": 3.486782546601,
+      "printed": "+3.487",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv"
+    },
+    {
+      "key": "M5--M3/6400/mean",
+      "value": 0.1699999999999968,
+      "printed": "+0.170",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv"
+    },
+    {
+      "key": "M5--M3/6400/ci95_low",
+      "value": -0.6261187041210515,
+      "printed": "-0.626",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv"
+    },
+    {
+      "key": "M5--M3/6400/ci95_high",
+      "value": 0.9661187041210452,
+      "printed": "+0.966",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv"
+    },
+    {
+      "key": "OODLoRAHigh",
+      "value": 94.056,
+      "printed": "94.056",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "OODPartialHigh",
+      "value": 93.88,
+      "printed": "93.880",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "OODFullHigh",
+      "value": 93.886,
+      "printed": "93.886",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "MtwoMinusMoneLow",
+      "value": 8.793999999999997,
+      "printed": "8.794",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "MtwoMinusMoneMid",
+      "value": 4.97999999999999,
+      "printed": "4.980",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "MtwoMinusMoneHigh",
+      "value": 3.9739999999999895,
+      "printed": "3.974",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "LoRAvsLPMid",
+      "value": 0.012000000000014666,
+      "printed": "0.012",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "LoRASDLow",
+      "value": 2.6688443191763707,
+      "printed": "2.669",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv"
+    },
+    {
+      "key": "LoRAFailure",
+      "value": 87.33999999999999,
+      "printed": "87.34",
+      "source": "member-c/results/C-final/selected_models.csv"
+    },
+    {
+      "key": "LoRATrainingHours",
+      "value": 3.4917484953727884,
+      "printed": "3.492",
+      "source": "member-c/results/C-final/selected_models.csv"
+    },
+    {
+      "key": "ProbeMemory",
+      "value": 0.6279311180114746,
+      "printed": "0.628",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "ProbeStep",
+      "value": 0.1429576916620135,
+      "printed": "0.143",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "PartialMemory",
+      "value": 1.1415557861328125,
+      "printed": "1.142",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "PartialStep",
+      "value": 0.1852291479085882,
+      "printed": "0.185",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "FullMemory",
+      "value": 4.376400947570801,
+      "printed": "4.376",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "FullStep",
+      "value": 0.4319371634473403,
+      "printed": "0.432",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "LoRAMemory",
+      "value": 2.219942569732666,
+      "printed": "2.220",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "LoRAStep",
+      "value": 0.3226393148303032,
+      "printed": "0.323",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "FeatureMemory",
+      "value": 4.892028331756592,
+      "printed": "4.892",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "FeatureStep",
+      "value": 0.5835303251941999,
+      "printed": "0.584",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "WeightMemory",
+      "value": 5.642110347747803,
+      "printed": "5.642",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "WeightStep",
+      "value": 0.4826564851527413,
+      "printed": "0.483",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "MemorySaving",
+      "value": 49.2746986318773,
+      "printed": "49.3",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "MemoryVsPartial",
+      "value": 94.46641125205512,
+      "printed": "94.5",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "TimeSaving",
+      "value": 25.304108529286605,
+      "printed": "25.3",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "TimeVsPartial",
+      "value": 74.1838789808221,
+      "printed": "74.2",
+      "source": "member-c/results/C-final/ada_cost_summary.csv"
+    },
+    {
+      "key": "domain/400/imdb/0",
+      "value": 0.04639912195764656,
+      "printed": "0.046",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/400/imdb/1",
+      "value": 0.22047313029343538,
+      "printed": "0.220",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/400/imdb/2",
+      "value": 0.006713974123272751,
+      "printed": "+0.007",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/400/imdb/3",
+      "value": -0.2516643861405302,
+      "printed": "-0.252",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/400/imdb/4",
+      "value": -0.05919999999999259,
+      "printed": "-0.059",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/400/imdb/brier",
+      "value": -0.003260277755862212,
+      "printed": "-0.0033",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/400/imdb/nll",
+      "value": -0.06437328783879803,
+      "printed": "-0.0644",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/400/imdb/ece15",
+      "value": -0.012491184352112217,
+      "printed": "-0.0125",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "domain/400/yelp/0",
+      "value": 0.09568259899551008,
+      "printed": "0.096",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/400/yelp/1",
+      "value": 0.3110616187642353,
+      "printed": "0.311",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/400/yelp/2",
+      "value": 0.014823898921767664,
+      "printed": "+0.015",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/400/yelp/3",
+      "value": -0.2046343679164179,
+      "printed": "-0.205",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/400/yelp/4",
+      "value": -0.43599999999999195,
+      "printed": "-0.436",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/400/yelp/brier",
+      "value": 0.00039121234474130684,
+      "printed": "+0.0004",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/400/yelp/nll",
+      "value": -0.02500380997625845,
+      "printed": "-0.0250",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/400/yelp/ece15",
+      "value": -0.013049372785151898,
+      "printed": "-0.0130",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "domain/400/amazon/0",
+      "value": 0.11188978825122217,
+      "printed": "0.112",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/400/amazon/1",
+      "value": 0.23695071911176674,
+      "printed": "0.237",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/400/amazon/2",
+      "value": 0.015223349836526734,
+      "printed": "+0.015",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/400/amazon/3",
+      "value": -0.21895294396604081,
+      "printed": "-0.219",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/400/amazon/4",
+      "value": -0.9680000000000022,
+      "printed": "-0.968",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/400/amazon/brier",
+      "value": 0.00486266424288459,
+      "printed": "+0.0049",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/400/amazon/nll",
+      "value": -0.017683292317703048,
+      "printed": "-0.0177",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/400/amazon/ece15",
+      "value": -0.00906623029523932,
+      "printed": "-0.0091",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "domain/1600/imdb/0",
+      "value": 0.038762089043839,
+      "printed": "0.039",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/1600/imdb/1",
+      "value": 0.17507786931525882,
+      "printed": "0.175",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/1600/imdb/2",
+      "value": 0.000343290752959996,
+      "printed": "+0.000",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/1600/imdb/3",
+      "value": -0.3642473582848661,
+      "printed": "-0.364",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/1600/imdb/4",
+      "value": 0.27280000000000637,
+      "printed": "+0.273",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/1600/imdb/brier",
+      "value": -0.0010143079035355648,
+      "printed": "-0.0010",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/1600/imdb/nll",
+      "value": 0.011988531373810674,
+      "printed": "+0.0120",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/1600/imdb/ece15",
+      "value": 0.0035306120044606287,
+      "printed": "+0.0035",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "domain/1600/yelp/0",
+      "value": 0.08683901704560013,
+      "printed": "0.087",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/1600/yelp/1",
+      "value": 0.24305548791126091,
+      "printed": "0.243",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/1600/yelp/2",
+      "value": 0.006869207491312895,
+      "printed": "+0.007",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/1600/yelp/3",
+      "value": -0.3027728075180322,
+      "printed": "-0.303",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/1600/yelp/4",
+      "value": 0.6920000000000037,
+      "printed": "+0.692",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/1600/yelp/brier",
+      "value": -0.0036553913604127075,
+      "printed": "-0.0037",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/1600/yelp/nll",
+      "value": -0.006848972396226449,
+      "printed": "-0.0068",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/1600/yelp/ece15",
+      "value": 0.005870346414737895,
+      "printed": "+0.0059",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "domain/1600/amazon/0",
+      "value": 0.10273021064048685,
+      "printed": "0.103",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/1600/amazon/1",
+      "value": 0.18252596889320186,
+      "printed": "0.183",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/1600/amazon/2",
+      "value": 0.005090965669508188,
+      "printed": "+0.005",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/1600/amazon/3",
+      "value": -0.3102720608870968,
+      "printed": "-0.310",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/1600/amazon/4",
+      "value": 0.6960000000000188,
+      "printed": "+0.696",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/1600/amazon/brier",
+      "value": -0.0038744904858918072,
+      "printed": "-0.0039",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/1600/amazon/nll",
+      "value": -0.0023857482388602302,
+      "printed": "-0.0024",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/1600/amazon/ece15",
+      "value": 0.0021100142330169464,
+      "printed": "+0.0021",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "domain/6400/imdb/0",
+      "value": 0.04908591118809314,
+      "printed": "0.049",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/6400/imdb/1",
+      "value": 0.6380356112079402,
+      "printed": "0.638",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/6400/imdb/2",
+      "value": 0.002641178513025755,
+      "printed": "+0.003",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/6400/imdb/3",
+      "value": -0.42752312834272627,
+      "printed": "-0.428",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/6400/imdb/4",
+      "value": 0.08079999999999199,
+      "printed": "+0.081",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/6400/imdb/brier",
+      "value": -0.0015159024305662627,
+      "printed": "-0.0015",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/6400/imdb/nll",
+      "value": -0.015350599401039944,
+      "printed": "-0.0154",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/6400/imdb/ece15",
+      "value": -0.0021924943924702053,
+      "printed": "-0.0022",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "domain/6400/yelp/0",
+      "value": 0.1050850479123984,
+      "printed": "0.105",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/6400/yelp/1",
+      "value": 0.7240461965461872,
+      "printed": "0.724",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/6400/yelp/2",
+      "value": 0.002859720917308739,
+      "printed": "+0.003",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/6400/yelp/3",
+      "value": -0.34808088901826423,
+      "printed": "-0.348",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/6400/yelp/4",
+      "value": -0.05199999999998539,
+      "printed": "-0.052",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/6400/yelp/brier",
+      "value": -0.0012351378269574234,
+      "printed": "-0.0012",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/6400/yelp/nll",
+      "value": -0.030063707900411962,
+      "printed": "-0.0301",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/6400/yelp/ece15",
+      "value": -0.006486730853062221,
+      "printed": "-0.0065",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "domain/6400/amazon/0",
+      "value": 0.11030005841916919,
+      "printed": "0.110",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/6400/amazon/1",
+      "value": 0.5809105418558508,
+      "printed": "0.581",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/6400/amazon/2",
+      "value": 0.006838176173582039,
+      "printed": "+0.007",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/6400/amazon/3",
+      "value": -0.36158479219250644,
+      "printed": "-0.362",
+      "source": "member-c/results/C-final/recomputed/cka_all_seeds.csv"
+    },
+    {
+      "key": "domain/6400/amazon/4",
+      "value": 0.1280000000000059,
+      "printed": "+0.128",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/6400/amazon/brier",
+      "value": -0.002829156637305097,
+      "printed": "-0.0028",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/6400/amazon/nll",
+      "value": -0.04154935446141117,
+      "printed": "-0.0415",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    },
+    {
+      "key": "calibration/6400/amazon/ece15",
+      "value": -0.006561790945118141,
+      "printed": "-0.0066",
+      "source": "member-c/results/C-v1/prediction_metrics.csv"
+    }
+  ],
+  "source_sha256": {
+    "member-c/results/C-final/imdb_accuracy_summary.csv": "cd6d082718f79775ab1fc13cfc535ae9a4a5abe71b3c6139c1da68a8ce89b978",
+    "member-c/results/C-final/yelp_accuracy_summary.csv": "45621533e770fe6c1e6a096c5c05bb6cf6cbda650ae39493a53288e4339eb630",
+    "member-c/results/C-final/amazon_accuracy_summary.csv": "3d710e8eec76cba29b729395ee0e896dfae3c7e8545bd5136826d4f6458e46e8",
+    "member-c/results/C-final/ood_accuracy_summary.csv": "4b4c0b5169e6aa649100046f6a1975f047e8694f37c62b8a4b388314e6025be0",
+    "member-c/results/C-final/trainable_parameters.csv": "ae4767160123f7a88c310b2758a97a019a51f81c4391a698cd1b7300fdd9ffdd",
+    "member-a/remote-records/data-v1/audit.json": "71c762904653e1921416a4ce023e5bc31c2ddec9c108df8625f4af6e4ed2670b",
+    "member-c/results/C-v1/paired_comparisons.csv": "5142fdada656d17c265f22d84c1a605525c4e8fae9987f7071c3de629a217d8c",
+    "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv": "8364b7e8f789820002cd042f2137a5ffe2e5ae77af56be9728fa49b2ab698c1d",
+    "member-c/results/C-final/selected_models.csv": "01e1f62b408f14aa3910ec5c46304c1b650fcee820f13b0e982d0f8bfdd49046",
+    "member-c/results/C-final/ada_cost_summary.csv": "b8f10ebdbacd18de724051a427f206b2a5b3fd0063ae6e4055ccd0487c756940",
+    "member-c/results/C-final/recomputed/cka_all_seeds.csv": "bc6943e84289414d853cc751154857a91b63f196a96120562b76cd56eadc3c79",
+    "member-c/results/C-v1/prediction_metrics.csv": "1b111619decd03e7001b9039db5779c7711841ac01aef62e63714d1e8e5181e0",
+    "member-c/results/C-v1/error_cases_with_excerpts.csv": "981d0350ea1b5401ad95d43aae3c84aa16956c23d32afa563bd34db53c331aef",
+    "member-a/protocol/A-v1.json": "112e7abb91531eff521da1d93f28449e74d92172c74606d30e057449d482de40",
+    "member-b/protocol/B-v1.json": "0118c13b5c37faeb10293ec23ac52046a270b473bbc16d198759923ccc192fa0",
+    "member-c/protocol/M5-v1.json": "39465bb00534b1833bbcdd078e376573a99433b5fccd8da3cf9683a3c67b3892",
+    "member-c/report/figures/02_cka_layers.pdf": "f992e50bfa278ee0f788ea04c86d7581387dc97df2ff5263a6771b34d487d3c3",
+    "member-c/report/figures/03_cka_accuracy.pdf": "a85c9dc44d1dc1d5eb6b7c313abfd7000c1421a108ba2cefcac4b16dc05ebaf7",
+    "member-c/report/figures/04_lambda_ablation.pdf": "f5c2520332cd614a4d108cd8e71a2caf8019910b7b009adf00be693eadea55b2",
+    "member-c/report/figures/05_v100_cost.pdf": "6bc990df5664372c4c50a2ba6e3f2fc2cb764a08501272a58e350e09e4fa14bd",
+    "member-c/report/figures/06_ada_cost.pdf": "f88b8d0e069a46f926c30e3befe460ff3ab162c6bb8399de5ef09cb053219b9c"
+  },
+  "generator_sha256": "a3c58e3caf236a470159e9ff1b2715c607192953b43ecac2b241d4d5e9660729"
+}

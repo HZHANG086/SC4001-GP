@@ -1,0 +1,9 @@
+\begin{tabular}{lp{61mm}p{63mm}}\toprule
+Method & Three candidates per cell & Additional selection dependency\\\midrule
+M1 & Learning rate: $10^{-4},10^{-3},10^{-2}$ & None\\
+M2 & Learning rate: $5\!\times\!10^{-6},2\!\times\!10^{-5},5\!\times\!10^{-5}$ & None\\
+M3 / M4 & Learning rate: $10^{-5},2\!\times\!10^{-5},3\!\times\!10^{-5}$ & M4 retrains a selected-rate head first\\
+M5 & Learning rate: $10^{-4},3\!\times\!10^{-4},10^{-3}$ & Rank 8; alpha 16; query and value\\
+M6 & $\lambda=0.01,0.1,1$ & M3 selected learning rate\\
+L2-SP & $\lambda=0.1,1,10$ & M3 selected learning rate\\
+\bottomrule\end{tabular}

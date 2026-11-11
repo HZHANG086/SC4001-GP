@@ -1,0 +1,10 @@
+\begin{tabular}{lrp{105mm}}\toprule
+Method & Trainable parameters & Adaptation\\\midrule
+M1 & 1,538 & Frozen encoder; train linear head only.\\
+M2 & 14,177,282 & Tune final two encoder blocks and linear head.\\
+M3 & 124,056,578 & Tune the complete encoder and linear head.\\
+M4 & 124,056,578 & Head-only first stage, then full fine-tuning (LP-FT).\\
+M5 & 296,450 & Query/value LoRA in all layers, plus linear head.\\
+M6 & 124,056,578 & Full tuning with pooled cosine feature preservation.\\
+L2-SP & 124,056,578 & Full tuning with encoder weight anchoring.\\
+\bottomrule\end{tabular}
