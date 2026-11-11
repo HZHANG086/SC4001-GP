@@ -1,0 +1,82 @@
+{
+  "status": "C_SCOPE_COMPLETE_AND_FINAL_ARCHIVE_PASS",
+  "accepted_utc": "2026-11-11T03:47:56.936002+00:00",
+  "source_commit": "ea150faa6a811852a2c863d30cd73adafdb5c43d",
+  "archive": {
+    "name": "SC4001-C-code.zip",
+    "bytes": 89299330,
+    "sha256": "93257b31511e4e2f887b180921eeb42db2e5e2652a2f78e87ad73e84be299506",
+    "manifested_files": 5037,
+    "contains_weights_caches_or_fonts": false
+  },
+  "report": {
+    "name": "SC4001-C-analysis.pdf",
+    "sha256": "4cb74ca04d1124f431a58d60afad5db562b3b31e5c63e766aaafdc5d99e154b3",
+    "pages": 8,
+    "main_pages": 5,
+    "references_pages": 1,
+    "appendix_pages": 2,
+    "layout_qa": "member-c/report/FINAL_QA.json",
+    "numerical_qa": "member-c/report/NUMERICAL_QA.json",
+    "headline_numeric_checks": 107
+  },
+  "final_archive_execution": {
+    "job": 12383,
+    "observed_scheduler_state": "COMPLETED",
+    "observed_exit": "0:0",
+    "source": "validation/scheduler-12383.txt",
+    "tests_passed": 40,
+    "prediction_rows": 5775000,
+    "synthesis_tables": 22,
+    "figure_exports": 36,
+    "no_git_or_weights_required": true,
+    "status": "PASS"
+  },
+  "public_coursework_review": {
+    "completed_after_first_full_version": true,
+    "first_complete_job": 12381,
+    "review": "member-c/docs/PUBLIC_COURSEWORK_REVIEW.md",
+    "implemented_improvements": [
+      "experiment/evidence guide",
+      "one-command audited offline reproduction"
+    ],
+    "scientific_results_or_protocol_changed": false
+  },
+  "publication": {
+    "branch": "member-c-analysis-v1",
+    "verified_export_commit_on_remote": "ea150faa6a811852a2c863d30cd73adafdb5c43d",
+    "url": "https://github.com/HZHANG086/SC4001-GP/tree/member-c-analysis-v1/member-c",
+    "note": "A later evidence-only commit may add this final archive certificate; the exact tested payload is the source_commit above."
+  },
+  "validation_file_hashes": {
+    "validation/final-repro-12383.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "validation/final-repro-12383.out": "647a7d5f4bf0540e2fa2f9421c90f045dddcd8ede990ad7b3111fbbffc54f877",
+    "validation/final-reproduce.sbatch": "a6350ceeade481e2d11bba3efa8f27cd50469cdda52390cda2c5e0f0e475964c",
+    "validation/logs/color-figures.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "validation/logs/color-figures.out": "c355b9b6c73cfcf8aa4042a2508070a85c5abff4bf927807bb747ecdfa5af992",
+    "validation/logs/grayscale-figures.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "validation/logs/grayscale-figures.out": "c355b9b6c73cfcf8aa4042a2508070a85c5abff4bf927807bb747ecdfa5af992",
+    "validation/logs/m5-predictions.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "validation/logs/m5-predictions.out": "f11f26784426e6e6ab040f8bca36573c4d7c468e48e7b58a914f8a45dc92fbb3",
+    "validation/logs/original-predictions.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "validation/logs/original-predictions.out": "120e4e48fb9eeea1e70acfaca22f568a17e0891357aeeaded61bc9b8a9aa1bb8",
+    "validation/logs/synthesis.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "validation/logs/synthesis.out": "cadfc67f2c512c1b32d68a8d9c1bdfd1edb7d0cb4793a1f9937fcc8b813dcbfc",
+    "validation/logs/tests.err": "13577c28257bfed7b50cd6bf25fbcbcbfa8599f18ea9ecad1b90667fbdf24e5c",
+    "validation/logs/tests.out": "9dff109f55c792755d179654adf1dd867ecf539d133248ec10168dcea3825c4b",
+    "validation/scheduler-12383.txt": "b9498f2fc4b8a218e1fa4af7d990fdffdf24bb9ae4585d8f5a4aa11b9f5af8dd",
+    "validation/verification.json": "9408129ec8cae383f5e0d8467061da198bd5d362bc9a447b0673f462b4f47a13"
+  },
+  "remaining_C_experiments_or_analyses": [],
+  "remaining_human_group_tasks": [
+    "Add deferred actual group identifiers",
+    "Review actual individual contributions, AI statement and case interpretations; understand the work",
+    "Integrate A/B/C into at most ten main pages and submit through the course system"
+  ],
+  "boundaries": [
+    "Not a guaranteed grade or whole-group submission certificate",
+    "No fabricated human review",
+    "GPU reruns are distinct from the offline archive acceptance",
+    "Final PDF unchanged from the fully rendered and numerically checked version"
+  ]
+}
