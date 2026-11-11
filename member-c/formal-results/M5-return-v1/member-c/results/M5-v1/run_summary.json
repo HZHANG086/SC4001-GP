@@ -1,0 +1,9 @@
+{
+  "status": "COMPLETE",
+  "selected_models": 15,
+  "candidate_runs": 45,
+  "hardware_stratum": "RTX 6000 Ada; do not pool timing/memory with V100",
+  "timing_caveat": "Per-invocation times; audit attempts/Slurm for any interrupted earlier invocation",
+  "protocol_sha256": "39465bb00534b1833bbcdd078e376573a99433b5fccd8da3cf9683a3c67b3892",
+  "selection_lock_sha256": "e95f4eb727bfccf3544041408e02977272b5eae3a0de3bc19d18595f1df27aa3"
+}

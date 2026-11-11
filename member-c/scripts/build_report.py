@@ -1,10 +1,11 @@
-"""Build the explicitly incomplete six-method C draft from audited source tables.
+"""Build the completed seven-method C analysis from audited source tables.
 
 Run from the repository root in the analysis environment. Requires Tectonic (or
 adapt the final subprocess to XeLaTeX) and a locally installed licensed Arial font.
-Do not distribute system font files. Real M5 integration requires a prose revision.
+Do not distribute system font files. Re-run final_analysis with accepted M5 first.
 """
 import argparse
+import json
 import shutil
 import subprocess
 from pathlib import Path
@@ -12,14 +13,15 @@ import pandas as pd
 
 p=argparse.ArgumentParser()
 p.add_argument('--tectonic',default='tectonic')
-p.add_argument('--out',type=Path,default=Path('../output/C-draft'))
+p.add_argument('--out',type=Path,default=Path('../output/C-final'))
 a=p.parse_args()
 root=Path('member-c/report/latex');figures=Path('member-c/report/figures')
 s=pd.read_csv('member-c/results/C-final/ood_accuracy_summary.csv')
-if 'M5' in set(s.method):
-    raise SystemExit('Revise the draft narrative and completion boundary for real M5 results before building a final report.')
+manifest=json.loads(Path('member-c/results/C-final/analysis_manifest.json').read_text())
+if not manifest['M5_included'] or set(s.method)!={'M1','M2','M3','M4','M5','M6','L2SP'}:
+    raise SystemExit('The final report requires all seven methods and accepted real M5 evidence.')
 rows=[]
-for method in ('M1','M2','M3','M4','M6','L2SP'):
+for method in ('M1','M2','M3','M4','M5','M6','L2SP'):
     g=s[s.method==method].set_index('budget')
     rows.append(method.replace('L2SP','L2-SP')+' & '+' & '.join(
         f"{g.loc[b,'mean']:.2f} $\\pm$ {g.loc[b,'std']:.2f}" for b in (400,1600,6400))+r' \\')
@@ -43,9 +45,10 @@ for b in (400,1600,6400):
 (root/'domain_table.tex').write_text('\\begin{tabular}{rlrrrrr}\\toprule\nBudget & Domain & M3 mean CKA & M6 mean CKA & $\\Delta$ CLS CKA & $\\Delta$ cosine & $\\Delta$ acc. (pp)\\\\\\midrule\n'+'\n'.join(rows)+'\n\\bottomrule\\end{tabular}\n')
 (root/'calibration_table.tex').write_text('\\begin{tabular}{rlrrr}\\toprule\nBudget & Domain & $\\Delta$ Brier & $\\Delta$ NLL & $\\Delta$ ECE\\\\\\midrule\n'+'\n'.join(calibration)+'\n\\bottomrule\\end{tabular}\n')
 (root/'images').mkdir(exist_ok=True)
-for name in ('02_cka_layers.pdf','03_cka_accuracy.pdf','04_lambda_ablation.pdf','05_v100_cost.pdf'):
+for name in ('02_cka_layers.pdf','03_cka_accuracy.pdf','04_lambda_ablation.pdf','05_v100_cost.pdf','06_ada_cost.pdf'):
     shutil.copy2(figures/name,root/'images'/name)
 a.out.mkdir(parents=True,exist_ok=True)
 subprocess.run([a.tectonic,'--keep-logs','--outdir',str(a.out),str(root/'main.tex')],check=True)
-shutil.copy2(a.out/'main.pdf',a.out/'C_analysis_DRAFT.pdf')
-print(a.out/'C_analysis_DRAFT.pdf')
+shutil.copy2(a.out/'main.pdf',a.out/'C_analysis.pdf')
+shutil.copy2(a.out/'C_analysis.pdf',Path('member-c/report/C_analysis.pdf'))
+print(a.out/'C_analysis.pdf')

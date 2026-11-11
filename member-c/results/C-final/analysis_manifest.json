@@ -1,22 +1,30 @@
 {
   "version": "C-final-analysis-v1",
   "scope": "Descriptive synthesis plus existing paired statistical audit",
-  "M5_included": false,
-  "status": "PARTIAL_M5_REAL_RUNS_PENDING",
+  "M5_included": true,
+  "status": "ANALYSIS_READY_FOR_WRITING",
   "source_hashes": {
     "/Users/zhangheng/Desktop/CCDS/SC4001/GP/SC4001-GP/member-b/formal-results/results/B-v1/per_seed.csv": "1baaad0c6ab9da5b8f7273ab75f60418809b5dc85a849d556c892b394dd72827",
     "/Users/zhangheng/Desktop/CCDS/SC4001/GP/SC4001-GP/member-b/formal-results/results/B-v1/ablation.csv": "0646b01560f01df39237c8fb405da638b900433c078880cfc1ca53ec9f7c63a9",
     "/Users/zhangheng/Desktop/CCDS/SC4001/GP/SC4001-GP/member-c/formal-results/return-v2/analysis/C-handoff-v2/RETURN_MANIFEST.json": "3caeae6db128420b4b22ef1d1cf635c2e143a08c2f79f53aa44ef0c7cf5a87da",
-    "/Users/zhangheng/Desktop/CCDS/SC4001/GP/SC4001-GP/member-c/results/C-v1/paired_comparisons.csv": "5142fdada656d17c265f22d84c1a605525c4e8fae9987f7071c3de629a217d8c"
+    "/Users/zhangheng/Desktop/CCDS/SC4001/GP/SC4001-GP/member-c/results/C-v1/paired_comparisons.csv": "5142fdada656d17c265f22d84c1a605525c4e8fae9987f7071c3de629a217d8c",
+    "member-c/formal-results/M5-return-v1/member-c/results/M5-v1/per_seed.csv": "e042cb19eab2c7da85e2b1d7a2d3795b48bdcad948c4bd65540ac5bd67ff8800",
+    "member-c/formal-results/M5-return-v1/member-c/results/M5-CKA/cka.csv": "ab0e98fe1979b88ce955a948b72f5ec4fae14cee75b1a6b4e97bfffc3d2c4547",
+    "member-c/formal-results/M5-return-v1/member-c/results/M5-CKA/manifest.json": "9f83b65789759b983431b5c2fa393c1985e8be3820622b21b54f5ff246ab6fa1",
+    "member-c/formal-results/M5-return-v1/member-c/results/M5-audit/audit.json": "9527f9dcb1906e780201d392be0a11670923217739a1292f373205bcd7eecf5d",
+    "member-c/formal-results/M5-return-v1/member-c/results/M5-diagnostics/audit.json": "386c4d389c44ad3c75c44f12a44c2a17b072c50988d7b12ec16207717d740420",
+    "member-c/formal-results/M5-return-v1/member-c/results/M5-audit/paired_comparisons.csv": "8364b7e8f789820002cd042f2137a5ffe2e5ae77af56be9728fa49b2ab698c1d",
+    "member-c/formal-results/M5-return-v1/member-c/results/M5-diagnostics/ada_cost_summary.csv": "8ca88d12ad99fde0a124611bca18478dcd8189b242489a3a634747c3cdfb2250",
+    "/Users/zhangheng/Desktop/CCDS/SC4001/GP/SC4001-GP/member-c/results/M5-local-audit/local_audit.json": "9021325f31644bc2b34eacfd2eee0747370a7c010942b1bb775a8301336d7a40"
   },
-  "script_sha256": "dd35c135fd53d9afb0ef4488fa110a785730509272e595147f39b55cdaf5e087",
+  "script_sha256": "0fe898d1824d6b8b2d296e25b1ea26a710e62a03fe351782ade54be00a536b8e",
   "counts": {
-    "selected_cells": 90,
-    "cka_rows": 8190,
-    "cka_checkpoint_cells": 60,
+    "selected_cells": 105,
+    "cka_rows": 9360,
+    "cka_checkpoint_cells": 75,
     "V100_cost_probes": 27,
-    "Ada_cost_probes": 0
+    "Ada_cost_probes": 21
   },
   "inference_units": "Five paired training seeds; two OOD domains averaged within seed, layers never independent repeats",
-  "limit": "B-only CKA; M5 results pending. No test-guided selection."
+  "limit": "M5 has pretrained-reference CKA only, on Ada; B CKA on V100 includes direct paired-M3 references. No test-guided selection. Hardware cost strata remain separate."
 }

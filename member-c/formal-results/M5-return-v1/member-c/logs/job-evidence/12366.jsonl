@@ -1,0 +1,1 @@
+{"job_id": "12366", "event": "observed", "unix_time": 1794331269.9051542, "observed_utc": "2026-11-10T17:21:09.905172+00:00", "shell_exit_code": null, "scontrol_returncode": 1, "scontrol_stdout": "", "scontrol_stderr": "slurm_load_jobs error: Invalid job id specified\n", "caveat": "Live scheduler snapshot; shell exit observation is not historical accounting."}

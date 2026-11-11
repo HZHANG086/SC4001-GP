@@ -1,0 +1,8 @@
+{
+  "manifest_files": 809,
+  "return_manifest_sha256": "43ebc293d210f6ebb7ca4753eae26618b847448b787ac37dd8980ed6b3c45be7",
+  "destination": "member-c/formal-results/M5-return-v1",
+  "mode": "archive_import",
+  "status": "CHECKSUM_AND_LOCAL_PREDICTION_AUDIT_PASSED",
+  "archive_sha256": "7812944d024e5ddd3d321d3884ea3c6c24e743c203d12083426661b7a59f2efa"
+}

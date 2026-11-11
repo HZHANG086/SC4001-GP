@@ -1,6 +1,6 @@
 # M5 Ada execution and recovery
 
-Run from the remote project root `/share/zhangh/sc4001-gp-c/project`. This runbook describes the already submitted chain; do not submit duplicates.
+Run from the remote project root `/share/zhangh/sc4001-gp-c/project`. The original chain has finished successfully. This runbook preserves its execution/recovery contract; do not submit duplicates.
 
 ```bash
 source member-c/scripts/ada/activate.sh
@@ -45,9 +45,9 @@ Do not run these steps against a partial return. From the local repository root,
 export PYTHONPATH=member-c/src:member-a/protocol/locked_src:member-b/protocol/locked_src
 python -m sc4001_c.m5_import \
   --archive ../received/M5-return-v1.tar.gz \
-  --destination ../received/M5-return-v1
+  --destination member-c/formal-results/M5-return-v1
 python -m sc4001_c.final_analysis \
-  --m5 ../received/M5-return-v1/member-c/results/M5-v1/per_seed.csv
+  --m5 member-c/formal-results/M5-return-v1/member-c/results/M5-v1/per_seed.csv
 python -m sc4001_c.final_plots
 ```
 
@@ -57,10 +57,10 @@ An already extracted return can be independently re-audited without retaining a 
 
 ```bash
 python -m sc4001_c.m5_import \
-  --raw ../received/M5-return-v1 \
+  --raw member-c/formal-results/M5-return-v1 \
   --out reproduced/M5-local-audit
 ```
 
-Raw mode first verifies the complete file inventory and all manifest checksums, rejecting extra or missing files, symbolic links and unsafe paths, then runs the same prediction and statistical audit as archive import. The output must be outside the immutable raw return. It does not invent an archive checksum when no archive was supplied. Verify the enclosing delivery ZIP's published checksum separately; an internal manifest alone is not evidence of external provenance. This command is documented before the real return arrives and is not a claim of completed M5 reproduction; final delivery instructions will name the actual included path.
+Raw mode first verifies the complete file inventory and all manifest checksums, rejecting extra or missing files, symbolic links and unsafe paths, then runs the same prediction and statistical audit as archive import. The output must be outside the immutable raw return. It does not invent an archive checksum when no archive was supplied. Verify the enclosing delivery ZIP's published checksum separately; an internal manifest alone is not evidence of external provenance. The delivered raw directory is the verified real return. Use a separate output directory to preserve the archived acceptance records.
 
-The current report builder deliberately rejects a results table containing M5 until the six-method draft's prose, figures and completion boundary have been revised. Updating a table alone is insufficient to produce the final report.
+The report builder requires seven-method results and an M5-inclusive analysis manifest. The narrative has been revised to include actual M5 accuracy, uncertainty, CKA and matched Ada costs; updating a table alone would not be sufficient.

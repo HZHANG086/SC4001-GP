@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "cost_reaggregation": "Python statistics.mean/stdev from all 21 raw process results; sample SD across three processes, not training seeds.",
+  "cost_checks": [
+    {
+      "method": "M1",
+      "computed": {
+        "peak_allocated_gib_mean": 0.6279311180114746,
+        "peak_allocated_gib_sd": 0.0,
+        "seconds_per_step_mean": 0.14295769166201353,
+        "seconds_per_step_sd": 0.0012213853116598808,
+        "n_process_repeats": 3
+      },
+      "max_absolute_difference": 4.7704895589362195e-18
+    },
+    {
+      "method": "M2",
+      "computed": {
+        "peak_allocated_gib_mean": 1.1415557861328125,
+        "peak_allocated_gib_sd": 0.0,
+        "seconds_per_step_mean": 0.18522914790858824,
+        "seconds_per_step_sd": 0.0008799534294530939,
+        "n_process_repeats": 3
+      },
+      "max_absolute_difference": 4.0115480381963664e-18
+    },
+    {
+      "method": "M3",
+      "computed": {
+        "peak_allocated_gib_mean": 4.376400947570801,
+        "peak_allocated_gib_sd": 0.0,
+        "seconds_per_step_mean": 0.43193716344734034,
+        "seconds_per_step_sd": 0.00245553847270834,
+        "n_process_repeats": 3
+      },
+      "max_absolute_difference": 8.239936510889834e-18
+    },
+    {
+      "method": "M4",
+      "computed": {
+        "peak_allocated_gib_mean": 4.376400947570801,
+        "peak_allocated_gib_sd": 0.0,
+        "seconds_per_step_mean": 0.4349538903683424,
+        "seconds_per_step_sd": 0.002366802848752734,
+        "n_process_repeats": 3
+      },
+      "max_absolute_difference": 5.551115123125783e-17
+    },
+    {
+      "method": "M5",
+      "computed": {
+        "peak_allocated_gib_mean": 2.219942569732666,
+        "peak_allocated_gib_sd": 0.0,
+        "seconds_per_step_mean": 0.32263931483030317,
+        "seconds_per_step_sd": 0.0025525933000365426,
+        "n_process_repeats": 3
+      },
+      "max_absolute_difference": 5.551115123125783e-17
+    },
+    {
+      "method": "M6",
+      "computed": {
+        "peak_allocated_gib_mean": 4.892028331756592,
+        "peak_allocated_gib_sd": 0.0,
+        "seconds_per_step_mean": 0.5835303251941999,
+        "seconds_per_step_sd": 0.0024819961507253708,
+        "n_process_repeats": 3
+      },
+      "max_absolute_difference": 0.0
+    },
+    {
+      "method": "L2SP",
+      "computed": {
+        "peak_allocated_gib_mean": 5.642110347747803,
+        "peak_allocated_gib_sd": 0.0,
+        "seconds_per_step_mean": 0.4826564851527413,
+        "seconds_per_step_sd": 0.0037392740869247477,
+        "n_process_repeats": 3
+      },
+      "max_absolute_difference": 2.7755575615628914e-17
+    }
+  ],
+  "identical_cost_input_protocols": 21,
+  "cka_complete_grid": 1170,
+  "cka_expected_undefined_rows": 45,
+  "prediction_replays": 45,
+  "max_probability_replay_difference": 9.059906005859377e-06,
+  "scope": "Independent local summary/inventory validation; not a new GPU experiment or weight download."
+}

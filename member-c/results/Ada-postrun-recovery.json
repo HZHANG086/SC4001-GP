@@ -1,0 +1,27 @@
+{
+  "observed_unix": 1794365062.112039,
+  "status": "GPU_OUTPUTS_RECORDED_SUCCESS_LOCAL_RETURN_AUDIT_PENDING",
+  "completed_candidates": 45,
+  "completed_selected_evaluations": 15,
+  "prediction_audit": "PASS",
+  "diagnostic_audit": "PASS",
+  "scheduler_checks": [
+    {
+      "job": "12377",
+      "lookup_returncode": 1,
+      "lookup_stdout": "",
+      "lookup_stderr": "slurm_load_jobs error: Invalid job id specified\n",
+      "recorded_shell_exit_code": 0,
+      "recorded_exit_utc": "2026-11-10T21:47:39.873931+00:00"
+    },
+    {
+      "job": "12379",
+      "lookup_returncode": 1,
+      "lookup_stdout": "",
+      "lookup_stderr": "slurm_load_jobs error: Invalid job id specified\n",
+      "recorded_shell_exit_code": 0,
+      "recorded_exit_utc": "2026-11-10T21:53:28.120558+00:00"
+    }
+  ],
+  "boundary": "Live scheduler terminal records for these jobs aged out during the connectivity interruption; success is supported by recorded shell exits, complete outputs and diagnostic checks, not invented historical scheduler terminal states."
+}

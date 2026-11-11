@@ -1,0 +1,74 @@
+{
+  "version": "M5-v1",
+  "status": "FROZEN",
+  "planned_on": "2026-11-11",
+  "model_id": "FacebookAI/roberta-base",
+  "model_revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "budgets": [
+    400,
+    1600,
+    6400
+  ],
+  "seeds": [
+    13,
+    21,
+    42,
+    87,
+    100
+  ],
+  "learning_rates": [
+    0.0001,
+    0.0003,
+    0.001
+  ],
+  "lora": {
+    "rank": 8,
+    "alpha": 16,
+    "dropout": 0.0
+  },
+  "target_modules": [
+    "query",
+    "value"
+  ],
+  "max_length": 512,
+  "epochs": 10,
+  "precision": "FP32",
+  "batch_size": 8,
+  "gradient_accumulation": 4,
+  "optimizer": "AdamW",
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "selection": "IMDb validation accuracy; earliest checkpoint on tie; LR list order on candidate tie; all 45 trained and 15 selections frozen before M5 test access",
+  "hardware": "RTX 6000 Ada, separate from V100 cost strata",
+  "novelty": "LoRA is an established comparator, not our new method",
+  "reference": "https://arxiv.org/abs/2106.09685",
+  "disclosure": "Chosen after existing A/B accuracy and representation results were known; not a retrospective preregistration. No M5 target tests used for design/selection.",
+  "dropout_note": "Pretrained encoder training-mode dropout remains active; extra LoRA dropout fixed to zero.",
+  "dependency_note": "Original minimal PyTorch implementation, no PEFT dependency; merge and gradient tests required.",
+  "code_hashes": {
+    "lora.py": "ddcc8dc4f2e8b93194c392637ab2191d04efdf20121231a08ba6774b7e887270",
+    "lora_train.py": "fce847b98bcb46aff729943a174e6f5331479c5125889afbcf1793836b105498",
+    "lora_sweep.py": "67917b478096811ceb2f5a7f96e035ca538271a0738d219e18214ee7b3736e7a",
+    "common.py": "255840b9d60339306e195523fbdb62d8f2ddf21b1c31f759236657fe4d2d9778",
+    "cka.py": "3359c6307cd82cc9fc45e71dc060a9cfb125b9c6126f5dbfb339110e26d93f57"
+  },
+  "frozen_on": "2026-11-11 Asia/Singapore; before any M5 real training/test outputs",
+  "a_code_hashes": {
+    "model.py": "16cac1c2550027cc457967ae671947ec6d3ba69eb0a1af3fd804aab4d1934d72",
+    "checkpoint.py": "48e5496a06e8013f86b4b16bacee2ce7a9c189796736315f854b063e3276e605",
+    "evaluate.py": "54a2502c1027122e2efa32ec8a81f3b736e15484d65298d49b576dfef9382217",
+    "prepare.py": "be52f6cdf2d25ffbd13b1d1b1b1a82aa35c47306a10cdc47ddd39f4c70f0899b",
+    "protocol.py": "58b339065d61f5c4cbaddf1aa5911b4cf51898ff2f7ab9d0a4c9d04795d2f743"
+  },
+  "environment": {
+    "torch": "2.5.1",
+    "transformers": "4.51.3",
+    "datasets": "3.5.0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "accelerate": "1.6.0",
+    "pyarrow": "19.0.1",
+    "safetensors": "0.5.3"
+  },
+  "retention": "Keep all configs/history/metrics/source and 15 merged winners. Prune complete recovery checkpoints after merged export verified; prune nonwinner best weights only after all selections frozen."
+}

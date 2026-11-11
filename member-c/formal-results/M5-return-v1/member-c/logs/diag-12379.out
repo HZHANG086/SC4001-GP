@@ -1,0 +1,37 @@
+JOB_EVIDENCE 12379 start 0
+DIAGNOSTIC_CODE_HASHES_VERIFIED
+M5_AUDIT_PASS
+M5 CKA complete 400 13
+M5 CKA complete 1600 13
+M5 CKA complete 6400 13
+M5 CKA complete 400 21
+M5 CKA complete 1600 21
+M5 CKA complete 6400 21
+M5 CKA complete 400 42
+M5 CKA complete 1600 42
+M5 CKA complete 6400 42
+M5 CKA complete 400 87
+M5 CKA complete 1600 87
+M5 CKA complete 6400 87
+M5 CKA complete 400 100
+M5 CKA complete 1600 100
+M5 CKA complete 6400 100
+Completed M1/clean/repeat-1
+Completed M2/clean/repeat-1
+Completed M3/clean/repeat-1
+Completed M4/clean/repeat-1
+Completed M6/clean/repeat-1
+Completed L2SP/clean/repeat-1
+Completed M1/clean/repeat-2
+Completed M2/clean/repeat-2
+Completed M3/clean/repeat-2
+Completed M4/clean/repeat-2
+Completed M6/clean/repeat-2
+Completed L2SP/clean/repeat-2
+Completed M1/clean/repeat-3
+Completed M2/clean/repeat-3
+Completed M3/clean/repeat-3
+Completed M4/clean/repeat-3
+Completed M6/clean/repeat-3
+Completed L2SP/clean/repeat-3
+M5_DIAGNOSTICS_COLLECTED

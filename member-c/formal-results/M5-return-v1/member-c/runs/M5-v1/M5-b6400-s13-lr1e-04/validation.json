@@ -1,0 +1,25 @@
+{
+  "eval_loss": 0.19098827242851257,
+  "eval_accuracy": 0.94453125,
+  "eval_runtime": 6.4036,
+  "eval_samples_per_second": 199.887,
+  "eval_steps_per_second": 12.493,
+  "epoch": 10.0,
+  "train_wall_seconds_this_invocation": 623.720492547378,
+  "peak_cuda_allocated_bytes": 2461424640,
+  "peak_cuda_reserved_bytes": 3357540352,
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "best_checkpoint": "member-c/runs/M5-v1/M5-b6400-s13-lr1e-04/checkpoints/checkpoint-960",
+  "global_step": 1600,
+  "merge_max_abs_logit_difference": 3.337860107421875e-06,
+  "checkpoint_weight_sha256": "1a60f6fdd3804b47e5b49aea1ba8cfabb795c95079c6741cda2e21272a91f5b3",
+  "versions": {
+    "torch": "2.5.1+cu124",
+    "transformers": "4.51.3",
+    "datasets": "3.5.0",
+    "python": "3.10.12"
+  },
+  "job_id": "12367",
+  "runtime_includes_epoch_validation_and_saving": true,
+  "timing_note": "This invocation only; see invocations and Slurm ledger for interruptions. Training peak captured before post-training validation and merge."
+}

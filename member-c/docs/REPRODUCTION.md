@@ -17,7 +17,13 @@ The GPU host initially lacked SciPy. Version 1.15.3 was added with `--no-deps` f
 
 ```bash
 python -m sc4001_c.reproduce --out reproduced/C-v1
-python -m sc4001_c.final_analysis --out reproduced/C-final
+python -m sc4001_c.m5_import \
+  --raw member-c/formal-results/M5-return-v1 \
+  --out reproduced/M5-local-audit
+python -m sc4001_c.final_analysis \
+  --m5 member-c/formal-results/M5-return-v1/member-c/results/M5-v1/per_seed.csv \
+  --m5-audit reproduced/M5-local-audit/local_audit.json \
+  --out reproduced/C-final
 python -m sc4001_c.final_plots --data reproduced/C-final --out reproduced/figures
 python -m sc4001_c.final_plots --data reproduced/C-final --grayscale --out reproduced/figures-grayscale
 ```
@@ -26,11 +32,11 @@ The first command is the portable entry point for an extracted ZIP. It checks th
 
 Cross-platform checking preserves exact input hashes and exact result fields. Only approximate Student-t probabilities (`p_t_approx`, `p_t_approx_holm`) and t-interval endpoints (`ci95_low`, `ci95_high`) allow an absolute difference of at most 1e-12, with every differing cell recorded. A real Linux test revealed two approximate p-values differing from the Mac reference by 5.55e-17; the earlier byte-only checker correctly raised a difference but was too strict for portable numerical reproduction. The failed attempt and reviewed differences are retained. Predictions, accuracies, sample counts, exact sign-flip results and other fields remain strict; no frozen result or statistical calculation was changed.
 
-`final_analysis` verifies the 244-file GPU return manifest and re-aggregates the 60-model CKA and 27 V100 cost probes. Figure files are exported as PDF, SVG and PNG. Accuracy/ablation error bars are five-seed SDs; cost-process repetitions do not represent additional training seeds.
+`m5_import --raw` verifies all 809 M5 return-manifest files, independently audits 45 prediction files/525,000 rows and all 15 source-only decisions, and recomputes the 18 M5 contrasts. It rejects incomplete or changed raw directories and writes outside that immutable input. `final_analysis` uses this newly generated audit, verifies the original 244-file B manifest and complete M5 manifest, and combines 60 B models plus 15 M5 models for CKA. The 27 V100 and 21 Ada cost probes remain separate. Figure files are exported as PDF, SVG and PNG. Accuracy/ablation error bars are five-seed SDs; cost-process repetitions do not represent additional training seeds.
 
-A separate no-Git/no-weight copy has executed all four commands: seven historical statistics tables and 21 synthesis CSVs reproduced byte-for-byte; all ten color/grayscale PNGs matched exactly. The 30 PDF/SVG/PNG exports were generated successfully. Evidence is recorded in `results/standalone_reproduction.json`. PDF/SVG timestamps or identifiers can vary between runs.
+An earlier six-method no-Git/no-weight check executed its four analysis/plot commands: seven historical statistics tables and 21 synthesis CSVs reproduced byte-for-byte; all ten color/grayscale PNGs matched exactly. The 30 PDF/SVG/PNG exports were generated successfully. Evidence is recorded in `results/standalone_reproduction.json`. PDF/SVG timestamps or identifiers can vary between runs.
 
-**Current M5 boundary:** M5 is still training. The commands above reproduce the completed six-method evidence, not a final seven-method report. Once the real M5 return is available, run the separate import and audit commands in `M5_RUNBOOK.md`, then pass its `per_seed.csv` with `--m5` to `final_analysis`. An independent local prediction audit is required before M5 is accepted. The final package instructions must be updated to name the actual included return location.
+**Accepted M5 return:** `member-c/formal-results/M5-return-v1`. The original 8,084,794-byte archive has SHA256 `7812944d024e5ddd3d321d3884ea3c6c24e743c203d12083426661b7a59f2efa`; its raw files are included in the code ZIP, so the original tar archive is not needed for offline reproduction. Local audit tables reproduced the 18 returned statistical rows exactly. Server-side CKA adds 1,170 rows, 45 probability replays and 45 expected undefined layer-0 CLS values. No weights are needed for this numerical re-audit.
 
 ## Reconstructing text strata and cases
 
@@ -56,7 +62,7 @@ The source is `member-c/report/latex/main.tex`; the course format is A4, one col
 python member-c/scripts/build_report.py --tectonic /path/to/tectonic
 ```
 
-The current builder produces the explicitly incomplete six-method draft and refuses a table containing M5 until the prose has been revised. PDF export alone is not acceptance: render all pages, verify tables/labels/references and confirm the whole group's main content stays within ten pages. The course also requires the group's own identification, integration and AI-use review; these cannot be inferred from code execution.
+The builder requires all seven methods and the accepted M5-inclusive synthesis. It outputs `../output/C-final/C_analysis.pdf` and `member-c/report/C_analysis.pdf`. The revised narrative includes real accuracy, uncertainty, CKA and hardware-matched costs. PDF export alone is not acceptance: render all pages, verify tables/labels/references and confirm the whole group's main content stays within ten pages. The course also requires the group's own identification, integration and AI-use review; these cannot be inferred from code execution.
 
 ## Exporting and checking the code ZIP
 
@@ -74,7 +80,7 @@ The ZIP can be checked without Git using the included script after extraction:
 python member-c/scripts/export_code.py --verify /path/to/SC4001-code-snapshot.zip
 ```
 
-Compare the external `.zip.sha256` value with the delivered archive before extraction. `PACKAGE_MANIFEST.json` describes the archived version and points to the current-status and reproduction instructions. An export is a versioned snapshot, not a certificate that M5, the report, the later public-coursework review or the overall goal has finished. The final deliverable must be rebuilt from the completed, audited version; do not submit the explicitly incomplete preflight snapshot.
+Compare the external `.zip.sha256` value with the delivered archive before extraction. `PACKAGE_MANIFEST.json` describes the archived version and points to the current-status and reproduction instructions. An export is a versioned snapshot, not by itself a certificate of scientific completeness or team review. The final deliverable must be rebuilt from the completed, audited version; do not submit the explicitly incomplete preflight snapshot.
 
 Actual preflight evidence: `results/zip_preflight/PREFLIGHT.json`. Archive version `05b37e3` contains 4,132 files (79,739,964 bytes); Linux CPU job 12371 fully recomputed 450 prediction files/5,250,000 rows and all seven tables after extraction. It used Python 3.10.12, NumPy 1.26.4, pandas 2.2.3 and SciPy 1.15.3. Both the first failed byte-only attempt and the successful rerun are retained. This check excludes unfinished M5 results and is not the final submission package.
 
@@ -82,4 +88,4 @@ Actual preflight evidence: `results/zip_preflight/PREFLIGHT.json`. Archive versi
 
 With the PYTHONPATH above, run `python -m unittest discover -s member-c/tests -v`. The updated 40-test suite passed in an allocated CPU-only Linux job; `results/validation-40-tests` records raw logs, source hashes and scope. Tests use small synthetic fixtures for training/resume, CKA, costs, archive integrity, roundoff handling and paired-statistics re-execution. Fixture output must never be presented as a formal GPU experiment.
 
-For an already extracted M5 return, `m5_import --raw` performs the same independent numerical audit after checking the complete file inventory and manifest hashes; see M5_RUNBOOK.md. This avoids shipping a redundant tar archive inside the final code ZIP. The real M5-inclusive extracted-package test remains pending the return.
+For an already extracted M5 return, `m5_import --raw` performs the same independent numerical audit after checking the complete file inventory and manifest hashes; see M5_RUNBOOK.md. This avoids shipping a redundant tar archive inside the final code ZIP. The M5-inclusive extracted-package check is recorded separately in the delivery evidence; its status must be assessed from actual execution, not this interface description.

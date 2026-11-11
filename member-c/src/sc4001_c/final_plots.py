@@ -23,8 +23,8 @@ def main(argv=None):
         'axes.labelsize':9,'axes.titlesize':10,'legend.fontsize':8,'axes.spines.top':False,'axes.spines.right':False,
         'pdf.fonttype':42,'ps.fonttype':42,'savefig.dpi':220,'axes.grid':True,'grid.alpha':.14})
     made=[]
-    def save(fig,name):
-        fig.tight_layout()
+    def save(fig,name,rect=None):
+        fig.tight_layout(rect=rect)
         for extension in ('pdf','svg','png'):
             target=a.out/f'{name}.{extension}';fig.savefig(target,bbox_inches='tight');made.append(target)
         plt.close(fig)
@@ -62,8 +62,10 @@ def main(argv=None):
         for m in rep_methods:
             g=sub[sub.method==m];ax.scatter(g.linear_cka,100*g.ood_accuracy,label=m,c=colors[m],marker=MARKERS[m],s=24,alpha=.85)
         ax.set_title(f'Budget {budget}');ax.set_xlabel('Final-layer mean-pooled CKA');ax.set_xlim(-.03,1.03)
-    axes[0].set_ylabel('OOD accuracy (%)');axes[-1].legend(ncol=2,frameon=False)
-    save(fig,'03_cka_accuracy')
+    axes[0].set_ylabel('OOD accuracy (%)')
+    handles,labels=axes[-1].get_legend_handles_labels()
+    fig.legend(handles,labels,loc='upper center',ncol=len(rep_methods),frameon=False)
+    save(fig,'03_cka_accuracy',rect=(0,0,1,.88))
     ab=pd.read_csv(a.data/'ablation_ood_accuracy.csv');fig,axes=plt.subplots(1,2,figsize=(7.2,2.7))
     budget_colors=['#0072B2','#D55E00','#009E73'] if not a.grayscale else ['#222222']*3
     for ax,m in zip(axes,('M6','L2SP')):
@@ -94,7 +96,8 @@ def main(argv=None):
         save(fig,'06_ada_cost')
     dump(a.out/'figure_manifest.json',{'style':'Restrained colorblind-friendly conference-style; not an official ICML palette',
         'colors':colors,'grayscale':a.grayscale,'uncertainty':'Accuracy/ablation: five-seed sample SD. CKA: thin individual seed curves, bold mean. Scatter: one point per seed with OOD domains averaged.',
-        'status':'Preliminary until required M5 results integrated','files':{str(p):digest(p) for p in made},'source_script_sha256':digest(Path(__file__))})
+        'status':'Complete seven-method figures from accepted evidence' if 'M5' in methods else 'Preliminary until required M5 results integrated',
+        'files':{str(p):digest(p) for p in made},'source_script_sha256':digest(Path(__file__))})
     print('Generated',len(made),'figure files')
 
 

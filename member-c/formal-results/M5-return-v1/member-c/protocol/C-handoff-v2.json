@@ -1,0 +1,120 @@
+{
+  "version": "C-handoff-v2",
+  "date": "2026-11-10",
+  "status": "Implementation ready; real TC1 execution pending",
+  "scope": "Supplementary analysis of frozen A/B; no new accuracy claims or full retraining",
+  "upstream_commit": "f442a4462364ce0c53cbae45febbfcfc8238988c",
+  "cka": {
+    "methods": [
+      "M3",
+      "M4",
+      "M6",
+      "L2SP"
+    ],
+    "budgets": [
+      400,
+      1600,
+      6400
+    ],
+    "seeds": [
+      13,
+      21,
+      42,
+      87,
+      100
+    ],
+    "models": 60,
+    "cells": 15,
+    "models_per_cell": 4,
+    "samples_per_domain": 256,
+    "samples_balanced": true,
+    "sampling_salt": "SC4001-C-v1-20261110",
+    "pools": [
+      "cls",
+      "mean_nonpadding_including_special"
+    ],
+    "layers": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "comparisons": [
+      "M3/pretrained",
+      "M4/pretrained",
+      "M6/pretrained",
+      "L2SP/pretrained",
+      "M4/M3",
+      "M6/M3",
+      "L2SP/M3"
+    ],
+    "expected_rows": 8190,
+    "replay_checks": 180,
+    "max_probability_difference": 0.0001,
+    "purpose": "Exploratory description; no test-guided selection or causal mechanism claim"
+  },
+  "cost": {
+    "methods": [
+      "M1",
+      "M2",
+      "M3",
+      "M4",
+      "M6",
+      "L2SP"
+    ],
+    "extra_diagnostic_teacher_profiles": [
+      "M3",
+      "M4",
+      "L2SP"
+    ],
+    "process_repeats": 3,
+    "processes": 27,
+    "data": "First 32 training indices in frozen IMDb b400_s13 split",
+    "max_length": 512,
+    "padding": "max_length",
+    "microbatch": 8,
+    "accumulation": 4,
+    "warmup_steps": 2,
+    "timed_steps": 5,
+    "dtype": "float32",
+    "tf32": false,
+    "lr": 2e-05,
+    "lambda_M6": 0.01,
+    "lambda_L2SP": 0.1,
+    "optimizer": "AdamW, weight decay .01 excluding bias/LayerNorm, clip norm 1; constant LR for probe",
+    "initialization": "Common pretrained encoder and matched per-repeat fresh head; M4 phase-2 computational proxy",
+    "intrinsic_costs_preserved": [
+      "M6 teacher forward",
+      "L2SP reference weights and penalty"
+    ],
+    "not_estimating": [
+      "full training runtime",
+      "best checkpoint accuracy",
+      "full LP-FT pipeline",
+      "minimum achievable memory"
+    ],
+    "inference": "Student only, before any training steps; same fixed source inputs"
+  },
+  "queue": {
+    "smoke": "4 CKA models plus 6 short clean cost probes",
+    "formal_jobs": 18,
+    "max_chain_submissions_at_once": 2,
+    "failure_policy": "Stop; manual diagnosis/resume; no automatic retries"
+  },
+  "return": "analysis/C-return-v2.tar.gz",
+  "excluded": [
+    "LoRA new training",
+    "A checkpoint CKA",
+    "new hyperparameter searches"
+  ],
+  "verification": "CPU small-model integration, optimizer/backprop and mocked queue tests; no actual TC1 measurement yet"
+}

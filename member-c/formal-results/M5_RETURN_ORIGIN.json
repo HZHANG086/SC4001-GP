@@ -1,0 +1,10 @@
+{
+  "archive_sha256": "7812944d024e5ddd3d321d3884ea3c6c24e743c203d12083426661b7a59f2efa",
+  "archive_bytes": 8084794,
+  "raw_directory": "member-c/formal-results/M5-return-v1",
+  "manifest_files": 809,
+  "independent_acceptance": "member-c/results/M5-local-audit/local_audit.json",
+  "local_diagnostic_reaggregation": "member-c/results/M5-local-audit/diagnostics_recomputed.json",
+  "hardware": "RTX 6000 Ada",
+  "weights": "Retained on server; excluded from small return and code package."
+}

@@ -1,6 +1,6 @@
 # Integrating the C analysis into the group report
 
-This is an integration guide, not evidence that the final report or M5 experiments are complete. The course handout governs the submission: A4, single column, Arial 10pt, at most ten main-content pages, with references/contents/cover/appendices excluded from that limit. Do not use a two-column ICML template merely because the figures use a restrained conference-style palette.
+All seven methods and planned M5 diagnostics are complete and independently audited. This guide describes integration into the group submission; it does not certify the group cover, member review or final submission. The course handout governs the submission: A4, single column, Arial 10pt, at most ten main-content pages, with references/contents/cover/appendices excluded from that limit. Do not use a two-column ICML template merely because the figures use a restrained conference-style palette.
 
 ## One scientific question and consistent terminology
 
@@ -19,17 +19,17 @@ Use the shared question: **Does preserving pretrained representations improve ou
 | Research question and motivation | A/B/C agree on the question above; introduce source-to-target transfer and the representation hypothesis | 0.75 page |
 | Existing techniques and positioning | A's `RELATED_WORK.md`, verified against C's reference ledger; B describes the relation to LP–FT and preservation methods | 0.75 page |
 | Data, methods and common training protocol | A's data audit and frozen A protocol; B's frozen method definitions; C's actual M5 protocol | 1.5 pages |
-| Evaluation protocol, results and analysis | C accuracy, paired uncertainty, CKA, ablation, errors and cost, after actual M5 integration | 4–5 pages |
+| Evaluation protocol, results and analysis | C accuracy, paired uncertainty, CKA, ablation, errors and cost, including the actual M5 results | 4–5 pages |
 | Discussion, limitations and conclusion | Joint scientific interpretation, including negative results and evidence boundaries | 0.75 page |
 | AI Use Statement and final formatting margin | Actual assistance and team verification; no invented human-review assertions | 0.25 page plus remaining space |
 
-These are editing targets, not a guarantee of the final page count. The current C draft has five main pages and repeats some common-method material for standalone readability. Remove that duplication when incorporating it; do not simply concatenate three PDFs. Keep detailed source hashes, full domain/seed tables and extended diagnostics in the appendix or code package, with clear references from the main text. Essential negative results and qualifications belong in the main text.
+These are editing targets, not a guarantee of the final page count. The C analysis insert has five main pages and repeats some common-method material for standalone readability. Remove that duplication when incorporating it; do not simply concatenate three PDFs. Keep detailed source hashes, full domain/seed tables and extended diagnostics in the appendix or code package, with clear references from the main text. Essential negative results and qualifications belong in the main text.
 
 ## Which version to use
 
 `member-a/REPORT_A_DRAFT.md` explicitly labels itself as historical. Use its verified data/method descriptions, but replace its old “results pending” and job-status paragraphs with the actual audited A results. Do not turn the development pilot into a formal result. B's `HANDOFF_C.md` defines the M5 commitment and input interfaces; its original subset-only CKA suggestion has since been extended to all 60 selected B checkpoints through the accepted return.
 
-For C, start from `CURRENT.md`, `results/C-final` and the LaTeX draft, while respecting their unfinished-M5 status. The historical C `README.md`, `DELIVERY_MANIFEST.json` and `results/C-v1` stay unchanged as provenance. Seven-method final tables must come from the accepted real M5 return, never estimated values or a manually inserted row.
+For C, start from `CURRENT.md`, `report/C_analysis.pdf`, `report/latex/main.tex` and `results/C-final`. M5 is now included using its accepted real return. The historical C `README.md`, `DELIVERY_MANIFEST.json` and `results/C-v1` stay unchanged as provenance. Seven-method final tables must come from the accepted real M5 return, never estimated values or a manually inserted row.
 
 ## Claims that need careful wording
 

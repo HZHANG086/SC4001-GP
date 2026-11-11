@@ -17,7 +17,9 @@ from .m5_import import verify_accepted_return
 def main(argv=None):
     p=argparse.ArgumentParser();p.add_argument('--repo',type=Path,default=Path('.'))
     p.add_argument('--out',type=Path,default=Path('member-c/results/C-final'))
-    p.add_argument('--m5',type=Path);a=p.parse_args(argv)
+    p.add_argument('--m5',type=Path)
+    p.add_argument('--m5-audit',type=Path,help='Independent re-audit JSON; defaults to the archived local acceptance')
+    a=p.parse_args(argv)
     a.repo=a.repo.resolve();a.out.mkdir(parents=True,exist_ok=True)
     raw=a.repo/'member-c/formal-results/return-v2';root=raw/'analysis/C-handoff-v2'
     for name,sha in load(root/'RETURN_MANIFEST.json')['files'].items():
@@ -33,7 +35,8 @@ def main(argv=None):
         parent=a.m5.parent.parent
         if load(parent/'M5-audit/audit.json')['status']!='PASS' or load(parent/'M5-diagnostics/audit.json')['status']!='PASS':
             raise ValueError('M5 prediction and diagnostic audits must pass first')
-        local=load(a.repo/'member-c/results/M5-local-audit/local_audit.json')
+        audit_path=a.m5_audit or a.repo/'member-c/results/M5-local-audit/local_audit.json'
+        local=load(audit_path)
         if local['status']!='PASS' or len(local['checks'])!=45:raise ValueError('Independent local prediction audit required')
         stats_check=local.get('paired_statistics',{})
         if stats_check.get('comparisons')!=18 or not stats_check.get('check',{}).get('equivalent'):
@@ -102,7 +105,7 @@ def main(argv=None):
         inputs.extend([a.m5,parent/'M5-CKA/cka.csv',parent/'M5-CKA/manifest.json',
             parent/'M5-audit/audit.json',parent/'M5-diagnostics/audit.json',
             parent/'M5-audit/paired_comparisons.csv',
-            parent/'M5-diagnostics/ada_cost_summary.csv',a.repo/'member-c/results/M5-local-audit/local_audit.json'])
+            parent/'M5-diagnostics/ada_cost_summary.csv',audit_path])
     dump(a.out/'analysis_manifest.json',{'version':'C-final-analysis-v1','scope':'Descriptive synthesis plus existing paired statistical audit',
         'M5_included':a.m5 is not None,'status':'ANALYSIS_READY_FOR_WRITING' if a.m5 else 'PARTIAL_M5_REAL_RUNS_PENDING',
         'source_hashes':{str(x):digest(x) for x in inputs},'script_sha256':digest(Path(__file__)),

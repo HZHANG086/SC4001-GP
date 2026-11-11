@@ -1,0 +1,19 @@
+{
+  "method": "M5",
+  "budget": 1600,
+  "seed": 100,
+  "lr": 0.0001,
+  "winner": "member-c/runs/M5-v1/M5-b1600-s100-lr1e-04",
+  "candidate_runs": [
+    "member-c/runs/M5-v1/M5-b1600-s100-lr1e-04",
+    "member-c/runs/M5-v1/M5-b1600-s100-lr3e-04",
+    "member-c/runs/M5-v1/M5-b1600-s100-lr1e-03"
+  ],
+  "source_val_accuracy": 0.93125,
+  "validation_sha256": [
+    "f53a66ee64069c293314747cc9791b839a0639d13510410cfe8c60a0a8c5b009",
+    "5662f0600d7aca880179583e82f76cfae2a43857198fa3f17c2cf52079338dfe",
+    "2ad5de86d60f1203218a773b5cc2869f421cc0be4cdda0b4055772fd844ee954"
+  ],
+  "rule": "IMDb validation only; fixed LR-list tie order; no test metrics consulted"
+}

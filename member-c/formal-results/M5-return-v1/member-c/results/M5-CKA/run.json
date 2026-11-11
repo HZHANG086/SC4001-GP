@@ -1,0 +1,9 @@
+{
+  "status": "COMPLETE",
+  "models": 15,
+  "rows": 1170,
+  "replays": 45,
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "job_id": "12379",
+  "elapsed_seconds": 65.73031630832702
+}

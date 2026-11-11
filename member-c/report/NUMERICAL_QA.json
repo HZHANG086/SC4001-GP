@@ -1,0 +1,764 @@
+{
+  "status": "PASS",
+  "checked_numeric_claims": 107,
+  "checks": [
+    {
+      "claim": "L2SP budget 400 OOD mean",
+      "value": 92.376,
+      "printed": "92.38",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "L2SP budget 400 OOD SD",
+      "value": 1.0544572063388844,
+      "printed": "1.05",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "L2SP budget 1600 OOD mean",
+      "value": 92.70799999999998,
+      "printed": "92.71",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "L2SP budget 1600 OOD SD",
+      "value": 2.1209479012931967,
+      "printed": "2.12",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "L2SP budget 6400 OOD mean",
+      "value": 94.23,
+      "printed": "94.23",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "L2SP budget 6400 OOD SD",
+      "value": 0.6394919858762912,
+      "printed": "0.64",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M1 budget 400 OOD mean",
+      "value": 82.736,
+      "printed": "82.74",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M1 budget 400 OOD SD",
+      "value": 3.481347440288032,
+      "printed": "3.48",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M1 budget 1600 OOD mean",
+      "value": 87.474,
+      "printed": "87.47",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M1 budget 1600 OOD SD",
+      "value": 0.8454466275289042,
+      "printed": "0.85",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M1 budget 6400 OOD mean",
+      "value": 89.906,
+      "printed": "89.91",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M1 budget 6400 OOD SD",
+      "value": 1.0233425623905228,
+      "printed": "1.02",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M2 budget 400 OOD mean",
+      "value": 91.53,
+      "printed": "91.53",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M2 budget 400 OOD SD",
+      "value": 0.867611664283048,
+      "printed": "0.87",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M2 budget 1600 OOD mean",
+      "value": 92.454,
+      "printed": "92.45",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M2 budget 1600 OOD SD",
+      "value": 1.0739785845164738,
+      "printed": "1.07",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M2 budget 6400 OOD mean",
+      "value": 93.88,
+      "printed": "93.88",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M2 budget 6400 OOD SD",
+      "value": 0.4905609034564376,
+      "printed": "0.49",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M3 budget 400 OOD mean",
+      "value": 92.734,
+      "printed": "92.73",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M3 budget 400 OOD SD",
+      "value": 0.7549039674024727,
+      "printed": "0.75",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M3 budget 1600 OOD mean",
+      "value": 92.20600000000002,
+      "printed": "92.21",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M3 budget 1600 OOD SD",
+      "value": 1.2766087889404487,
+      "printed": "1.28",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M3 budget 6400 OOD mean",
+      "value": 93.886,
+      "printed": "93.89",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M3 budget 6400 OOD SD",
+      "value": 0.5350981218430845,
+      "printed": "0.54",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M4 budget 400 OOD mean",
+      "value": 91.778,
+      "printed": "91.78",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M4 budget 400 OOD SD",
+      "value": 2.483741129828146,
+      "printed": "2.48",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M4 budget 1600 OOD mean",
+      "value": 93.14,
+      "printed": "93.14",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M4 budget 1600 OOD SD",
+      "value": 1.297593927236097,
+      "printed": "1.30",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M4 budget 6400 OOD mean",
+      "value": 94.364,
+      "printed": "94.36",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M4 budget 6400 OOD SD",
+      "value": 0.8652340723757914,
+      "printed": "0.87",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 budget 400 OOD mean",
+      "value": 91.064,
+      "printed": "91.06",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 budget 400 OOD SD",
+      "value": 2.6688443191763707,
+      "printed": "2.67",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 budget 1600 OOD mean",
+      "value": 93.15200000000002,
+      "printed": "93.15",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 budget 1600 OOD SD",
+      "value": 0.9940674021413256,
+      "printed": "0.99",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 budget 6400 OOD mean",
+      "value": 94.056,
+      "printed": "94.06",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 budget 6400 OOD SD",
+      "value": 0.3945630494610486,
+      "printed": "0.39",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6 budget 400 OOD mean",
+      "value": 92.032,
+      "printed": "92.03",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6 budget 400 OOD SD",
+      "value": 0.6820337235063978,
+      "printed": "0.68",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6 budget 1600 OOD mean",
+      "value": 92.9,
+      "printed": "92.90",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6 budget 1600 OOD SD",
+      "value": 0.7673982017179869,
+      "printed": "0.77",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6 budget 6400 OOD mean",
+      "value": 93.924,
+      "printed": "93.92",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6 budget 6400 OOD SD",
+      "value": 0.6057474721366971,
+      "printed": "0.61",
+      "source": "member-c/results/C-final/ood_accuracy_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6-M3 budget 400 mean",
+      "value": -0.7020000000000026,
+      "printed": "-0.702",
+      "source": "member-c/results/C-v1/paired_comparisons.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6-M3 budget 400 ci95_low",
+      "value": -1.6428995188395408,
+      "printed": "-1.643",
+      "source": "member-c/results/C-v1/paired_comparisons.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6-M3 budget 400 ci95_high",
+      "value": 0.2388995188395355,
+      "printed": "0.239",
+      "source": "member-c/results/C-v1/paired_comparisons.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6-M3 budget 400 p_signflip_exact_holm",
+      "value": 0.375,
+      "printed": "0.375",
+      "source": "member-c/results/C-v1/paired_comparisons.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6-M3 budget 1600 mean",
+      "value": 0.6939999999999968,
+      "printed": "0.694",
+      "source": "member-c/results/C-v1/paired_comparisons.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6-M3 budget 1600 ci95_low",
+      "value": -1.5196574362836524,
+      "printed": "-1.520",
+      "source": "member-c/results/C-v1/paired_comparisons.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6-M3 budget 1600 ci95_high",
+      "value": 2.907657436283646,
+      "printed": "2.908",
+      "source": "member-c/results/C-v1/paired_comparisons.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6-M3 budget 1600 p_signflip_exact_holm",
+      "value": 1.0,
+      "printed": "1.000",
+      "source": "member-c/results/C-v1/paired_comparisons.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6-M3 budget 6400 mean",
+      "value": 0.037999999999998,
+      "printed": "0.038",
+      "source": "member-c/results/C-v1/paired_comparisons.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6-M3 budget 6400 ci95_low",
+      "value": -0.399358408097862,
+      "printed": "-0.399",
+      "source": "member-c/results/C-v1/paired_comparisons.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6-M3 budget 6400 ci95_high",
+      "value": 0.475358408097858,
+      "printed": "0.475",
+      "source": "member-c/results/C-v1/paired_comparisons.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6-M3 budget 6400 p_signflip_exact_holm",
+      "value": 1.0,
+      "printed": "1.000",
+      "source": "member-c/results/C-v1/paired_comparisons.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5-M3 budget 400 mean",
+      "value": -1.6700000000000004,
+      "printed": "-1.670",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5-M3 budget 400 ci95_low",
+      "value": -5.060004227645659,
+      "printed": "-5.060",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5-M3 budget 400 ci95_high",
+      "value": 1.7200042276456582,
+      "printed": "1.720",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5-M3 budget 400 p_signflip_exact_holm",
+      "value": 1.0,
+      "printed": "1.000",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5-M3 budget 1600 mean",
+      "value": 0.946,
+      "printed": "0.946",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5-M3 budget 1600 ci95_low",
+      "value": -1.5947825466009995,
+      "printed": "-1.595",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5-M3 budget 1600 ci95_high",
+      "value": 3.486782546601,
+      "printed": "3.487",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5-M3 budget 1600 p_signflip_exact_holm",
+      "value": 1.0,
+      "printed": "1.000",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5-M3 budget 6400 mean",
+      "value": 0.1699999999999968,
+      "printed": "0.170",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5-M3 budget 6400 ci95_low",
+      "value": -0.6261187041210515,
+      "printed": "-0.626",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5-M3 budget 6400 ci95_high",
+      "value": 0.9661187041210452,
+      "printed": "0.966",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5-M3 budget 6400 p_signflip_exact_holm",
+      "value": 1.0,
+      "printed": "1.000",
+      "source": "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "L2SP budget 400 final mean CKA",
+      "value": 0.14748838586914265,
+      "printed": "0.147",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "L2SP budget 1600 final mean CKA",
+      "value": 0.14533160345596158,
+      "printed": "0.145",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "L2SP budget 6400 final mean CKA",
+      "value": 0.20854744012406182,
+      "printed": "0.209",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M3 budget 400 final mean CKA",
+      "value": 0.10378619362336612,
+      "printed": "0.104",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M3 budget 400 debiased CKA",
+      "value": 0.08833894174940049,
+      "printed": "0.088",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M3 budget 1600 final mean CKA",
+      "value": 0.09478461384304344,
+      "printed": "0.095",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M3 budget 1600 debiased CKA",
+      "value": 0.08028417215376003,
+      "printed": "0.080",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M3 budget 6400 final mean CKA",
+      "value": 0.10769255316578377,
+      "printed": "0.108",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M3 budget 6400 debiased CKA",
+      "value": 0.09278845208606076,
+      "printed": "0.093",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M4 budget 400 final mean CKA",
+      "value": 0.568600096319712,
+      "printed": "0.569",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M4 budget 1600 final mean CKA",
+      "value": 0.7780587646358214,
+      "printed": "0.778",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M4 budget 6400 final mean CKA",
+      "value": 0.7551904408935226,
+      "printed": "0.755",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 budget 400 final mean CKA",
+      "value": 0.11566321917221238,
+      "printed": "0.116",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 budget 400 debiased CKA",
+      "value": 0.0993490988378968,
+      "printed": "0.099",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 budget 1600 final mean CKA",
+      "value": 0.13715539541687952,
+      "printed": "0.137",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 budget 1600 debiased CKA",
+      "value": 0.11834613510680947,
+      "printed": "0.118",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 budget 6400 final mean CKA",
+      "value": 0.15048457282179778,
+      "printed": "0.150",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 budget 6400 debiased CKA",
+      "value": 0.1318103466074151,
+      "printed": "0.132",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6 budget 400 final mean CKA",
+      "value": 0.274006168938001,
+      "printed": "0.274",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6 budget 400 debiased CKA",
+      "value": 0.25852611693865457,
+      "printed": "0.259",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6 budget 1600 final mean CKA",
+      "value": 0.21279072840223137,
+      "printed": "0.213",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6 budget 1600 debiased CKA",
+      "value": 0.19926366469927728,
+      "printed": "0.199",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6 budget 6400 final mean CKA",
+      "value": 0.652478369201019,
+      "printed": "0.652",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6 budget 6400 debiased CKA",
+      "value": 0.6426654545221223,
+      "printed": "0.643",
+      "source": "member-c/results/C-final/cka_ood_per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M1 Ada peak_allocated_gib_mean",
+      "value": 0.6279311180114746,
+      "printed": "0.628",
+      "source": "member-c/results/C-final/ada_cost_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M1 Ada seconds_per_step_mean",
+      "value": 0.1429576916620135,
+      "printed": "0.143",
+      "source": "member-c/results/C-final/ada_cost_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M2 Ada peak_allocated_gib_mean",
+      "value": 1.1415557861328125,
+      "printed": "1.142",
+      "source": "member-c/results/C-final/ada_cost_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M2 Ada seconds_per_step_mean",
+      "value": 0.1852291479085882,
+      "printed": "0.185",
+      "source": "member-c/results/C-final/ada_cost_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M3 Ada peak_allocated_gib_mean",
+      "value": 4.376400947570801,
+      "printed": "4.376",
+      "source": "member-c/results/C-final/ada_cost_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M3 Ada seconds_per_step_mean",
+      "value": 0.4319371634473403,
+      "printed": "0.432",
+      "source": "member-c/results/C-final/ada_cost_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 Ada peak_allocated_gib_mean",
+      "value": 2.219942569732666,
+      "printed": "2.220",
+      "source": "member-c/results/C-final/ada_cost_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 Ada seconds_per_step_mean",
+      "value": 0.3226393148303032,
+      "printed": "0.323",
+      "source": "member-c/results/C-final/ada_cost_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6 Ada peak_allocated_gib_mean",
+      "value": 4.892028331756592,
+      "printed": "4.892",
+      "source": "member-c/results/C-final/ada_cost_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M6 Ada seconds_per_step_mean",
+      "value": 0.5835303251941999,
+      "printed": "0.584",
+      "source": "member-c/results/C-final/ada_cost_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "L2SP Ada peak_allocated_gib_mean",
+      "value": 5.642110347747803,
+      "printed": "5.642",
+      "source": "member-c/results/C-final/ada_cost_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "L2SP Ada seconds_per_step_mean",
+      "value": 0.4826564851527413,
+      "printed": "0.483",
+      "source": "member-c/results/C-final/ada_cost_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 vs M3 absolute percent change peak_allocated_gib_mean",
+      "value": 49.2746986318773,
+      "printed": "49.3",
+      "source": "member-c/results/C-final/ada_cost_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 vs M3 absolute percent change seconds_per_step_mean",
+      "value": 25.304108529286605,
+      "printed": "25.3",
+      "source": "member-c/results/C-final/ada_cost_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 vs M2 absolute percent change peak_allocated_gib_mean",
+      "value": 94.46641125205512,
+      "printed": "94.5",
+      "source": "member-c/results/C-final/ada_cost_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 vs M2 absolute percent change seconds_per_step_mean",
+      "value": 74.1838789808221,
+      "printed": "74.2",
+      "source": "member-c/results/C-final/ada_cost_summary.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    },
+    {
+      "claim": "M5 candidate training hours",
+      "value": 3.4917484953727884,
+      "printed": "3.492",
+      "source": "member-c/formal-results/M5-return-v1/member-c/results/M5-v1/per_seed.csv",
+      "check": "formatted value present in intended LaTeX surface"
+    }
+  ],
+  "source_sha256": {
+    "member-c/formal-results/M5-return-v1/member-c/results/M5-v1/per_seed.csv": "e042cb19eab2c7da85e2b1d7a2d3795b48bdcad948c4bd65540ac5bd67ff8800",
+    "member-c/results/C-final/ada_cost_summary.csv": "b8f10ebdbacd18de724051a427f206b2a5b3fd0063ae6e4055ccd0487c756940",
+    "member-c/results/C-final/cka_ood_per_seed.csv": "f5df67280f8a8bfee79d092a7603570074059d4bdcc0d324c3433c605f15cbe8",
+    "member-c/results/C-final/ood_accuracy_summary.csv": "4b4c0b5169e6aa649100046f6a1975f047e8694f37c62b8a4b388314e6025be0",
+    "member-c/results/C-v1/paired_comparisons.csv": "5142fdada656d17c265f22d84c1a605525c4e8fae9987f7071c3de629a217d8c",
+    "member-c/results/M5-local-audit/paired_comparisons_recomputed.csv": "8364b7e8f789820002cd042f2137a5ffe2e5ae77af56be9728fa49b2ab698c1d"
+  },
+  "scope": "Generated accuracy table and headline paired/CKA/Ada-cost/M5-time numbers. Existence checks supplement manual contextual reading; they are not a proof of every possible textual claim. Historical ablation/error/domain claims retain the original audited sources and were reviewed in context."
+}

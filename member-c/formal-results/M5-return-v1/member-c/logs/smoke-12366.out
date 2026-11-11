@@ -1,0 +1,146 @@
+Tue Nov 10 17:04:42 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX 6000 Ada Gene...    Off |   00000000:27:00.0 Off |                  Off |
+| 47%   62C    P8             28W /  300W |     455MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA RTX 6000 Ada Gene...    Off |   00000000:38:00.0 Off |                  Off |
+| 59%   84C    P2            277W /  300W |   16463MiB /  49140MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA RTX 6000 Ada Gene...    Off |   00000000:A8:00.0 Off |                  Off |
+| 46%   71C    P2            234W /  300W |   25056MiB /  49140MiB |     91%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA RTX 6000 Ada Gene...    Off |   00000000:B8:00.0 Off |                  Off |
+| 30%   52C    P2             73W /  300W |    2777MiB /  49140MiB |     12%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A         2556554      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         2562810      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         2562980      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4097551      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4098484      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4099138      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4099375      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4099986      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4100319      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4100954      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4101156      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4101830      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4102069      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4102721      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4105650      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4106344      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4106545      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4107227      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4107515      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4108119      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4108386      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4109043      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4109490      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4110016      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4110549      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4111077      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4111534      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    0   N/A  N/A         4111965      G   ...0d69f666c7f282e54abfe58f1e917          6MiB |
+|    1   N/A  N/A         2293850      C   python                                14204MiB |
+|    1   N/A  N/A         2295307      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2295893      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2296261      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2296828      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2297504      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2297867      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2298462      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2299056      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2299557      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2299864      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2300559      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2301120      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2301365      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2302010      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2302616      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2303251      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2303415      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2304018      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2304704      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2305483      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2305777      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2306311      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2306992      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2307350      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2307951      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    1   N/A  N/A         2308372      G   ...onda3/envs/dreamer/bin/python         77MiB |
+|    2   N/A  N/A         4086383      C   python                                17278MiB |
+|    2   N/A  N/A         4097551    C+G   ...0d69f666c7f282e54abfe58f1e917        301MiB |
+|    2   N/A  N/A         4098484    C+G   ...0d69f666c7f282e54abfe58f1e917        306MiB |
+|    2   N/A  N/A         4099138    C+G   ...0d69f666c7f282e54abfe58f1e917        286MiB |
+|    2   N/A  N/A         4099375    C+G   ...0d69f666c7f282e54abfe58f1e917        304MiB |
+|    2   N/A  N/A         4099986    C+G   ...0d69f666c7f282e54abfe58f1e917        292MiB |
+|    2   N/A  N/A         4100319    C+G   ...0d69f666c7f282e54abfe58f1e917        286MiB |
+|    2   N/A  N/A         4100954    C+G   ...0d69f666c7f282e54abfe58f1e917        306MiB |
+|    2   N/A  N/A         4101156    C+G   ...0d69f666c7f282e54abfe58f1e917        294MiB |
+|    2   N/A  N/A         4101830    C+G   ...0d69f666c7f282e54abfe58f1e917        300MiB |
+|    2   N/A  N/A         4102069    C+G   ...0d69f666c7f282e54abfe58f1e917        300MiB |
+|    2   N/A  N/A         4102721    C+G   ...0d69f666c7f282e54abfe58f1e917        304MiB |
+|    2   N/A  N/A         4105650    C+G   ...0d69f666c7f282e54abfe58f1e917        308MiB |
+|    2   N/A  N/A         4106344    C+G   ...0d69f666c7f282e54abfe58f1e917        300MiB |
+|    2   N/A  N/A         4106545    C+G   ...0d69f666c7f282e54abfe58f1e917        296MiB |
+|    2   N/A  N/A         4107227    C+G   ...0d69f666c7f282e54abfe58f1e917        302MiB |
+|    2   N/A  N/A         4107515    C+G   ...0d69f666c7f282e54abfe58f1e917        304MiB |
+|    2   N/A  N/A         4108119    C+G   ...0d69f666c7f282e54abfe58f1e917        302MiB |
+|    2   N/A  N/A         4108386    C+G   ...0d69f666c7f282e54abfe58f1e917        298MiB |
+|    2   N/A  N/A         4109043    C+G   ...0d69f666c7f282e54abfe58f1e917        304MiB |
+|    2   N/A  N/A         4109490    C+G   ...0d69f666c7f282e54abfe58f1e917        302MiB |
+|    2   N/A  N/A         4110016    C+G   ...0d69f666c7f282e54abfe58f1e917        302MiB |
+|    2   N/A  N/A         4110549    C+G   ...0d69f666c7f282e54abfe58f1e917        308MiB |
+|    2   N/A  N/A         4111077    C+G   ...0d69f666c7f282e54abfe58f1e917        296MiB |
+|    2   N/A  N/A         4111534    C+G   ...0d69f666c7f282e54abfe58f1e917        304MiB |
+|    2   N/A  N/A         4111965    C+G   ...0d69f666c7f282e54abfe58f1e917        294MiB |
+|    3   N/A  N/A         2555955      C   python                                  620MiB |
+|    3   N/A  N/A         2556554    C+G   ...0d69f666c7f282e54abfe58f1e917        281MiB |
+|    3   N/A  N/A         2562156      C   python                                  620MiB |
+|    3   N/A  N/A         2562238      C   python                                  620MiB |
+|    3   N/A  N/A         2562810    C+G   ...0d69f666c7f282e54abfe58f1e917        283MiB |
+|    3   N/A  N/A         2562980    C+G   ...0d69f666c7f282e54abfe58f1e917        290MiB |
++-----------------------------------------------------------------------------------------+
+{'eval_loss': 0.692430317401886, 'eval_accuracy': 0.5, 'eval_runtime': 0.3593, 'eval_samples_per_second': 222.645, 'eval_steps_per_second': 13.915, 'epoch': 0.2}
+{'train_runtime': 3.0666, 'train_samples_per_second': 20.87, 'train_steps_per_second': 0.652, 'train_loss': 0.7149310111999512, 'epoch': 0.2}
+{
+  "eval_loss": 0.692430317401886,
+  "eval_accuracy": 0.5,
+  "eval_runtime": 0.3589,
+  "eval_samples_per_second": 222.886,
+  "eval_steps_per_second": 13.93,
+  "epoch": 0.2,
+  "train_wall_seconds_this_invocation": 3.261332830414176,
+  "peak_cuda_allocated_bytes": 2371064832,
+  "peak_cuda_reserved_bytes": 2648702976,
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "best_checkpoint": "member-c/runs/M5-smoke/checkpoints/checkpoint-2",
+  "global_step": 2,
+  "merge_max_abs_logit_difference": 4.470348358154297e-08,
+  "checkpoint_weight_sha256": "2a9d887dd1e9125931d021d3016039ec48c814cbfd43369889ae8a93451d6bee",
+  "versions": {
+    "torch": "2.5.1+cu124",
+    "transformers": "4.51.3",
+    "datasets": "3.5.0",
+    "python": "3.10.12"
+  },
+  "job_id": "12366",
+  "runtime_includes_epoch_validation_and_saving": true,
+  "timing_note": "This invocation only; see invocations and Slurm ledger for interruptions. Training peak captured before post-training validation and merge."
+}
+EXIT_CODE=0

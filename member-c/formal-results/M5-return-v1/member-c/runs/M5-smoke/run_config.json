@@ -1,0 +1,31 @@
+{
+  "method": "M5",
+  "protocol": "M5-v1",
+  "budget": 400,
+  "seed": 13,
+  "lr": 0.0003,
+  "length": 512,
+  "epochs": 10,
+  "batch": 8,
+  "accumulation": 4,
+  "smoke": true,
+  "stage": "smoke",
+  "data_manifest_sha256": "74d278fb4419173b5aaf439f6b3723621b6e39484d2749ddacdc01665e964a78",
+  "split_sha256": "42100fd4142b4d6617e3b9f664ed030ac0757c197f64792a51671c11a3bcd972",
+  "model_id": "FacebookAI/roberta-base",
+  "model_revision": "e2da8e2f811d1448a5b465c236feacd80ffbac7b",
+  "lora": {
+    "rank": 8,
+    "alpha": 16,
+    "dropout": 0.0
+  },
+  "protocol_sha256": "39465bb00534b1833bbcdd078e376573a99433b5fccd8da3cf9683a3c67b3892",
+  "fixture": false,
+  "code_sha256": {
+    "lora.py": "ddcc8dc4f2e8b93194c392637ab2191d04efdf20121231a08ba6774b7e887270",
+    "lora_train.py": "fce847b98bcb46aff729943a174e6f5331479c5125889afbcf1793836b105498",
+    "common.py": "255840b9d60339306e195523fbdb62d8f2ddf21b1c31f759236657fe4d2d9778"
+  },
+  "a_model_sha256": "16cac1c2550027cc457967ae671947ec6d3ba69eb0a1af3fd804aab4d1934d72",
+  "a_checkpoint_sha256": "48e5496a06e8013f86b4b16bacee2ce7a9c189796736315f854b063e3276e605"
+}

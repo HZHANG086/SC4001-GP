@@ -1,0 +1,2 @@
+{"event": "start", "unix_time": 1794336236.2589924, "job_id": "12374", "resume": false}
+{"event": "success", "unix_time": 1794336291.3574216, "job_id": "12374", "train_seconds": 51.50881029292941}

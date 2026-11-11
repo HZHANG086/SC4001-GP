@@ -1,0 +1,15 @@
+{
+  "status": "RENDER_AND_LAYOUT_PASS",
+  "pages": 8,
+  "main_content_pages": 5,
+  "reference_pages": 1,
+  "appendix_pages": 2,
+  "paper": "A4",
+  "body_font": "Arial 10pt, embedded subset; standard mathematical fonts for equations",
+  "pdf_sha256": "4cb74ca04d1124f431a58d60afad5db562b3b31e5c63e766aaafdc5d99e154b3",
+  "source_sha256": "3d7894366c96f7ac6775efd5190244fbd3360c14b7323f92693bcae6990344f9",
+  "visual_review": "All eight pages inspected at 1400px; final revised scatter-legend page 7 rerendered and inspected. No clipping, overlap, missing glyphs or detached short overflow pages.",
+  "bounds_check": "All extracted words lie within page bounds; no TeX overfull boxes.",
+  "figures": "Six scientific figures in PDF/SVG/PNG, colorblind-friendly colors and separate grayscale variants; inspected representative grayscale plots.",
+  "scope": "C insert layout only; final group page count and deferred identifying information remain team integration responsibilities."
+}

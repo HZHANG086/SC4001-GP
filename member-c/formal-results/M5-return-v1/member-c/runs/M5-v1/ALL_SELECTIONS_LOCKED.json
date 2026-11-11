@@ -1,0 +1,291 @@
+{
+  "protocol_sha256": "39465bb00534b1833bbcdd078e376573a99433b5fccd8da3cf9683a3c67b3892",
+  "selections": [
+    {
+      "method": "M5",
+      "budget": 400,
+      "seed": 13,
+      "lr": 0.001,
+      "winner": "member-c/runs/M5-v1/M5-b400-s13-lr1e-03",
+      "candidate_runs": [
+        "member-c/runs/M5-v1/M5-b400-s13-lr1e-04",
+        "member-c/runs/M5-v1/M5-b400-s13-lr3e-04",
+        "member-c/runs/M5-v1/M5-b400-s13-lr1e-03"
+      ],
+      "source_val_accuracy": 0.9375,
+      "validation_sha256": [
+        "ac5b1aef34340c3394273338292efb1c4f56cd74638e6584d3cb21d89f585019",
+        "3a325f5f7cbddc1a92ba49e2eeade4368345685aa3221c183f146a138d84c724",
+        "d46159c4755615b76880ab2f7dff862eb95577643320fce5b6cb8b31ddff0280"
+      ],
+      "rule": "IMDb validation only; fixed LR-list tie order; no test metrics consulted"
+    },
+    {
+      "method": "M5",
+      "budget": 1600,
+      "seed": 13,
+      "lr": 0.0003,
+      "winner": "member-c/runs/M5-v1/M5-b1600-s13-lr3e-04",
+      "candidate_runs": [
+        "member-c/runs/M5-v1/M5-b1600-s13-lr1e-04",
+        "member-c/runs/M5-v1/M5-b1600-s13-lr3e-04",
+        "member-c/runs/M5-v1/M5-b1600-s13-lr1e-03"
+      ],
+      "source_val_accuracy": 0.940625,
+      "validation_sha256": [
+        "4fc05335e4658039a0b155a22a7d1c1af018b23b84f6960e5705a879bc565bba",
+        "f617d88f5b2c3d48677bbb13ab79a92613ad2573416e1241fc8763656feac1b2",
+        "c96419603d641cef61e7df17b8390ddbf749947ab261563c721b5525d89e8e3e"
+      ],
+      "rule": "IMDb validation only; fixed LR-list tie order; no test metrics consulted"
+    },
+    {
+      "method": "M5",
+      "budget": 6400,
+      "seed": 13,
+      "lr": 0.0001,
+      "winner": "member-c/runs/M5-v1/M5-b6400-s13-lr1e-04",
+      "candidate_runs": [
+        "member-c/runs/M5-v1/M5-b6400-s13-lr1e-04",
+        "member-c/runs/M5-v1/M5-b6400-s13-lr3e-04",
+        "member-c/runs/M5-v1/M5-b6400-s13-lr1e-03"
+      ],
+      "source_val_accuracy": 0.94453125,
+      "validation_sha256": [
+        "37923a97de9d476df204b28cdbb82764049ccfcdb7608305a353cbc0aecebe35",
+        "22a9f3970b98685df3b5cddf0804f73657704df9d0e1b31b531913dfe62d8569",
+        "c2413b86b435b69f24ec1c93f9cfd8c6a1042737b283de0493624e230a2804df"
+      ],
+      "rule": "IMDb validation only; fixed LR-list tie order; no test metrics consulted"
+    },
+    {
+      "method": "M5",
+      "budget": 400,
+      "seed": 21,
+      "lr": 0.001,
+      "winner": "member-c/runs/M5-v1/M5-b400-s21-lr1e-03",
+      "candidate_runs": [
+        "member-c/runs/M5-v1/M5-b400-s21-lr1e-04",
+        "member-c/runs/M5-v1/M5-b400-s21-lr3e-04",
+        "member-c/runs/M5-v1/M5-b400-s21-lr1e-03"
+      ],
+      "source_val_accuracy": 0.9625,
+      "validation_sha256": [
+        "7e1ea5c001e5ac805cd99496786f8712876b3c374faba5b5d72670bec8ef9866",
+        "d599d33eed395b0a3c0de19443523c14ef6b5d85f91d788fcc2f8958ac313dac",
+        "5288e3dbc9776824a97ccbbf56392225a7e13cf16857c222e21517fd1a05e76b"
+      ],
+      "rule": "IMDb validation only; fixed LR-list tie order; no test metrics consulted"
+    },
+    {
+      "method": "M5",
+      "budget": 1600,
+      "seed": 21,
+      "lr": 0.0003,
+      "winner": "member-c/runs/M5-v1/M5-b1600-s21-lr3e-04",
+      "candidate_runs": [
+        "member-c/runs/M5-v1/M5-b1600-s21-lr1e-04",
+        "member-c/runs/M5-v1/M5-b1600-s21-lr3e-04",
+        "member-c/runs/M5-v1/M5-b1600-s21-lr1e-03"
+      ],
+      "source_val_accuracy": 0.946875,
+      "validation_sha256": [
+        "4ba38f60c5fb172becd70d7a04a79f5c4d3b9ef8cfb761db21b75e8b1875630f",
+        "1ae1888f46fcabfbba302df1c960f0ebd34cfa8341edece70b018b4cd6453a58",
+        "424220940e1fa1de97b086904fe52c24db1f0a3cd7700907e601b86ef9874f1c"
+      ],
+      "rule": "IMDb validation only; fixed LR-list tie order; no test metrics consulted"
+    },
+    {
+      "method": "M5",
+      "budget": 6400,
+      "seed": 21,
+      "lr": 0.0003,
+      "winner": "member-c/runs/M5-v1/M5-b6400-s21-lr3e-04",
+      "candidate_runs": [
+        "member-c/runs/M5-v1/M5-b6400-s21-lr1e-04",
+        "member-c/runs/M5-v1/M5-b6400-s21-lr3e-04",
+        "member-c/runs/M5-v1/M5-b6400-s21-lr1e-03"
+      ],
+      "source_val_accuracy": 0.93984375,
+      "validation_sha256": [
+        "192a407e3f286689b424d7d237b0c9bcd8a3b34b539d851b43969019079b9e1f",
+        "98edf4db55e294a1d18abcddc2c3c409db4b5528b6ea17c8f0572219522180e5",
+        "56fdc6fd6e7f6e58cf1cc790f32991ff2629d41a29506570b828d5e16bdf2765"
+      ],
+      "rule": "IMDb validation only; fixed LR-list tie order; no test metrics consulted"
+    },
+    {
+      "method": "M5",
+      "budget": 400,
+      "seed": 42,
+      "lr": 0.001,
+      "winner": "member-c/runs/M5-v1/M5-b400-s42-lr1e-03",
+      "candidate_runs": [
+        "member-c/runs/M5-v1/M5-b400-s42-lr1e-04",
+        "member-c/runs/M5-v1/M5-b400-s42-lr3e-04",
+        "member-c/runs/M5-v1/M5-b400-s42-lr1e-03"
+      ],
+      "source_val_accuracy": 0.875,
+      "validation_sha256": [
+        "5458e5a4fe62094afed607f569980ec5d52fd01fe54fc8a343751592facdb118",
+        "9a8eaa799f7965158d660f0acde4a388fb40cb6a10b357fe5c1aaec6808a4545",
+        "34c4bea276879ed6ca827219911e07e048345091bbaa3865a2a2d1a04cac2fc1"
+      ],
+      "rule": "IMDb validation only; fixed LR-list tie order; no test metrics consulted"
+    },
+    {
+      "method": "M5",
+      "budget": 1600,
+      "seed": 42,
+      "lr": 0.0003,
+      "winner": "member-c/runs/M5-v1/M5-b1600-s42-lr3e-04",
+      "candidate_runs": [
+        "member-c/runs/M5-v1/M5-b1600-s42-lr1e-04",
+        "member-c/runs/M5-v1/M5-b1600-s42-lr3e-04",
+        "member-c/runs/M5-v1/M5-b1600-s42-lr1e-03"
+      ],
+      "source_val_accuracy": 0.946875,
+      "validation_sha256": [
+        "3f8fa4ad3d91e7d70d0c7a789c55ea5a6df9f58f4c2317e95d40577c26ac4397",
+        "cbc6546faf79f0880a38133540dd49437dcebfa208c7fd37f2779d0ea2c5a907",
+        "75fd5d944d0b135b711c8aec03658c728890ddbbe8601a556a2affebe0557652"
+      ],
+      "rule": "IMDb validation only; fixed LR-list tie order; no test metrics consulted"
+    },
+    {
+      "method": "M5",
+      "budget": 6400,
+      "seed": 42,
+      "lr": 0.0003,
+      "winner": "member-c/runs/M5-v1/M5-b6400-s42-lr3e-04",
+      "candidate_runs": [
+        "member-c/runs/M5-v1/M5-b6400-s42-lr1e-04",
+        "member-c/runs/M5-v1/M5-b6400-s42-lr3e-04",
+        "member-c/runs/M5-v1/M5-b6400-s42-lr1e-03"
+      ],
+      "source_val_accuracy": 0.946875,
+      "validation_sha256": [
+        "0ffece54d2d30df2ba52b1c817d30bcbeb6c156af0d70e34bc55cd0dfa28aac6",
+        "f9b4007c03c8258c99c7d8c6b46c032aa30762058a804e4fa48beb4e72b3db30",
+        "efe17a48e7714e1efe5670fb5a86387b00d715b107f186da7c5fcf8a48c2bade"
+      ],
+      "rule": "IMDb validation only; fixed LR-list tie order; no test metrics consulted"
+    },
+    {
+      "method": "M5",
+      "budget": 400,
+      "seed": 87,
+      "lr": 0.0003,
+      "winner": "member-c/runs/M5-v1/M5-b400-s87-lr3e-04",
+      "candidate_runs": [
+        "member-c/runs/M5-v1/M5-b400-s87-lr1e-04",
+        "member-c/runs/M5-v1/M5-b400-s87-lr3e-04",
+        "member-c/runs/M5-v1/M5-b400-s87-lr1e-03"
+      ],
+      "source_val_accuracy": 0.9125,
+      "validation_sha256": [
+        "4f5b15013478849cc62b01c7300ceded8913e7fa310665b5fe25c03819f1873a",
+        "cf3acf5775f706a68d2410093e994621cab366ce2593739f94382018688dc3df",
+        "77ad38bc7719f6f5f3083c02a78aa88ae907fecc1334be955936f83ecdd5a30a"
+      ],
+      "rule": "IMDb validation only; fixed LR-list tie order; no test metrics consulted"
+    },
+    {
+      "method": "M5",
+      "budget": 1600,
+      "seed": 87,
+      "lr": 0.0003,
+      "winner": "member-c/runs/M5-v1/M5-b1600-s87-lr3e-04",
+      "candidate_runs": [
+        "member-c/runs/M5-v1/M5-b1600-s87-lr1e-04",
+        "member-c/runs/M5-v1/M5-b1600-s87-lr3e-04",
+        "member-c/runs/M5-v1/M5-b1600-s87-lr1e-03"
+      ],
+      "source_val_accuracy": 0.93125,
+      "validation_sha256": [
+        "9a7ec1ef198697eb068b4b6a75d97ae3a214d1898be07907c663159a1baf3596",
+        "7d8d36286c57f54040c3a991508246829b875867f0f2c93b0b423e1728154004",
+        "721888ec8163fc6d654185e541039fda89b36d8c2b74d72938ff77de7d2a893b"
+      ],
+      "rule": "IMDb validation only; fixed LR-list tie order; no test metrics consulted"
+    },
+    {
+      "method": "M5",
+      "budget": 6400,
+      "seed": 87,
+      "lr": 0.0003,
+      "winner": "member-c/runs/M5-v1/M5-b6400-s87-lr3e-04",
+      "candidate_runs": [
+        "member-c/runs/M5-v1/M5-b6400-s87-lr1e-04",
+        "member-c/runs/M5-v1/M5-b6400-s87-lr3e-04",
+        "member-c/runs/M5-v1/M5-b6400-s87-lr1e-03"
+      ],
+      "source_val_accuracy": 0.9421875,
+      "validation_sha256": [
+        "d65760f2cd9269a1539eeb95d4073bb922da421dbfadbfba828c5e78f961b015",
+        "71248e998ac5653ff2a33d4e5a42ea4c7fcc6246f9299052c014e7480b4e3024",
+        "2e3b52575c3fa8c5351f29cc3fdacd871c855586a1818266b047ac90b213f8da"
+      ],
+      "rule": "IMDb validation only; fixed LR-list tie order; no test metrics consulted"
+    },
+    {
+      "method": "M5",
+      "budget": 400,
+      "seed": 100,
+      "lr": 0.001,
+      "winner": "member-c/runs/M5-v1/M5-b400-s100-lr1e-03",
+      "candidate_runs": [
+        "member-c/runs/M5-v1/M5-b400-s100-lr1e-04",
+        "member-c/runs/M5-v1/M5-b400-s100-lr3e-04",
+        "member-c/runs/M5-v1/M5-b400-s100-lr1e-03"
+      ],
+      "source_val_accuracy": 0.9,
+      "validation_sha256": [
+        "17a67d6d6d02ff36091b9b27991d8bb25b652958bd180aadf3f075a3ded2b5e6",
+        "b2830804d11d9003c5f97c32c12f46646c60b00f4abb342ab3f6bacf682a8356",
+        "1cfe9bb4a15f2f08d475543aad8f068a0f98887dec001589bcfa7e5726620c62"
+      ],
+      "rule": "IMDb validation only; fixed LR-list tie order; no test metrics consulted"
+    },
+    {
+      "method": "M5",
+      "budget": 1600,
+      "seed": 100,
+      "lr": 0.0001,
+      "winner": "member-c/runs/M5-v1/M5-b1600-s100-lr1e-04",
+      "candidate_runs": [
+        "member-c/runs/M5-v1/M5-b1600-s100-lr1e-04",
+        "member-c/runs/M5-v1/M5-b1600-s100-lr3e-04",
+        "member-c/runs/M5-v1/M5-b1600-s100-lr1e-03"
+      ],
+      "source_val_accuracy": 0.93125,
+      "validation_sha256": [
+        "f53a66ee64069c293314747cc9791b839a0639d13510410cfe8c60a0a8c5b009",
+        "5662f0600d7aca880179583e82f76cfae2a43857198fa3f17c2cf52079338dfe",
+        "2ad5de86d60f1203218a773b5cc2869f421cc0be4cdda0b4055772fd844ee954"
+      ],
+      "rule": "IMDb validation only; fixed LR-list tie order; no test metrics consulted"
+    },
+    {
+      "method": "M5",
+      "budget": 6400,
+      "seed": 100,
+      "lr": 0.001,
+      "winner": "member-c/runs/M5-v1/M5-b6400-s100-lr1e-03",
+      "candidate_runs": [
+        "member-c/runs/M5-v1/M5-b6400-s100-lr1e-04",
+        "member-c/runs/M5-v1/M5-b6400-s100-lr3e-04",
+        "member-c/runs/M5-v1/M5-b6400-s100-lr1e-03"
+      ],
+      "source_val_accuracy": 0.94296875,
+      "validation_sha256": [
+        "e766568c089573e6e27b85e23d4a36969b95cac2bb8d7924035c365cff17cb60",
+        "34251707ba3addbf512ddb471ecb4d9c514fbf0f6c2adbf89543c267cecb4d2e",
+        "06f181af452d97ed85c64e377632bcdffb52745c22a99318bb36ab602154f0f8"
+      ],
+      "rule": "IMDb validation only; fixed LR-list tie order; no test metrics consulted"
+    }
+  ],
+  "rule": "All 45 candidate training runs completed before any M5 test evaluation"
+}

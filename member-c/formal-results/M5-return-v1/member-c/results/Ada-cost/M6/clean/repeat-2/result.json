@@ -1,0 +1,46 @@
+{
+  "training_seconds_per_optimizer_step": [
+    0.5812739869579673,
+    0.5838839709758759,
+    0.5865997783839703,
+    0.5884367059916258,
+    0.5840376224368811
+  ],
+  "training_loss_diagnostic_only": [
+    0.6744130849838257,
+    0.6652955114841461,
+    0.6556921750307083,
+    0.6278825849294662,
+    0.629914253950119
+  ],
+  "training_examples_per_second": 54.715219742274506,
+  "warmup_peak": {
+    "allocated_bytes": 5256183296,
+    "reserved_bytes": 5498732544
+  },
+  "training_peak": {
+    "allocated_bytes": 5252775424,
+    "reserved_bytes": 5498732544
+  },
+  "inference_peak": {
+    "allocated_bytes": 653112320,
+    "reserved_bytes": 773849088
+  },
+  "inference_seconds": 0.7027203151956201,
+  "inference_examples_per_second": 227.68660097077162,
+  "trainable_parameters": 124056578,
+  "total_parameters": 124056578,
+  "optimizer_state_tensors": 597,
+  "intrinsic_reference": "M6",
+  "teacher_present_training": true,
+  "teacher_used_in_loss": true,
+  "microbatch": 8,
+  "accumulation": 4,
+  "fixture": false,
+  "gpu": "NVIDIA RTX 6000 Ada Generation",
+  "gpu_total_bytes": 50865307648,
+  "job_id": "12379",
+  "elapsed_seconds": 5.480325859040022,
+  "interpretation": "Short fixed-shape microbenchmark; not full-run cost or model accuracy",
+  "saved_model": false
+}
